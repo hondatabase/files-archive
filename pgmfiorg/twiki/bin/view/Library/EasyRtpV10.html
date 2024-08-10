@@ -1,0 +1,323 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . EasyRtpV10   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="EasyRtpV10.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <a href="RealTimeProgramming.html">Real&nbsp;Time&nbsp;Programming</a> &gt;<b>EasyRtpV10</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+This page is a construction design for the Easy-RTP V1.0 board.  This is the single sided design for a DS1230 style 28 pin DIP <a href="NVSRAM.html">NVSRAM</a>.  You can find the eagle design files attached in a zipfile at the end of this thread. THIS ONLY WORKS WITH <a href="OBD.html">OBD</a>1 <a href="ECU.html">ECU</a> FOR NOW.
+<p />
+<p />
+<ul>
+<li> <a href="EasyRtpV10.html#Brief_Explanation">Brief Explanation</a>
+</li>
+<li> <a href="EasyRtpV10.html#Parts_list_">Parts list:</a>
+</li>
+<li> <a href="EasyRtpV10.html#Construction_">Construction:</a>
+</li>
+<li> <a href="EasyRtpV10.html#Modification_for_OBD0_Applicatio">Modification for OBD0 Application</a>
+</li>
+</ul>
+<p />
+<h3> Brief Explanation </h3>
+<p />
+<strong>A quick explanation:</strong> the "optional components" are only required if you want 27C256 emulation. This is intended for those who do not have an <a href="EPROM.html">EPROM</a> programmer capable of natively programming their <a href="NVSRAM.html">NVSRAM</a> of choice. Most programmers "28C256" setting seem to do the trick nicely, FYI. (Tested with Willem by Calvin and the Batronix by gimpy... Gimpy sez you have to disable the blank check for it to work)
+<p />
+picture of board layout in eagle: <br />
+    <img src="../../../pub/Library/EasyRtpV10/boardlayout.png" alt="boardlayout.png"  width="700"  />
+<p />
+<h3> Parts list: </h3>
+<ul>
+<li> DS1230Y or similar TI, ST, Simtek, ZMD, ... 32K 28 pin .600" DIP <a href="NVSRAM.html">NVSRAM</a>
+</li>
+<li> 74HC00 DIP package quad NAND gate
+</li>
+<li> 2x 0.1 uF ceramic caps (decoupling)
+</li>
+<li> 2x 10K resistors
+</li>
+<li> 2x 1x14 pin headers or similar contraption to make contact with <a href="ECU.html">ECU</a> socket
+</li>
+</ul>
+<p />
+Optional components: (required for 27C256 emulation)
+<ul>
+<li> 1x 10K resistor
+</li>
+<li> 1x 100k resistor
+</li>
+<li> 1x generic NPN switching transistor (2N4401 or equivalent)
+</li>
+<li> 1x switching diode (1n4148, etc... not too picky.)
+</li>
+</ul>
+<p />
+<h3> Construction: </h3>
+<p />
+<center>
+<img src="../../../pub/Library/EasyRtpV10/IM000496.JPG" alt="IM000496.JPG"  width="350"  />
+    <img src="../../../pub/Library/EasyRtpV10/IM000495.JPG" alt="IM000495.JPG"  width="350" /><br />
+First off, orient your board with the traces facing up. (bottom up)
+<p />
+<img src="../../../pub/Library/EasyRtpV10/IM000497.JPG" alt="IM000497.JPG"  width="350"  />
+    <img src="../../../pub/Library/EasyRtpV10/IM000498.JPG" alt="IM000498.JPG"  width="350"  /><br />
+If you have the two 28 pin footprints facing right, the top set of holes (that are also larger diameter) are the ones to use for the <a href="ECU.html">ECU</a>-board connectors. Solder in place the 2 - 1x14 pin headers (I'm ghetto, fuck off.) or whatever other contraption you are using to connect the board to the <a href="ECU.html">ECU</a> in place and continue.</center>
+<p />
+<ul>
+<li> Orient your board with the traces on the BOTTOM.  Look at the top of the board (no traces). Orient your board so the 3 pin jumper connector faces left and the double 27C256 face right.  This is the orientation in which all the following instructions will assume you are looking at the board.
+</li>
+</ul>
+<p />
+<center>
+    <img src="../../../pub/Library/EasyRtpV10/IM000499.JPG" alt="IM000499.JPG"  width="350"  />
+    <img src="../../../pub/Library/EasyRtpV10/IM000500.JPG" alt="IM000500.JPG"  width="350" /><br />
+Next, solder in a 28 pin DIP socket for the <a href="NVSRAM.html">NVSRAM</a> in the top set of holes. The notch will face left.
+<p />
+<img src="../../../pub/Library/EasyRtpV10/IM000501.JPG" alt="IM000501.JPG"  width="350" />
+    <img src="../../../pub/Library/EasyRtpV10/IM000502.JPG" alt="IM000502.JPG"  width="350" /><br />
+Next, solder in a 3pin - pin header or 3 wires for J1.
+<p />
+<img src="../../../pub/Library/EasyRtpV10/IM000503.JPG" alt="IM000503.JPG"  width="350"  />
+    <img src="../../../pub/Library/EasyRtpV10/IM000504.JPG" alt="IM000504.JPG"  width="350"  /><br />
+Next, solder the two caps C1+C2 in place.
+<p />
+<img src="../../../pub/Library/EasyRtpV10/IM000505.JPG" alt="IM000505.JPG"  width="350"  />
+    <img src="../../../pub/Library/EasyRtpV10/IM000506.JPG" alt="IM000506.JPG"  width="350"  /><br />
+Next, solder in R1 (10k, to the left) and R2 (10K, center).</center>
+<p />
+<ul>
+<li> Next decide whether you want/need 27C256 emulation. 
+</li>
+</ul>
+<p />
+IF YOU DON'T WANT 27C256 EMULATION:
+<ul>
+<li> Solder in a wire link or 0-ohm resistor for D1 
+</li>
+<li> Skip to <strong>FINAL STEPS</strong>.
+</li>
+</ul>
+<p />
+IF YOU DO WANT 27C256 EMULATION:
+<ul>
+<li> Solder in the switching diode for D1.
+</li>
+<li> Solder in the NPN switching transistor Q1.
+</li>
+<li> Solder in R3 (10k - top resistor)
+</li>
+<li> Solder in R4 (100k - bottom resistor)
+</li>
+<li> continue...
+</li>
+</ul>
+<p />
+<strong>FINAL STEPS</strong>:
+<ul>
+<li> Solder in the 74HC00 Latch
+</li>
+<li> Place the <a href="NVSRAM.html">NVSRAM</a> in the 28 pin DIP socket
+</li>
+</ul>
+<p />
+    <img src="../../../pub/Library/EasyRtpV10/IM000509.JPG" alt="IM000509.JPG"  width="350"  />
+    <img src="../../../pub/Library/EasyRtpV10/IM000510.JPG" alt="IM000510.JPG"  width="350"  /><br/>
+Final board
+<p />
+You can download the design or full size versions of any of the images:
+<p />
+<ul>
+<li> <a href="../../../pub/Library/EasyRtpV10/rtp_EasyRtpV10-v1.pdf" target="_top">rtp_EasyRtpV10-v1.pdf</a>: This Page in PDF form
+</li>
+</ul>
+<p />
+<p />
+<h3><a name="Modification_for_OBD0_Applicatio"> </a> Modification for <a href="OBD.html">OBD</a>0 Application </h3>
+<p />
+<strong>Modification for <a href="OBD.html">OBD</a>0 Application(while we make a version 2 of the board)</strong>
+<p />
+Okay then, here goes.
+This is just one way of doing it. I´m sure someone can come up with a much cleaner way, but this was how I did it.
+Needless to say, this is not my own design... l3st4rd is the evil genious here, not me Very Happy
+<p />
+You will need the following:
+-PCB, resistors, sockets, pins, <a href="NVSRAM.html">NVSRAM</a> etc. as found in the excellent current kit (as sold by joshuavillasenor)
+-1 pcs 74LS86N <a href="TTL.html">TTL</a> chip
+-1 pcs additional 10K ohm resistor
+-Some thin insulated wire for making interconnections on the board
+<p />
+How-to build/modify the board itself:
+-Cut the connections marked RED in the first picture
+-Assemble the <a href="RTP.html">RTP</a> as per the excellent instructions in <a href="WiKi.html">Wi&nbsp;Ki</a>
+-Cut or break off all pins except 4,5,6,7 and 14 from the 74LS86N (see picture 3)
+-Solder the 74LS86N on top of the 74LS00 (piggy backed!) - but ONLY pins 4, 7 and 14.
+-Bend the remaining pins 5 and 6 upwards so you can solder wires to them.
+-Using thin wire, make the connections as indicated in the first and second picture. The chip shown is the 74LS86N. This assumes of course that it is soldered on top of the 74LS00 as shown in the <a href="WiKi.html">Wi&nbsp;Ki</a> directions.
+-The resistor shown(or rather, crudely drawn!) in the second picture is 10Kohm
+<p />
+Shielding (optional):
+One of the connections made is pin 2 on the 3-pin header. If you make this connection, you will have a nice ground signal for connecting to a shield on a shielded cable.
+The A15 signal for which pin 2 was originally intended is now connected elsewhere.
+<p />
+Connecting to the <a href="ECU.html">ECU</a>:
+You will need to isolate pin 16 from the <a href="ECU.html">ECU</a>. Sorry no pictures, as I don´t have my <a href="ECU.html">ECU</a> with me at the moment.
+-One connection must be cut going to the 24-pin <a href="SRAM.html">SRAM</a> on the top of the board.
+-Another must be cut on the bottom of the board.
+-These two points must be re-connected so that only the <a href="ECU.html">ECU</a> pin is "disconnected" and the rest of the circuit is complete.
+-Connect one <a href="RTP.html">RTP</a> wire to pin 16 on the <a href="ECU.html">ECU</a> (connect this to the INPUT on <a href="RTP.html">RTP</a>)
+-Connect one <a href="RTP.html">RTP</a> wire to pin 21 on the 24-pin <a href="SRAM.html">SRAM</a> (M5128)
+<p />
+That´s all I have time for now - hope it helps.
+<p />
+/Bindegal 
+<p />
+<img src="http://forum.pgmfi.org/files/rtpmod3.jpg" alt="rtpmod3.jpg" height="350" />
+<img src="http://forum.pgmfi.org/files/rtpmod2.jpg" alt="rtpmod2.jpg" width="350" />
+<img src="http://forum.pgmfi.org/files/rtpmod1.jpg" alt="rtpmod1.jpg" width="350" />
+<p />
+<p />
+<font size = "-1"><center>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th align="center" bgcolor="#D0D1E0"> <strong><span style='background : #FFFFCE;'><font color="#0000FF">Attachment</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FileAttachment?topicparent=Library.EasyRtpV10">?</a>:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Modify:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Size:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Date:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Who:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Comment:</strong> </th></tr>
+<tr><td>  <img src="../../../pub/icn/zip.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/easyrtpv1-eagle.zip">easyrtpv1-eagle.zip</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=easyrtpv1-eagle.zip&amp;revInfo=1">mod</a>     </td><td>  34574  </td><td>  21 Feb 2004 - 00:24  </td><td>  blundar  </td><td>  The design in eagle format  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/IM000495.JPG">IM000495.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=IM000495.JPG&amp;revInfo=1">mod</a>     </td><td>  54179  </td><td>  22 Apr 2004 - 17:54  </td><td>  blundar  </td><td>  bottom of rtp board  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/IM000496.JPG">IM000496.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=IM000496.JPG&amp;revInfo=1">mod</a>     </td><td>  48789  </td><td>  22 Apr 2004 - 17:54  </td><td>  blundar  </td><td>  top of rtp board  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/IM000497.JPG">IM000497.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=IM000497.JPG&amp;revInfo=1">mod</a>     </td><td>  60302  </td><td>  22 Apr 2004 - 18:07  </td><td>  blundar  </td><td>  board with pin headers - top  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/IM000498.JPG">IM000498.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=IM000498.JPG&amp;revInfo=1">mod</a>     </td><td>  68144  </td><td>  22 Apr 2004 - 18:08  </td><td>  blundar  </td><td>  board with pin headers - bottom  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/IM000499.JPG">IM000499.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=IM000499.JPG&amp;revInfo=1">mod</a>     </td><td>  48925  </td><td>  22 Apr 2004 - 18:09  </td><td>  blundar  </td><td>  Image of board front with socket  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/IM000500.JPG">IM000500.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=IM000500.JPG&amp;revInfo=1">mod</a>     </td><td>  67878  </td><td>  22 Apr 2004 - 18:10  </td><td>  blundar  </td><td>  Image of board back with socket  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/IM000501.JPG">IM000501.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=IM000501.JPG&amp;revInfo=1">mod</a>     </td><td>  56798  </td><td>  22 Apr 2004 - 18:10  </td><td>  blundar  </td><td>  Image of board front with 3 pin header  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/IM000502.JPG">IM000502.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=IM000502.JPG&amp;revInfo=1">mod</a>     </td><td>  78703  </td><td>  22 Apr 2004 - 18:10  </td><td>  blundar  </td><td>  Image of board back with 3 pin header  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/IM000503.JPG">IM000503.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=IM000503.JPG&amp;revInfo=1">mod</a>     </td><td>  56249  </td><td>  22 Apr 2004 - 18:11  </td><td>  blundar  </td><td>  Image of board front with Capacitors  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/IM000504.JPG">IM000504.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=IM000504.JPG&amp;revInfo=1">mod</a>     </td><td>  70396  </td><td>  22 Apr 2004 - 18:11  </td><td>  blundar  </td><td>  Image of board back with Capacitors  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/IM000505.JPG">IM000505.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=IM000505.JPG&amp;revInfo=1">mod</a>     </td><td>  56663  </td><td>  22 Apr 2004 - 18:12  </td><td>  blundar  </td><td>  Image of board front with resistors  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/IM000506.JPG">IM000506.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=IM000506.JPG&amp;revInfo=1">mod</a>     </td><td>  74566  </td><td>  22 Apr 2004 - 18:12  </td><td>  blundar  </td><td>  Image of board back with resistors  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/IM000507.JPG">IM000507.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=IM000507.JPG&amp;revInfo=1">mod</a>     </td><td>  61984  </td><td>  22 Apr 2004 - 18:12  </td><td>  blundar  </td><td>  Image of board front with 74HC00  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/IM000508.JPG">IM000508.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=IM000508.JPG&amp;revInfo=1">mod</a>     </td><td>  75290  </td><td>  22 Apr 2004 - 18:13  </td><td>  blundar  </td><td>  Image of board back with 74HC00  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/IM000509.JPG">IM000509.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=IM000509.JPG&amp;revInfo=1">mod</a>     </td><td>  64788  </td><td>  22 Apr 2004 - 18:13  </td><td>  blundar  </td><td>  Image of board front with DS1230Y  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/IM000510.JPG">IM000510.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=IM000510.JPG&amp;revInfo=1">mod</a>     </td><td>  57468  </td><td>  22 Apr 2004 - 18:14  </td><td>  blundar  </td><td>  Image of board with DS1230Y  </td></tr>
+<tr><td>  <img src="../../../pub/icn/pdf.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/rtp_EasyRtpV10-v1.pdf">rtp_EasyRtpV10-v1.pdf</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=rtp_EasyRtpV10-v1.pdf&amp;revInfo=1">mod</a>     </td><td>  482308  </td><td>  15 Mar 2004 - 02:35  </td><td>  The_DoC  </td><td>  This Page in PDF form (no install instructions)  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/doc_RTP_OBD1.jpg">doc_RTP_OBD1.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=doc_RTP_OBD1.jpg&amp;revInfo=1">mod</a>     </td><td>  62057  </td><td>  12 Apr 2004 - 21:29  </td><td>  tungsten2k  </td><td>  doc's original design installed in <a href="ECU.html">ECU</a>  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/doc_RTP_OBD1_Cut_here.jpg">doc_RTP_OBD1_Cut_here.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=doc_RTP_OBD1_Cut_here.jpg&amp;revInfo=1">mod</a>     </td><td>  70898  </td><td>  12 Apr 2004 - 21:30  </td><td>  tungsten2k  </td><td>  doc's original info on where to cut WE line in <a href="ECU.html">ECU</a>  </td></tr>
+<tr><td>  <img src="../../../pub/icn/else.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/EasyRtpV10/boardlayout.png">boardlayout.png</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10?filename=boardlayout.png&amp;revInfo=1">mod</a>     </td><td>  33830  </td><td>  22 Apr 2004 - 18:05  </td><td>  blundar  </td><td>  picture of board layout in eagle  </td></tr>
+</table>
+<p />
+</font></center>
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"><B>Parents:</b> <a href="WebHome.html">Web&nbsp;Home</a> &gt; <a href="RealTimeProgramming.html">Real&nbsp;Time&nbsp;Programming</a></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.10 - 22 Dec 2004 - 20:36 GMT - synoptic 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/EasyRtpV10?t=1194411438"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpV10">Attach</a>
+   |  <a href="../../rdiff/Library/EasyRtpV10.html">History</a>
+   |  <a href="../../oops/Library/EasyRtpV10%3Ftemplate=oopsmore&amp;param1=1.10&amp;param2=1.10.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.EasyRtpV10">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#04736d6f6d44746369626d2a6b76633b7771666e6167703950536d6f6d24426161606665676f">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#7c0813113c18151b15081d101a090f151312131210151219521f1311" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

@@ -1,0 +1,1421 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . HondaErrorCodes   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="HondaErrorCodes.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <a href="EcuTroubleshooting.html">Ecu&nbsp;Troubleshooting</a> &gt;<b>HondaErrorCodes</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+Ripped from <a href="http://www.hybridgarage.com" target="_top">http://www.hybridgarage.com</a>
+<p />
+<td valign="top>
+      <h2>Honda <a href="ECU.html">ECU</a> Trouble Codes</h2>
+      <p>by <!-- #BeginEditable "Author" -->various contributors<!-- #EndEditable --><br>
+        <!-- #BeginEditable "Date" --><!-- #EndEditable --></p>
+      <table BORDER CELLPADDING=3 align="center" BORDERCOLOR="#000000" CELLSPACING=0 >
+        <tr> 
+          <td VALIGN=CENTER ROWSPAN="2" WIDTH="6%"> 
+            <center>
+              <font face="Arial Black"><font size=+2>1</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3">85-98</td>
+          <td VALIGN=CENTER COLSPAN="4">86-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">85-91</td>
+          <td VALIGN=CENTER COLSPAN="4">93-97</td>
+          <td VALIGN=CENTER COLSPAN="3">95-98</td>
+          <td VALIGN=CENTER COLSPAN="4">85-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Oxygen Sensor "A" (Primary)</b> <br>
+            <font size=-1>defective circuit or unplugged / defective sensor</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER ROWSPAN="2" WIDTH="6%"> 
+            <center>
+              <font face="Arial Black"><font size=+2>2</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3">85-89</td>
+          <td VALIGN=CENTER COLSPAN="4">86-87</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">85-87</td>
+          <td VALIGN=CENTER COLSPAN="4">85-91</td>
+          <td VALIGN=CENTER COLSPAN="3">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Oxygen Sensor "B"</b> <br>
+            <font size=-1>defective circuit or unplugged / defective sensor</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER ROWSPAN="2" WIDTH="6%"> 
+            <center>
+              <font face="Arial Black"><font size=+2>3</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3">85-98</td>
+          <td VALIGN=CENTER COLSPAN="4">86-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">85-91</td>
+          <td VALIGN=CENTER COLSPAN="4">93-97</td>
+          <td VALIGN=CENTER COLSPAN="3">95-98</td>
+          <td VALIGN=CENTER COLSPAN="4">85-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>MAP Sensor (Manifold Absolute Pressure)</b> 
+            <br>
+            <font size=-1>defective circuit or unplugged / defective sensor</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER ROWSPAN="2" WIDTH="6%"> 
+            <center>
+              <font face="Arial Black"><font size=+2>4</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3">90-98</td>
+          <td VALIGN=CENTER COLSPAN="4">88-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">88-91</td>
+          <td VALIGN=CENTER COLSPAN="4">93-97</td>
+          <td VALIGN=CENTER COLSPAN="3">95-98</td>
+          <td VALIGN=CENTER COLSPAN="4">85-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27">CKP Sensor (Crankshaft Position Sensor)&nbsp; 
+            <br>
+            <font size=-1>defective circuit or unplugged / defective sensor</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER ROWSPAN="2" WIDTH="6%"> 
+            <center>
+              <font face="Arial Black"><font size=+2>5</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="6"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER WIDTH="37%"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="6">85-98 *</td>
+          <td VALIGN=CENTER COLSPAN="4">86-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">85-91</td>
+          <td VALIGN=CENTER COLSPAN="3">93-97</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER WIDTH="37%">85-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>MAP Sensor (Manifold Absolute Pressure)</b> 
+            <br>
+            <font size=-1>mechanical problem / disconnected piping</font> <br>
+            <font size=-1>* exc 94-95</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+2>6</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">85-98</td>
+          <td VALIGN=CENTER COLSPAN="4">86-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">85-91</td>
+          <td VALIGN=CENTER COLSPAN="4">93-97</td>
+          <td VALIGN=CENTER COLSPAN="4">95-98</td>
+          <td VALIGN=CENTER COLSPAN="2">85-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>ECT Sensor (Engine Coolant Temperature)</b> 
+            <br>
+            <font size=-1>defective circuit or unplugged / defective sensor</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+2>7</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">85-98</td>
+          <td VALIGN=CENTER COLSPAN="4">86-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">85-91</td>
+          <td VALIGN=CENTER COLSPAN="4">93-97</td>
+          <td VALIGN=CENTER COLSPAN="4">95-98</td>
+          <td VALIGN=CENTER COLSPAN="2">85-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>TP Sensor (Throttle Position)</b> 
+            <br>
+            <font size=-1>defective circuit or unplugged / defective sensor</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>8</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">85-98</td>
+          <td VALIGN=CENTER COLSPAN="4">86-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">85-91</td>
+          <td VALIGN=CENTER COLSPAN="4">93-97</td>
+          <td VALIGN=CENTER COLSPAN="4">95-98</td>
+          <td VALIGN=CENTER COLSPAN="2">85-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>TDC Sensor (Top Dead Center)</b> <br>
+            <font size=-1>defective circuit or unplugged / defective sensor</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>9*</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">85-98**</td>
+          <td VALIGN=CENTER COLSPAN="4">86-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">85-91</td>
+          <td VALIGN=CENTER COLSPAN="4">93-97</td>
+          <td VALIGN=CENTER COLSPAN="4">95-98</td>
+          <td VALIGN=CENTER COLSPAN="2">85-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>CYP Sensor (Cylinder)</b> <br>
+            <font size=-1>defective circuit or unplugged / defective sensor&nbsp;</font> 
+            <br>
+            <font size=-1>*&nbsp;&nbsp; not a valid code for any throttle body 
+            injection Hondas&nbsp;</font> <br>
+            <font size=-1>** not a valid code for V-6 engines</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>10</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">85-98</td>
+          <td VALIGN=CENTER COLSPAN="4">86-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">85-91</td>
+          <td VALIGN=CENTER COLSPAN="4">93-97</td>
+          <td VALIGN=CENTER COLSPAN="4">95-98</td>
+          <td VALIGN=CENTER COLSPAN="2">85-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>IAT Sensor (Intake Air Temperature)</b> 
+            <br>
+            <font size=-1>defective circuit or unplugged / defective sensor</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>12</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">85-98</td>
+          <td VALIGN=CENTER COLSPAN="4">86-98 *</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">85-91 *</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">95-98</td>
+          <td VALIGN=CENTER COLSPAN="2">85-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>EGR Lift Sensor (Exhaust Gas Recirculation)</b> 
+            <br>
+            <font size=-1>defective circuit or unplugged / defective sensor&nbsp;</font> 
+            <br>
+            <font size=-1>* not a valid code if car is not equipped with an EGR 
+            valve (some Civic models are not)</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>13</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">85-98</td>
+          <td VALIGN=CENTER COLSPAN="4">86-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">85-91</td>
+          <td VALIGN=CENTER COLSPAN="4">93-97</td>
+          <td VALIGN=CENTER COLSPAN="4">95-98</td>
+          <td VALIGN=CENTER COLSPAN="2">85-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>BARO Sensor (Atmospheric Pressure)</b> 
+            <br>
+            <font size=-1>defective circuit or unplugged / defective sensor</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>14</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">88-98</td>
+          <td VALIGN=CENTER COLSPAN="4">88-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">88-91</td>
+          <td VALIGN=CENTER COLSPAN="4">93-97</td>
+          <td VALIGN=CENTER COLSPAN="4">95-98</td>
+          <td VALIGN=CENTER COLSPAN="2">88-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>IAC Valve (Idle Air Control)</b> <br>
+            <font size=-1>defective circuit or unplugged / defective sensor</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER ROWSPAN="2" WIDTH="6%"> 
+            <center>
+              <font face="Arial Black"><font size=+1>15</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3">90-95</td>
+          <td VALIGN=CENTER COLSPAN="4">88-95</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">88-91</td>
+          <td VALIGN=CENTER COLSPAN="4">93-95</td>
+          <td VALIGN=CENTER COLSPAN="3">95</td>
+          <td VALIGN=CENTER COLSPAN="4">88-95</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Ignition Output Signal</b> <br>
+            <font size=-1>missing or defective ignition output signal</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>16</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">90-95</td>
+          <td VALIGN=CENTER COLSPAN="4">88-95</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">88-91</td>
+          <td VALIGN=CENTER COLSPAN="4">93-95</td>
+          <td VALIGN=CENTER COLSPAN="4">95</td>
+          <td VALIGN=CENTER COLSPAN="2">88-95</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Fuel Injector System</b> <br>
+            <font size=-1>defective circuit or unplugged / defective fuel injector</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>17</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">88-98</td>
+          <td VALIGN=CENTER COLSPAN="4">88-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">88-91</td>
+          <td VALIGN=CENTER COLSPAN="4">93-97</td>
+          <td VALIGN=CENTER COLSPAN="4">95-97</td>
+          <td VALIGN=CENTER COLSPAN="2">88-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>VSS (Vehicle Speed Sensor)</b> <br>
+            <font size=-1>defective circuit or unplugged / defective sensor</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>19</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">88-95</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">88-91</td>
+          <td VALIGN=CENTER COLSPAN="4">93-97</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="2">n/a</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Automatic Transmission Lock Up Control 
+            Solenoid Valve</b> <br>
+            <font size=-1>defective circuit or unplugged / defective solenoid 
+            valve</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>20</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">90-98</td>
+          <td VALIGN=CENTER COLSPAN="4">88-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">88-91</td>
+          <td VALIGN=CENTER COLSPAN="4">93-97</td>
+          <td VALIGN=CENTER COLSPAN="4">95-98</td>
+          <td VALIGN=CENTER COLSPAN="2">92-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Electrical Load Detector</b> <br>
+            <font size=-1>defective circuit or unplugged / defective sensor</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>21*</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="4">94-98 **</td>
+          <td VALIGN=CENTER COLSPAN="4">92-95</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="3">93-95</td>
+          <td VALIGN=CENTER COLSPAN="3">n/a</td>
+          <td VALIGN=CENTER COLSPAN="3">93-95</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>VTEC Solenoid Valve</b> <br>
+            <font size=-1>defective circuit or unplugged / defective solenoid 
+            valve&nbsp;</font> <br>
+            <font size=-1>*&nbsp;&nbsp; not a valid code if car does not have 
+            a VTEC engine&nbsp;</font> <br>
+            <font size=-1>** not with V-6 engine</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>22*</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">94-98</td>
+          <td VALIGN=CENTER COLSPAN="4">92-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">93-97</td>
+          <td VALIGN=CENTER COLSPAN="4">98</td>
+          <td VALIGN=CENTER COLSPAN="2">93-98`</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27">VTEC Oil Pressure Switch&nbsp; <br>
+            <font size=-1>defective circuit or unplugged / defective oil pressure 
+            switch&nbsp;</font> <br>
+            <font size=-1>* not a valid code if car does not have a VTEC engine</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>23</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">98 *</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">94-97</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="2">92-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>KS (Knock Sensor)</b> <br>
+            <font size=-1>defective circuit or unplugged / defective sensor&nbsp;</font> 
+            <br>
+            <font size=-1>* not a valid code if V-6 engine</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>30</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">90-98 *</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">95</td>
+          <td VALIGN=CENTER COLSPAN="2">92-98 *</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Automatic Transmission Signal: "A" 
+            / SEAF / SEFA / TMA or TMB</b> <br>
+            defective circuit or unplugged / defective sensor&nbsp; <br>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li> not a valid code for 1996</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>31</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">90-95</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">95</td>
+          <td VALIGN=CENTER COLSPAN="2">92-95</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Automatic Transmission Signal "B"</b> 
+            <br>
+            <font size=-1>defective circuit or unplugged / defective sensor</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER ROWSPAN="2" WIDTH="6%"> 
+            <center>
+              <font face="Arial Black"><font size=+1>41</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3">90-98</td>
+          <td VALIGN=CENTER COLSPAN="4">92-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">93-97</td>
+          <td VALIGN=CENTER COLSPAN="3">95-98</td>
+          <td VALIGN=CENTER COLSPAN="4">90-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Primary Oxygen Sensor - Heater</b> 
+            <br>
+            <font size=-1>circuit malfunction</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>43</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">90-95</td>
+          <td VALIGN=CENTER COLSPAN="4">92-95</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">93-95</td>
+          <td VALIGN=CENTER COLSPAN="4">95</td>
+          <td VALIGN=CENTER COLSPAN="2">90-95</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Fuel Supply System</b> <br>
+            <font size=-1>defective or malfunctioning fuel supply system</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER ROWSPAN="2" WIDTH="6%"> 
+            <center>
+              <font face="Arial Black"><font size=+1>45</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">96-97</td>
+          <td VALIGN=CENTER COLSPAN="3">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>System Too Lean or Too Rich</b> <br>
+            <font size=-1>malfunction in the fuel monitoring systems</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>48</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">98</td>
+          <td VALIGN=CENTER COLSPAN="4">92-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="2">n/a</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>LAF Sensor (Lean Air Fuel)</b> <br>
+            <font size=-1>defective circuit or unplugged / defective sensor</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>54</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">96</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">96-97</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="2">n/a</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>CKF Sensor (Crankshaft Speed Fluctuation)</b> 
+            <br>
+            <font size=-1>defective circuit or unplugged / defective sensor</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>58</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">98 *</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="2">n/a</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>TDC Sensor 2 (Top Dead Center)</b> 
+            <br>
+            <font size=-1>defective circuit or unplugged / defective sensor&nbsp;</font> 
+            <br>
+            <font size=-1>* with V-6 engine only</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER ROWSPAN="2" WIDTH="6%"> 
+            <center>
+              <font face="Arial Black"><font size=+1>61</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">96-97</td>
+          <td VALIGN=CENTER COLSPAN="3">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Oxygen Sensor, Heated - Sensor 1 (Primary)</b> 
+            <br>
+            <font size=-1>high voltage, low voltage, or slow response</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>63</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">96-97</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="2">96-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Oxygen Sensor, Heated - Sensor 2 (Secondary)</b> 
+            <br>
+            <font size=-1>high voltage, low voltage, or slow response</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>65</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">96-97</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="2">96-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Oxygen Sensor Heater (Secondary)</b> 
+            <br>
+            <font size=-1>malfunctioning or defective oxygen sensor heater</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER ROWSPAN="2" WIDTH="6%"> 
+            <center>
+              <font face="Arial Black"><font size=+1>67</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">96-97</td>
+          <td VALIGN=CENTER COLSPAN="3">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Catalyst system Efficiency Below Threshold</b> 
+            <br>
+            <font size=-1>malfunctioning or defective catalyst system</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>70</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="2">96-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Automatic Transmission</b> <br>
+            <font size=-1>malfunction with the automatic transmission controls</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>71</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">96-97</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="2">96-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Cylinder 1 Misfire or a Random Misfire</b> 
+            <br>
+            <font size=-1>a condition is present that is creating a cylinder misfire</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>72</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">96-97</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="2">96-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Cylinder 2 Misfire or a Random Misfire</b> 
+            <br>
+            <font size=-1>a condition is present that is creating a cylinder misfire</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>73</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">96-97</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="2">96-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Cylinder 3 Misfire or a Random Misfire</b> 
+            <br>
+            <font size=-1>a condition is present that is creating a cylinder misfire</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>74</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">96-97</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="2">96-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Cylinder 4 Misfire or a Random Misfire</b> 
+            <br>
+            <font size=-1>a condition is present that is creating a cylinder misfire</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>75</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">98 *</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="2">n/a</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Cylinder 5 Misfire or a Random Misfire</b> 
+            <br>
+            <font size=-1>a condition is present that is creating a cylinder misfire&nbsp;</font> 
+            <br>
+            <font size=-1>* valid code for V-6 engine only</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3" ROWSPAN="2"> 
+            <center>
+              <font face="Arial Black"><font size=+1>76</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="2"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="2">98 *</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="2">n/a</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Cylinder 6 Misfire or a Random Misfire</b> 
+            <br>
+            <font size=-1>a condition is present that is creating a cylinder misfire&nbsp;</font> 
+            <br>
+            <font size=-1>* valid code for V-6 engine only</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER ROWSPAN="2" WIDTH="6%"> 
+            <center>
+              <font face="Arial Black"><font size=+1>80</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="3">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Exhaust Gas Recirculation</b> <br>
+            <font size=-1>insufficient flow detected</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER ROWSPAN="2" WIDTH="6%"> 
+            <center>
+              <font face="Arial Black"><font size=+1>86</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">96-97</td>
+          <td VALIGN=CENTER COLSPAN="3">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>ECT Sensor (Engine Coolant Temperature)</b> 
+            <br>
+            <font size=-1>circuit range / performance problem</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER ROWSPAN="2" WIDTH="6%"> 
+            <center>
+              <font face="Arial Black"><font size=+1>90</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="3">98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Evaporative Emission Control System</b> 
+            <br>
+            <font size=-1>leak detected in the fuel tank area</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER ROWSPAN="2" WIDTH="6%"> 
+            <center>
+              <font face="Arial Black"><font size=+1>91</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="3">98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Fuel Tank Pressure Sensor</b> <br>
+            <font size=-1>low input</font></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER ROWSPAN="2" WIDTH="6%"> 
+            <center>
+              <font face="Arial Black"><font size=+1>92</font></font> 
+            </center>
+          </td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Accord</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Civic</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRV</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>CRX</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Del Sol</b></td>
+          <td VALIGN=CENTER COLSPAN="3"><b>Odyssey</b></td>
+          <td VALIGN=CENTER COLSPAN="4"><b>Prelude</b></td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="3">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+          <td VALIGN=CENTER COLSPAN="4">97-98</td>
+          <td VALIGN=CENTER COLSPAN="4">n/a</td>
+          <td VALIGN=CENTER COLSPAN="4">96-97</td>
+          <td VALIGN=CENTER COLSPAN="3">96-97</td>
+          <td VALIGN=CENTER COLSPAN="4">96-98</td>
+        </tr>
+        <tr> 
+          <td VALIGN=CENTER COLSPAN="27"><b>Evaporative Emission Control System</b> 
+            <br>
+            <font size=-1>insufficient purge flow</font></td>
+        </tr>
+      </table>
+      <!-- #EndEditable --></td>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"><B>Parents:</b> <a href="WebHome.html">Web&nbsp;Home</a> &gt; <a href="EcuTroubleshooting.html">Ecu&nbsp;Troubleshooting</a></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.1 - 18 Nov 2004 - 21:11 GMT - blundar 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/HondaErrorCodes?t=1194411915"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/HondaErrorCodes">Attach</a>
+   |  <a href="../../rdiff/Library/HondaErrorCodes.html">History</a>
+   |  <a href="../../oops/Library/HondaErrorCodes%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.HondaErrorCodes">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#a4d3cdcfcde4d4c3c9c2cd8acbd6c39bd7d1c6cec1c7d099f0f3cdcfcd84e2c1c1c0c6c5c7cf">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#7602191b36121f111f02171a1003051f191819181a1f18135815191b" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

@@ -1,0 +1,222 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . PhpWikiAdministration   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="PhpWikiAdministration.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>PhpWikiAdministration</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+<strong><em>Note</em></strong>: Most of the actions on this page require administrative privileges.
+They won't work unless you have set an admin username and password in the <a href="PhpWiki.html">Php&nbsp;Wiki</a> config file.
+<p />
+<hr />
+<h2> Cleanup </h2>
+A Wiki <a href="SandBox.html">Sand&nbsp;Box</a> is very easy to clean. Here you can restore it to pristine condition by loading the default from pgsrc:
+<p />
+<span style='background : #FFFFCE;'><font color="#0000FF">Rake the Sand&nbsp;Box </font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/PhpwikiactionloadfilesourcepgsrcSandBox?topicparent=Library.PhpWikiAdministration">?</a>.
+<p />
+<hr />
+<h2> Making Snapshots or Backups </h2>
+<p />
+<h3><a name="ZIP_files_of_database"> </a> ZIP files of database </h3>
+<p />
+These links lead to zip files, generated on the fly, which contain all
+the  pages in your Wiki.  The zip file will be downloaded to your local computer.
+<p />
+This <strong><em><span style='background : #FFFFCE;'><font color="#0000FF">ZIP Snapshot </font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/Phpwikiactionzip?topicparent=Library.PhpWikiAdministration">?</a></em></strong> contains only the latest versions
+of each page, while this <strong><em><span style='background : #FFFFCE;'><font color="#0000FF">ZIP Dump </font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/Phpwikiactionzipincludeall?topicparent=Library.PhpWikiAdministration">?</a></em></strong> contains all
+archived versions.
+<p />
+(If the <a href="PhpWiki.html">Php&nbsp;Wiki</a> is configured to allow it,) anyone can download a zip file.
+<p />
+If your php has ''zlib'' support, the files in the archive will be compressed,
+otherwise they will just be stored.
+<p />
+<h3> Dump to directory </h3>
+<p />
+Here you can dump pages of your Wiki into a directory of your choice.
+<p />
+<?plugin <span style='background : #FFFFCE;'><font color="#0000FF">Wiki&nbsp;Form</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/WikiForm?topicparent=Library.PhpWikiAdministration">?</a> action=dumpserial?>
+<p />
+The most recent version of each page will written out to the
+directory, one page per file.
+Your server must have write permissions to the directory!
+<p />
+<hr />
+<h2> Restoring </h2>
+<p />
+If you have dumped a set of pages from <a href="PhpWiki.html">Php&nbsp;Wiki</a>, you can reload them here.
+Note that pages in your database will be overwritten; thus, if you dumped
+your <span style='background : #FFFFCE;'><font color="#0000FF">Home&nbsp;Page</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/HomePage?topicparent=Library.PhpWikiAdministration">?</a> when you load it from this form it will overwrite the one
+in your database now. If you want to be selective just delete
+the pages from the directory (or zip file) which you don't want to load.
+<p />
+<h3> Upload File </h3>
+<p />
+Here you can upload ZIP archives, or individual files from
+your (client) machine.
+<p />
+<?plugin <span style='background : #FFFFCE;'><font color="#0000FF">Wiki&nbsp;Form</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/WikiForm?topicparent=Library.PhpWikiAdministration">?</a> action=upload?>
+<p />
+<h3> Load File </h3>
+<p />
+Here you can load ZIP archives, individual files or entire directories.
+The file or directory must be local to the http server.
+You can also use this form to load from an http: or ftp: URL.
+<p />
+<?plugin <span style='background : #FFFFCE;'><font color="#0000FF">Wiki&nbsp;Form</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/WikiForm?topicparent=Library.PhpWikiAdministration">?</a> action=loadfile?>
+<p />
+<hr />
+<h2> Format of the files </h2>
+<p />
+Currently the pages are stored, one per file, as MIME (RFC:2045)
+e-mail (RFC:822) messages.
+The content-type ''application/x-phpwiki'' is used, and page meta-data
+is encoded in the content-type parameters.
+(If the file contains several versions of a page, it will have
+type ''multipart/mixed'', and contain several sub-parts, each
+with type ''application/x-phpwiki''.)
+The message body contains the page text.
+<p />
+<h3> Old Formats </h3>
+<p />
+<strong><em>Serialized Files</em></strong>
+<p />
+The dump to directory command used to dump the pages as
+php ''serialized()'' strings.  For humans, this made the files very hard
+to read, and nearly impossible to edit.
+<p />
+<strong><em>Plain Files</em></strong>
+<p />
+Before that the page text was just dumped to a file--this means
+that all page meta-data was lost. Note that when loading
+''plain files'', the page name is deduced from the file name.
+<p />
+The upload and load functions will automatically recognize each of these
+three types of files, and handle them accordingly.
+<hr />
+<h2><a name="Dump_pages_as_XHTML"> </a> Dump pages as XHTML </h2>
+<?plugin <span style='background : #FFFFCE;'><font color="#0000FF">Wiki&nbsp;Form</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/WikiForm?topicparent=Library.PhpWikiAdministration">?</a> action=dumphtml?>
+<p />
+This will generate a directory of static pages suitable for distribution on disk where no web server is available.
+<hr />
+<a href="PhpWikiDocumentation.html">Php&nbsp;Wiki&nbsp;Documentation</a>
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.1 - 19 Feb 2004 - 22:01 GMT - guest 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/PhpWikiAdministration?t=1194413973"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/PhpWikiAdministration">Attach</a>
+   |  <a href="../../rdiff/Library/PhpWikiAdministration.html">History</a>
+   |  <a href="../../oops/Library/PhpWikiAdministration%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.PhpWikiAdministration">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#cdbaa4a6a48dbdaaa0aba4e3a2bfaaf2beb8afa7a8aeb9f0999aa4a6a4ed8ba8a8a9afacaea6">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#5b2f34361b3f323c322f3a373d2e2832343534353732353e75383436" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>
