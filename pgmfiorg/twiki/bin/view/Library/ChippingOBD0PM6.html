@@ -1,0 +1,147 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . ChippingOBD0PM6   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="ChippingOBD0PM6.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <a href="ChippingWithPictures.html">Chipping&nbsp;With&nbsp;Pictures</a> &gt;<b>ChippingOBD0PM6</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+<h5><a name="OBD0_ECU_Chipping"> </a> OBD0 <a href="ECU.html">ECU</a> Chipping </h5>
+If you have a <a href="OBD0.html">OBD0</a> <a href="ECU.html">ECU</a>, chipping the <a href="ECU.html">ECU</a> might not be straightforward. Almost ALL 90-91 PM6, PM7, PR4 and PP5(with catalytic converter) <a href="ECU.html">ECU</a>s had external <a href="EPROM.html">EPROM</a>s, and are easy to change the program on. Almost all 88-89 PG7, PM6, PM7 and 88-91 PM8 <a href="ECU.html">ECU</a>s did not have an external <a href="EPROM.html">EPROM</a>. It is possible to chip these <a href="ECU.html">ECU</a>s, but it requires considerably more work and is beyond the scope of this article. See <a href="ChippingAn88-89ECU.html">Chipping&nbsp;An88-89&nbsp;ECU</a> for more details.  The following <a href="ECU.html">ECU</a> is a PM7 that does not have an external <a href="ROM.html">ROM</a>:
+<p />
+<img src="../../../pub/Library/ChippingOBD0PM6/trickyPM7small.jpg" alt="trickyPM7small.jpg"  width="500" height="346"  />
+<p />
+If you are luckier and have an <a href="ECU.html">ECU</a> with an external <a href="EPROM.html">EPROM</a> from the factory, the <a href="ECU.html">ECU</a> you have will look more like this:
+<p />
+<img src="../../../pub/Library/ChippingOBD0PM6/PM6tochip_small.jpg" alt="PM6tochip_small.jpg"  width="411" height="278"  />
+<p />
+<p />
+An <a href="OBD0.html">OBD0</a> <a href="ECU.html">ECU</a> with an external <a href="EPROM.html">EPROM</a> is very simple to chip. First, cut all 28 pins with a razor blade or utility knife. BE CAREFUL YOU DO NOT SLIP AS YOU CAN PERMANENTLY DAMAGE THE CIRCUIT BOARD. It is not absolutely necessary to do this before desoldering, but removing the chip will make it much easier, particularly if you do not have a good desoldering station. Once the original <a href="ROM.html">ROM</a> is desoldered and removed and you can see through the holes in the circuit board, add a socket for an <a href="EPROM.html">EPROM</a> and then place the new <a href="ROM.html">ROM</a> you have created into the socket.
+<hr />
+<p />
+<p />
+<font size = "-1"><center>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th align="center" bgcolor="#D0D1E0"> <strong><span style='background : #FFFFCE;'><font color="#0000FF">Attachment</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FileAttachment?topicparent=Library.ChippingOBD0PM6">?</a>:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Modify:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Size:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Date:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Who:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Comment:</strong> </th></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/ChippingOBD0PM6/PM6tochip_small.jpg">PM6tochip_small.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/ChippingOBD0PM6?filename=PM6tochip_small.jpg&amp;revInfo=1">mod</a>     </td><td>  56965  </td><td>  05 Nov 2006 - 15:35  </td><td>  synoptic  </td><td>  &nbsp;  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/ChippingOBD0PM6/trickyPM7small.jpg">trickyPM7small.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/ChippingOBD0PM6?filename=trickyPM7small.jpg&amp;revInfo=1">mod</a>     </td><td>  66239  </td><td>  05 Nov 2006 - 15:36  </td><td>  synoptic  </td><td>  &nbsp;  </td></tr>
+</table>
+<p />
+</font></center>
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"><B>Parents:</b> <a href="WebHome.html">Web&nbsp;Home</a> &gt; <a href="ChippingWithPictures.html">Chipping&nbsp;With&nbsp;Pictures</a></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.2 - 05 Nov 2006 - 15:41 GMT - synoptic 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/ChippingOBD0PM6?t=1194410802"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/ChippingOBD0PM6">Attach</a>
+   |  <a href="../../rdiff/Library/ChippingOBD0PM6.html">History</a>
+   |  <a href="../../oops/Library/ChippingOBD0PM6%3Ftemplate=oopsmore&amp;param1=1.2&amp;param2=1.2.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.ChippingOBD0PM6">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#13647a787a5363747e757a3d7c61742c606671797670672e47447a787a335576767771727078">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#b9cdd6d4f9ddd0ded0cdd8d5dfcccad0d6d7d6d7d5d0d7dc97dad6d4" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

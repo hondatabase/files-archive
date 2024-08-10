@@ -1,0 +1,169 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . CalendarPlugin   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="CalendarPlugin.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>CalendarPlugin</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+The <a href="CalendarPlugin.html">Calendar&nbsp;Plugin</a> can be used to generate a monthly calendar in a wiki page. It's handy for <span style='background : #FFFFCE;'><font color="#0000FF">Personal&nbsp;Wiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/PersonalWiki?topicparent=Library.CalendarPlugin">?</a>s.
+<p />
+Individual dates in the calendar link to specially named wiki pages. The names for the "day pages" are by default formed by appending the date to the pagename on which the calendar appears.
+<p />
+''This feature was inspired by <a href="http://manila.userland.com/" target="_top">Manila</a>, and first implemented by <span style='background : #FFFFCE;'><font color="#0000FF">Gary&nbsp;Benson</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/GaryBenson?topicparent=Library.CalendarPlugin">?</a>. It was later implemented as a <a href="WikiPlugin.html">Wiki&nbsp;Plugin</a> by <span style='background : #FFFFCE;'><font color="#0000FF">Jeff&nbsp;Dairiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/JeffDairiki?topicparent=Library.CalendarPlugin">?</a>.''
+<p />
+<h2> Usage: </h2>
+ <?plugin Calendar?>
+<p />
+wil get you:
+<?plugin Calendar?>
+<p />
+<hr />
+<p />
+<h2> Plugin Arguments </h2>
+<p />
+<h3> Selection of Month </h3>
+<p />
+;__year__: Specify the year for the calendar.  (Default: current year.)
+;__month__: Specify the month for the calendar.  (Default: current month.)
+;__month_offset__: Added to ''month''.  Can be used to include several months worth of calendars on a single wiki page.
+<?plugin Calendar month_offset=+1?>
+<p />
+<h3> "Day Page" Names </h3>
+<p />
+;__date_format__:<span style='background : #FFFFCE;'><font color="#0000FF">Strftime</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/Php-functionstrftime?topicparent=Library.CalendarPlugin">?</a> style format string used to generate page names for the "day pages."  The default value is '%Y-%m-%d'.
+;__prefix__: Prepended to the date (formatted per ''date_format'') to generate the "day page" names.  The default value is '<span style='background : #FFFFCE;'><font color="#0000FF">[pagename</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/Pagename?topicparent=Library.CalendarPlugin">?</a>:'.
+<p />
+<h3> Appearance </h3>
+<p />
+;__month_format__: <span style='background : #FFFFCE;'><font color="#0000FF">Strftime</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/Php-functionstrftime?topicparent=Library.CalendarPlugin">?</a> style format string used to generate the title of the calendar.  (Default: '%B, %Y'.)
+;__wday_format__: <span style='background : #FFFFCE;'><font color="#0000FF">Strftime</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/Php-functionstrftime?topicparent=Library.CalendarPlugin">?</a> style format string used to generate the day-of-week names at the top of the calendar.
+;__start_wday__: What day of the week does the calendar start on.  This should be specified as an integer in the range zero (Sunday) through six (Saturday), inclusive.
+<p />
+<?plugin Calendar start_wday=1 ?>
+<hr />
+<p />
+<h3> Patch for 1.2 </h3>
+<p />
+<span style='background : #FFFFCE;'><font color="#0000FF">Gary&nbsp;Benson</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/GaryBenson?topicparent=Library.CalendarPlugin">?</a> wrote the first calendar implementation for <a href="PhpWiki.html">Php&nbsp;Wiki</a> 1.2.  (Since 1.2 doesn't support plugins, it uses a ###CALENDAR### token as a trigger.)  Gary provides a screenshot at <img src="http://inauspicious.org/files/screenshots/calender.png" alt="calender.png" />, a <a href="http://inauspicious.org/files/phpwiki/phpwiki-1.2.0-calendar.patch" target="_top">patch </a> (on 1.2.0), and <a href="http://inauspicious.org/files/phpwiki/calendar.php" target="_top">calendar.php </a> (which renders a view of the year.)
+<hr />
+<a href="PhpWikiDocumentation.html">Php&nbsp;Wiki&nbsp;Documentation</a>
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.1 - 19 Feb 2004 - 22:01 GMT - guest 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/CalendarPlugin?t=1194410719"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/CalendarPlugin">Attach</a>
+   |  <a href="../../rdiff/Library/CalendarPlugin.html">History</a>
+   |  <a href="../../oops/Library/CalendarPlugin%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.CalendarPlugin">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#8cfbe5e7e5ccfcebe1eae5a2e3feebb3fff9eee6e9eff8b1d8dbe5e7e5accae9e9e8eeedefe7">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#11657e7c517578767865707d776462787e7f7e7f7d787f743f727e7c" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

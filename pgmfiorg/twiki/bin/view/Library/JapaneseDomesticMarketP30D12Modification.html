@@ -1,0 +1,196 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . JapaneseDomesticMarketP30D12Modification   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="JapaneseDomesticMarketP30D12Modification.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <a href="DataLogging.html">Data&nbsp;Logging</a> &gt; <a href="HowToLogExternalDataSuchAsAnEgtSensor.html">How&nbsp;To&nbsp;Log&nbsp;External&nbsp;Data&nbsp;Such&nbsp;As&nbsp;An&nbsp;Egt&nbsp;Sensor</a> &gt;<b>JapaneseDomesticMarketP30D12Modification</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+<h3><a name="Using_the_Unused_Analog_Input_D1"> </a> Using the Unused Analog Input D12 on <a href="OBD.html">OBD</a>1 <a href="ECU.html">ECU</a>s to Log Analog Input Such as Exhaust Gas Temperature. </h3>
+<p />
+All of the testing was done on a <a href="USDM.html">USDM</a> P30 <a href="OBD.html">OBD</a>1 <a href="ECU.html">ECU</a> and all of the modifications and testing was done on a <a href="JDM.html">JDM</a> P30 <a href="OBD.html">OBD</a>1 <a href="ECU.html">ECU</a>, but other Honda <a href="OBD.html">OBD</a>1 <a href="ECU.html">ECU</a>s should be the same.
+<p />
+There are differences between the circuits connected to the <a href="USDM.html">USDM</a> P30 and the <a href="JDM.html">JDM</a> P30:
+<p />
+<a href="USDM.html">USDM</a> P30:
+-All of the components are installed in the <a href="USDM.html">USDM</a> P30.
+-The <a href="USDM.html">USDM</a> P30 D12 circuit is simpler that the one in the <a href="JDM.html">JDM</a> P30.
+-AI5 in the <a href="USDM.html">USDM</a> P30 (66207 Pin59 of the 64 pinDIP package) is grounded.
+-The <a href="USDM.html">USDM</a> D12 circuitry leads to AI3 (66207 Pin57 of the 64 pinDIP package)  in the <a href="USDM.html">USDM</a> P30 which is logged in the following way:
+*066h = the two most significant bits are the two least significant bits of the 10 bit value saved by the A/D converter for AI3 analog input.
+*067h = the most significant 8 bits of the 10 bit value saved by the A/D converter for AI3 analog input.
+<p />
+<a href="JDM.html">JDM</a> P30:
+Not all components are installed in the <a href="JDM.html">JDM</a> P30.
+The <a href="JDM.html">JDM</a> P30 D12 circuit is more complex than the one in the <a href="USDM.html">USDM</a> P30.
+AI3 in the <a href="USDM.html">USDM</a> P30 (66207 Pin 61 of the 68 pin PLCC package) is grounded.
+The <a href="USDM.html">USDM</a> D12 circuitry leads to AI5 (66207 Pin 63 of the 68 pin PLCC package) in the <a href="JDM.html">JDM</a> P30 which is logged in the following way:
+*06Ah = the two most significant bits are the two least significant bits of the 10 bit value saved by the A/D converter for AI5 analog input. 
+*06Bh = the most significant 8 bits of the 10 bit value saved by the A/D converter for AI5 analog input.
+<p />
+The <a href="USDM.html">USDM</a> P30 D12 input can be used to log 0-5V analog input such as from an Exhaust Gas Temperature thermocouple amplifier.  I tested the D12 input on my <a href="USDM.html">USDM</a> P30 by using a 10K ohm pot used as a variable voltage divider across a 5V power supply.    I also tested it with my EGADS EGT sensor, and it works very well as an EGT logging input.
+<p />
+The <a href="JDM.html">JDM</a> P30 <a href="ECU.html">ECU</a> must be modified in order to use D12 to log 0-5V analog input such as from an Exhaust Gas Temperature thermocouple amplifier.
+<p />
+<h3><a name="CAUTION_"> </a> CAUTION: </h3>
+While the <a href="JDM.html">JDM</a> D12 mod works well electronically, there appears to be <a href="OBD.html">OBD</a>1 code that reads the AI5 analog input and performs some sort of function.  Until this code is understood, it is proabably safer to cut the traces on both the AI3 and AI5 analog inputs to the 66207.  Then add a wire to ground AI5, and add a wire to run the D12 circuit to AI3.  This pin swap will cause the <a href="JDM.html">JDM</a> <a href="ECU.html">ECU</a> to log exactly as the <a href="USDM.html">USDM</a> <a href="ECU.html">ECU</a> does.  (Caution added -- markolson - 02 Jan 2006)
+<p />
+Here is a copy of the schematics for the D12 circuit in the 
+<a href="USDM.html">USDM</a> P30 <a href="ECU.html">ECU</a>.
+<p />
+<ul>
+<li> <a href="USDM.html">USDM</a> P30 D12 schematics: <br />
+   <img src="../../../pub/Library/JapaneseDomesticMarketP30D12Modification/USDMP30D12Schematics.jpg" alt="USDMP30D12Schematics.jpg"  width="945" height="235"  />
+</li>
+</ul>
+<p />
+The <a href="JDM.html">JDM</a> P30 D12 circuit can be modified in the following way to enable logging of analog inputs.  All of these modifications are on the back of the <a href="ECU.html">ECU</a> board.  Replace R15 with a diode.  Put another diode in the location marked for R14.  These diodes protect the analog input of the 66207 chip.  I used surface mount 1N-4148 diodes.  Put a jumper across the location marked for R13 and across the non-ground connections of Q3 in order to get the signal from D12 to the modified circuit.  Do not remove or change the 33K ohm R16 resistor or C17, whatever its value is.  It looks like a tantalum cap.  It is a very simple modification.  I tested the D12 input on my <a href="JDM.html">JDM</a> P30 by using a 10K ohm pot used as a variable voltage divider across a 5V power supply.    I also tested it with my EGADS EGT sensor, and it works very well as an EGT logging input.
+<p />
+<p />
+Here is a copy of the schematics of the <a href="JDM.html">JDM</a> P30 D12 circuit before and after the modification.
+<p />
+<ul>
+<li> <a href="JDM.html">JDM</a> P30 D12 mod schematics: <br />
+    <img src="../../../pub/Library/JapaneseDomesticMarketP30D12Modification/JDMP30D12CircuitEGTModR1.jpg" alt="JDMP30D12CircuitEGTModR1.jpg"  width="511" height="370"  />
+</li>
+</ul>
+<p />
+Here is a high resolution picture of the modified <a href="JDM.html">JDM</a> P30 <a href="ECU.html">ECU</a> enabling D12 as a 0-5V analog logging input.
+<p />
+<ul>
+<li> <a href="JDM.html">JDM</a> P30 D12 mod to enable analog input logging: <br />
+    <img src="../../../pub/Library/JapaneseDomesticMarketP30D12Modification/JDMp30D12ModPin63.JPG" alt="JDMp30D12ModPin63.JPG"  width="1770" height="1174"  />
+</li>
+</ul>
+<p />
+<p />
+Good luck.
+<p />
+-- markolson - 20 Nov 2005 
+<p />
+<p />
+<p />
+<p />
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"><B>Parents:</b> <a href="DataLogging.html">Data&nbsp;Logging</a> &gt; <a href="HowToLogExternalDataSuchAsAnEgtSensor.html">How&nbsp;To&nbsp;Log&nbsp;External&nbsp;Data&nbsp;Such&nbsp;As&nbsp;An&nbsp;Egt&nbsp;Sensor</a></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.3 - 31 Mar 2007 - 03:41 GMT - racingsky 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/JapaneseDomesticMarketP30D12Modification?t=1194412131"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/JapaneseDomesticMarketP30D12Modification">Attach</a>
+   |  <a href="../../rdiff/Library/JapaneseDomesticMarketP30D12Modification.html">History</a>
+   |  <a href="../../oops/Library/JapaneseDomesticMarketP30D12Modification%3Ftemplate=oopsmore&amp;param1=1.3&amp;param2=1.3.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.JapaneseDomesticMarketP30D12Modification">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#b8cfd1d3d1f8c8dfd5ded196d7cadf87cbcddad2dddbcc85ecefd1d3d198fedddddcdad9dbd3">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#9de9f2f0ddf9f4faf4e9fcf1fbe8eef4f2f3f2f3f1f4f3f8b3fef2f0" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

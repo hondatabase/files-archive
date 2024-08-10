@@ -1,0 +1,223 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . UPD7004C   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="UPD7004C.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>UPD7004C</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+The NEC UPD7004C is an <a href="ADC.html">ADC</a> chip found in <a href="OBD0MPFI.html">OBD0&nbsp;MPFI</a> <a href="ECU.html">ECU</a>s.
+<p />
+Documentation on it was very hard to find.  :)  We looked and googled for months, and then finally I emailed NEC and they got back to me within 10 hours!!! Talk about customer service!  <strong><em>Download the <a href="../../../pub/Library/UPD7004C/uPD7004C.PDF" target="_top">uPD7004C.PDF datasheet</a></em></strong>
+<p />
+<strong>l3st4rd says:</strong>
+i got a description of the uPD7002.  it has 3 internal registers(here 4000, 4001, 4002):
+<ul>
+<li> 4000h is the control register
+</li>
+<li> 4001 and 4002 are the data registers.
+</li>
+</ul>
+<p />
+a measure is started by sending one byte to the control register. it can operate in 8 and 12 bit mode. the control bits are:
+<ul>
+<li> bit 0: } control bits for channel multiplexer
+</li>
+<li> bit 1: } 00 = channel 0, 01 = channel 1, 10 = channel 3...
+</li>
+<li> bit 2: no function (or possilby 3rd channel ctrl bit for 7004?)
+</li>
+<li> bit 3: 1 = 12bit mode, 0 = 8bit mode
+</li>
+<li> bit 4 to 7: no function
+</li>
+</ul>
+<p />
+*note by 1net: Please take the above description with a grain of salt as it is NOT for 7004.
+In upd7004, we have only 2 registers: 4000 and 4001. The upd7004 has only 10bit mode, but since the code only reads 4001, the resolution is effectively 8bit... the 2lsb are discarded and not read.
+<p />
+<p />
+In practice, use of the chip is somewhat like what follows:
+<ul>
+<li> the external interrupt 1 routine jumpes to 0064h, where it reads the value from 4001h (A/D HIGH byte).
+</li>
+<li> then it resets the A/D low byte by writing 0 to 4001h
+</li>
+<li> then it starts the next 8bit measure by sending 0 - 7 to 4000h(control register).
+</li>
+<li> the first seven times it takes the values from channel 0 to 6 and stores them at external ram 0000h - 0006h. *the next 8 times, it's called, it takes the value from channel 7 and stores it at external ram 0007h - 000Eh (this all assuming that internal mem 07Dh is a counter from 0 to 0Eh)
+</li>
+</ul>
+<p />
+<p />
+Now that we have the datasheet, this can more definitively be settled.
+<p />
+Note to self:  chip is used exclusively in parallel mode.  Make appropriate changes to the following table.
+<p />
+Further note: Channel 7 is multiplexed using a Toshiba 8 channel analog MUX.  15 channels total A/D capability in <a href="ECU.html">ECU</a>.
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> function </td><td> short </td><td> pin </td><td> uPD7004C </td><td> pin </td><td> short </td><td> function </td></tr>
+<tr><td> Channel 4 </td><td> CH4 </td><td> 1 </td><td> uPD7004C </td><td> 28 </td><td> CH3 </td><td> Channel 3 </td></tr>
+<tr><td> Channel 5 </td><td> CH5 </td><td> 2 </td><td> uPD7004C </td><td> 27 </td><td> CH2 </td><td> Channel 2 </td></tr>
+<tr><td> Channel 6 </td><td> CH6 </td><td> 3 </td><td> uPD7004C </td><td> 26 </td><td> CH1 </td><td> Channel 1 </td></tr>
+<tr><td> Channel 7 </td><td> CH7 </td><td> 4 </td><td> uPD7004C </td><td> 25 </td><td> CH0 </td><td> Channel 0 </td></tr>
+<tr><td> Reference Voltage </td><td> VREF </td><td> 5 </td><td> uPD7004C </td><td> 24 </td><td> GND </td><td> Analog Ground </td></tr>
+<tr><td> Digital GND </td><td> GND </td><td> 6 </td><td> uPD7004C </td><td> 23 </td><td> VDD </td><td> Analog supply </td></tr>
+<tr><td>  &nbsp;  </td><td> DB7/SO </td><td> 7 </td><td> uPD7004C </td><td> 22 </td><td> _CS </td><td> Chip select </td></tr>
+<tr><td>  &nbsp;  </td><td> DB6/SI </td><td> 8 </td><td> uPD7004C </td><td> 21 </td><td> _RD/SCI </td><td>  &nbsp;  </td></tr>
+<tr><td>  &nbsp;  </td><td> BD5/_SHIFT </td><td> 9 </td><td> uPD7004C </td><td> 20 </td><td> A0 </td><td> control address input </td></tr>
+<tr><td>  &nbsp;  </td><td> DB4/SCKO </td><td> 10 </td><td> uPD7004C </td><td> 19 </td><td> _WR/_STB </td><td>  &nbsp;  </td></tr>
+<tr><td>  &nbsp;  </td><td> DB3/SOEN </td><td> 11 </td><td> uPD7004C </td><td> 18 </td><td> MC </td><td> Mode select (high=parallel) </td></tr>
+<tr><td>  &nbsp;  </td><td> DB2/CODE </td><td> 12 </td><td> uPD7004C </td><td> 17 </td><td> CLK </td><td> Clock </td></tr>
+</table>
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td>  &nbsp;  </td><td> DB1/DEV1 </td><td> 13 </td><td> uPD7004C </td><td> 16 </td><td> EOC </td><td> End Of Converstion (Active low) </td></tr>
+<tr><td>  &nbsp;  </td><td> DB0/DEV0 </td><td> 14 </td><td> uPD7004C </td><td> 15 </td><td> VDD </td><td> Digital Power suppply </td></tr>
+</table>
+<p />
+<p />
+channel mapping (including MUX):
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> <a href="ADC.html">ADC</a>-channel </td><td> MUX-channel </td><td> sensor </td></tr>
+<tr><td> 0 </td><td> - </td><td> MAP sensor </td></tr>
+<tr><td> 1 </td><td> - </td><td> TP sensor </td></tr>
+<tr><td> 2 </td><td> - </td><td> Alternator (voltage regulator) </td></tr>
+<tr><td> 3 </td><td> - </td><td> PA sensor </td></tr>
+<tr><td> 4 </td><td> - </td><td> <a href="ECT.html">ECT</a> sensor </td></tr>
+<tr><td> 5 </td><td> - </td><td> <a href="IAT.html">IAT</a> sensor </td></tr>
+<tr><td> 6 </td><td> - </td><td> '89-91 <a href="JDM.html">JDM</a> <span style='background : #FFFFCE;'><font color="#0000FF">Si&nbsp;R</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/SiR?topicparent=Library.UPD7004C">?</a> : secondary O2; '88-91 US Si / HF, '88-89 US teg: EGR </td></tr>
+<tr><td> 7 </td><td> 0 </td><td> O2 sensor </td></tr>
+<tr><td> 7 </td><td> 1 </td><td> voltage reference for <a href="ADC.html">ADC</a> ? </td></tr>
+<tr><td> 7 </td><td> 2 </td><td> ? </td></tr>
+<tr><td> 7 </td><td> 3 </td><td> ? </td></tr>
+<tr><td> 7 </td><td> 4 </td><td> ? </td></tr>
+<tr><td> 7 </td><td> 5 </td><td> ? </td></tr>
+<tr><td> 7 </td><td> 6 </td><td> ELD </td></tr>
+<tr><td> 7 </td><td> 7 </td><td> Connector B18 (unused ???) </td></tr>
+</table>
+<p />
+<p />
+<font size = "-1"><center>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th align="center" bgcolor="#D0D1E0"> <strong><span style='background : #FFFFCE;'><font color="#0000FF">Attachment</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FileAttachment?topicparent=Library.UPD7004C">?</a>:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Modify:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Size:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Date:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Who:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Comment:</strong> </th></tr>
+<tr><td>  <img src="../../../pub/icn/pdf.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/UPD7004C/uPD7004C.PDF">uPD7004C.PDF</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/UPD7004C?filename=uPD7004C.PDF&amp;revInfo=1">mod</a>     </td><td>  556339  </td><td>  05 Mar 2004 - 18:37  </td><td>  blundar  </td><td>  Datasheet for UPD 7004C  </td></tr>
+</table>
+<p />
+</font></center>
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.7 - 27 Jun 2005 - 10:08 GMT - 1net 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/UPD7004C?t=1194414751"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/UPD7004C">Attach</a>
+   |  <a href="../../rdiff/Library/UPD7004C.html">History</a>
+   |  <a href="../../oops/Library/UPD7004C%3Ftemplate=oopsmore&amp;param1=1.7&amp;param2=1.7.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.UPD7004C">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#a0d7c9cbc9e0d0c7cdc6c98ecfd2c79fd3d5c2cac5c3d49df4f7c9cbc980e6c5c5c4c2c1c3cb">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#03776c6e43676a646a77626f6576706a6c6d6c6d6f6a6d662d606c6e" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> </center>
+</html>

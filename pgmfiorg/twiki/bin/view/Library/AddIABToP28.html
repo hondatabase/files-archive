@@ -1,0 +1,205 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . AddIABToP28   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="AddIABToP28.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>AddIABToP28</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+Author: Deluded  Date:   07-24-03 23:44
+<p />
+<strong>READ CAREFULLY:</strong> The procedure to add <a href="IAB.html">IAB</a>s is different depending on how they are wired.  One <a href="IAB.html">IAB</a> wire will always run to the <a href="ECU.html">ECU</a>, the other will run to either +12v or gnd.  Choose the procedure to match how your car is wired!  This is very important!
+<p />
+<strong><em>USDM ODB1 B18C:</em></strong> ( <a href="ECU.html">ECU</a> sends ground, <a href="IAB.html">IAB</a> wired to +12v )
+<p />
+<a href="IAB.html">IAB</a> conversion... (this is for Manual cars only, but an AUTO <a href="USDM.html">USDM</a> <a href="ECU.html">ECU</a> converted to manual will have all the parts you need present)
+<p />
+<strong><em>Remove:</em></strong>
+R135...11F0/1720 autos only
+R150...1980/LS only
+<p />
+<strong><em>Add:</em></strong>
+<ul>
+<li> Q17(<a href="A143.html">A143</a>)...already present on <a href="USDM.html">USDM</a> auto 11F0/1720 (A5x, L5x, etc). Not present on <a href="EDM.html">EDM</a>  auto 11F0/1720 (G5x, etc).
+</li>
+<li> Q34(<a href="D1780.html">D1780</a> or <span style='background : #FFFFCE;'><font color="#0000FF">C3225</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/C3225?topicparent=Library.AddIABToP28">?</a>)... already present on <a href="USDM.html">USDM</a> auto 11F0/1720 (A5x, L5x, etc). Not present on <a href="EDM.html">EDM</a>  auto 11F0/1720 (G5x, etc). may use PCS trans: Q31(<a href="D1780.html">D1780</a>)
+</li>
+<li> jumper from right hole of R135(trans side) to D13(arrow side)
+</li>
+</ul>
+<p />
+<p />
+<p />
+<ul>
+<li> Jumper wire for <a href="OBD.html">OBD</a>1 <a href="IAB.html">IAB</a> control: <br />
+</li>
+</ul>
+<p />
+    <img src="../../../pub/Library/AddIABToP28/P28_IAB_OBD1.jpg" alt="P28_IAB_OBD1.jpg"  width="821" height="645"  />
+<p />
+<p />
+<strong><em>ODB2 &amp; <a href="JDM.html">JDM</a> B18C conversions:</em></strong> ( <a href="ECU.html">ECU</a> sends +12v, <a href="IAB.html">IAB</a> wired to GND )
+<ul>
+<li> above procedure not needed...
+</li>
+</ul>
+<strong><em>Remove:</em></strong>
+Q34
+<ul>
+<li> cut control leg of IC15 short and solder signal carrying wire to it (thread wire through hole)and solder other <a href="515XHighSideSwitch.html">515&nbsp;X High Side Switch</a> pins in place
+</li>
+<li> solder other end of wire to control hole of q34.
+</li>
+<li> add C61 (1uF 35V tantalum cap) for <a href="515XHighSideSwitch.html">515&nbsp;X High Side Switch</a>.
+</li>
+<li> add Q17(<a href="A143.html">A143</a>)...already present on <a href="USDM.html">USDM</a> auto 11F0/1720 (A5x, L5x, etc). Not present on <a href="EDM.html">EDM</a>  auto 11F0/1720 (G5x, etc).
+</li>
+</ul>
+<p />
+Use <a href="../../../pub/Library/P72/P72NoKnockGoodchksum.bin" target="_top">P72 code with knock disabled </a>.
+Similar install on LS ecus.
+<p />
+Pin A19 will be your <a href="IAB.html">IAB</a> output on the <a href="OBD.html">OBD</a>1 harness.
+<p />
+<p />
+<ul>
+<li> High side switch for <a href="OBD.html">OBD</a>2 <a href="IAB.html">IAB</a> control: <br />
+    <img src="../../../pub/Library/AddIABToP28/P28_IAB_1.jpg" alt="P28_IAB_1.jpg"  width="807" height="943"  />
+</li>
+</ul>
+<p />
+<ul>
+<li> High side switch for <a href="OBD.html">OBD</a>2 <a href="IAB.html">IAB</a> control: <br />
+    <img src="../../../pub/Library/AddIABToP28/P28_IAB_2.jpg" alt="P28_IAB_2.jpg"  width="835" height="659"  />
+</li>
+</ul>
+<p />
+<p />
+<p />
+<p />
+<font size = "-1"><center>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th align="center" bgcolor="#D0D1E0"> <strong><span style='background : #FFFFCE;'><font color="#0000FF">Attachment</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FileAttachment?topicparent=Library.AddIABToP28">?</a>:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Modify:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Size:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Date:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Who:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Comment:</strong> </th></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/AddIABToP28/P28_IAB_1.jpg">P28_IAB_1.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/AddIABToP28?filename=P28_IAB_1.jpg&amp;revInfo=1">mod</a>     </td><td>  364224  </td><td>  12 Jul 2005 - 13:58  </td><td>  m2prelude  </td><td>  High side switch for <a href="OBD.html">OBD</a>2 <a href="IAB.html">IAB</a> control  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/AddIABToP28/P28_IAB_2.jpg">P28_IAB_2.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/AddIABToP28?filename=P28_IAB_2.jpg&amp;revInfo=1">mod</a>     </td><td>  212634  </td><td>  12 Jul 2005 - 14:00  </td><td>  m2prelude  </td><td>  High side switch for <a href="OBD.html">OBD</a>2 <a href="IAB.html">IAB</a> control  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/AddIABToP28/P28_IAB_OBD1.jpg">P28_IAB_OBD1.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/AddIABToP28?filename=P28_IAB_OBD1.jpg&amp;revInfo=1">mod</a>     </td><td>  266030  </td><td>  12 Jul 2005 - 17:41  </td><td>  m2prelude  </td><td>  Jumper wire for <a href="OBD.html">OBD</a>1 <a href="IAB.html">IAB</a> control  </td></tr>
+</table>
+<p />
+</font></center>
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.9 - 29 Jul 2006 - 05:20 GMT - M2Prelude 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/AddIABToP28?t=1194410453"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/AddIABToP28">Attach</a>
+   |  <a href="../../rdiff/Library/AddIABToP28.html">History</a>
+   |  <a href="../../oops/Library/AddIABToP28%3Ftemplate=oopsmore&amp;param1=1.9&amp;param2=1.9.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.AddIABToP28">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#ee99878587ae9e89838887c0819c89d19d9b8c848b8d9ad3bab9878587cea88b8b8a8c8f8d85">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#8df9e2e0cde9e4eae4f9ece1ebf8fee4e2e3e2e3e1e4e3e8a3eee2e0" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

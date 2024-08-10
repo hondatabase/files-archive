@@ -1,0 +1,164 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . NicoAnalyze   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="NicoAnalyze.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>NicoAnalyze</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+Author: XDEep 
+<p />
+first thanks to nico for a great tool. the mishap im talking about is when you drag the scrollbar up and down, the cells get pushed around. so even though i found where the maps where, i had a hard time distinguishing what was what all day until just now i lined up the fuel multipliers into a single row and all the tables magically appeared before me! or just go straight to the beginning of the maps if you know it already. so dont drag, just use the arrow buttons.
+<p />
+as an alternative to dragging, you can change the step to 255 to skip a table at a time. change it back to 1 if your cells get pushed and you need to line it up again.
+<p />
+precision 1 is the decimal equivalent of the hex value in 8bit form. the default is precision:2 which is the 16bit decimal value of the hex value, which makes it harder to identify the tables at first.
+<p />
+thanks to joseph for getting me in the right direction. in this post he explained how to use the program itself-
+<p />
+<hr />
+<p />
+Re: P30 Excel Map Calculator Author: Joseph Davis Date: 11-12-02 22:00
+<p />
+Sammy, all it is doing is displaying the hex or binary values in decimal.
+<p />
+Open a <a href="ROM.html">ROM</a> that you have table locations for in the program.
+<p />
+Offset is the memory location you're looking for, that the table begins at.
+<p />
+Colonnes is how many columns - kinda critical for newbie map recognition. Maps are 15X17 for <a href="OBD.html">OBD</a>0 and 10X20 for <a href="OBD.html">OBD</a>1 - that means Columns X Rows. Set to 15 if <a href="OBD.html">OBD</a>0 and 10 if <a href="OBD.html">OBD</a>1.
+<p />
+Step is how many locations the program jumps when you press the up/down arrows on offset (great for searching for a table in a new <a href="ROM.html">ROM</a>).
+<p />
+Precision is just a multiplier. If you set it to 1 you'll get the real values from 0-255 in decimal instead of 00-FF in hex - since we learn decimal in school it is easier to work with at first. 
+<p />
+If you sit down with a PM6.bin and the CRX map calculator.xls you'll have zero problems identifying the maps, and the map calculator will have the same decimal as what you see in the Analyser.exe. The P30 kids came up with a similar Excel spreadsheet if you'd rather start there.
+<p />
+<p />
+You see how the values distibute themselves logically across the ignition map? The fuel is doing the same, but the further across the columns you go you have to start using that column's multiplier at the bottom of the map or else it looks like the map starts lean, goes rich, then starts lean + goes rich a couple times across it. 
+<p />
+<p />
+<font size = "-1"><center>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th align="center" bgcolor="#D0D1E0"> <strong><span style='background : #FFFFCE;'><font color="#0000FF">Attachment</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FileAttachment?topicparent=Library.NicoAnalyze">?</a>:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Modify:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Size:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Date:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Who:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Comment:</strong> </th></tr>
+<tr><td>  <img src="../../../pub/icn/exe.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/NicoAnalyze/Analyze.exe">Analyze.exe</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/NicoAnalyze?filename=Analyze.exe&amp;revInfo=1">mod</a>     </td><td>  589312  </td><td>  22 Jul 2004 - 16:10  </td><td>  blundar  </td><td>  Nico's analyze.exe  </td></tr>
+</table>
+<p />
+</font></center>
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"><B>Parents:</b> <a href="WebHome.html">Web&nbsp;Home</a></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.2 - 18 Jul 2005 - 02:10 GMT - roy 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/NicoAnalyze?t=1194409826"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/NicoAnalyze">Attach</a>
+   |  <a href="../../rdiff/Library/NicoAnalyze.html">History</a>
+   |  <a href="../../oops/Library/NicoAnalyze%3Ftemplate=oopsmore&amp;param1=1.2&amp;param2=1.2.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.NicoAnalyze">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#e196888a88a191868c8788cf8e9386de9294838b848295dcb5b6888a88c1a78484858380828a">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#c4b0aba984a0ada3adb0a5a8a2b1b7adabaaabaaa8adaaa1eaa7aba9" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

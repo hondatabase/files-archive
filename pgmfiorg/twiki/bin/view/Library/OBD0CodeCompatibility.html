@@ -1,0 +1,174 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . OBD0CodeCompatibility   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="OBD0CodeCompatibility.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>OBD0CodeCompatibility</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+Can you run code from one <a href="OBD0MPFI.html">OBD0&nbsp;MPFI</a> <a href="ECU.html">ECU</a> in another? The short answer to this is yes.
+<p />
+The following has been tried before and is known to work successfully:
+<ul>
+<li> PM6 in PR4 (see notes)
+</li>
+<li> PR4 in PM6 (see notes)
+</li>
+<li> PM7 in PM6
+</li>
+<li> PM7 in PR4 (see notes)
+</li>
+<li> PM6 in PS9
+</li>
+<li> PS9 in PR4 (see notes)
+</li>
+</ul>
+<p />
+<p />
+In theory, the code should additionally interchange almost perfectly among:
+<ul>
+<li> PG7
+</li>
+<li> Trash.PM6
+</li>
+<li> PM7
+</li>
+<li> PS9
+</li>
+<li> PR5
+</li>
+<li> PP5
+</li>
+</ul>
+<p />
+The PR4 and <a href="USDM.html">USDM</a> PM8 use slightly different circuit boards.  The PM8 looks to be closer to the rest of the <a href="ECU.html">ECU</a>s in this family than the PR4, which has some notable differences.
+<p />
+<strong><em>Notes</em></strong>: There are some things to watch out for however that will cause problems:
+#Presence or absence of an internal PA Sensor. (this is mainly <a href="OBD0PR4.html">OBD0&nbsp;PR4</a>)
+#Presence or absence of an ELD sensor. (this is present in US cars/software and absent in most <a href="JDM.html">JDM</a> and <a href="EDM.html">EDM</a>  cars/programs)
+#Presence or absence of an O2 sensor. (some <a href="EDM.html">EDM</a>  ZC PM7 have an IMA instead of an O2. Likewise with Mugen XE3)
+#Weird use of inputs: Power steering on PR4
+#<a href="Oki83C154.html">Oki83&nbsp;C154</a> vs <a href="Oki80C154.html">Oki80&nbsp;C154</a> and <a href="EPROM.html">EPROM</a> design - 88-89 <a href="ECU.html">ECU</a>s almost always lack <a href="EPROM.html">EPROM</a>s.
+<p />
+In summary, most code from <a href="ECU.html">ECU</a>s of this family will run on other <a href="ECU.html">ECU</a>s in the family, but there may be secondary systems (AC, ELD, PS to be more specific) that do not function well when the PR4 is involved.  It remains to be seen exactly what must be done with <a href="USDM.html">USDM</a> PM8 <a href="ECU.html">ECU</a>s.
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.3 - 12 Jul 2005 - 19:25 GMT - 4G vtec 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/OBD0CodeCompatibility?t=1194412620"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/OBD0CodeCompatibility">Attach</a>
+   |  <a href="../../rdiff/Library/OBD0CodeCompatibility.html">History</a>
+   |  <a href="../../oops/Library/OBD0CodeCompatibility%3Ftemplate=oopsmore&amp;param1=1.3&amp;param2=1.3.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.OBD0CodeCompatibility">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#1e697775775e6e7973787730716c79216d6b7c747b7d6a234a497775773e587b7b7a7c7f7d75">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#03776c6e43676a646a77626f6576706a6c6d6c6d6f6a6d662d606c6e" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

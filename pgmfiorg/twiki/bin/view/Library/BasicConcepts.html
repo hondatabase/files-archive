@@ -1,0 +1,246 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . BasicConcepts   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="BasicConcepts.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>BasicConcepts</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+<h3> Vocab: </h3>
+<ul>
+<li> <a href="ECU.html">ECU</a> = Engine Control Unit
+</li>
+<li> <a href="OBD0.html">OBD0</a> = the first unofficial generation of honda engine electronics
+</li>
+<li> <a href="OBD1.html">OBD1</a> = the second unofficial generation of honda engine electronics
+</li>
+<li> <a href="OBD2.html">OBD2</a> = the first official standard for engine electronics
+</li>
+<li> <a href="EDM.html">EDM</a> = European Domestic Market
+</li>
+<li> <a href="JDM.html">JDM</a> = Japanese Domestic Market
+</li>
+<li> <a href="USDM.html">USDM</a> = United States Domestic Market
+</li>
+<li> <a href="CheckSum.html">Check&nbsp;Sum</a> = what is a checksum? What kind of checksums do honda <a href="ECU.html">ECU</a>s use?
+</li>
+<li> <a href="ManualChecksum.html">Manual&nbsp;Checksum</a> = how do I fix a checksum by hand?
+</li>
+<li> <a href="BinFile.html">Bin&nbsp;File</a> = what is a bin file?
+</li>
+<li> <a href="HexFile.html">Hex&nbsp;File</a> = what is a hex file?
+</li>
+<li> <a href="Hex2Bin.html">Hex2&nbsp;Bin</a> = how to convert hex files to bin files
+</li>
+<li> <a href="PulseWidthModulation.html">Pulse&nbsp;Width&nbsp;Modulation</a> = <a href="PWM.html">PWM</a> which is frequently used to do <a href="DAC.html">DAC</a>
+</li>
+<li> <a href="DAC.html">DAC</a> = Digital to Analog Conversion
+</li>
+<li> <a href="ADC.html">ADC</a> = Analog to Digital Conversion
+</li>
+<li> <a href="RPM.html">RPM</a> = <a href="RevolutionsPerMinute.html">Revolutions&nbsp;Per&nbsp;Minute</a> = how fast the motor is spinning
+</li>
+<li> <a href="EcuSensors.html">Ecu&nbsp;Sensors</a> = Sensors that the <a href="ECU.html">ECU</a> monitors in order to run the motor properly.
+</li>
+<li> <a href="PreIgnition.html">Pre&nbsp;Ignition</a> = "knocking" or "detonation" - destructive combustion of fuel without a spark
+</li>
+<li> <a href="AtmosphericPressure.html">Atmospheric&nbsp;Pressure</a> = the pressure of air around you
+</li>
+<li> <a href="Boost.html">Boost</a> = Pressure greater than atmospheric pressure
+</li>
+<li> <a href="AbsolutePressure.html">Absolute&nbsp;Pressure</a> = pressure measured on a scale where <a href="AbsoluteVacuum.html">Absolute&nbsp;Vacuum</a> = 0
+</li>
+<li> <a href="AbsoluteVacuum.html">Absolute&nbsp;Vacuum</a> = the state where there are no gas molecules present
+</li>
+<li> <a href="AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratio</a> = ratio between air and fuel entering engine. <strong>critical</strong>
+</li>
+<li> <a href="IAB.html">IAB</a> = Intake Air Bypass
+</li>
+</ul>
+<hr />
+<h3> Devices/Hardware: </h3>
+<ul>
+<li> <a href="ECU.html">ECU</a> = Engine Control Unit
+</li>
+<li> <a href="EcuSensors.html">Ecu&nbsp;Sensors</a> let the <a href="ECU.html">ECU</a> interact with the world.
+</li>
+<li> <a href="RomBurner.html">Rom&nbsp;Burner</a> programs chips
+</li>
+<li> <a href="RomEmulator.html">Rom&nbsp;Emulator</a> a device that "looks" like a <a href="ROM.html">ROM</a> but allows changes in realtime
+</li>
+<li> <a href="EngineSimulator.html">Engine&nbsp;Simulator</a> A workbench <a href="ECU.html">ECU</a> testing and tuning device. (Work in Progress.)
+</li>
+<li> <a href="BoostController.html">Boost&nbsp;Controller</a> = device to adjust boost pressure levels
+</li>
+<li> <a href="WasteGate.html">Waste&nbsp;Gate</a> = device to limit boost with a turbocharger
+</li>
+<li> <a href="ExhaustGasTempSensor.html">Exhaust&nbsp;Gas&nbsp;Temp&nbsp;Sensor</a> = ''EGT'' - measures the temperature of exhaust gases
+</li>
+<li> <a href="WideBandO2.html">Wide&nbsp;Band&nbsp;O2</a> = ''wideband'' - a device to measure a (relatively) broad range of <a href="AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratio</a>s
+</li>
+</ul>
+<hr />
+<h3> Stock ECU Code Features </h3>
+<ul>
+<li> <a href="DualTables.html">Dual&nbsp;Tables</a> = fuel and timing mapping for two separated states on the same <a href="ROM.html">ROM</a>.  Used with <a href="Vtec.html">Vtec</a> motors.
+</li>
+<li> <a href="RevLimiter.html">Rev&nbsp;Limiter</a> = limits engine rotation to a safe <a href="RPM.html">RPM</a>
+</li>
+<li> <a href="SpeedLimiter.html">Speed&nbsp;Limiter</a> = limits a vehicles top speed
+</li>
+<li> <a href="DataLogging.html">Data&nbsp;Logging</a> = most <a href="ECU.html">ECU</a>s have some provision for datalogging in the factory code.
+</li>
+<li> <a href="ECU-CodeCompatibility.html">ECU-Code&nbsp;Compatibility</a> = Most <a href="ECU.html">ECU</a>s can run a wide variety of programs other than the one from the factory
+</li>
+</ul>
+<hr />
+<h3><a name="PGMFI_Hacked_Features_Code_dupli"> </a> PGMFI-Hacked Features/Code (duplicates indicate modifications) </h3>
+<ul>
+<li> <a href="DualTables.html">Dual&nbsp;Tables</a> = added to non-<a href="Vtec.html">Vtec</a> <a href="ECU.html">ECU</a> code to run a <a href="Vtec.html">Vtec</a> motor properly, and as part of <a href="ECUNitrousControl.html">ECUNitrous&nbsp;Control</a>
+</li>
+<li> <a href="AddBoost.html">Add&nbsp;Boost</a> = What does <a href="CromeROMEditor.html">Crome&nbsp;ROMEditor</a> or <a href="UberDataERM.html">Uber&nbsp;Data&nbsp;ERM</a> do to make the <a href="ECU.html">ECU</a> understand boost?
+</li>
+<li> <a href="ECUBoostController.html">ECUBoost&nbsp;Controller</a> = What is the <a href="BoostController.html">Boost&nbsp;Controller</a> portion of <a href="UberDataERM.html">Uber&nbsp;Data&nbsp;ERM</a> and how does it work?
+</li>
+<li> <a href="ECUNitrousControl.html">ECUNitrous&nbsp;Control</a> = Code for the <a href="ECU.html">ECU</a> to turn a nitrous solenoid on/off (and also implement <a href="DualTables.html">Dual&nbsp;Tables</a> and other stuff.)
+</li>
+<li> <a href="DataLogging.html">Data&nbsp;Logging</a> = often, code mods are needed for solid datalogging.
+</li>
+<li> <a href="LaunchControl.html">Launch&nbsp;Control</a> = a "two-step" revlimiter - low revlimit while stationary for consistent launches
+</li>
+<li> <a href="FullThrottleShift.html">Full&nbsp;Throttle&nbsp;Shift</a> = For ricer glitz full-throttle shifting w/o grenading your motor
+</li>
+<li> <span style='background : #FFFFCE;'><font color="#0000FF">NGxx</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/NGxx?topicparent=Library.BasicConcepts">?</a> (i.e. <span style='background : #FFFFCE;'><font color="#0000FF">NG60</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/NG60?topicparent=Library.BasicConcepts">?</a>) = A very modified PM6 file (firmware) with boost capability among other things.
+</li>
+</ul>
+<hr />
+<h3> Physics, Thermodynamics, Engine Management Theory </h3>
+<ul>
+<li> <a href="IdealGasLaw.html">Ideal&nbsp;Gas&nbsp;Law</a> = equation explaining relationship between gas properties
+</li>
+<li> <a href="SpeedDensity.html">Speed&nbsp;Density</a> = the type of engine management philosophy used in Honda <a href="ECU.html">ECU</a>s.
+</li>
+<li> <a href="VolumetricEfficiency.html">Volumetric&nbsp;Efficiency</a> = the efficiency of an engine at pumping air in a given state
+</li>
+<li> <a href="MassAirFlow.html">Mass&nbsp;Air&nbsp;Flow</a> = A type of engine management system that directly measures air entering the motor.  Not typically found on Hondas, but common on other manufacturers.
+</li>
+</ul>
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.3 - 19 Jan 2006 - 07:34 GMT - markolson 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/BasicConcepts?t=1194409643"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/BasicConcepts">Attach</a>
+   |  <a href="../../rdiff/Library/BasicConcepts.html">History</a>
+   |  <a href="../../oops/Library/BasicConcepts%3Ftemplate=oopsmore&amp;param1=1.3&amp;param2=1.3.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.BasicConcepts">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#b7c0dedcdef7c7d0dad1de99d8c5d088c4c2d5ddd2d4c38ae3e0dedcde97f1d2d2d3d5d6d4dc">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#fb8f9496bb9f929c928f9a979d8e8892949594959792959ed5989496" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

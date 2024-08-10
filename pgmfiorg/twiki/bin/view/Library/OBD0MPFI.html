@@ -1,0 +1,187 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . OBD0MPFI   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="OBD0MPFI.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>OBD0MPFI</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+There is a very distinct family of <a href="ECU.html">ECU</a>s found in 88-91ish <a href="OBD0.html">OBD0</a> hondas.
+The main characteristics of this family:
+<ul>
+<li> <a href="Oki80C154.html">Oki80&nbsp;C154</a> or <a href="Oki83C154.html">Oki83&nbsp;C154</a> <a href="MCU.html">MCU</a>s that are essentially <a href="Intel8051.html">Intel8051</a> with a 12Mhz <a href="ClockSpeed.html">Clock&nbsp;Speed</a>.
+</li>
+<li> Presence of oki 38256 <a href="EPROM.html">EPROM</a> on 90-91 models
+</li>
+<li> <a href="MPFI.html">MPFI</a> engines w/ 4 injectors
+</li>
+<li> non-vtec engines
+</li>
+<li> electronic advance distributors
+</li>
+<li> Presence of <a href="Oki6260A.html">Oki6260&nbsp;A</a> <a href="IO.html">IO</a> controller chip
+</li>
+<li> Presence of NEC <a href="UPD7004C.html">UPD7004&nbsp;C</a> <a href="ADC.html">ADC</a> chip
+</li>
+<li> Presence of <a href="5128XRAM.html">5128&nbsp;XRAM</a> 2K <a href="SRAM.html">SRAM</a> chip
+</li>
+</ul>
+<p />
+<p />
+This architecture was also used by Rover in the UK, and appeared to do so for considerably longer than the 4 years this architecture was used in <a href="USDM.html">USDM</a> and <a href="JDM.html">JDM</a> cars.
+<p />
+A partial list of <a href="OBD0.html">OBD0</a> <a href="ECU.html">ECU</a>s:
+<ul>
+<li> PG7 (88-89 Integra D16A1 - <strong>note</strong> the 86-87 version of this <a href="ECU.html">ECU</a> ran the vacuum advance D16A1 motor.  Different family)
+</li>
+<li> PM6 (<a href="USDM.html">USDM</a> Civic/CRX Si - D16A6 <a href="SOHC.html">SOHC</a>)
+</li>
+<li> PM7 (<a href="JDM.html">JDM</a>/EDM Civic/CRX Si - ZC <a href="DOHC.html">DOHC</a>)
+</li>
+<li> PM8 (<a href="USDM.html">USDM</a> D15B? <a href="SOHC.html">SOHC</a> HF, <a href="EDM.html">EDM</a>  D16Z? ZC <a href="DOHC.html">DOHC</a>)
+</li>
+<li> PR4 (<a href="USDM.html">USDM</a> 90-91 Int
+</li>
+<li> PR5 (<a href="JDM.html">JDM</a> Integra ???)
+</li>
+<li> PP5 (UKDM Rover Cabio?)
+</li>
+<li> PS9 (<a href="USDM.html">USDM</a> Civic Ex 4dr D16A6 auto???)
+</li>
+<li> PK2 (<a href="JDM.html">JDM</a> Honda Prelude B20A Engine electronic advance)
+</li>
+<li> PH3 (<a href="JDM.html">JDM</a> 86-89 Honda Accord B20A)
+</li>
+</ul>
+<a href="ChippingAn88-89ECU.html">Chipping&nbsp;An88-89&nbsp;ECU</a> is not as easy as the 90-91 computers because only the later computers have replaceable external <a href="ROM.html">ROM</a>s.
+<p />
+Understanding <a href="OBD0InterChipCommunication.html">OBD0&nbsp;Inter&nbsp;Chip&nbsp;Communication</a> will be key to figuring out exactly how the <a href="ECU.html">ECU</a>s work.
+<p />
+Attached below is an eagle (4.09) library containing the <a href="MCU.html">MCU</a> (OKI 8xC154), <a href="RAM.html">RAM</a> (M5128), <a href="ADC.html">ADC</a> (µPD7004) and engine control counter IC (<a href="Oki6260A.html">Oki6260&nbsp;A</a>) devices for using these components in eagle layout editor.
+<p />
+<p />
+<font size = "-1"><center>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th align="center" bgcolor="#D0D1E0"> <strong><span style='background : #FFFFCE;'><font color="#0000FF">Attachment</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FileAttachment?topicparent=Library.OBD0MPFI">?</a>:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Modify:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Size:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Date:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Who:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Comment:</strong> </th></tr>
+<tr><td>  <img src="../../../pub/icn/else.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/OBD0MPFI/pm6.lbr">pm6.lbr</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/OBD0MPFI?filename=pm6.lbr&amp;revInfo=1">mod</a>     </td><td>  11725  </td><td>  05 Dec 2004 - 20:57  </td><td>  l3st4rd  </td><td>  eagle 4.09 library for some <a href="OBD.html">OBD</a>0 <a href="ECU.html">ECU</a> components  </td></tr>
+</table>
+<p />
+</font></center>
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"><p><i>Library.OBD0MPFI moved from Library.OBD0CivicIntegra on 20 Feb 2004 - 00:37 by Home.blundar </i> - <a title="Click to move topic back to previous location, with option to change references." href="http://www.pgmfi.org/twiki/bin/rename/Library/OBD0MPFI?newweb=Library&amp;newtopic=OBD0CivicIntegra&amp;confirm=on">put it back</a></p></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.5 - 30 Jan 2006 - 07:24 GMT - carotman 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/OBD0MPFI?t=1194409806"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/OBD0MPFI">Attach</a>
+   |  <a href="../../rdiff/Library/OBD0MPFI.html">History</a>
+   |  <a href="../../oops/Library/OBD0MPFI%3Ftemplate=oopsmore&amp;param1=1.5&amp;param2=1.5.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.OBD0MPFI">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#f88f919391b8889f959e91d6978a9fc78b8d9a929d9b8cc5acaf919391d8be9d9d9c9a999b93">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#90e4fffdd0f4f9f7f9e4f1fcf6e5e3f9fffefffefcf9fef5bef3fffd" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

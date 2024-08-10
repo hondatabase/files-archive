@@ -1,0 +1,235 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . WideBandO2   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="WideBandO2.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>WideBandO2</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+<strong><em>What is a Wideband O2 sensor</em></strong>
+<p />
+It is an <a href="OxygenSensor.html">Oxygen&nbsp;Sensor</a> that gives stable output over a much larger range than standard 1-wire or 4-wire oxygen sensors.  It is helpful in determining the <a href="AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratio</a> for <a href="EcuTuning.html">Ecu&nbsp;Tuning</a>.
+<p />
+The market just got a little more competitive, I'm going to do a quick summary.
+Traditionally you had two options for a wideband/lambda O2 meter. These were the MOTEC unit and the FJO offering. These can cost you $600-1000 and up, so I'll be focusing on cheaper solutions.
+<p />
+The new Bosch LSU4 is a windfall to the community because it is OEM equipment on some VWs and can be had for between 30 and 60 dollars. Previously your options were generally the NGK L1H1 and the older BOSCH UEGO sensor (LSM-11?)
+<p />
+<strong><em>What is a narrowband output?</em></strong>
+<p />
+Narrowband is what your stock O2 sensor is giving you, it is of the range 0-1volts, so there is not very much room for resolution or "accuracy." Also it was engineered to save costs, and really only tells you if you are above or at stoich (14.7:1 A/F). This is not accurate enough for tuning.
+<p />
+<img src="http://plxdevices.com/M-200/NarrowbandOutputGraph.jpg" alt="NarrowbandOutputGraph.jpg" />
+<p />
+<strong><em>What is a wideband output?</em></strong>
+<p />
+A more complicated 02 sensor element is used, and it can give you more usable resolution, from 0-5 volts. It was also engineered to be accurate, re-calibrateably on the fly, and with less emphasis on making a mass-produced economical unit. A wideband needs a special circuit and power source to control it's delicate heating needs. This is the "wideband controller", or controller box, that you see advertized.
+<p />
+<img src="http://www.plxdevices.com/M-200/WidebandOutputGraph.jpg" alt="WidebandOutputGraph.jpg" />
+<p />
+<strong><em>How can I make use of this?</em></strong>
+<p />
+I see two main options.
+<p />
+Have a bung tapped into your downpipe for a second permanent O2 sensor mount. If you are planning on running the unit in the car full time. Have the ecu running off the stock O2 sensors narrowband output, and do tuning via your dedicated wideband O2 sensor and controlling unit. Once tuned, you can remove the wideband O2 sensor, and use a plug to seal the bung.
+<p />
+The second method is more complicated, but it is more desirable for someone like myself that uses the wideband portably to tune different cars. You remove the stock O2 sensor unit, and put the wideband sensor in it's place. Then you feed a narrowband output off of your wideband O2 sensor controller to satisfy the ecu. (The narrowband output off the wideband controller, is just the wideband info scaled down to 0-1volts.) For ease of instalation, you can have an <a href="OBD1.html">OBD1</a> -OBD1 "conversion/crossover" harness, instead of splicing into the customer chassis harness. Academically there may be a problem here, because when you are done tuning, and return the car to running off of the stock narrowband sensor, there might be slight inconsistencies. More research/opinion is needed on this.
+<p />
+Ok, on to our budget options:
+<p />
+<strong><em>Innovate Motorsports:</em></strong>
+<a href="http://www.innovatemotorsports.com/" target="_top">http://www.innovatemotorsports.com/</a>
+<p />
+New to the market, very competitive pricing/feature list. Uses the new, cheap LSU4 sensor. Has a patent-pending calibration routine for the sensor that none of the other companies can lay claim to. Integrated LCD for displaying values. Programmable outputs (narrowband out, wideband out, whatever you want), comes with a datalogging suite, that lacks only <a href="RPM.html">RPM</a> pickup at this time, and is soon to come). It's a little too big to mount, it's more of a tuner's device, but it can easily be tucked away, and use the narrowband output to drive a A/F gauge.
+<p />
+<strong><em>AEM UEGO:</em></strong>
+<a href="http://aempower.com/product_ems.asp" target="_top">http://aempower.com/product_ems.asp</a>
+<p />
+Uses a sensor very similar to the BOSCH LSU4, but the price is artificially high because only AEM is a supplier. The prodcut arries the AEM name and reputation. It can control 2 wideband sensors, for V-6 or V-8 people, or any setup with 2 O2 sensors. It does not have an internal LCD, so you need to pass the output voltages to a standalone fuel managment, or to the ecu, or to an A/F gauge or to whatever datalogging setup you have. Outputs are not scriptable, they are pre-defined.  AEM's wideband output scale is different from PLX and Innovate, where the stock Honda <a href="ECU.html">ECU</a> can only read from 8.5AFR to 13.66AFR due to the voltage sweep (0.156vdc = 8.5, 3.83vdc=13.66AFR, 4.99vdc = 20.5AFR)
+<p />
+<strong><em>PLX-devices:</em></strong>
+<a href="http://www.plxdevices.com/index.htm" target="_top">http://www.plxdevices.com/index.htm</a>
+<p />
+PLX-devices is hopping on the band-wagon and adding a product to support the LSU4 sensor, their M-250 or M-300. They offer controllers with/without LCD, letting you choose your pricing option. Wideband and narrowband outputs, not scriptable. They also have a VERY helpful website, with alot of info to aid in your research, and really help you understand this topic, thanks PLX!
+<p />
+<strong><em>DIY-WB:</em></strong>
+<a href="http://wbo2.com/" target="_top">http://wbo2.com/</a>
+<p />
+The !TechEdge/DIY-WB project are a bunch of very talented hobbyists who set out to build their own wideband, shocked at the prices of the FJO/MOTEC offerings. They have had an offering on the market longer than any of the other companies presented here. They offer kits that you can assemble yourself, or pay to have assembled; they will even sell you JUST the circuit board and let you source all the components yourself, for the real real cheapskate :cough: hobbyist. I'm going to focus on the !TechEdge v2.0 because it uses the LSU4 sensor, whereas the !TechEdge 1.x uses the more expensive L1H1 sensor. The 2.0 has three built-in analogue logger inputs (0 to 5 Volts), three thermocouple (K-type) inputs and a <a href="RPM.html">RPM</a> input. In addition to the inputs, you have the standard narrowband and wideband outputs. Comes with a logging suite, and POSSIBLY scriptable outputs(?) info here: <a href="http://wbo2.com/sw.htm" target="_top">http://wbo2.com/sw.htm</a>. The company also has options for LED display outputs. Altogether a very well thought out, robust product.
+<p />
+I'm not going to gather prices at this time. Prices are available from all the URLs above, except for AEMPOWER.  AEM UEGO can be purchased at <a href="http://ks-motorsports.com" target="_top">http://ks-motorsports.com</a>, who'd I'd reccomend checking out.
+<p />
+You are in general looking at sub 400 dollar solutions, and if you feel like assembling the <a href="DIY.html">DIY</a>-WB / !TechEdge kit, you're probably looking at like 250-300 dollars.
+<p />
+Here are some useful links:
+<p />
+<ul>
+<li> <a href="http://www.g-speed.com/pbh/afr-o2.html" target="_top">Wideband theory</a>
+</li>
+<li> <a href="http://www.plxdevices.com/appnotes.htm" target="_top">Some application notes</a>
+</li>
+<li> <a href="http://hondata.com/techwidebandtuning.html" target="_top">Hondata's take on tuning with a wideband</a>
+</li>
+<li> <a href="https://www.parts.com/partlocator/index.cfm?action=selectCatalogYearMakeModel&amp;make=0&amp;siteid=213799&amp;catalogid=1" target="_top">LSU4 for ~US$40+Shipping</a>
+</li>
+</ul>
+<p />
+<strong><em>Bosch LSU4/LSU4.2 Sensor Info</em></strong>
+This sensor is more commercially available than the NTK and is used in production cars such as, Porche, Audi, VW, Subaru, Cadillac, and Volvo. The Bosch LSU 4.2 sensor is marked with the numbers 0 258 007 057/058 (sold by PLX Devices Inc.). The Bosch LSU4 sensor is marked with the numbers 0 258 006 066. 
+<p />
+<strong><em>NTK L1H1 Calibration</em></strong>
+Below is a table of <a href="AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratio</a> and respective output voltages
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> <strong><em>A/F ratio</em></strong> </td><td>  Voltage(volts) </td></tr>
+<tr><td> 10.015625 </td><td> 0 </td></tr>
+<tr><td> 10.015625 </td><td> 0.156 </td></tr>
+<tr><td> 10.015625 </td><td> 0.312 </td></tr>
+<tr><td> 10.015625 </td><td> 0.468 </td></tr>
+<tr><td> 10.015625 </td><td> 0.624 </td></tr>
+<tr><td> 10.015625 </td><td> 0.780 </td></tr>
+<tr><td> 10.2890625 </td><td> 0.936 </td></tr>
+<tr><td> 10.71875 </td><td> 1.092 </td></tr>
+<tr><td> 11.109375 </td><td> 1.248 </td></tr>
+<tr><td> 11.421875 </td><td> 1.404 </td></tr>
+<tr><td> 11.8125 </td><td> 1.560 </td></tr>
+<tr><td> 12.203125 </td><td> 1.716 </td></tr>
+<tr><td> 12.59375 </td><td> 1.872 </td></tr>
+<tr><td> 13.1015625 </td><td> 2.028 </td></tr>
+<tr><td> 13.4921875 </td><td> 2.184 </td></tr>
+<tr><td> 14.1171875 </td><td> 2.340 </td></tr>
+<tr><td> 14.703125 </td><td> 2.496 </td></tr>
+<tr><td> 15.71875 </td><td> 2.652 </td></tr>
+<tr><td> 17.0078125 </td><td> 2.808 </td></tr>
+<tr><td> 18.609375 </td><td> 2.964 </td></tr>
+<tr><td> 18.9609375 </td><td> 3.120 </td></tr>
+<tr><td> 18.9609375 </td><td> 3.276 </td></tr>
+<tr><td> 18.9609375 </td><td> 3.432 </td></tr>
+<tr><td> 18.9609375 </td><td> 3.588 </td></tr>
+<tr><td> 18.9609375 </td><td> 3.744 </td></tr>
+<tr><td> 18.9609375 </td><td> 3.900 </td></tr>
+<tr><td> 18.9609375 </td><td> 4.056 </td></tr>
+<tr><td> 18.9609375 </td><td> 4.212 </td></tr>
+<tr><td> 18.9609375 </td><td> 4.368 </td></tr>
+<tr><td> 18.9609375 </td><td> 4.524 </td></tr>
+<tr><td> 18.9609375 </td><td> 4.680 </td></tr>
+<tr><td> 18.9609375 </td><td> 4.836 </td></tr>
+<tr><td> 18.9609375 </td><td> 4.992 </td></tr>
+</table>
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.6 - 17 Feb 2006 - 19:56 GMT - kabuki 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/WideBandO2?t=1194409689"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/WideBandO2">Attach</a>
+   |  <a href="../../rdiff/Library/WideBandO2.html">History</a>
+   |  <a href="../../oops/Library/WideBandO2%3Ftemplate=oopsmore&amp;param1=1.6&amp;param2=1.6.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.WideBandO2">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#b2c5dbd9dbf2c2d5dfd4db9cddc0d58dc1c7d0d8d7d1c68fe6e5dbd9db92f4d7d7d6d0d3d1d9">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#20544f4d604449474954414c465553494f4e4f4e4c494e450e434f4d" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

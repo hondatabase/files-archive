@@ -1,0 +1,204 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . DisableVtecVSSCheckP30_203   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="DisableVtecVSSCheckP30_203.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>DisableVtecVSSCheckP30_203</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+Author: doc 07-10-03 15:21
+<p />
+Did i?
+<p />
+Ok, in a 203 or 209 rom, you can change the location 6010 (hex) from 00 to FF to bypass the <a href="VSS.html">VSS</a> check in the VTEC routine.
+<p />
+<p />
+If you use a other rom, you've to search for the right location. Here a short instruction how i would search for it:
+<p />
+First we need a disassembly of the desired rom. Choose your faforite disassembler and create the disasm.
+<p />
+Search for the VTEC routine. I'll normally search for "22.1", with a1k0n's disassembler you've to search for "22h.1" (don't confuse with <em>OFF</em> 22.1) and stop when i find a routine which looks similar to the following one (the addresses and offset could be different, but the RB 22.1 and RB 22.0 are in every Rom the same!):
+<p />
+<ul>
+<li> 11B9- C5 22 09 : RB 22.1 ; Reset Bit Port1.1 VTEC
+</li>
+<li> 11BC- CB 24 : SJ 11E2 ; disable VTEC
+</li>
+</ul>
+<hr />
+<ul>
+<li> 11BE- C5 22 19 : SB 22.1 ; Set Bit Port1.1
+</li>
+<li> 11C1- C5 E9 C0 32 : CMPB E9, #32
+</li>
+<li> 11C5- CA 1B : JLT 11E2
+</li>
+<li> 11C7- C5 C1 C0 44 : CMPB C1, #44
+</li>
+<li> 11CB- CD 15 : JGE 11E2
+</li>
+</ul>
+<hr />
+<ul>
+<li> 11CD- 90 9D 10 60 : LCB A, 6010 ; use <a href="VSS.html">VSS</a>
+</li>
+<li> 11D1- CE 03 : JNE 11D6
+</li>
+<li> 11D3- D8 28 0C : JBR off 28.0, 11E2 ; enough speed for VTEC?
+</li>
+<li> 11D6- DB 16 03 : JBR off 16.3, 11DC
+</li>
+<li> 11D9- ED 11 03 : JBS off 11.5, 11DF
+</li>
+<li> 11DC- E9 28 0B : JBS off 28.1, 11EA
+</li>
+<li> 11DF- E9 1F 21 : JBS off 1F.1, 1203
+</li>
+</ul>
+<hr />
+<ul>
+<li> 11E2- C5 22 08 : RB 22.0 ; }
+</li>
+<li> 11E5- C4 1F 0A : RB off 1F.2 ; } deactive VTec
+</li>
+<li> 11E8- CB 29 : SJ 1213 ; }
+</li>
+</ul>
+<hr />
+<p />
+To activate VTEC without taking care about the speed sensor we're interrested in the following lines:
+<p />
+<ul>
+<li> 11CD: LCB A,6010 ;Here the <a href="ROM.html">ROM</a> Content on address 6010 is readed into A. (hardcoded configuration)
+</li>
+<li> 11D1: JNE 11D6 ;If the <a href="ROM.html">ROM</a> Content is not 00 then jump to 11D6
+</li>
+<li> 11D3: JBR off 28.0, 11E2 ;If off 28.0=0 then jump to 11E2 (off 28.0 will be set in a <a href="VSS.html">VSS</a> check routine.)
+</li>
+</ul>
+<p />
+<p />
+Now you can decide how to patch your Rom. Change Rom Address 6010 (or whatever you find in your rom) from 00 to FF, overjump the <a href="VSS.html">VSS</a> check (11CD: J 11D6), or whatever (i.e. 11D3: NOP, NOP, NOP) ...
+<p />
+Hope this helps.
+<p />
+Doc
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.1 - 19 Feb 2004 - 22:01 GMT - guest 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/DisableVtecVSSCheckP30_203?t=1194411222"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/DisableVtecVSSCheckP30_203">Attach</a>
+   |  <a href="../../rdiff/Library/DisableVtecVSSCheckP30_203.html">History</a>
+   |  <a href="../../oops/Library/DisableVtecVSSCheckP30_203%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.DisableVtecVSSCheckP30_203">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#8afde3e1e3cafaede7ece3a4e5f8edb5f9ffe8e0efe9feb7dedde3e1e3aaccefefeee8ebe9e1">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#4c3823210c28252b25382d202a393f252322232220252229622f2321" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

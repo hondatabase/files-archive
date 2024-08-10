@@ -1,0 +1,273 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . UberDataFAQ   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="UberDataFAQ.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>UberDataFAQ</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+Uberdata FAQ
+Stupid newbie tard Uberdata FAQ
+<hr />
+Author: Blake Warner Email: <a href="/cdn-cgi/l/email-protection#aedbcccbdcdacbc9eecdc1d680c0cbda"><span class="__cf_email__" data-cfemail="ee9b8c8b9c9a8b89ae8d8196c0808b9a">[email&#160;protected]</span></a>, <a href="/cdn-cgi/l/email-protection#0d7b687f79646a623c3c354d6e627523636879"><span class="__cf_email__" data-cfemail="baccdfc8ced3ddd58b8b82fad9d5c294d4dfce">[email&#160;protected]</span></a>
+<p />
+Notes: Remember to donate if you use and enjoy this software!
+<p />
+# What EXACTLY do I need to chip my ecu and tune it with this program?
+# How do I know which bin file to open?
+# I opened the bin file, what do these #'s mean?
+# The boost portion of the maps aren't set?
+# What is this fuel avergae efficiency thing?
+# What does "Boost ignition retard" do?
+# How do I set/change my rev limiters?
+# What is Full THrottle Launch?
+# How do I change my VTEC crossover point?
+# How do I adjust my idle?
+# What is TPS enrichment?
+# What is cold crank enrichment?
+# Ok, I got all this shit, how do I tune?
+<p />
+<p />
+<hr />
+1) What EXACTLY do I need to chip my ecu and tune it with this program?
+<p />
+<ul>
+<li>  First, you must make sure your ecu is an <a href="OBD1.html">OBD1</a> (came in 1992-95) honda civic/integra <a href="ECU.html">ECU</a> (engine control unit).
+</li>
+</ul>
+<p />
+<ul>
+<li>  Second, get your hardware supplies. You need one - 1/4 Watt 1.0k resistor, two 0.1uF Ceramic Disc capacitors, one <a href="74HC373.html">74&nbsp;HC373</a> IC, and a 28-pin <a href="29C256.html">29&nbsp;C256</a> eprom.
+</li>
+</ul>
+I get my chippling supplies from radio shack and jdr.com. Radioshack wont have the eproms
+<p />
+<ul>
+<li>  third, chip your ecu. Heres a guide form pgmfi.org (Remove the cover from your <a href="ECU.html">ECU</a> and follow these instructions):
+</li>
+</ul>
+1. Desolder all holes for the components.
+2. Solder in a 28 pin socket. (Empty footprint)
+3. Solder in the 74HC373. (Empty footprint)
+4. Solder a 1.1K ohm resistor into R54 location marked in white lettering (not needed on P72 <a href="USDM.html">USDM</a> GSR) (Note: 1K - 10K resistors seem to work ok. This is a simple pull up/pulldown resistor. 1K resistors seem to work well with <a href="ROM.html">ROM</a> emulators that have trouble with 10k resistors)
+5. Solder in two 0.1uF ceramic disc capacitors into C51 and C52.
+6. Solder in J1. This jumper can activated by utilizing an unused resistor lead or extra section of spare wire.
+7. Insert the 28 pin DIP PROM in the proper orientation and start the car.
+<p />
+Notes: Caution: If you plug in an <a href="EPROM.html">EPROM</a> or <a href="EEPROM.html">EEPROM</a> backwards it will overheat and erase or damage the device. Use a <a href="27C256.html">27&nbsp;C256</a> <a href="ROM.html">ROM</a>, same as <a href="OBD0.html">OBD0</a>.
+If you are getting an error that was not there with the stock <a href="ECU.html">ECU</a>, write the appropriate stock .bin file to a blank chip and install in your <a href="ECU.html">ECU</a>. If there is still an error, there may be a soldering problem. Cut <a href="OBD1J1.html">J1</a> to return the <a href="ECU.html">ECU</a> to stock.
+<p />
+Thanks go to Fabrik8 for this great explanation!
+<p />
+<ul>
+<li>  finally, you need a <a href="RomBurner.html">Rom&nbsp;Burner</a>
+</li>
+</ul>
+<p />
+<hr />
+2) How do I know which bin file to open?
+<p />
+<ul>
+<li> If you have a b18a/b, use <span style='background : #FFFFCE;'><font color="#0000FF">Stock&nbsp;LS</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/StockLS?topicparent=Library.UberDataFAQ">?</a>/Int274.bin
+</li>
+<li> If you have a b18c, use <span style='background : #FFFFCE;'><font color="#0000FF">Stock&nbsp;GSR</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/StockGSR?topicparent=Library.UberDataFAQ">?</a>/Int273.bin (this includes type-r's)
+</li>
+<li> If you have a Non-VTEC d-series, use <span style='background : #FFFFCE;'><font color="#0000FF">P06-Erm&nbsp;Baseline.bin</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/P06-ErmBaselinebin?topicparent=Library.UberDataFAQ">?</a>
+</li>
+<li> If you have a VTEC d-series, use <span style='background : #FFFFCE;'><font color="#0000FF">P28-Erm&nbsp;Baseline.bin</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/P28-ErmBaselinebin?topicparent=Library.UberDataFAQ">?</a>
+</li>
+</ul>
+<p />
+<hr />
+3) I opened the bin file, what do these #'s mean?
+<p />
+<ul>
+<li> On the grid view, the Y-Axis is Revolutions Per Minute (<a href="RPM.html">RPM</a>).
+</li>
+<li> The X-Axis is the MAP reading (The amount of pressure inside of the motor).
+</li>
+<li> The vacuum side (left) is in inch/Hg units, while the boost portion is in PSI.
+</li>
+<li> On the fuel maps, the values dont mean anything special. All you need to know is, the higher the #, the more fuel you get. Injectors start to max out around 800.
+</li>
+<li> The Ignition values are in degrees before top dead center (BTDC).
+</li>
+</ul>
+<p />
+<hr />
+4) The boost portion of the maps aren't set?
+<p />
+When you open a stock rom, it doesnt automaticlly set the boost side of the ignition and fuel maps. You must set them manually or use my built in calculator functions.
+<ul>
+<li> To set fuel, click on the "Boost" tab, set the "Boost Average Efficiency" to 120%, then click apply.
+</li>
+<li> To set ignition, click on he "Boost" tab, set "Boost Ignition Retard" to 1.0 and click apply. (Or just set each value manually (Arg! heh).)
+</li>
+</ul>
+<p />
+<hr />
+5) What is this fuel average efficiency thing?
+<p />
+its the average amount of air density change when the air is compressed. A value of 100% means the air density isnt changed (which is never true). When you compress air, it heats up, hotter air is less dense. Most turbos are around 75%, but NEVER start off with this. You want to richen it up, start with 120%, and tune down from there. Richer is better than lean!
+<p />
+<hr />
+6) What does "Boost ignition retard" do?
+<p />
+The more air you get into your motor, the more you must retard the ignition because denser charge burns faster. This setting lets u specify how much timing is pulled per psi of boost. 1.0 is very conservative, and is a good base setting. Dont go lower than 0.6 per lbs w/out dyno tuning or unless you really kno what you are doing.
+<p />
+<hr />
+7) How do I set/change my rev limiters?
+<p />
+Click on the "Rev Limits" tab, then set "Fuel Cut" to what you want your rev limit to be. Set Fuel resume about 100rpm lower. Click "Apply" when finished.
+<p />
+<hr />
+8) What is Full Throttle Launch?
+<p />
+Full throttle launch pretty much lowers your rev limit when you are below a certain speed, this is for mroe consistant launches, and <strong>could</strong> be used to build boost off the line if tuned properly (retard timing and dump fuel at your FTL rpm). Fuel Cut is your stall <a href="RPM.html">RPM</a>, and Disable MPH is the speed at which FTL disables.
+<p />
+<hr />
+9) How do I change my VTEC crossover point?
+<p />
+Click on the "Rev Limits Tab, change the enable/disable rpm's to what ever you like, then click apply.
+<p />
+<hr />
+10) How do I adjust my idle?
+<p />
+Click on the "Misc" tab. Change the Idle Speed rev limiters to what ever you wish. If you raise your idle, advance your timing slightly in that rpm range so it will Idle smoothly. IACV Adjustment adjusts the frequency of the Intake Air Control Valve. If you have having a low idle problem, slide it to the left. If you have a high idle problem, Slide it to the right.
+<p />
+<hr />
+11) What is TPS enrichment?
+<p />
+When you step on the gas suddenly, the ecu dumps some extra fuel in anticipation of the extra load. Without this, your car would hesitate when you stepped on the gas. However, when you add larger injectors, the ecu will dump too much fuel. Ususually, you should set this to (240/New_Injector_Size)*100, but add like 5-10% back.
+So if you have DSM 450's, set this to about 65%.
+<p />
+<hr />
+12) What is cold crank enrichment?
+<p />
+Adjusts the amount of fuel dumped on cold starts, this is only a concern when u get larger injectors. Then the ecu will dump too much fuel causing rich start ups and hesitation until it warms up. Current not supported in this version, but will be added very soon.
+<p />
+<hr />
+13) Ok, I got all this shit, how do I tune?
+<p />
+First of all, you must scale the maps for your larger injectors since the stock maps are for 240cc injectors. The ghetto way todo this, is to select the entire fuel map, change the math multiuplication multiplier at the bottom to (240/New_Injector_Size)*100 + 5-10%, then tune from there. This is ghetto because larger injectors dont flow as much at lower pulse widths because it takes longer for them to open/close cuz of their increased mass.
+Thats why you add at least 5% back, maybe more if you have a huge injector.
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.1 - 19 Feb 2004 - 22:01 GMT - guest 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/UberDataFAQ?t=1194414792"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/UberDataFAQ">Attach</a>
+   |  <a href="../../rdiff/Library/UberDataFAQ.html">History</a>
+   |  <a href="../../oops/Library/UberDataFAQ%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.UberDataFAQ">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#c6b1afadaf86b6a1aba0afe8a9b4a1f9b5b3a4aca3a5b2fb9291afadafe680a3a3a2a4a7a5ad">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#4632292b06222f212f32272a2033352f292829282a2f28236825292b" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> </center>
+</html>

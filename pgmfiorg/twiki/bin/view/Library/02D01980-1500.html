@@ -1,0 +1,240 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . 02D01980-1500   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="02D01980-1500.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>02D01980-1500</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+<strong><em>Editor's note: the small list does not appear to have the required parts for the <a href="IAB.html">IAB</a>s</em></strong>
+<p />
+Author: eg6ajk
+Date:   05-24-03 15:10
+<p />
+my parts list seems to be alot smaller:
+<p />
+changes to the <a href="ECU.html">ECU</a> on top of standard external <a href="ROM.html">ROM</a> changes by adding:
+<ul>
+<li> C60: 1uf 35V tantlum
+</li>
+<li> D11: 600V 1AM diode
+</li>
+<li> IC14: SK5151S
+</li>
+<li> J10: 0hm resistor/jumper
+</li>
+<li> R142: 10k ohm resistor
+</li>
+<li> R143: 45k ohm resistor (51k ohm is the recommended resistor)
+</li>
+<li> R144: 12k ohm resistor (Can use 10k here)
+</li>
+<li> Q26: C2785/C2458Y tranistor
+</li>
+<li> Q37: C2785/C2458Y tranistor
+</li>
+</ul>
+<p />
+Removed:
+<ul>
+<li> RP17: 0hm resistor
+</li>
+<li> J4: 0hm resistor
+</li>
+</ul>
+<p />
+EG come, EG go!
+<p />
+<p />
+<strong><em>and the original list...</em></strong>
+<p />
+<p />
+Author: Darksmiles
+<p />
+Date: 09-05-03 12:13
+<p />
+Hey Flyrod- I just saw your post about the P75-P72
+Use the <a href="../../../pub/Library/P72/P72NoKnockGoodchksum.bin" target="_top">USDM GSR P72 w/ knock disabled ROM </a>.
+<p />
+Here is my final list for the conversion:
+<p />
+<strong><em>Add:</em></strong>
+<ul>
+<li> Q34 - <a href="D1780.html">D1780</a>
+</li>
+<li> D11 - <a href="ClampingDiode.html">Clamping&nbsp;Diode</a>
+</li>
+<li> IC14 - <a href="515XHighSideSwitch.html">515&nbsp;X High Side Switch</a>
+</li>
+<li> J10 - Jumper
+</li>
+<li> R142 - 10k resistor
+</li>
+<li> R143 - 51k resistor
+</li>
+<li> R144- 12k resistor  (Can use 10k here)
+</li>
+<li> Q17 - <a href="A143.html">A143</a>
+</li>
+<li> Q26 - <a href="C2785.html">C2785</a>
+</li>
+<li> R107 - 220 ohm resistor
+</li>
+<li> C94 - 4.7uF tantalum electrolytic capacitor
+</li>
+<li> R115 - 220 ohm resistor
+</li>
+<li> R116 - 220 ohm resistor
+</li>
+<li> J5 - jumper
+</li>
+<li> J3 - jumper
+</li>
+<li> J1 - Jumper
+</li>
+</ul>
+<p />
+<strong><em>Remove:</em></strong>
+<ul>
+<li> R90
+</li>
+<li> C71
+</li>
+<li> J4
+</li>
+</ul>
+<p />
+That's it...runs great!
+<p />
+Andrew
+<ul>
+<li> Picture009.jpg: <br />
+    <img src="../../../pub/Library/02D01980-1500/Picture009.jpg" alt="Picture009.jpg"  width="640" height="480"  />
+</li>
+</ul>
+<p />
+<p />
+<font size = "-1"><center>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th align="center" bgcolor="#D0D1E0"> <strong><span style='background : #FFFFCE;'><font color="#0000FF">Attachment</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FileAttachment?topicparent=Library.02D01980-1500">?</a>:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Modify:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Size:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Date:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Who:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Comment:</strong> </th></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/02D01980-1500/p75conversion.jpg">p75conversion.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/02D01980-1500?filename=p75conversion.jpg&amp;revInfo=1">mod</a>     </td><td>  167595  </td><td>  30 Mar 2004 - 02:33  </td><td>  eg6ajk  </td><td>  &nbsp;  </td></tr>
+</table>
+<p />
+</font></center>
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.4 - 02 Dec 2006 - 23:22 GMT - enigma06 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/02D01980-1500?t=1194410076"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/02D01980-1500">Attach</a>
+   |  <a href="../../rdiff/Library/02D01980-1500.html">History</a>
+   |  <a href="../../oops/Library/02D01980-1500%3Ftemplate=oopsmore&amp;param1=1.4&amp;param2=1.4.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.02D01980-1500">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#07706e6c6e4777606a616e29687560387472656d6264733a53506e6c6e27416262636566646c">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#a6d2c9cbe6c2cfc1cfd2c7cac0d3d5cfc9c8c9c8cacfc8c388c5c9cb" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

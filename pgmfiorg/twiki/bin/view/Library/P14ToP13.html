@@ -1,0 +1,199 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . P14ToP13   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="P14ToP13.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <a href="NonVtec-To-Vtec.html">Non&nbsp;Vtec-To-Vtec</a> &gt;<b>P14ToP13</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+<h2><a name="How_to_convert_an_OBD1_P14_into_"> </a> How to convert an <a href="OBD.html">OBD</a>1 P14 into a <a href="OBD.html">OBD</a>1 P13  </h2>
+by Andrew Congdon 
+<p />
+I've now suceeded in converting a P14 to P13. Here's what I added to a P14-Q00 to make it electrically equivalent to a P13-N01 and it seems to work fine with a stock P13 <a href="EPROM.html">EPROM</a>. 
+P0A and P0C seem to use the same board which is different to the P12-14. 
+<p />
+Add:
+<ul>
+<li> D4 ?
+</li>
+<li> C43 1u35v tant
+</li>
+<li> IC11 SI5050S (or is that SK?)
+</li>
+<li> IC12 SI5050S
+</li>
+<li> NF3
+</li>
+<li> NF4
+</li>
+<li> C77 22p
+</li>
+<li> C42 1032p (revised: C42 103Z)
+</li>
+<li> C78 22p
+</li>
+<li> R56 820R
+</li>
+<li> R55 820R
+</li>
+<li> Q35E K329 (AIL 4L)
+</li>
+<li> R59 10k
+</li>
+<li> DM1 S233
+</li>
+<li> R121 22k
+</li>
+<li> R115 10k
+</li>
+<li> IC4 74HC365
+</li>
+<li> J5 0R
+</li>
+<li> Q29 D1780
+</li>
+<li> RP12 0R
+</li>
+<li> RP16 0R
+</li>
+<li> RP17 0R
+</li>
+</ul>
+<p />
+Remove:
+<ul>
+<li> C41 3u3 16V tant
+</li>
+<li> Q32 D1780  (revised: Q30 D1780)
+</li>
+<li> RP11 4k7
+</li>
+<li> RP12 1k5
+</li>
+<li> RP15 0R
+</li>
+<li> RP17 4k7
+</li>
+<li> RP18 4k7
+</li>
+</ul>
+-- speed_of_bokchoy - 28 Apr 2005 (Revisions in brackets, please verify)
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"><B>Parents:</b> <a href="NonVtec-To-Vtec.html">Non&nbsp;Vtec-To-Vtec</a></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.2 - 28 Apr 2005 - 05:11 GMT - speed_of_bokchoy 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/P14ToP13?t=1194413268"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/P14ToP13">Attach</a>
+   |  <a href="../../rdiff/Library/P14ToP13.html">History</a>
+   |  <a href="../../oops/Library/P14ToP13%3Ftemplate=oopsmore&amp;param1=1.2&amp;param2=1.2.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.P14ToP13">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#53243a383a1323343e353a7d3c21346c202631393630276e07043a383a731536363731323038">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#65110a0825010c020c1104090310160c0a0b0a0b090c0b004b060a08" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

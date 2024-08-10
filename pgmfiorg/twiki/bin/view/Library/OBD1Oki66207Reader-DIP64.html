@@ -1,0 +1,187 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . OBD1Oki66207Reader-DIP64   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="OBD1Oki66207Reader-DIP64.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <a href="McuReaders.html">Mcu&nbsp;Readers</a> &gt;<b>OBD1Oki66207Reader-DIP64</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+First of all i'll thank Nico-HRED again for the info he posts in the general forum about the "66P507 Readout".
+<p />
+I adapted the idea and simplified it, so everyone of us can now readout the content of his 66207.
+<p />
+My reader is a bit different of the one he posted. I need a <a href="ECU.html">ECU</a> with a 66207, a 27C512 (EProm), a 1 k Resistor, two wires and a RS232<->TTL converter.
+<p />
+The most of you will allready have this, if not, the parts are usual and cheep.
+<p />
+We need to modify the <a href="ECU.html">ECU</a> a bit to have a nice 66207 reader, here is a short description:
+<ul>
+<li> If your <a href="ECU.html">ECU</a> isn't chipped, you need to add the 74HC373, the EProm socket and the 1kOhm resistor (R54).
+</li>
+<li> Connect a wire from the 66207 pin 16 (A15) to the Eprom Pin 1 (A15).
+</li>
+</ul>
+BUT DON'T PUT THE PIN 1 OF THE <a href="EPROM.html">EPROM</a> IN THE SOCKET! JUST CONNECT THE WIRE TO IT.
+<ul>
+<li> Connect a wire from the 66207 Pin 19 (P2.2) to the 66207 Pin 27 (-EA).
+</li>
+<li> Remove the Jumper J1 and replace it with a 1kOhm resistor.
+</li>
+<li> Put in the 27C512 Eprom, programmed with my "ROMREADER" program on it.
+</li>
+<li> Connect your PC via a RS232<->TTL converter to the <a href="ECU.html">ECU</a> (see <a href="DataLogging.html">Data&nbsp;Logging</a> for more information).
+</li>
+</ul>
+<p />
+Let's read a 66207:
+<ul>
+<li> Switch off your <a href="ECU.html">ECU</a>, or leave it off.
+</li>
+<li> Start the program on the PC: DOWNLOADER
+</li>
+<li> if the Address display isn't 0000, then click on RESET.
+</li>
+<li> Switch on your <a href="ECU.html">ECU</a>
+</li>
+<li> After around 1 secound you should see the address counter running
+</li>
+<li> after almost a minute (i never stopped it) the address counter should show 8001
+</li>
+<li> now click SAVE to save your rom.
+</li>
+</ul>
+<p />
+If something dosn't work, retry the procedure but don't forget to click on RESET.
+<p />
+Now have fun with your own 66207 reader. 
+<p />
+Doc
+<p />
+<p />
+<font size = "-1"><center>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th align="center" bgcolor="#D0D1E0"> <strong><span style='background : #FFFFCE;'><font color="#0000FF">Attachment</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FileAttachment?topicparent=Library.OBD1Oki66207Reader-DIP64">?</a>:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Modify:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Size:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Date:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Who:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Comment:</strong> </th></tr>
+<tr><td>  <img src="../../../pub/icn/zip.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/OBD1Oki66207Reader-DIP64/downloader.zip">downloader.zip</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/OBD1Oki66207Reader-DIP64?filename=downloader.zip&amp;revInfo=1">mod</a>     </td><td>  225127  </td><td>  05 Mar 2004 - 18:09  </td><td>  blundar  </td><td>  Win32 downloader application  </td></tr>
+<tr><td>  <img src="../../../pub/icn/else.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/OBD1Oki66207Reader-DIP64/romreader66207.bin">romreader66207.bin</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/OBD1Oki66207Reader-DIP64?filename=romreader66207.bin&amp;revInfo=1">mod</a>     </td><td>  65536  </td><td>  05 Mar 2004 - 18:10  </td><td>  blundar  </td><td>  BIN file to use for reading <a href="MCU.html">MCU</a>  </td></tr>
+<tr><td>  <img src="../../../pub/icn/txt.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/OBD1Oki66207Reader-DIP64/romreader.txt">romreader.txt</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/OBD1Oki66207Reader-DIP64?filename=romreader.txt&amp;revInfo=1">mod</a>     </td><td>  2212  </td><td>  05 Mar 2004 - 18:10  </td><td>  blundar  </td><td>  Assembly source of reader program  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/OBD1Oki66207Reader-DIP64/66207_romreader.jpg">66207_romreader.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/OBD1Oki66207Reader-DIP64?filename=66207_romreader.jpg&amp;revInfo=1">mod</a>     </td><td>  57642  </td><td>  05 Mar 2004 - 18:10  </td><td>  blundar  </td><td>  Picture of hardware modifications  </td></tr>
+</table>
+<p />
+</font></center>
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"><B>Parents:</b> <a href="WebHome.html">Web&nbsp;Home</a> &gt; <a href="McuReaders.html">Mcu&nbsp;Readers</a></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.1 - 05 Mar 2004 - 18:16 GMT - blundar 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/OBD1Oki66207Reader-DIP64?t=1194412880"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/OBD1Oki66207Reader-DIP64">Attach</a>
+   |  <a href="../../rdiff/Library/OBD1Oki66207Reader-DIP64.html">History</a>
+   |  <a href="../../oops/Library/OBD1Oki66207Reader-DIP64%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.OBD1Oki66207Reader-DIP64">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#92e5fbf9fbd2e2f5fff4fbbcfde0f5ade1e7f0f8f7f1e6afc6c5fbf9fbb2d4f7f7f6f0f3f1f9">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#81f5eeecc1e5e8e6e8f5e0ede7f4f2e8eeefeeefede8efe4afe2eeec" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

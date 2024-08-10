@@ -1,0 +1,158 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . HowToLogExternalDataSuchAsAnEgtSensor   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="HowToLogExternalDataSuchAsAnEgtSensor.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <a href="DataLogging.html">Data&nbsp;Logging</a> &gt;<b>HowToLogExternalDataSuchAsAnEgtSensor</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+Wouldn't it be nice to use your <a href="ECU.html">ECU</a> to log data from and aftermarket sensor such as data from an EGT sensor?  If you could, it would be relatively easy to use the O2 sensor data to tune your AF mixture and the EGT sensor data to tune your ignition timing, so you can really dial things in.
+<p />
+Fortunately, there is a spare undocumented analog input on the <a href="USDM.html">USDM</a> P30 <a href="ECU.html">ECU</a> on connector D, pin 12.  <a href="JDM.html">JDM</a> P30 <a href="ECU.html">ECU</a>s also have an undocumented input on that connector, but it has some uninstalled components in that circuit and it goes to a different Analog Input port on the 66207 chip.  Other <a href="USDM.html">USDM</a> <a href="OBD.html">OBD</a>1 <a href="ECU.html">ECU</a>s should have the same D12 circuit as the <a href="USDM.html">USDM</a> P30, and other <a href="JDM.html">JDM</a> <a href="OBD.html">OBD</a>1 <a href="ECU.html">ECU</a>s should have the same D12 circuit as the <a href="JDM.html">JDM</a> P30, but I will let others add confirmation here later.  It looks like the <a href="USDM.html">USDM</a> P28 has the same D12 circcuitry as the <a href="USDM.html">USDM</a> P30.
+<p />
+Thanks to josecar700 we have the schematics of the <a href="USDM.html">USDM</a> P30 analog input section here: <a href="http://forum.pgmfi.org/viewtopic.php?t=4082" target="_top">http://forum.pgmfi.org/viewtopic.php?t=4082</a>
+<ul>
+<li> josecar700's D12 <a href="ADC.html">ADC</a> Schematics: <br />
+    <img src="../../../pub/Library/HowToLogExternalDataSuchAsAnEgtSensor/USDMD12adc.jpg" alt="USDMD12adc.jpg"  width="600" height="164"  />
+</li>
+</ul>
+<p />
+Bottom line is, you can put any 0 to 5V signal on a <a href="USDM.html">USDM</a> P30 D12 pin, and log it by reading <a href="RAM.html">RAM</a> location 0067h.  That <a href="RAM.html">RAM</a> location contains a byte that gives you the input voltage in 0.02V increments from 0V at 00h to 5V at 0FFh.  Keep in mind that there is about a 1% drop in voltage from pin D12 to Pin 57 on the 66207 chip (AI3 analog input port), although that is probably negligent.  If you want to get really accurate, you can also read <a href="RAM.html">RAM</a> location 0066h to get the least significant two bits of the 10 bit A/D converter data, but that seems like overkill for EGT logging.  
+<p />
+C42 is unstuffed in a stock <a href="USDM.html">USDM</a> <a href="ECU.html">ECU</a>, so it is a really good idea to put a 1uF 35V tantalum cap in C42.  This provides a nice filter to smooth the <a href="ADC.html">ADC</a> analog input.  Make sure you install the cap with the plus side the same as all of the other caps in that row, away from the 66207.
+<ul>
+<li> <a href="USDM.html">USDM</a> C42 Installed: <br />
+    <img src="../../../pub/Library/HowToLogExternalDataSuchAsAnEgtSensor/USDMc42.JPG" alt="USDMc42.JPG"  width="608" height="352"  />
+</li>
+</ul>
+<p />
+Note that in the <a href="USDM.html">USDM</a> P30, the AI5 analog input pin is grounded.  
+<p />
+You can go here to read the entire thread on how this was figured out and how it works: <a href="http://forum.pgmfi.org/viewtopic.php?p=34134#34134" target="_top">http://forum.pgmfi.org/viewtopic.php?p=34134#34134</a>
+<p />
+That thread also has the schematic for the D12 circuit in the <a href="JDM.html">JDM</a> P30.  I have figured out how to modify that circuit to enable D12 logging with a <a href="JDM.html">JDM</a> P30.  Also, the <a href="JDM.html">JDM</a> D12 circuit goes to the 66207 chip pin 63 which is its AI5 analog input port.  Note that in the <a href="JDM.html">JDM</a> P30, the AI3 analog input port is grounded.
+<p />
+Here is a deeper description of the <a href="JapaneseDomesticMarketP30D12Modification.html">Japanese&nbsp;Domestic&nbsp;Market&nbsp;P30&nbsp;D12&nbsp;Modification</a> with schematics and a high resolution photo of the <a href="JDM.html">JDM</a> P30 modifications.
+<p />
+You could use this input as a 0-5V input for a wideband O2 data, leaving the stock O2 sensor input for the narrow band O2 data.  Another application for this input could be for a kill switch input.  A clever person could use this feature to make a plugin for the <a href="ECU.html">ECU</a> software to read a kill switch with a pullup resistor to disable the <a href="ECU.html">ECU</a> if the switch is set to disable the <a href="ECU.html">ECU</a> or enable the <a href="ECU.html">ECU</a> if the switch is the other way.  Of course, that would make it so you couldn't log EGTs or anything else, but not everyone is into logging.  There are probably a lot of other applications that D12 could be used for.  We just need clever programmers.
+<p />
+-- markolson - 20 Nov 2005, Edited -- markolson - 02 Jan 2006
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"><B>Parents:</b> <a href="DataLogging.html">Data&nbsp;Logging</a></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.5 - 07 Mar 2006 - 04:51 GMT - markolson 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/HowToLogExternalDataSuchAsAnEgtSensor?t=1194411940"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/HowToLogExternalDataSuchAsAnEgtSensor">Attach</a>
+   |  <a href="../../rdiff/Library/HowToLogExternalDataSuchAsAnEgtSensor.html">History</a>
+   |  <a href="../../oops/Library/HowToLogExternalDataSuchAsAnEgtSensor%3Ftemplate=oopsmore&amp;param1=1.5&amp;param2=1.5.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.HowToLogExternalDataSuchAsAnEgtSensor">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#2b5c4240426b5b4c464d420544594c14585e49414e485f167f7c4240420b6d4e4e4f494a4840">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#d3a7bcbe93b7bab4baa7b2bfb5a6a0babcbdbcbdbfbabdb6fdb0bcbe" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

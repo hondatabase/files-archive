@@ -1,0 +1,154 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . OBD1CodeCompatibility   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="OBD1CodeCompatibility.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>OBD1CodeCompatibility</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+<a href="OBD1CivicIntegra.html">OBD1&nbsp;Civic&nbsp;Integra</a> <a href="ECU.html">ECU</a>s are a common hardware platform.
+<p />
+What this means is that you can (with minor modifications) run essentially any code on any <a href="ECU.html">ECU</a> in the family.  There are rules however:
+<ul>
+<li> <a href="Vtec.html">Vtec</a> programs (<a href="P28.html">P28</a>, <a href="P30.html">P30</a>, <a href="P72.html">P72</a>, ...) require a <a href="Vtec.html">Vtec</a> <a href="ECU.html">ECU</a> or a <a href="NonVtec-To-Vtec.html">Non&nbsp;Vtec-To-Vtec</a> conversion.
+</li>
+<li> Non-<a href="Vtec.html">Vtec</a> programs run in a <a href="Vtec.html">Vtec</a> <a href="ECU.html">ECU</a> without any problems.
+</li>
+<li> <a href="Vtec.html">Vtec</a> programs run in non-Vtec <a href="ECU.html">ECU</a>s with vtec disabled.  (DB: they may even work with vtec xover above redline although I think the sensor checks for VTP/VTS will cause issues.)
+</li>
+<li> 1-wire O2 <a href="ECU.html">ECU</a>s like <a href="P05.html">P05</a>, <a href="P08.html">P08</a> require <strong><em>either</em></strong> <a href="OneWireTo4WireO2Sensor.html">One&nbsp;Wire&nbsp;To4&nbsp;Wire&nbsp;O2&nbsp;Sensor</a> conversion of the hardware <strong><em>or</em></strong> to disable the <a href="O2HeaterCircuit.html">O2&nbsp;Heater&nbsp;Circuit</a> in the <a href="ROM.html">ROM</a>.
+</li>
+<li> <a href="DOHC.html">DOHC</a> <a href="Vtec.html">Vtec</a> programs (<a href="P30.html">P30</a>, <a href="P72.html">P72</a>, ...) generally have a <a href="KnockSensor.html">Knock&nbsp;Sensor</a> enabled.  To use these programs on <a href="ECU.html">ECU</a>s lacking the <a href="KnockBoard.html">Knock&nbsp;Board</a> (<a href="P28.html">P28</a>, <a href="P08.html">P08</a>, conversions, ...) you must first disable the <a href="KnockSensor.html">Knock&nbsp;Sensor</a>.
+</li>
+</ul>
+<p />
+For information on disabling <a href="KnockSensor.html">Knock&nbsp;Sensor</a> or the <a href="O2HeaterCircuit.html">O2&nbsp;Heater&nbsp;Circuit</a> in software, please consult the <a href="RomMaps.html">Rom&nbsp;Maps</a> for the code you are working with.
+<p />
+Additionally, different markets received different features in their <a href="ECU.html">ECU</a>s.  
+<ul>
+<li> <a href="USDM.html">USDM</a> <a href="ECU.html">ECU</a>s are by far the most full-featured.  Almost any code will run in a <a href="USDM.html">USDM</a> <a href="ECU.html">ECU</a> if the above rules are followed.
+</li>
+<li> <a href="JDM.html">JDM</a> <a href="ECU.html">ECU</a>s generally lack several things that must either be physically added to the <a href="ECU.html">ECU</a> or disabled in the <a href="ROM.html">ROM</a>.  The <a href="PressureAtmosphere.html">Pressure&nbsp;Atmosphere</a> (PA) sensor <a href="ElectricalLoadDetector.html">Electrical&nbsp;Load&nbsp;Detector</a> (ELD) and <a href="InjectorTestCircuit.html">Injector&nbsp;Test&nbsp;Circuit</a> are the most notable things here.
+</li>
+<li> <a href="EDM.html">EDM</a> <a href="ECU.html">ECU</a>s are generally the most bare.  They generally lack PA, ELD, Injector test like the <a href="JDM.html">JDM</a> <a href="ECU.html">ECU</a>s, and will occaisonally lack the <a href="KnockSensor.html">Knock&nbsp;Sensor</a> and knock board present in <a href="JDM.html">JDM</a> <a href="ECU.html">ECU</a>s too.
+</li>
+</ul>
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.1 - 22 Jun 2004 - 15:34 GMT - blundar 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/OBD1CodeCompatibility?t=1194412838"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/OBD1CodeCompatibility">Attach</a>
+   |  <a href="../../rdiff/Library/OBD1CodeCompatibility.html">History</a>
+   |  <a href="../../oops/Library/OBD1CodeCompatibility%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.OBD1CodeCompatibility">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#96e1fffdffd6e6f1fbf0ffb8f9e4f1a9e5e3f4fcf3f5e2abc2c1fffdffb6d0f3f3f2f4f7f5fd">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#95e1faf8d5f1fcf2fce1f4f9f3e0e6fcfafbfafbf9fcfbf0bbf6faf8" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

@@ -1,0 +1,159 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . TuningTiming   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="TuningTiming.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>TuningTiming</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+Tuning ignition timing is not a simple topic. Lots of factors change optimal ignition timing - chemistry stuff, mechanical stuff, etc. etc. A true understanding of the factors involved in ignition timing requires a lot more study and understanding than AFR stuff - There isn't a magic meter like a wideband to help you with ignition timing.
+<p />
+Important things to consider:
+<ul>
+<li> Combustion chamber size and shape
+</li>
+<li> Piston compression
+</li>
+<li> Octane of fuel
+</li>
+<li> Type of fuel (race gas, pump gas, summer pump gas, winter pump gas, high oxygenate pump gas, low oxygenate pump gas, ...)
+</li>
+<li> R/S ratio of the motor
+</li>
+</ul>
+<p />
+So why not fire the spark at <a href="TDC.html">TDC</a>?  The whole point of ignition advance is to maximize the work done by the expanding burn mixture. This is accomplished by timing peak cylinder pressure to occur at a time where the piston exerts the most force on the crank in the direction of crank rotation. As the crank rotates, the angle between the rod and the crank changes, changing how much of the vertical force on the piston is changed into rotational force on the crank. Fuel takes time to burn.  In order to maximize rotational work, the air-fuel mixture must be ignited with enough time to burn such that it exerts the most force on the piston at the time where the piston exerts the most effective force on the crank in the direction of crank rotation.  A picture would really help, but I don't have one yet.
+<p />
+Resources you should check out to get started:
+<ul>
+<li> Check out <span style='background : #FFFFCE;'><font color="#0000FF">How&nbsp;Stuff&nbsp;Works</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/HowStuffWorks?topicparent=Library.TuningTiming">?</a>.com and look at some of their moving motor pictures to give you some idea of how the amount of rotational work on the crank is affected by when in the stroke peak cylinder pressure occurs. Think about how R/S ratio will affect things.
+</li>
+<li> Google for "Gasoline FAQ" to get a great basic explanation of the chemistry behind gasolines and how the chemical composition of gasoline affects burn rates. Burn rates will dictate how much advance is needed to have peak cylinder pressure occur at a certain spot.
+</li>
+<li> Check out Endyn's site and read between the lines to get an idea of how piston/combustion chamber geometry change the need for timing advance and flame front propagation times.
+</li>
+</ul>
+<p />
+Tunning timming depends on mechanical and electronical adjudgements. First to find the cyl #1 at <a href="TDC.html">TDC</a>, this can be found by various methods, by preasure gague, by rod ..etc, after tdc found spark should be 15 +-2 degree after <a href="TDC.html">TDC</a> as initial timming adjudgement, after this mechanical setup with distributer advance or retard can be added to timming.
+Tootal timmenig as initial timming + advance + sensor triming advance degree as totally advance ecu calculates.
+it is important too much retard result in cyp#1 sensor fault error 9.
+and overheating problem at piston.
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"><B>Parents:</b> <a href="WebHome.html">Web&nbsp;Home</a></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.2 - 10 Apr 2006 - 12:01 GMT - edurmus 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/TuningTiming?t=1194409695"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/TuningTiming">Attach</a>
+   |  <a href="../../rdiff/Library/TuningTiming.html">History</a>
+   |  <a href="../../oops/Library/TuningTiming%3Ftemplate=oopsmore&amp;param1=1.2&amp;param2=1.2.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.TuningTiming">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#e6918f8d8fa696818b808fc8899481d99593848c838592dbb2b18f8d8fc6a08383828487858d">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#daaeb5b79abeb3bdb3aebbb6bcafa9b3b5b4b5b4b6b3b4bff4b9b5b7" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

@@ -1,0 +1,165 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . TurboCompressorMap   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="TurboCompressorMap.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>TurboCompressorMap</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+Some common turbo compressor maps are here: <a href="http://not2fast.wryday.com/turbo/maps/" target="_top">http://not2fast.wryday.com/turbo/maps/</a>
+<hr />
+<p />
+Reading turbo compressor maps is pretty simple, and is something that anyone who is turbocharging their car should know how to read. A turbo compressor map tells you several things about a turbo's characteristics that helps you match the correct turbo to your particular engine setup.
+<p />
+A turbo compressor map looks like this:
+<p />
+<p />
+<a href="http://web.inter.nl.net/users/turbo-team-europe/_borders/t3-60.jpg" target="_top">T-3 Super 60 </a>
+<p />
+<p />
+<p />
+<p />
+<p />
+<p />
+1) pressure ratio. This number represents the boost you intend to run, it makes up the Y axis of the graph. The numeric pressure ratio value is calculated by taking your target psi (15 psi for example) then adding 1 Atmosphere(14.7psi) and dividing the total by 1 bar(14.7 psi). The equation looks like this for our example:
+<p />
+15 + 14.7 = 29.7
+29.7 / 14.7 = 2.02
+<p />
+2.02 is the refrence number that you would look at on the Y axis.
+<p />
+<p />
+__2) The X axis of the graph represents airflow in pounds per minute. As a general rule, each pound of air generated represents 10hp. This is flywheel hp and not wheel hp, so don't confuse the two. When looking at this be sure to account for driveline losses when you estimate your power output.
+<p />
+  HINT: use CFM X .075 to get the lb/min numbers. The graph shown is in LB/min, while other graphs are in CFM. How do you tell? CFM graphs have numbers on the x-axis that are in the hundreds (i.e., 400) as apposed to the tens (i.e., 26) like the LB/MIN graphs.
+<p />
+<p />
+3) The third area represents the efficiency island. This is the target area you want to keep your boost at. This is where the turbo is at it's peak efficiency and thus runs the best.
+<p />
+4) These are the outer rings of efficicncy or wheel efficiency. As you can see from the numbers, each ring drops in efficiency and thus drops in power output. The percentage of efficiency lost and power loss vary from turbo to turbo, but as a rule of thumb you want to remain as close to your efficiency island(center island) as possible.
+<p />
+5) This dashed line is the surge limit. Any points to the left of this line indicate that the compressor wheel in quesation is too big for the expected boost and power output you are planning for. There would not be enough exhaust gas volume to spin the wheel fast enough to make useable boost.
+<p />
+6) This area to the right of the graph plots overspin choke. This means that the compressor wheel is too small and will have to spin too quickly to make the target boost/power. At these extreem speeds, efficiency goes out the door because the wheel chops the air so badly, this will likely cause a dramatic loss of power.
+<p />
+7) This is the compressor wheel speed in rpm. This measures the shaft speed of the compressor wheel. The faster it is spinning the hotter the outlet charge will be, and thus the lower your power output becomes. This is where a good intercooler comes into play.
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.1 - 19 Feb 2004 - 22:01 GMT - guest 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/TurboCompressorMap?t=1194414735"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/TurboCompressorMap">Attach</a>
+   |  <a href="../../rdiff/Library/TurboCompressorMap.html">History</a>
+   |  <a href="../../oops/Library/TurboCompressorMap%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.TurboCompressorMap">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#e89f818381a8988f858e81c6879a8fd79b9d8a828d8b9cd5bcbf818381c8ae8d8d8c8a898b83">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#7703181a37131e101e03161b1102041e181918191b1e19125914181a" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+
+</html>

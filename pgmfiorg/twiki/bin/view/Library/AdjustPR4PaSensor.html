@@ -1,0 +1,156 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . AdjustPR4PaSensor   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="AdjustPR4PaSensor.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <a href="ECUHardwareMods.html">ECUHardware&nbsp;Mods</a> &gt;<b>AdjustPR4PaSensor</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+Dave Blundell sez "Vernon (deluded) sent me much of this info."
+<p />
+As a rule of thumb, 90 PR4s have external PA sensors, and 91 <a href="ECU.html">ECU</a>s have internal PA sensors.  You can tell (to some degree) by looking at the "code" of the <a href="ECU.html">ECU</a>:
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th bgcolor="#D0D1E0"> <strong>Label</strong> </th><th bgcolor="#D0D1E0"> <strong>Description</strong> </th></tr>
+<tr><td> A00 </td><td>  90 5 Speed (-33 program) </td></tr>
+<tr><td> A01 </td><td>  90 5 Speed (?? program) </td></tr>
+<tr><td> A02 </td><td>  90 5 Speed (-54 program) </td></tr>
+<tr><td> A51 </td><td>  90 Automatic (?? program) </td></tr>
+<tr><td> A52 </td><td>  90 Automatic (-54 program) </td></tr>
+<tr><td> A10 </td><td>  91 5 Speed (-92 program) </td></tr>
+<tr><td> A12 </td><td>  91 5 speed (-92 program) </td></tr>
+<tr><td> A60 </td><td>  91 auto (-92 program) </td></tr>
+<tr><td> A62 </td><td>  91 auto (-92 program) </td></tr>
+</table>
+<p />
+Ok, with that out of the way...  It is easy to select whether to use a internal or external <a href="PressureAtmosphere.html">PA</a> sensor.  See the following table:
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th bgcolor="#D0D1E0"> <strong>Part</strong> </th><th bgcolor="#D0D1E0"> <strong>External PA</strong> </th><th bgcolor="#D0D1E0"> <strong>Internal PA</strong> </th></tr>
+<tr><td> PA Sensor </td><td>  missing  </td><td>  installed  </td></tr>
+<tr><td> C103  </td><td>  missing  </td><td>  present(103Z)  </td></tr>
+<tr><td> R92  </td><td>  jumper  </td><td> 10Kohm  </td></tr>
+<tr><td> C106 </td><td>  missing  </td><td>  present(103Z)  </td></tr>
+</table>
+<p />
+<p />
+<strong>*edit*</strong>
+It seems that the Internal PA <a href="ECU.html">ECU</a> is missing C106, and the External PA <a href="ECU.html">ECU</a> has C106 present.
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"><B>Parents:</b> <a href="ECUHardwareMods.html">ECUHardware&nbsp;Mods</a></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.2 - 22 Sep 2005 - 21:14 GMT - warrick 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/AdjustPR4PaSensor?t=1194410485"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/AdjustPR4PaSensor">Attach</a>
+   |  <a href="../../rdiff/Library/AdjustPR4PaSensor.html">History</a>
+   |  <a href="../../oops/Library/AdjustPR4PaSensor%3Ftemplate=oopsmore&amp;param1=1.2&amp;param2=1.2.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.AdjustPR4PaSensor">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#c0b7a9aba980b0a7ada6a9eeafb2a7ffb3b5a2aaa5a3b4fd9497a9aba9e086a5a5a4a2a1a3ab">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#4e3a21230e2a2729273a2f22283b3d27212021202227202b602d2123" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

@@ -1,0 +1,164 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . ChippingJDMP30   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="ChippingJDMP30.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <a href="IntroductionToECUChipping.html">Introduction&nbsp;To&nbsp;ECUChipping</a> &gt;<b>ChippingJDMP30</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+You will need bridge J1 on the back of the <a href="ECU.html">ECU</a>.
+<p />
+<img src=http://forum.pgmfi.org/files/p30mtat2.jpg>
+<p />
+Add C49 &amp; C50 and  C92 on back. C91 is on the front by the latch
+<p />
+C49 &amp; C50 --> .004UF (Digikey part number 399-1230-1-nd )
+<p />
+C91 &amp; C92 --> .00001UF ( digikey Part Number 399-1192-1-nd )
+<p />
+<img src=http://forum.pgmfi.org/files/p30_ecu_underside.jpg>
+<p />
+Add the 74hc373 SMD chip. (MFG part# SN74HC373NSR, Digi-Key Part Number 296-8310-1-ND)
+<p />
+<img src=http://forum.pgmfi.org/files/p30mtat1.jpg>
+<p />
+The Above picture is untrue, many A/T boards need the latch and the socket. As there are different variants of the <a href="JDM.html">JDM</a> P30 Board
+<p />
+Add a 29C256 eprom with bin written to it.
+<p />
+For <a href="RTP.html">RTP</a>/Datalogging w/ Crome remove J4 on front. (J4 is a 000 resistor)
+<p />
+Solder in a 4 pin header (snappable header pins 1x40 work GREAT for this and are VERY cheap)
+<p />
+Lastly if you are wanting to convert Auto to manual remove the resistor RP18 '472' on the back and replace it with a jumper wire. Also remove RP17 and leave it open. A/T resistor layout shown in bottom right of the picture.
+<img src="http://i76.photobucket.com/albums/j20/redintegNZ/RP18resistor.jpg" alt="RP18resistor.jpg" />
+All info is from the following threads:
+<p />
+<a href="http://forum.pgmfi.org/viewtopic.php?t=3112&amp;highlight=chipping+jdm+computers" target="_top">http://forum.pgmfi.org/viewtopic.php?t=3112&amp;highlight=chipping+jdm+computers</a>
+<p />
+Special thanks to all the contributors of the above thread and katman for doing the pics in 
+the first place... We love you katman :)
+<p />
+<a href="http://forum.pgmfi.org/viewtopic.php?t=4005&amp;highlight=chipping+jdm+computers" target="_top">http://forum.pgmfi.org/viewtopic.php?t=4005&amp;highlight=chipping+jdm+computers</a>
+<p />
+Thanks to infotechplus for pics and info on C49,C50,C91,C92
+<p />
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"><B>Parents:</b> <a href="IntroductionToECUChipping.html">Introduction&nbsp;To&nbsp;ECUChipping</a></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.5 - 12 Jan 2007 - 03:32 GMT - coupe-r 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/ChippingJDMP30?t=1194410791"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/ChippingJDMP30">Attach</a>
+   |  <a href="../../rdiff/Library/ChippingJDMP30.html">History</a>
+   |  <a href="../../oops/Library/ChippingJDMP30%3Ftemplate=oopsmore&amp;param1=1.5&amp;param2=1.5.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.ChippingJDMP30">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#6a1d0301032a1a0d070c034405180d55191f08000f091e573e3d0301034a2c0f0f0e080b0901">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#3743585a77535e505e43565b5142445e585958595b5e59521954585a" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

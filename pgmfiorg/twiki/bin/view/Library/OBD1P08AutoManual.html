@@ -1,0 +1,171 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . OBD1P08AutoManual   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="OBD1P08AutoManual.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>OBD1P08AutoManual</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td>  </td><td>  RP17 and RP18 values </td></tr>
+<tr><td>  &nbsp;  </td><td> <strong><em>Automatic</em></strong> </td><td> <strong><em>Manual</em></strong> </td></tr>
+<tr><td> RP17 </td><td> 2.7K </td><td> open </td></tr>
+<tr><td> RP18 </td><td> 4.7K </td><td> jumped </td></tr>
+</table>
+<p />
+this is for board pn:    02d01550-1500
+<p />
+Auto to Manual:
+remove rp17
+remove rp18
+add a jumper to rp18
+<p />
+Manual to Auto:
+<ul>
+<li> remove jumper at RP18  (Not sure what will be here)
+</li>
+<li> add 4.7kOhm +/- 5% at RP18 SMD
+</li>
+<li> add 2.7kOhm +/- 5% at RP17 SMD
+</li>
+<li> add IC15 &amp; IC16 <a href="515XHighSideSwitch.html">5050&nbsp;S</a> or equiv.
+</li>
+<li> add Caps at C73, c74, c75, c76  (values???  0.1 uf ?  should be ceramic)
+</li>
+<li> add Diodes to D13 and D12  (1A Surface mount will work)
+</li>
+<li> add q29  q28
+</li>
+<li> add c57
+</li>
+</ul>
+- Not sure about any transistors yet...
+<p />
+If someone has a Manual P08 and can take a high quality picture of the top and bottom, Please email them to me..
+<p />
+<span style='background : #FFFFCE;'><font color="#0000FF">CRXSi&nbsp;RVtec</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/CRXSiRVtec?topicparent=Library.OBD1P08AutoManual">?</a> (<span style='background : #FFFFCE;'><font color="#0000FF">mailto:<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1063717c756350627173797e7773787960633e737f7d">[email&#160;protected]</a></font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/Mailtosalesracingchipscom?topicparent=Library.OBD1P08AutoManual">?</a>)
+<p />
+<p />
+<font size = "-1"><center>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th align="center" bgcolor="#D0D1E0"> <strong><span style='background : #FFFFCE;'><font color="#0000FF">Attachment</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FileAttachment?topicparent=Library.OBD1P08AutoManual">?</a>:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Modify:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Size:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Date:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Who:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Comment:</strong> </th></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/OBD1P08AutoManual/PC030021.JPG">PC030021.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/OBD1P08AutoManual?filename=PC030021.JPG&amp;revInfo=1">mod</a>     </td><td>  143950  </td><td>  30 Mar 2004 - 02:14  </td><td>  eg6ajk  </td><td>  <a href="JDM.html">JDM</a> P08 <a href="ECU.html">ECU</a>s (auto)  </td></tr>
+</table>
+<p />
+</font></center>
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.3 - 25 Nov 2006 - 13:52 GMT - kesnut 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/OBD1P08AutoManual?t=1194412901"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/OBD1P08AutoManual">Attach</a>
+   |  <a href="../../rdiff/Library/OBD1P08AutoManual.html">History</a>
+   |  <a href="../../oops/Library/OBD1P08AutoManual%3Ftemplate=oopsmore&amp;param1=1.3&amp;param2=1.3.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.OBD1P08AutoManual">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#f6819f9d9fb686919b909fd8998491c98583949c939582cba2a19f9d9fd6b09393929497959d">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#3b4f54567b5f525c524f5a575d4e4852545554555752555e15585456" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

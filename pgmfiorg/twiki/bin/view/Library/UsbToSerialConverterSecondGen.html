@@ -1,0 +1,155 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . UsbToSerialConverterSecondGen   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="UsbToSerialConverterSecondGen.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <a href="SandBox.html">Sand&nbsp;Box</a> &gt;<b>UsbToSerialConverterSecondGen</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+A company named <a href="http://www.elexol.com" target="_top">Elexol</a> makes a second generation serial-to-USB port adapter called the <a href="http://www.ravar.net/download/USBMOD3.PDF" target="_top">USBMOD3</a>.  Many newer notebook computers are being built with USB ports, and without the classic serial ports.  Here are the pin connections needed to connect a <a href="http://www.ravar.net/download/USBMOD3.PDF" target="_top">USBMOD3</a> to the datalogging port of a Honda <a href="ECU.html">ECU</a>:
+<p />
+Pin 4 (Vcc) is hooked to Pin 8 (Reset In) since an external device doesn't need to reset the device. 
+<p />
+Pin 9 (Enumeration Power) is hooked to Pin 10 (Reset Out) for bus powered operation per the user's manual. 
+<p />
+Pin 18 (Power Control) is wired to ground to select bus powered operation per the user's manual. 
+<p />
+Pin 23 (Data Set Ready) is hooked to Pin 24 (Data Terminal Ready) for modem control handshaking. 
+<p />
+Pin 25 (Clear To Send) is hooked to Pin 26 (Request To Send) for modem control handshaking. 
+<p />
+Pin 27 (RXD) is temporarily hooked to Pin 28 (TXD) for a loopback test. 
+<p />
+Pin 12 (VIO) hooked to Pin 13 (V+) to power the UART IO properly. 
+<p />
+You can get the <a href="http://www.ravar.net/download/USBMOD3.PDF" target="_top">USBMOD3</a> <a href="http://www.ftdichip.com/FTDriver.htm" target="_top">driver</a> from <a href="http://www.ftdichip.com/" target="_top">FTDI</a>.
+<p />
+After you plug in the <a href="http://www.ravar.net/download/USBMOD3.PDF" target="_top">USBMOD3</a>, you can test that it is recognized by your MS Windows computer by checking Device Manager under Ports to see which COMn: port is mapped to which USB port.  You can set the serial port settings such as baud rate and parity by opening the Properties window and selecting the Port Settings tab.
+<p />
+You can test the <a href="http://www.ravar.net/download/USBMOD3.PDF" target="_top">USBMOD3</a> by opening Windows Hyperterminal, and pointing it at the proper serial port, the one that you saw in Device Manager.  With Pins 27 and 28 connected fot the loopback test, everything you type in Hyperterminal will echo to the Hyperterminal window on your PC.
+<p />
+After that test is successful, all you need to do is connect Pin 27 (RXD) to the <a href="ECU.html">ECU</a> TXD signal and connect Pin 28 (TXD) to the <a href="ECU.html">ECU</a> RXD signal as described at <a href="http://www.ecucontrol.com/" target="_top">ECU Control</a> under the <a href="http://www.ecucontrol.com/how_to_mod_my_ecu.htm" target="_top">How to Mod my ECU</a> link. (Thanks Nicolas)
+<p />
+<p />
+-- markolson - 29 Oct 2004 
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"><B>Parents:</b> <a href="SandBox.html">Sand&nbsp;Box</a></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.2 - 22 Nov 2004 - 23:01 GMT - blundar 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/UsbToSerialConverterSecondGen?t=1194414819"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/UsbToSerialConverterSecondGen">Attach</a>
+   |  <a href="../../rdiff/Library/UsbToSerialConverterSecondGen.html">History</a>
+   |  <a href="../../oops/Library/UsbToSerialConverterSecondGen%3Ftemplate=oopsmore&amp;param1=1.2&amp;param2=1.2.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.UsbToSerialConverterSecondGen">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#7a0d1311133a0a1d171c135415081d45090f18101f190e472e2d1311135a3c1f1f1e181b1911">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#0a7e65674a6e636d637e6b666c7f7963656465646663646f24696567" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+
+<center>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> </center>
+</html>

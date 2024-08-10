@@ -1,0 +1,249 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . Sim   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="https://files.boostednw.com/www.pgmfi.org/twiki/bin/view/Library/" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="Sim.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <a href="EngineSim.html">Engine&nbsp;Sim</a> &gt;<b>Sim</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+This is a Engine Simulator I build to help me out with hardware Development.  Its basicly built into a rack mount computer case and uses a ATX 350W power supply.  
+<p />
+<img src="../../../pub/Library/Sim/Engine_Sim016.jpg" alt="Engine_Sim016.jpg" />
+<p />
+<p />
+<p />
+Everything is wired up as in the two bellow schematics "gsrwiring1.gif and gsrwiring2.gif"
+<p />
+- I am using variable resistors for the <a href="ECT.html">ECT</a>, <a href="IAT.html">IAT</a>, TPS,  MAP, and EGR
+<p />
+- I have added 4x 12R 5w resistors to simulate the injectors.
+<p />
+- I have wired up a EACV for the EACV
+<p />
+- I am using a distributor to achive the <a href="TDC.html">TDC</a>, CYP, CKP from a OBDI car. Its driven by a 12v motor from an old cordless drill :). then the trigger from the cordless drill is conected to a varable resistor to be able to vary the speed of the motor which simulates the <a href="RPM.html">RPM</a>s. The whole thing is built into a wooden jig that holds the dizzy and motor lined up together. I removed the camshaft drive from the dizzy and fit a 15 tooth tamiya gear from an RC car to the motor, then used fuel hose to link the two shafts. works great :)
+<p />
+- The ICM and coil has been wired up, 12v to the blk/yel wire from the main relay to prevent code 15 , but to control the coil Im switch the ground of the body of the dizzy.
+<p />
+- I made a circuit with a 555 timer IC to simulate the <a href="VSS.html">VSS</a>, Ill add the schematic soon.
+<p />
+- EGR at the moment is just a varable resistor, Im working an a solution that will automaticly vary the trimpot with the pulses from the EGR sol output. It if works then Ill post the plans.
+<p />
+- using a real main relay for the main relay.
+<p />
+- I have added an actual VTEC solenoid for the VTEC solenoid. ( no better way to simulate the load of one.) its reasuring to hear the click when VTEC engages.  also driving a bi colour LED on the front panel 
+<p />
+- VTP is simply a relay driven from the VTS signal.
+<p />
+- I have added a knock sensor that I hit against the chassis of the thing to simulate knock. ( thanks to edgeauto for the sensor ) 
+<p />
+- there is 3x 3.7k 5w resistors ( all I could find on the day ) to simulate the Oxygen Sensor Heater. 
+<p />
+- a LED is the MIL, used a 560R resistor to limmit the current to it then a 1k resistor across the LED to stop it from staying iluminated when it should not be.
+<p />
+- I have built an O2 simulator circuit from a 555 timer IC. I found the plans on the web.
+<p />
+- a LED that changes colours is used as the fuel pump. this simply lets me know the fuel pump is powered.
+<p />
+- Iv added an ELD from a <a href="JDM.html">JDM</a> ITR fuesbox, ran the main positive wire from the power supply through it to measure the current load. Even works with P13
+<p />
+- added an APEXI RSM for the dash board so I can see the <a href="RPM.html">RPM</a>'s and Vehicle Speed and Battery Voltage. ( bit over the top but its well worth it ) 
+<p />
+<img src="../../../pub/Library/Sim/Engine_Sim009.jpg" alt="Engine_Sim009.jpg" />
+<p />
+<p />
+<p />
+<p />
+<strong>The Control Pannel</strong>
+<p />
+<img src="../../../pub/Library/Sim/Engine_Sim001.jpg" alt="Engine_Sim001.jpg" />
+<p />
+<p />
+On the top two rows of switches I have added a switch and LED for each PGMFI component vital to PGMFI operation. the Switch will open circuit the sensor to the <a href="ECU.html">ECU</a> to force MIL. This is done to help <a href="ECU.html">ECU</a> repair and to confirm that a circuit has been disabled in code. example VTP, HO2, ELD, EACV ect, and ensure you dont get a code while operating the <a href="ECU.html">ECU</a>. When the circuit is disabled the LED lights up red.
+<p />
+Some LED's also act as a indicator of what that circuit is doing. for example, the AC switch is wired to the AC switch input, but the LED is wired to the AC clutch relay output from the <a href="ECU.html">ECU</a>.
+<p />
+<p />
+A row of varable resistor pots is added for the <a href="ECT.html">ECT</a>, <a href="IAT.html">IAT</a>, <a href="RPM.html">RPM</a>, <a href="VSS.html">VSS</a>, TPS, MAP, EGR control.  I simply turn these knobs to achive the desired signal level.  You will get a MIL if you go out of range or simply move the <a href="ECT.html">ECT</a> to fast. ( <a href="ECU.html">ECU</a> gets worried when the <a href="ECT.html">ECT</a> goes from 0deg to 90 deg in less than a second :).
+<p />
+On the bottom Row of switches and LED's are the basics to the simulator, like Acc then Ignition. I have wired up the start signal as in the schematic witch will also force the dizzy motor to run. If the dizzy motor pot is set to the low end the dizzy wont turn, however when you wind up the dizzy motor a little you can "Start the simulator" with the start switch, the dizzy motor will run Just as if the car was running. If I turn the <a href="RPM.html">RPM</a>'s to low ( 500 rpm ) the dizzy motor stalls :) just like an engine.  
+<p />
+A LED to show injector and ICM pulse has been added to show whats happening their. Two LED's make up the <a href="IAB.html">IAB</a> signal and its polarity.  and the fuel pump LED that changes colour as the main relay is engaged. I added a Immo Led for later when I add an IMMO unit to the sim. 
+<p />
+The pannel was drawn up in ms paint and printed on normal paper. Then used as a template on a peice of plastic from a sign and once the holes where all drilled then glued to the plastic with a clear coat of contact paper. then all the LEDs and switches go in.
+<p />
+<p />
+<strong>The <a href="ECU.html">ECU</a> Interface</strong>
+<p />
+<p />
+<img src="../../../pub/Library/Sim/Engine_Sim018.jpg" alt="Engine_Sim018.jpg" />
+<p />
+<p />
+On the side of the case, I cut out 3 holes to suit D25 computer connectors. simply A B and D, just like on the OBDI ecu, and to keep things simple everyting is wired the same as the OBDI standard which helps when probing with a multimeter for sensor signal.  I then have made Harneses to suit OBDIIa, OBDIIb OBDO, and when I get some conectors OBDI ( rather than using a harness.) 
+<p />
+There are so many uses for this thing from fault finding faults on an <a href="ECU.html">ECU</a> at the component level to testing code and PGMFI parts. It is also interesting to see how and what ways you can upset the <a href="ECU.html">ECU</a> by disconecting sensor ect whiel the engine sim is running.
+<p />
+Im working on an electronic distriblutor simulator, but for now I like the noise of something widing up. ( adds the fun to reving up the sim ) :)
+<p />
+<p />
+<p />
+<p />
+<p />
+If anyone else has built such a thing as this here please post up some pics and Ideas.
+<p />
+discussion thread <a href="http://forum.pgmfi.org/viewtopic.php?p=83194#83194" target="_top">http://forum.pgmfi.org/viewtopic.php?p=83194#83194</a>
+<p />
+<p />
+cheers
+<p />
+John
+<p />
+ <strong>b16a2 - 27 Jan 2007</strong>   from downunder 
+<p />
+<p />
+<p />
+<p />
+<p />
+.
+<p />
+<p />
+<p />
+<p />
+<p />
+<p />
+<p />
+<font size = "-1"><center>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th align="center" bgcolor="#D0D1E0"> <strong><span style='background : #FFFFCE;'><font color="#0000FF">Attachment</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FileAttachment?topicparent=Library.Sim">?</a>:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Modify:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Size:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Date:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Who:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Comment:</strong> </th></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Sim/gsrwiring1.gif">gsrwiring1.gif</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Sim?filename=gsrwiring1.gif&amp;revInfo=1">mod</a>     </td><td>  102200  </td><td>  27 Jan 2007 - 14:55  </td><td>  b16a2  </td><td>  OBDI  PGMFI schematic part 1  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Sim/gsrwiring2.gif">gsrwiring2.gif</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Sim?filename=gsrwiring2.gif&amp;revInfo=1">mod</a>     </td><td>  71437  </td><td>  27 Jan 2007 - 14:55  </td><td>  b16a2  </td><td>  OBDI PGMFI schematic part 2  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Sim/Engine_Sim001.jpg">Engine_Sim001.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Sim?filename=Engine_Sim001.jpg&amp;revInfo=1">mod</a>     </td><td>  39532  </td><td>  27 Jan 2007 - 14:59  </td><td>  b16a2  </td><td>  control panel of engine sim  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Sim/Engine_Sim009.jpg">Engine_Sim009.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Sim?filename=Engine_Sim009.jpg&amp;revInfo=1">mod</a>     </td><td>  35521  </td><td>  27 Jan 2007 - 15:00  </td><td>  b16a2  </td><td>  internals of engine sim  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Sim/Engine_Sim016.jpg">Engine_Sim016.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Sim?filename=Engine_Sim016.jpg&amp;revInfo=1">mod</a>     </td><td>  29824  </td><td>  27 Jan 2007 - 15:00  </td><td>  b16a2  </td><td>  front view of engine sim  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Sim/Engine_Sim018.jpg">Engine_Sim018.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Sim?filename=Engine_Sim018.jpg&amp;revInfo=1">mod</a>     </td><td>  44419  </td><td>  27 Jan 2007 - 15:01  </td><td>  b16a2  </td><td>  side view of engine sim  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Sim/Engine_Sim019.jpg">Engine_Sim019.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Sim?filename=Engine_Sim019.jpg&amp;revInfo=1">mod</a>     </td><td>  110159  </td><td>  28 Jan 2007 - 12:25  </td><td>  b16a2  </td><td>  Close up of  Distributor  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Sim/Engine_Sim020.jpg">Engine_Sim020.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Sim?filename=Engine_Sim020.jpg&amp;revInfo=1">mod</a>     </td><td>  104598  </td><td>  28 Jan 2007 - 12:26  </td><td>  b16a2  </td><td>  Close up of O2 and <a href="VSS.html">VSS</a> simulator  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Sim/Engine_Sim022.jpg">Engine_Sim022.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Sim?filename=Engine_Sim022.jpg&amp;revInfo=1">mod</a>     </td><td>  88001  </td><td>  28 Jan 2007 - 12:28  </td><td>  b16a2  </td><td>  Close up of ELD  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Sim/Engine_Sim023.jpg">Engine_Sim023.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Sim?filename=Engine_Sim023.jpg&amp;revInfo=1">mod</a>     </td><td>  155808  </td><td>  28 Jan 2007 - 12:29  </td><td>  b16a2  </td><td>  Close up back of control panel  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Sim/Engine_Sim024.jpg">Engine_Sim024.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Sim?filename=Engine_Sim024.jpg&amp;revInfo=1">mod</a>     </td><td>  106593  </td><td>  28 Jan 2007 - 12:30  </td><td>  b16a2  </td><td>  Close up of main relay, knock, O2 heater  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Sim/Engine_Sim025.jpg">Engine_Sim025.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Sim?filename=Engine_Sim025.jpg&amp;revInfo=1">mod</a>     </td><td>  74211  </td><td>  28 Jan 2007 - 12:31  </td><td>  b16a2  </td><td>  Close up of  VTS and EACV  </td></tr>
+</table>
+<p />
+</font></center>
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"><B>Parents:</b> <a href="WebHome.html">Web&nbsp;Home</a> &gt; <a href="EngineSim.html">Engine&nbsp;Sim</a></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.3 - 28 Jan 2007 - 12:26 GMT - b16a2 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/Sim?t=1194414459"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Sim">Attach</a>
+   |  <a href="../../rdiff/Library/Sim.html">History</a>
+   |  <a href="../../oops/Library/Sim%3Ftemplate=oopsmore&amp;param1=1.3&amp;param2=1.3.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.Sim">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#9deaf4f6f4ddedfaf0fbf4b3f2effaa2eee8fff7f8fee9a0c9caf4f6f4bddbf8f8f9fffcfef6">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#c8bca7a588aca1afa1bca9a4aebdbba1a7a6a7a6a4a1a6ade6aba7a5" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

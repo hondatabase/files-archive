@@ -1,0 +1,143 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . EngineCoolantTemperature   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="EngineCoolantTemperature.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>EngineCoolantTemperature</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+The <a href="EngineCoolantTemperature.html">Engine&nbsp;Coolant&nbsp;Temperature</a> (<a href="ECT.html">ECT</a>) sensor measures how warm (or cool) coolant passing through the motor is.
+<p />
+<img src="../../../pub/Library/EngineCoolantTemperature/honda_stock_coolant_temp.jpg" alt="honda_stock_coolant_temp.jpg"  width="284" height="207"  />
+<p />
+<hr />
+Ed Gibson had this to say about it:
+<p />
+'Temperature lookup table for <a href="OBD1.html">OBD1</a>  <a href="IAT.html">IAT</a> Sensor from '93 CRX <a href="EDM.html">EDM</a> 
+<p />
+'Resistance mapped from sensor in lab from 0 to 100 Celcius
+'ECU hex values mapped via applied equivalent resistance on car
+<p />
+'some degree (ahem) for error there, but I reckon on better than a couple of degrees
+'Extracted from VB. Array from <a href="ECU.html">ECU</a> value 255 to 0
+<p />
+Temperature Degrees = Array( -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, -1#, 0#, 0.5, 1#, 1.6, 2.2, 2.9, 3.5, 4.1, 4.7, 5.4, 6#, 6.5, 7#, 7.5, 8#, 8.5, 8.9, 9.4, 9.8, 10.3, 10.7, 11.1, 11.6, 12#, 12.3, 12.7, 13#, 13.5, 13.9, 14.4, 14.8, 15.3, 15.7, 16.2, 16.6, 17.1, 17.5, 17.8, 18.2, 18.5, 18.9, 19.3, 19.8, 20.2, 20.6, 21#, 21.4, 21.8, 22.3, 22.7, 23.1, 23.5, 23.9, 24.2, 24.6, 24.9, 25.3, 25.6, 26#, 26.3, 26.7, 27#, 27.4, 27.8, 28.1, 28.5, 28.9, 29.3, 29.6, 30#, 30.3, 30.7, 31#, 31.3, 31.7, 32#, 32.3, 32.7, 33#, 33.4, 33.7, 34.1, 34.4, 34.8, 35.1, 35.5, 35.9, 36.2, 36.6, 36.9, 37.3, 37.6, 38#, 38.4, 38.8, 39.1, 39.5, 39.9, 40.3, 40.6, 41#, 41.4, 41.8, 42.1, 42.5, 42.9, 43.3, 43.6, 44#, 44.4, 44.8, 45.3, 45.7, 46.1, 46.5, 46.9, 47.3, 47.8, 48.2, 48.6, 49#, 49.5, 50.1, 50.6, 51.2, 51.7, 52.3, 52.8, 53.4, 53.9, 54.5, 55#, 55.5, 56#, 56.5, 57#, 57.5, 58#, 58.5, 59#, 59.5, 60#, 60.5, 61#, 61.7, 62.4, 63.1, 63.8, 64.5, 65.2, 65.9, 66.6, 67.3, 68#, 68.7, 69.4, 70.1, 70.8, 71.5, 72.2, 72.9, 73.6, 74.3, 75#, 75.8, 76.6, 77.5, 78.3, 79.1, 79.9, 80.7, 81.5, 82.4, 83.2, 84#, 85.2, 86.4, 87.7, 88.9, 90.1, 91.3, 92.6, 93.8, 95#, 96.7, 98.3, 100#, 101#, 101#, 101#, 101#, 101#, 101#, 101#, 101#, 101#, 101#, 101#, 101#, 101#, 101#, 101#, 101#, 101#, 101#, 101#, 101#, 101#, 101#, 101#, 101#)
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.1 - 05 Mar 2004 - 19:46 GMT - blundar 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/EngineCoolantTemperature?t=1194411324"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EngineCoolantTemperature">Attach</a>
+   |  <a href="../../rdiff/Library/EngineCoolantTemperature.html">History</a>
+   |  <a href="../../oops/Library/EngineCoolantTemperature%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.EngineCoolantTemperature">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#b3c4dad8daf3c3d4ded5da9ddcc1d48cc0c6d1d9d6d0c78ee7e4dad8da93f5d6d6d7d1d2d0d8">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#6713080a27030e000e13060b0112140e080908090b0e09024904080a" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>
