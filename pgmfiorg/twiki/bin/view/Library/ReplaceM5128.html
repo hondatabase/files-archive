@@ -1,0 +1,190 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . ReplaceM5128   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="ReplaceM5128.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <a href="RealTimeProgramming.html">Real&nbsp;Time&nbsp;Programming</a> &gt;<b>ReplaceM5128</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+<p />
+<p />
+This page explain how to replace the current <a href="5128XRAM.html">5128&nbsp;XRAM</a> 2K <a href="SRAM.html">SRAM</a> chip by a DS1220 <a href="NVSRAM.html">NVSRAM</a> for future <a href="RTP.html">RTP</a> solution.
+<p />
+<p />
+<ul>
+<li> <a href="ReplaceM5128.html#Brief_Explanation">Brief Explanation</a>
+</li>
+<li> <a href="ReplaceM5128.html#Parts_list_">Parts list:</a>
+</li>
+<li> <a href="ReplaceM5128.html#Construction_">Construction:</a>
+</li>
+<li> <a href="ReplaceM5128.html#Step_by_step_">Step by step:</a>
+</li>
+<li> <a href="ReplaceM5128.html#Note_">Note:</a>
+</li>
+</ul>
+<p />
+<h3> Brief Explanation </h3>
+    The M5128 chip is used to store and calculate values while the car is running. By default pin 19 and 22 are grounded, thus preventing full 2k addressing. Also, it is a good idea to replace the current M5128 by a DS1220 <a href="NVSRAM.html">NVSRAM</a> module. This module  behave like a normal ram, but its <a href="RAM.html">RAM</a> content will remain when power is cut.
+<p />
+<h3> Parts list: </h3>
+<ul>
+<li> 1x DS1220AB
+</li>
+<li> 1x 24 pin IC socket
+</li>
+<li> 22 gauge wire (or smaller) 
+</li>
+</ul>
+<p />
+<h3> Construction: </h3>
+    It is pretty simple, but required a bit of dexterity. First you need to unsolder the M5128. Then, you should cut the traces of pin 19 an dpin 22 as they both connect to the ground. Solder the 24 pin IC socket. Then, solder a wire from M5128 pin 19 to <a href="MCU.html">MCU</a> pin 23 and solder a wire from M5128 pin 22 to <a href="MCU.html">MCU</a> pin 22 too.
+<p />
+<h3> Step by step: </h3>
+<ul>
+<li> Desolder M5128
+</li>
+<li> Cut traces to ground of pin 19 and pin 22
+</li>
+<li> Solder 24 pin IC socket
+</li>
+<li> Solder wire from M5128 pin 19 to <a href="MCU.html">MCU</a> pin 23
+</li>
+<li> Solder wired from M5128 pin 22 to <a href="MCU.html">MCU</a> pin 22
+</li>
+<li> Put in the DS1220AB
+</li>
+</ul>
+<p />
+<p />
+<h3> Note: </h3>
+The traces to be cut on a 90-91 <a href="ECU.html">ECU</a> are on the component side. On the 88-89, there is 1 trace on the solder side, and 1 on the component side. You can check out the scans to help you out.
+<p />
+<p />
+<font size = "-1"><center>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th align="center" bgcolor="#D0D1E0"> <strong><span style='background : #FFFFCE;'><font color="#0000FF">Attachment</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FileAttachment?topicparent=Library.ReplaceM5128">?</a>:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Modify:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Size:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Date:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Who:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Comment:</strong> </th></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/ReplaceM5128/DS1220-88-89.jpg">DS1220-88-89.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/ReplaceM5128?filename=DS1220-88-89.jpg&amp;revInfo=1">mod</a>     </td><td>  681906  </td><td>  27 Feb 2004 - 17:48  </td><td>  synoptic  </td><td>  Solder side of a 1988 - 1989 <a href="ECU.html">ECU</a>  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/ReplaceM5128/DS1220-90-91.jpg">DS1220-90-91.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/ReplaceM5128?filename=DS1220-90-91.jpg&amp;revInfo=1">mod</a>     </td><td>  728209  </td><td>  27 Feb 2004 - 17:49  </td><td>  synoptic  </td><td>  Solder side of a 1990 - 1991 <a href="ECU.html">ECU</a>  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/ReplaceM5128/DS1220-TOP-90-91.jpg">DS1220-TOP-90-91.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/ReplaceM5128?filename=DS1220-TOP-90-91.jpg&amp;revInfo=1">mod</a>     </td><td>  115939  </td><td>  27 Feb 2004 - 17:50  </td><td>  synoptic  </td><td>  Component side of a 1990 - 1991 <a href="ECU.html">ECU</a>  </td></tr>
+</table>
+<p />
+</font></center>
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"><B>Parents:</b> <a href="WebHome.html">Web&nbsp;Home</a> &gt; <a href="RealTimeProgramming.html">Real&nbsp;Time&nbsp;Programming</a></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.1 - 27 Feb 2004 - 17:59 GMT - synoptic 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/ReplaceM5128?t=1194414276"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/ReplaceM5128">Attach</a>
+   |  <a href="../../rdiff/Library/ReplaceM5128.html">History</a>
+   |  <a href="../../oops/Library/ReplaceM5128%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.ReplaceM5128">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#3e495755577e4e5953585710514c59014d4b5c545b5d4a036a695755571e785b5b5a5c5f5d55">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#71051e1c311518161805101d170402181e1f1e1f1d181f145f121e1c" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+
+</html>

@@ -1,0 +1,142 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . NVSRAM   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="NVSRAM.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <a href="RealTimeProgramming.html">Real&nbsp;Time&nbsp;Programming</a> &gt;<b>NVSRAM</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+<a href="NVSRAM.html">NVSRAM</a>
+<p />
+<strong>Non Volatile <a href="SRAM.html">SRAM</a></strong> - fast, byte addressible, byte write, <a href="RAM.html">RAM</a> that retains its contents after power is lost.
+<p />
+<a href="NVSRAM.html">NVSRAM</a> usually takes one of several forms:
+<ul>
+<li> <strong>Battery backed <a href="SRAM.html">SRAM</a></strong> (Dallas DS1220,1230, etc.  TI Benchmarq chips, ST ...) - chip contains <a href="SRAM.html">SRAM</a>, a battery and power sense circuitry. When power fails, the battery backup kicks in and is used to provide power to the <a href="RAM.html">RAM</a> preventing loss of data.  <strong>Pros:</strong> looks just like a <a href="SRAM.html">SRAM</a> electrically, old technology.  <strong>Cons:</strong> cost, large physical size, battery can die after several years
+</li>
+<li> <strong>EEPROM/SRAM hybrids</strong> (ZMD, Simtek chips, others?) - chip contains <a href="EEPROM.html">EEPROM</a>, <a href="SRAM.html">SRAM</a> and power sense circuitry.  On powerup, data is copied from <a href="EEPROM.html">EEPROM</a> to <a href="SRAM.html">SRAM</a>.  When a powerfail condition is detected, the data in <a href="SRAM.html">SRAM</a> is written to <a href="EEPROM.html">EEPROM</a>.  Often require large(r) capacitors on the power line to ensure a gradual drop on the power line occurs.  <strong>Pros:</strong> cheaper, small packages available.  <strong>Cons:</strong> long startup time after poweron can require electrical / logical modification of existing designs.
+</li>
+<li> <strong>FRAM</strong> (Ramtron) - Ferroelectric <a href="RAM.html">RAM</a>. Uses a ferroelectric crystal to store the bit. Has the read/write speed of <a href="RAM.html">RAM</a> (~1nS) with the feature of permanently retaining data. Near unlimited write cycles. <strong>Pros:</strong> Available in many packages. Very high endurance cycles. Read/Write speeds the same as <a href="RAM.html">RAM</a>. <strong>Cons:</strong> Availability. Minor pinout differences from standard 27C256. Detailed information on Ramtron's site: <a href="http://www.ramtron.com/doc/AboutFRAM/technology.asp" target="_top">http://www.ramtron.com/doc/AboutFRAM/technology.asp</a>
+</li>
+<li> <strong>MRAM</strong> (Cypress) - chip contains next generation electromagnetic storage.  Supposedly overcomes the shortcomings of <a href="EEPROM.html">EEPROM</a>/SRAM hybrids (powerup time) and the form factor / battery life issues of battery backed <a href="SRAM.html">SRAM</a> without introducing the peculiar electrical/logical characteristics of FRAM.  Overall: looks to be the perfect technology for <a href="RealTimeProgramming.html">Real&nbsp;Time&nbsp;Programming</a> of devices not designed for it.  Hope to see real parts instead of vaporware sometime Q2 '04
+</li>
+</ul>
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"><B>Parents:</b> <a href="WebHome.html">Web&nbsp;Home</a> &gt; <a href="RealTimeProgramming.html">Real&nbsp;Time&nbsp;Programming</a></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.3 - 23 Mar 2006 - 19:36 GMT - Nuno <span style='background : #FFFFCE;'><font color="#0000FF">Euro&nbsp;VTi</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/EuroVTi?topicparent=Library.NVSRAM">?</a> 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/NVSRAM?t=1194412485"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/NVSRAM">Attach</a>
+   |  <a href="../../rdiff/Library/NVSRAM.html">History</a>
+   |  <a href="../../oops/Library/NVSRAM%3Ftemplate=oopsmore&amp;param1=1.3&amp;param2=1.3.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.NVSRAM">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#c2b5aba9ab82b2a5afa4abecadb0a5fdb1b7a0a8a7a1b6ff9695aba9abe284a7a7a6a0a3a1a9">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#1d6972705d79747a74697c717b686e747273727371747378337e7270" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>
