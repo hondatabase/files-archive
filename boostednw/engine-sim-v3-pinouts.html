@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Signal Pinout Table</title>
+<style>
+body {
+	font-family    : sans-serif;
+	display        : flex;
+	justify-content: center;
+	align-items    : center;
+	min-height     : 100vh;
+	margin         : 0;
+}
+
+table {
+	border-collapse: collapse;
+	table-layout   : auto;
+}
+
+th, td {
+	border     : 1px solid #ddd;
+	padding    : 8px;
+	text-align : left;
+	white-space: nowrap;
+}
+
+th { background-color: #f2f2f2; }
+
+td:nth-of-type(2) { text-align: center; }
+
+tr { transition: all 300ms; }
+
+tr[data-connector="A"] { background-color: #f0fff0; }
+tr[data-connector="A"]:hover { background-color: #d0ffd0; }
+
+tr[data-connector="B"] { background-color: #ffffcc; }
+tr[data-connector="B"]:hover { background-color: #ffffaa; }
+
+tr[data-connector="D"] { background-color: #f0f8ff; }
+tr[data-connector="D"]:hover { background-color: #d0e8ff; }
+</style>
+</head>
+<body>
+
+<table>
+	<tr>
+		<th>Signal</th>
+		<th>Pin</th>
+		<th>Description</th>
+	</tr>
+	<tr data-connector="A"><td title="Injector 1">INJ1</td><td>A1</td><td>Injector signal: SINK input</td></tr>
+	<tr data-connector="A"><td title="Injector 4">INJ4</td><td>A2</td><td>Injector signal: SINK input</td></tr>
+	<tr data-connector="A"><td title="Injector 2">INJ2</td><td>A3</td><td>Injector signal: SINK input</td></tr>
+	<tr data-connector="A"><td title="Variable Valve Timing & Lift Electronic Control">VTS</td><td>A4</td><td class="note">Note: This is a SOURCE input. Use only with a switched-12V signal</td></tr>
+	<tr data-connector="A"><td title="Injector 3">INJ3</td><td>A5</td><td>Injector signal: SINK input</td></tr>
+	<tr data-connector="A"><td title="Oxygen Sensor Heater">O2 Heater</td><td>A6</td><td class="note">This is a SINK input. Use only with a switched-gnd signal</td></tr>
+	<tr data-connector="A"><td title="Fuel Pump">Fuel Pump</td><td>A7</td><td class="note">This is a SINK input. Use only with a switched-gnd signal</td></tr>
+	<tr data-connector="A"><td title="Idle Air Control Valve">IACV</td><td>A9</td><td class="note">This is a SINK input. Use only with a switched-gnd signal</td></tr>
+	<tr data-connector="A"><td title="Exhaust Gas Recirculation/Idle Air Bypass">EGR/IAB</td><td>A11/A17</td><td class="note">This is a SINK input. Use only with a switched-gnd signal</td></tr>
+	<tr data-connector="A"><td title="Fan Control">Fan Ctrl</td><td>A12</td><td class="note">This is a SINK input. Use only with a switched-gnd signal</td></tr>
+	<tr data-connector="A"><td title="Malfunction Indicator Lamp">MIL</td><td>A13</td><td class="note">Note: this is a SINK input. Use only with a switched-gnd signal</td></tr>
+	<tr data-connector="A"><td title="Air Conditioning Clutch">AC Clutch</td><td>A15</td><td class="note">This is a SINK input. Use only with a switched-gnd signal</td></tr>
+	<tr data-connector="A"><td title="Alternator Control">Alternator Ctrl</td><td>A16</td><td class="note">This is a SINK input. Use only with a switched-gnd signal</td></tr>
+	<tr data-connector="A"><td title="Automatic Transmission Solenoid">AT Sol.</td><td>A17</td><td class="note">This is a SOURCE input. Use only with a switched-12V signal</td></tr>
+	<tr data-connector="A"><td title="Purge Control Solenoid">Purge</td><td>A20</td><td class="note">This is a SINK input. Use only with a switched-gnd signal</td></tr>
+	<tr data-connector="A"><td title="Ignition Control Module">ICM</td><td>A21</td><td>Ignition output signal: SINK input</td></tr>
+	<tr data-connector="A"><td title="Power Ground">GND-P</td><td>A23, A26</td><td>Power signal: Ground</td></tr>
+	<tr data-connector="A"><td title="Switched Power">PWR</td><td>A25</td><td>Power signal: switched 12V (key on)</td></tr> 
+	<tr data-connector="B"><td title="Cylinder Position Sensor">CYP</td><td>B11</td><td>Distributor: cylinder position</td></tr>
+	<tr data-connector="B"><td title="Top Dead Center">TDC</td><td>B13</td><td>Distributor: top dead center</td></tr>
+	<tr data-connector="B"><td title="Crankshaft Position Sensor">CKP</td><td>B15</td><td>Distributor: crank position</td></tr>
+	<tr data-connector="D"><td title="Battery Voltage">Bat. V.</td><td>D1</td><td>Power signal: 12V constant battery backup (optional)</td></tr>
+	<tr data-connector="D"><td title="Service Check Signal">SCS</td><td>D4</td><td>Switched out: Service Check (aka 2pin to check codes)</td></tr>
+	<tr data-connector="D"><td title="Variable Valve Timing & Lift Pressure">VTP</td><td>D6</td><td>Switched out: vtec pressure</td></tr>
+	<tr data-connector="D"><td title="Electronic Load Detector">ELD</td><td>D10</td><td>Analog out: Electronic Load Detector</td></tr>
+	<tr data-connector="D"><td title="Throttle Position Sensor">TPS</td><td>D11</td><td>Analog out: Throttle position sensor</td></tr>
+	<tr data-connector="D"><td title="Engine Coolant Temperature">ECT</td><td>D13</td><td>Resistive out: Coolant temperature</td></tr>
+	<tr data-connector="D"><td title="Oxygen Sensor">O2</td><td>D14</td><td>Analog out: Oxygen sensor</td></tr>
+	<tr data-connector="D"><td title="Intake Air Temperature">IAT</td><td>D15</td><td>Resistive out: intake air temperature</td></tr>
+	<tr data-connector="D"><td title="Manifold Absolute Pressure">MAP</td><td>D17</td><td>Analog out: Manifold Absolute Pressure sensor</td></tr>
+	<tr data-connector="D"><td title="Analog Voltage Reference">Analog V. Ref</td><td>D19</td><td>Analog 5V reference: used for all analog sensors, sourced from ECU</td></tr>
+	<tr data-connector="D"><td title="Sensor Ground">Sensor GND</td><td>D21</td><td>Analog/resistive sensors ground: sourced from ECU</td></tr>  
+</table>
+
+</body>
+</html>
