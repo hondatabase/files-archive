@@ -1,0 +1,51 @@
+CobraRTP Honda Edition internal firmware update. 
+The instruction is in the archive with the CobraRTP Utility program.
+
+v20.31 (R6.0-R8.x only)
+-Increased stability when loading data
+-Fixed changing USB-Wireless mode for datalog (R8)
+-Improved minor nuances
+
+v20.29 (R6.0-R7.4 only)
+-Fixed ECU crashing while uploading changes (full basemap/calibrations), if the problem was present
+-Added emulator RAM testing functions (Utility v2.97)
+
+v20.28 (only R6.0-R7.4)
+-Reduced chance of crashes when changing a file (upload) 
+-Increased stability
+(Use CobraRTP utility v2.97 or later for update! Do not use v2.96!)
+
+v20.27 (only R6.0+)
+-Fix some bugs
+
+v20.26 (only R6.0+)
+-Fix some bugs
+
+v20.25 (11/09/2020):
+-Loop detection fix
+
+v20.24 (08/24/2019):
+-Improved EEPROM protection
+-Fixed some points
+
+v20.23 (08/07/2019):
+-Added full emulation of Moates Ostrich (work in BmTune is possible!)
+-Fixed some points
+
+v20.22 (07/23/2019):
+-Fixed some points
+
+v20.21 (06/26/2019):
+-Fix while loop
+-More reliable data protection
+
+v20.19 (04/21/2019):
+
+-Added support for BMTune
+-Increased job stability
+
+Note: CobraRTP Utility v1.95 or more is recommended for updates!
+
+
+cobrartp.ru
+cobrartpteam@gmail.com

@@ -1,0 +1,20 @@
+CobraRTP Honda Edition internal firmware update.
+Instructions in the archive with the CobraRTP Utulity program.
+
+v20.45
+-Improved knock sensor calibration algorithm (use CobraRTP utility v3.22 or higher)
+-Reduced chance of crashes when saving settings
+-Minor points improved
+
+v20.44
+-Improved knock sensor signal processing algorithm
+-Fixed minor bugs
+
+v20.43
+-Fixed datalog error "Bad checksum on packed" when enabling Knock or FlexFuel output in utility config
+
+
+
+
+cobrartp.com
+cobrartpteam@gmail.com

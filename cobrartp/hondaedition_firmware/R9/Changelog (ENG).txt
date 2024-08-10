@@ -1,0 +1,17 @@
+CobraRTP Honda Edition internal firmware update. 
+The instruction is in the archive with the CobraRTP Utility program.
+
+v20.35
+-Added support for Fast emulator protocol in HTS 
+-Fixed intermittent Put base ROM+calibration error in eCtune
+-Fixed bug with Get Rom and Verfy operations in eCtune
+
+v20.34
+-Fixed communication error in eCtune and HTS under certain conditions.
+
+v20.33
+-Fixed non-recognition of a USB device when connected to a PC under certain conditions.
+
+
+cobrartp.com
+cobrartpteam@gmail.com

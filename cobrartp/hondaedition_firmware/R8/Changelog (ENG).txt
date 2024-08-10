@@ -1,0 +1,12 @@
+CobraRTP Honda Edition internal firmware update. 
+The instruction is in the archive with the CobraRTP Utility program.
+
+v20.31 
+-Increased stability when loading data
+-Fixed changing USB-Wireless mode for datalog (R8)
+-Improved minor nuances
+
+
+
+cobrartp.com
+cobrartpteam@gmail.com

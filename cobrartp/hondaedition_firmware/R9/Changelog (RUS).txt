@@ -1,0 +1,18 @@
+Обновление внутренней прошивки CobraRTP Honda Edition. 
+Инструкция в архиве с программой CobraRTP Utulity.
+
+v20.35
+-Добавлена поддержка Fast emulator protocol в HTS (Download и Verfy)
+-Исправлена переодически возникающая ошибка Put base ROM+calibration в eCtune
+-Исправлена ошибка операций  Get Rom и Verfy в eCtune
+
+v20.34 
+-Исправлена ошибка коммуникации в eCtune и HTS при определенных условиях.
+
+v20.33
+-Исправлено нераспознование USB устройства при подключении к ПК при определенных условиях.
+
+
+
+cobrartp.com
+cobrartpteam@gmail.com

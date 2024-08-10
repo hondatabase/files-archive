@@ -1,0 +1,32 @@
+CobraRTP Honda Edition internal firmware update. 
+The instruction is in the archive with the CobraRTP Utility program.
+
+
+v20.25 (11/09/2020):
+-Loop detection fix
+
+v20.24 (08/24/2019):
+-Improved EEPROM protection
+-Fixed some points
+
+v20.23 (08/07/2019):
+-Added full emulation of Moates Ostrich (work in BmTune is possible!)
+-Fixed some points
+
+v20.22 (07/23/2019):
+-Fixed some points
+
+v20.21 (06/26/2019):
+-Fix while loop
+-More reliable data protection
+
+v20.19 (04/21/2019):
+
+-Added support for BMTune
+-Increased job stability
+
+Note: CobraRTP Utility v1.95 or more is recommended for updates!
+
+
+cobrartp.com
+cobrartpteam@gmail.com
