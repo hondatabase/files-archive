@@ -1,0 +1,560 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . OBD   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="OBD.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <a href="OBD2.html">OBD2</a> &gt;<b>OBD</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+<strong>On Board Diagnostics - General Overview</strong>
+<p />
+In an effort to reduce vehicle emissions, the California Air Resource Board
+(CARB) required that an on board diagnostic system be added to all cars sold in
+California beginning in 1988. These systems were to monitor the effectiveness of
+the emission control system and notify the driver if a problem existed with the
+emission control systems. The first generation on board diagnostic systems were
+very basic, and became a building block for the current second generation systems.
+<p />
+<strong>On Board Diagnostics – I</strong>
+<p />
+General Information
+<p />
+CARB mandated that starting in 1988, all cars sold in California would be
+equipped with an on board emissions testing system. The system had to illuminate
+a "check engine" light to notify the driver of potential failures on emission components
+and systems and store a diagnostic trouble code (DTC) in memory. This
+system is now referred to as On Board Diagnostics - First Generation (<a href="OBD.html">OBD</a>-I).
+The <a href="OBD.html">OBD</a>-I systems were required to monitor all inputs for a high / low range, the
+EGR system, the oxygen (O2) sensor, the fuel metering system, and the engine
+control module (ECM). The <a href="OBD.html">OBD</a>-I regulations were relatively easy for most
+manufacturers to comply with since most manufacturers were already monitoring
+these systems. Many manufacturers were monitoring ECM operation, and storing
+DTCs as early as 1980. Data stream was also available on many domestic cars in
+the mid 1980s even though it was not required until the introduction of <a href="OBD.html">OBD</a>-II
+systems in 1996.
+The first Honda PGMFI systems used in 1985 complied with <a href="OBD.html">OBD</a>-I regulations
+that did not go into effect until 1988. They monitored for fuel and emissions input
+malfunctions and stored a DTC when one was detected. DTC retrieval was done
+by counting the number of blinks from a light on either the dash, or the ECM itself.
+A 3-pin data link connector (<a href="DLC.html">DLC</a>) was added to 1992 Civics and Preludes for retrieval
+of data from the ECM. The 3-pin <a href="DLC.html">DLC</a> was added to Accords in 1994. This
+<a href="DLC.html">DLC</a> was the forerunner to the 16-pin <a href="OBD.html">OBD</a>-II connector. To retrieve data from
+this <a href="DLC.html">DLC</a>, you need a scan tool that is compatible with the Honda system. The
+Mastertech scan tool (utilizing the Honda/Acura aftermarket software) can be
+used. Other scan tools may be able to use this 3-pin <a href="DLC.html">DLC</a>, check your operating
+manual.
+The <a href="OBD.html">OBD</a>-I system was a starting point and had much room for improvement. The
+<a href="OBD.html">OBD</a>-II systems addressed all the shortcomings of the earlier <a href="OBD.html">OBD</a>-I systems. The
+most significant shortcomings of the <a href="OBD.html">OBD</a>-I systems were:
+<p />
+No consistency of DTCs
+<p />
+The assigning of DTCs for specific malfunctions was left up to each manufacturer.
+There was no consistency in the DTCs used from manufacturer to manufacturer.
+<p />
+No consistency in the <a href="DLC.html">DLC</a>
+<p />
+For the manufacturers that offered data stream, there was no consistency in the
+<a href="DLC.html">DLC</a>. The location, number of pins, and shape of the <a href="DLC.html">DLC</a> usually varied from
+manufacturer to manufacturer. This required a different scan tool cable for each
+major manufacturer.
+<p />
+No consistency in DTC retrieval protocol
+<p />
+For the manufacturers that offered data stream, the protocol used by the scan tool
+to retrieve information was not consistent. This required the scan tool manufacturers
+to have a different program for each manufacturer.
+<p />
+Unable to Detect Emissions System Degradation
+<p />
+The <a href="OBD.html">OBD</a>-I systems only checked input signals for extreme highs and lows. Many
+components would degrade to the point that they were creating increased emissions,
+but were not detected by the <a href="OBD.html">OBD</a>-I system.
+<p />
+<strong>On Board Diagnostics – II</strong>
+<p />
+General Information
+<p />
+At the same time the <a href="OBD.html">OBD</a>-I regulations went into effect, the standards for a second
+generation on-board diagnostic system (<a href="OBD.html">OBD</a>-II) were released. The <a href="OBD.html">OBD</a>-II
+standards were initially developed by CARB and the Society of Automotive Engineers
+(SAE). Their roles were as follows:
+<p />
+CARB SAE
+<p />
+Developed:
+<p />
+All the <a href="OBD.html">OBD</a>-II requirements for the
+manufacturers. All the rules, regulations,
+and requirements of the <a href="OBD.html">OBD</a>-II system
+were set forth in the California Code of
+Regulations:
+<p />
+Title 13 Section 1968
+<p />
+Developed:
+J1962 <a href="DLC.html">DLC</a> Location / Scanner Protocols
+J1930 Diagnostic / Component Terminology
+J1979 Diagnostic Test Modes
+J2012 DTC Standardization
+J2190 Diagnostic Test Modes
+<p />
+The <a href="OBD.html">OBD</a>-II system is much more complicated and powerful than the earlier
+<a href="OBD.html">OBD</a>-I systems. The implementation of <a href="OBD.html">OBD</a>-II systems has been a challenge for
+the automotive industry with both the manufacturers and the service techs.
+The "target" date for the <a href="OBD.html">OBD</a>-II systems was 1994. The automotive industry was
+behind schedule on developing these systems and the mandatory year for <a href="OBD.html">OBD</a>-II
+was pushed back to 1996. There were a few 1994 models (no Hondas) that had
+the <a href="OBD.html">OBD</a>-II system. The first <a href="OBD.html">OBD</a>-II system used by Honda was on a 1995 V-6
+Accord. All Honda models went <a href="OBD.html">OBD</a>-II in 1996.
+In actuality, every single model did not go full <a href="OBD.html">OBD</a>-II compliant in 1996. Many
+manufacturers petitioned CARB for waivers on certain parts of the <a href="OBD.html">OBD</a>-II system.
+It is not uncommon to find 96 and up vehicles that do not have every <a href="OBD.html">OBD</a>-II
+component installed and working per <a href="OBD.html">OBD</a>-II regulations. CARB and EPA set
+1998 as the year that all cars must have every component.
+<p />
+Features
+<p />
+The <a href="OBD.html">OBD</a>-II system does all that the <a href="OBD.html">OBD</a>-I system did, plus it has many more
+powerful features. Improvements were made in all areas with the biggest change
+in the actual monitoring techniques. The <a href="OBD.html">OBD</a>-II system added ECM run tests,
+called monitors, that can test an entire subsystem for performance. Let's take a
+look at all the key features of the <a href="OBD.html">OBD</a>-II systems.
+<p />
+Common Component Terminology
+<p />
+Most cars have components that perform the same function as a similar components
+on a different make car. These components may be called something different
+by each manufacturer. <a href="OBD.html">OBD</a>-II established a common component terminology.
+This makes it easier for service techs that have to work on many different models.
+Here is a list of the Honda components that got new <a href="OBD.html">OBD</a>-II names:
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> <a href="OBD.html">OBD</a>-II Name  </td><td> "Old" Name </td></tr>
+<tr><td> <a href="ECT.html">ECT</a> Sensor Engine Coolant Temperature Sensor  </td><td>  TW Sensor Temperature of Water Sensor </td></tr>
+<tr><td> <a href="IAT.html">IAT</a> Sensor Intake Air Temperature Sensor  </td><td>  TA Sensor Temperature of Air Sensor </td></tr>
+<tr><td> IAC Valve Idle Air Control Valve  </td><td>  EACV Electronic Air Control Valve </td></tr>
+<tr><td> BARO Sensor Barometric Pressure Sensor  </td><td>  PA Sensor Pressure of Air Sensor </td></tr>
+<tr><td> TP Sensor Throttle Position Sensor  </td><td>  TPS Throttle Position Sensor </td></tr>
+<tr><td> ECM / PCM Engine Control Module Powertrain Control Module  </td><td>  <a href="ECU.html">ECU</a> Electronic Control Unit  </td></tr>
+</table>
+<p />
+Common DTC Terminology
+Under the <a href="OBD.html">OBD</a>-I system all the DTCs were different among manufacturers. The
+<a href="OBD.html">OBD</a>-II regulations specified a common DTC numbering scheme. The SAE
+J2012 standard established the DTC numbering scheme. The DTC numbering
+scheme is covered in detail in the DTC / MIL / Freeze Frame Training Module.
+<p />
+Common <a href="DLC.html">DLC</a> and Protocol
+Prior to <a href="OBD.html">OBD</a>-II, each manufacturer was free to use any <a href="DLC.html">DLC</a> configuration and
+any scan tool protocol. This required a different cable and software for most
+manufacturers. The <a href="OBD.html">OBD</a>-II regulations standardizes the <a href="DLC.html">DLC</a> and the protocol.
+These regulations are based on the SAE J1962, J1979, and J2190 standards.
+The <a href="OBD.html">OBD</a>-II <a href="DLC.html">DLC</a> is a standardized 16-pin connector that is accessible by using
+no tools, located along the edge of the dash, and is visible while squatting.
+A standard protocol means that the <a href="OBD.html">OBD</a>-II information can be retrieved from any
+car using a generic <a href="OBD.html">OBD</a>-II compliant scan tool. Only a few wires in the <a href="DLC.html">DLC</a> are
+used for <a href="OBD.html">OBD</a>-II and the remaining pin locations are free to be used by the manufacturer
+any way they want. Many manufacturers use the <a href="OBD.html">OBD</a>-II <a href="DLC.html">DLC</a> for access
+to advanced diagnostic information. This information may not necessarily follow
+the <a href="OBD.html">OBD</a>-II protocols. Only the information that has been specified by <a href="OBD.html">OBD</a>-II
+regulations has to be available at the <a href="DLC.html">DLC</a> using an <a href="OBD.html">OBD</a>-II scanner protocol.
+The <a href="OBD.html">OBD</a>-II <a href="DLC.html">DLC</a> and scan tool protocols are covered in greater detail in the Scan
+<p />
+Tool Training Module.
+<p />
+The <a href="OBD.html">OBD</a>-II system is capable of storing some historical data. The <a href="OBD.html">OBD</a>-II system
+monitors the deviation of the actual fuel injector's pulse width (PW) from the factory
+default base pulse width. It records this deviation as a parameter called long
+term fuel trim (LT FT). This information is used to trim the fuel while the engine
+is being run in the open loop (OL) mode. The information can also be used to detect
+problems with the fuel delivery system by the service techs.
+The LTFT parameter is covered in greater detail in the Fuel System Monitor
+Training Module.
+<p />
+Expanded Malfunction Indicator Light
+<p />
+The operation of the malfunction indicator light (MIL) has changed significantly
+under the <a href="OBD.html">OBD</a>-II system.
+Illuminating the MIL
+Prior to <a href="OBD.html">OBD</a>-II, when a malfunction occurred the MIL was illuminated.
+With the <a href="OBD.html">OBD</a>-II system, a malfunction may be required to occur on as
+many as three consecutive trips before the MIL is illuminated.
+Extinguishing the MIL
+Prior to <a href="OBD.html">OBD</a>-II, the MIL was extinguished when the car was recranked.
+The MIL would not come back on unless the problem still existed. With
+<a href="OBD.html">OBD</a>-II, the MIL is not extinguished until the fault does not re-occur on
+three consecutive trips.
+The <a href="OBD.html">OBD</a>-II MIL will also flash when a condition is present that could cause
+damage to the catalytic converter. This usually occurs during a misfire. The MIL
+is covered in greater detail in the DTC / MIL / Freeze Frame Training Module.
+<p />
+Stored Freeze Frame Data
+<p />
+On of the more useful features of the <a href="OBD.html">OBD</a>-II system is its ability to take a snapshot
+of the engine's parameters when a DTC is set. This feature is called a freeze
+frame.
+The system will capture a set of parameters when the first DTC is set. The freeze
+frame will be held in memory until power is lost on the ECM or it is cleared with
+a scan tool. Subsequent DTCs will not overwrite the freeze frame (unless it is a
+high priority DTC). The ECM can store multiple DTCs but only one freeze frame,
+which was taken at the first DTC. This is one of the reasons why after recording
+the data on the freeze frame, you should clear it. If the freeze frame is not cleared
+it will not be able to store any more data.
+The freeze frame can be a great diagnostic tool since it is reflecting all the major
+engine parameters that were present when the fault occurred. Using this information
+a tech can try to "recreate" the situation that was present when the original
+fault occurred.
+The freeze frame is covered in greater detail in the DTC / MIL / Freeze Frame
+Training Module.
+<p />
+Expanded Monitoring Capabilities
+<p />
+The expanded monitoring capabilities of the <a href="OBD.html">OBD</a>-II system is where the major
+differences lie between <a href="OBD.html">OBD</a>-I and <a href="OBD.html">OBD</a>-II. In addition to monitoring input signals
+for a high low value, the <a href="OBD.html">OBD</a>-II system checks input signals for rationality
+and output signals for functionality.
+The <a href="OBD.html">OBD</a>-II system also has a whole set of tests that are run on subsystems under
+certain conditions. The running of these monitors are controlled by the ECM programming.
+Some of the tests are run continuously and some are run once per trip,
+when certain enable criteria has been met.
+The monitor requirements are specified in <a href="OBD.html">OBD</a>-II regulations, but how each
+manufacturer accomplishes that is left up to the manufacturer. For example,
+<a href="OBD.html">OBD</a>-II regulations require that a car with an EGR system on it must test it, once
+per trip for correct exhaust flow. How a manufacturer tests for proper flow is left
+up to the manufacturer. Like some manufacturers, Honda activates the EGR and
+watches for a change in the manifold absolute pressure (MAP) sensor input voltage.
+Some manufacturers activate the EGR and watch for a change in the oxygen
+content or a deviation in the engine's speed.
+The main objective of an on board diagnostic system is was to detect the degradation
+or failure of an emission component or system that could cause vehicle emissions
+to rise by 50%. <a href="OBD.html">OBD</a>-I was not catching degrading emissions components.
+Here is a list of current monitors that are defined by <a href="OBD.html">OBD</a>-II regulations:
+Monitor When Run
+Comprehensive Component Monitor
+This monitor checks all the input / output signals for a good
+electrical signal. The comprehensive component monitor handles
+all the electrical checks that were run by the <a href="OBD.html">OBD</a>-I system.
+To learn more about this monitor read the Comprehensive Component
+Monitor module.
+Continuous
+Misfire Monitor
+The misfire monitor checks the engine for signs of a misfire. The
+monitor primarily looks for fluctuation in the speed of the engine's
+crankshaft to determine if the engine is misfiring.
+To learn more about this monitor read the Misfire Monitor module.
+Continuous
+Fuel System Monitor
+The fuel system monitor compares the actual fuel injector PW
+with the factory default base pulse width and reports any major
+deviations.
+To learn more about this monitor read the Fuel System Monitor
+module.
+Continuous
+Catalyst Monitor
+The catalyst monitor actually runs an efficiency test on the car's
+catalytic converter once per trip. The <a href="OBD.html">OBD</a>-II systems have a
+second O2 sensor located downstream of the catalytic converter.
+The readings from this O2 sensor are compared to the upstream
+O2 sensor to determine the catalyst's efficiency.
+. To learn more about this monitor read the Catalyst Monitor
+module.
+Once Per
+Trip
+EGR Monitor
+The EGR system is tested for proper EGR valve lift, and for
+proper exhaust gas flow in the system
+To learn more about this monitor read the EGR- Monitor module.
+Once Per
+Trip
+Evaporative Monitor
+The evaporative monitor checks the evaporative system for leaks
+and proper purging. This monitor is a once per tip monitor and
+to date has given most car manufacturers the most trouble.
+To learn more about this monitor read the Evaporative Monitor
+module..
+Once Per
+Trip
+Oxygen Sensor Monitor
+The <a href="OBD.html">OBD</a>-II system tests the primary O2 sensor once per tip for
+its response time to rich and lean conditions. If the response time
+is too slow or the O2 sensor values stays fixed high or low, the
+system will store a DTC.
+. To learn more about this monitor read the Oxygen Sensor
+Monitor module.
+Once Per
+Trip
+Oxygen Sensor Heater Monitor
+The <a href="OBD.html">OBD</a>-II system checks once per trip to verify that the O2
+sensor heaters are working properly. The monitor is typically run
+right after the car is started.
+To learn more about this monitor read the Oxygen Sensor Heater
+Monitor module..
+Once Per
+Trip
+<p />
+The Politics of <a href="OBD.html">OBD</a>-II
+<p />
+The <a href="OBD.html">OBD</a>-II system was a product of the Clean Air Act Amendment. One of the
+main goals of the CAAA was to have in place an on-board diagnostic system that
+was "universal" among car manufacturers. An equally important goal of the
+CAAA was for all automotive service personnel to have access (at a fair market
+price) to information and training about these systems. The standard was that any
+training, support, guidance, or help given to the dealership techs was to be made
+available (at a fair market price) to anybody else in the service industry. In some
+ways this was accomplished, but in many ways it wasn't.
+In my opinion here are two areas where the standardization and information accessibility
+goals missed the mark:
+<p />
+What Is On The Car Is Not What You Expected
+<p />
+In theory a person should be able to read all the rules and regulations of the OBDII
+system and have a good idea of what to expect under the hood of a car. That is
+not always the case. Some of the issues that contribute to this are:
+<p />
+Waivers
+The manufacturer's engineering departments were having a problem meeting the
+deadline to get all the <a href="OBD.html">OBD</a>-II equipment working on every model line. The original
+<a href="OBD.html">OBD</a>-II implementation date of 1994 was pushed back to 1996. Even by 1996,
+some of the monitoring systems on some models was not developed to the satisfaction
+of the engineers.
+Each manufacturer was allowed two waivers in 1996 and one waiver in 1997 for a
+specific <a href="OBD.html">OBD</a>-II subsystem. If the manufacturer requested a waiver for a specific
+subsystem and could provide engineering reports to show that the system was not
+developed to the point that it was ready for production, a waiver was usually issued.
+This means you may fully expect to see a certain feature on a car and not
+find any part of that feature anywhere on the car!
+Two more monitors will be added to cars between now and the year 2002.
+The provisions also provide for a "phasing in" of these new monitors
+<p />
+Manufacturer's Interpretation
+<p />
+The "ground zero" document for <a href="OBD.html">OBD</a>-II is CARB's Title 13 Section 1968 document.
+It is 45 pages long and is written in a leegaleeze / government regulation
+type format. Each manufacturer had to read the regulations and make their interpretation
+of exactly what they had to do or not.
+In many instances you will not find what you expected to find because the manufacturer
+interpreted the regulation differently than you did. In some cases, manuVisit
+facturer's interpretation has resulted in hefty fines from CARB/EPA who content
+that the interpretation was outside the intent of the <a href="OBD.html">OBD</a>-II regulation.
+<p />
+Manufacturers Implementation
+<p />
+Contrary to what most people thought, the <a href="OBD.html">OBD</a>-II regulations did not specify
+how a manufacturer was to comply with the requirements.
+For example, the regulations state car as to be monitored for misfires, but
+exactly how that is done is left up to the individual manufacturers. Some
+look at crankshaft fluctuation, some look at O2 sensor waveforms, and
+some even monitor the current in the secondary ignition system
+<p />
+Limited Access To Service Information
+<p />
+Included in the CAAA, along with the requirement for the implication of an
+<a href="OBD.html">OBD</a>-II system, was the accessibility to service information requirement. The
+concept was that close to 75% of vehicle repairs are done outside the dealership
+and to keep the <a href="OBD.html">OBD</a>-II systems operating properly all service techs needed this
+service information.
+In my humble opinion, I do not think this part of the CAAA has been implemented
+as was intended by the authors of the CAAA and the Congress who voted
+on the act. I will just leave it at that...
+I have drawn a second conclusion about the accessibility of <a href="OBD.html">OBD</a>-II service information.
+It is my opinion, but I think it is an accurate one. This issue actually
+overshadows issues of the CAAA service information requirement. Since each
+manufacturer implements the <a href="OBD.html">OBD</a>-II requirements slightly differently, many
+manufacturers feel this information is a "trade secret" issue.
+I do not know this for a fact, but my feeling is that the engineering department
+wants to let nothing out, and the training department wants to pass enough information
+along to its dealer techs so that they can properly diagnose and repair
+<a href="OBD.html">OBD</a>-II systems. My observations are that some manufacturers do not give even
+its own techs adequate <a href="OBD.html">OBD</a>-II service information. My opinion is that this is due
+to the engineering department not wanting this information to get outside the
+dealership network and the safest thing to do would be to not tell anybody.
+In some cases <a href="OBD.html">OBD</a>-II training material developed by independent companies will
+exceed the level of training given by the manufacturers to its own technicians.
+<p />
+The Future of <a href="OBD.html">OBD</a>-II
+The <a href="OBD.html">OBD</a>-II system has worked well and is here to stay. The system will make
+evolutional changes over the next few years. Two new monitors will be added
+soon, the thermostat monitor and the PVC monitor. Two areas where <a href="OBD.html">OBD</a>-II will
+make some major changes are in the I/M programs and in the yet to be officially
+named "OBD-III" program.
+<p />
+Integration With I/M Programs
+<p />
+<a href="OBD.html">OBD</a>-II does a good job in monitoring a car for malfunctions. When it is working
+properly, it is actually more accurate than an emissions tail pipe test. Emissions
+officials are tying to figure out how to use the <a href="OBD.html">OBD</a>-II system in conjunction with
+smog checks.
+At present, most states will not allow a car to pass a smog check if the MIL is illuminated.
+The next step will probably be to require the car to be scanned for any
+stored DCTs. There are several pilot programs that are studying the feasibility of
+requiring the readiness status of the monitors to be checked to confirm that they
+have all ran to completion.
+The most interesting pilot test going on now is one by CARB in which cars with
+illuminated MILs are being run on an IM 240 test (the most stringent of the smog
+checks) CARB and EPA wants to see how effective the <a href="OBD.html">OBD</a>-II system is in
+catching malfunctions. They want to test 500 cars, but have already tested close to
+100. So far only 4 of the 100 cars that had illuminated MILs flunked an IM240
+test. It looks like using the vehicles own <a href="OBD.html">OBD</a>-II system may be more accurate
+than even using a tail pipe test. This means in the future it may be that a car
+comes in for an annual "scan tool" test instead of a tail pipe test. The advantages
+here is that it is much faster for the customer and less expensive for the service
+facility to provide.
+<p />
+<strong>OBD-III</strong>
+<p />
+As covered in the last section, <a href="OBD.html">OBD</a>-II does a good job of monitoring for malfunctions.
+So good that emissions experts are looking into the possibility of eliminating
+the annual tailpipe test if they could figure out a way to get a customer to
+bring a car in for repair when the MIL illuminates.
+This next generation of <a href="OBD.html">OBD</a>-II cars that report malfunctions are usually referred
+to as <a href="OBD.html">OBD</a>-III cars. The implementation of this type of system is a long ways off,
+not because of the technology, but because of civil liberty, freedom, and liability
+issues. The goal of <a href="OBD.html">OBD</a>-III is to minimize the time delay between detection of a
+malfunction by the <a href="OBD.html">OBD</a>-III system and the actual repair of the vehicle. Some of
+the reporting technologies that are being studied are:
+<p />
+External Signal
+<p />
+The car would have some type of external indicator (like a light) that would indicate
+the car was being driven around with an illuminated MIL. Apparently the
+Visit Our Website: www.tech2tech.net Page
+idea was to "shame" the owner into getting the car fixed. The civil liberties organizations
+and the manufacturers are fighting this one. This idea will not be one
+that will make it!
+<p />
+Driveability Modification
+<p />
+The idea to start having the car change its driveability the longer the owner went
+without getting the car fixed. Something like slowly reduce the top speed until the
+car is repaired. The civil liberties organizations and the manufacturers are fighting
+this one too and it is highly unlikely that this idea will be used either.
+<p />
+On-Board Transmitter
+<p />
+If there is ever going to be an <a href="OBD.html">OBD</a>-III, it will probably use an on-board transmitter
+to report a MIL light on. The technology is available to handle this.
+The most likely version will be the use of a roadside receiver to "query" cars as
+they pass. GM Hughes Electronics has already tested a roadside unit that can
+check every car on an eight lane interstate going 100 MPH. A violating car will
+transmit its VIN and stored DTCs to the roadside receiver.
+<p />
+<strong>Source: www.tech2tech.net</strong>
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"><B>Parents:</b> <a href="OBD2.html">OBD2</a></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.2 - 31 Mar 2007 - 03:45 GMT - racingsky 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/OBD?t=1194410786"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/OBD">Attach</a>
+   |  <a href="../../rdiff/Library/OBD.html">History</a>
+   |  <a href="../../oops/Library/OBD%3Ftemplate=oopsmore&amp;param1=1.2&amp;param2=1.2.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.OBD">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#bccbd5d7d5fcccdbd1dad592d3cedb83cfc9ded6d9dfc881e8ebd5d7d59cfad9d9d8dedddfd7">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#02766d6f42666b656b76636e6477716b6d6c6d6c6e6b6c672c616d6f" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

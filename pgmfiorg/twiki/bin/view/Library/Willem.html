@@ -1,0 +1,226 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . Willem   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="Willem.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>Willem</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+The <a href="http://www.willem.org" target="_top">Willem</a> programmer is essentially an open design / open source <a href="ROM.html">ROM</a> burner.  It is <strong><em>far</em></strong> from a polished design - the software was very buggy and crashed often after burning one chip on my laptop.  The burner was very consistent, aside from the slightly glitchy software.  It consistently burned both <a href="27C256.html">27&nbsp;C256</a> and AT<a href="29C256.html">29&nbsp;C256</a> chips, although the <span style='background : #FFFFCE;'><font color="#0000FF">Willem29&nbsp;C256&nbsp;Jumper</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/Willem29C256Jumper?topicparent=Library.Willem">?</a> is slightly confusing.  These can be had ready-assembled for $50-75 from <a href="http://www.ebay.com" target="_top">ebay</a> or about the same from <a href="http://www.willem.org" target="_top">http://www.willem.org</a>.  Kits/bare <a href="PCB.html">PCB</a>s are also available.  Software for windows and dos is free.  A linux port would probably be fairly easy considering source is available.
+<p />
+Dave B. sez "I've had a lot of luck with <strong><em>maxbest100</em></strong> on ebay - he is in Poland and his burners take between one and two weeks to arrrive, but they're always built well.  I've ordered several burners for friends from him.  For $65 shipped, it's <strong><em>my</em></strong> budget burner of choice."
+<p />
+<a href="WebGeek.html">Web&nbsp;Geek</a> sez "Another good ebay seller to get an Enhanced Willem Programmer for $67USD shipped from is jane-white.  She ships from BC in Canada, but she ships <span style='background : #FFFFCE;'><font color="#0000FF">Air&nbsp;Mail</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/AirMail?topicparent=Library.Willem">?</a>, and it only takes a few days." 
+<p />
+<h3><a name="_Using_the_Willem_Dual_Powered_P"> </a>  Using the Willem Dual Powered Programmer and SST 27SF512 </h3>
+<h3>  By zCivic </h3>
+<p />
+1. you need to have the programmer hooked up to you PC and the drivers loaded. If you've made it this far your on the right track. 
+<p />
+2. Set your DIP switch and insert your chip (SST27SF512) make sure the chip pin 14 &amp; 15 are in the 2 bottom slots with the middle divit towards the lever. 
+<p />
+3. Click the erase icon (has the rom with a pencil eraser) If it is unable to erase make sure you have the jumper set up as shown below. 
+<p />
+4. Load your bin your ready to program. 
+<p />
+5. Remove the jumper (shown below) 
+<p />
+6. Goto the bottom Right of the Willem box and you will see Offset(Hex) and will be defaulted to 0. Change this to 8000. 
+<p />
+7. Click on the program icon which is the complete rom picture. It will bring a pop up which will ask if want to use this off set, click yes. 
+<p />
+8. It will program and verify. If both show 100% your good to go. Replace the little jumper you removed (so you don't lose it) 
+<p />
+9. Put the Rom into your <a href="ECU.html">ECU</a> 
+<p />
+10. Turn on ignition and wait for the main relay to click off, <a href="CEL.html">CEL</a> should turn off. If this is the case you have programmed it correctly. 
+<p />
+<p />
+<ul>
+<li> Software screenshot 1: <br />
+    <img src="../../../pub/Library/Willem/willem1_377.jpg" alt="willem1_377.jpg"  width="445" height="359"  />
+</li>
+</ul>
+<p />
+<ul>
+<li> Software screenshot 2: <br />
+    <img src="../../../pub/Library/Willem/willem2_157.jpg" alt="willem2_157.jpg"  width="447" height="357"  />
+</li>
+</ul>
+<p />
+<ul>
+<li> DIP switch settings: <br />
+    <img src="../../../pub/Library/Willem/dip_853.jpg" alt="dip_853.jpg"  width="405" height="304"  />
+</li>
+</ul>
+<p />
+<ul>
+<li> Chip placement: <br />
+    <img src="../../../pub/Library/Willem/chip_117.jpg" alt="chip_117.jpg"  width="270" height="360"  />
+</li>
+</ul>
+<p />
+<ul>
+<li> Jumper settings for erase: <br />
+    <img src="../../../pub/Library/Willem/erase_146.jpg" alt="erase_146.jpg"  width="360" height="270"  />
+</li>
+</ul>
+<p />
+<ul>
+<li> Jumper settings for program: <br />
+    <img src="../../../pub/Library/Willem/program_156.jpg" alt="program_156.jpg"  width="360" height="270"  />
+</li>
+</ul>
+<p />
+<p />
+<h3><a name="_Using_the_Willem_Dual_Powered_P"> </a>  Using the Willem Dual Powered Programmer and SST 27SF256 </h3>
+<h3><a name="_By_4G_VTEC"> </a>  By 4G VTEC </h3>
+<p />
+<p />
+This is the settings in order to erase the 27SF256. Noticed some of the J jumpers on the right have to be swapped. You can not write over the old data. The chip needs to be erased in order to be re-written.
+<ul>
+<li> SST27SF256 erase: <br />
+    <img src="../../../pub/Library/Willem/sst27sf256erase_184.jpg" alt="sst27sf256erase_184.jpg"  width="465" height="275"  />
+</li>
+</ul>
+<p />
+This is the setting to burn the 27SF256, notice the board has to be on <a href="PCB.html">PCB</a>3 settings not Willem.
+<ul>
+<li> SST27SF256 burn: <br />
+    <img src="../../../pub/Library/Willem/sst27sf256_136.jpg" alt="sst27sf256_136.jpg"  width="465" height="275"  />
+</li>
+</ul>
+<p />
+<p />
+<font size = "-1"><center>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th align="center" bgcolor="#D0D1E0"> <strong><span style='background : #FFFFCE;'><font color="#0000FF">Attachment</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FileAttachment?topicparent=Library.Willem">?</a>:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Modify:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Size:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Date:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Who:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Comment:</strong> </th></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Willem/willem1_377.jpg">willem1_377.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Willem?filename=willem1_377.jpg&amp;revInfo=1">mod</a>     </td><td>  38106  </td><td>  23 Nov 2005 - 15:29  </td><td>  drdisco69  </td><td>  Software screenshot 1  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Willem/willem2_157.jpg">willem2_157.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Willem?filename=willem2_157.jpg&amp;revInfo=1">mod</a>     </td><td>  35217  </td><td>  23 Nov 2005 - 15:29  </td><td>  drdisco69  </td><td>  Software screenshot 2  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Willem/dip_853.jpg">dip_853.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Willem?filename=dip_853.jpg&amp;revInfo=1">mod</a>     </td><td>  29956  </td><td>  23 Nov 2005 - 15:29  </td><td>  drdisco69  </td><td>  DIP switch settings  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Willem/chip_117.jpg">chip_117.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Willem?filename=chip_117.jpg&amp;revInfo=1">mod</a>     </td><td>  36097  </td><td>  23 Nov 2005 - 15:30  </td><td>  drdisco69  </td><td>  Chip placement  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Willem/erase_146.jpg">erase_146.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Willem?filename=erase_146.jpg&amp;revInfo=1">mod</a>     </td><td>  37495  </td><td>  23 Nov 2005 - 15:30  </td><td>  drdisco69  </td><td>  Jumper settings for erase  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Willem/program_156.jpg">program_156.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Willem?filename=program_156.jpg&amp;revInfo=1">mod</a>     </td><td>  31657  </td><td>  23 Nov 2005 - 15:31  </td><td>  drdisco69  </td><td>  Jumper settings for program  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Willem/sst27sf256erase_184.jpg">sst27sf256erase_184.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Willem?filename=sst27sf256erase_184.jpg&amp;revInfo=1">mod</a>     </td><td>  34958  </td><td>  23 Nov 2005 - 20:56  </td><td>  drdisco69  </td><td>  SST27SF256 erase  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/Willem/sst27sf256_136.jpg">sst27sf256_136.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Willem?filename=sst27sf256_136.jpg&amp;revInfo=1">mod</a>     </td><td>  35319  </td><td>  23 Nov 2005 - 20:57  </td><td>  drdisco69  </td><td>  SST27SF256 burn  </td></tr>
+</table>
+<p />
+</font></center>
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.4 - 24 Nov 2005 - 00:08 GMT - 4g vtec 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/Willem?t=1194415169"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/Willem">Attach</a>
+   |  <a href="../../rdiff/Library/Willem.html">History</a>
+   |  <a href="../../oops/Library/Willem%3Ftemplate=oopsmore&amp;param1=1.4&amp;param2=1.4.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.Willem">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#790e10121039091e141f1057160b1e460a0c1b131c1a0d442d2e101210593f1c1c1d1b181a12">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#f0849f9db09499979984919c968583999f9e9f9e9c999e95de939f9d" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+
+</html>

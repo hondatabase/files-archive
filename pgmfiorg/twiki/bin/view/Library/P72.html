@@ -1,0 +1,272 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . P72   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="P72.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>P72</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+<a href="ROM.html">ROM</a> addresses and their functions specific to the stock Honda P72 used in:
+<p />
+<ul>
+<li> 94-95 <a href="OBD1.html">OBD1</a> Integra GSR (1.8L B18C? <a href="DOHC.html">DOHC</a> Vtec)
+</li>
+<li> 96-00 <a href="OBD2.html">OBD2</a> Integra GSR
+</li>
+</ul>
+<p />
+Picture of <a href="OBD.html">OBD</a>1 P72 (thanks Katman): <A HREF="../../../pub/Library/P72/P72OBD1top.jpg" alt="P72OBD1top.jpg"> scan </A>
+<p />
+To add an address, click <strong><em>Edit</em></strong> below, find where your <strong><em>Hex Offset</em></strong> address is, and then add your new entry like so:
+<p />
+"|''location''|''length in bytes''|''description''|''notes''<newline>|"
+<p />
+<strong><em>Note:</em></strong> Please do not add info specific to specialized <a href="ROM.html">ROM</a>s such as <a href="UberP72.html">Uber&nbsp;P72</a> and <a href="HiResP72.html">Hi&nbsp;Res&nbsp;P72</a>.
+<p />
+<p />
+<h3><a name="RAM"> </a> <a href="RAM.html">RAM</a> </h3>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> <strong><em>Location</em></strong> </td><td> <strong><em>Bytes</em></strong> </td><td> <strong><em>Description</em></strong> </td><td> <strong><em>Notes</em></strong> </td></tr>
+<tr><td> 00bb </td><td> 1 </td><td> raw MAP </td><td>  set at 0844  </td></tr>
+<tr><td> 00bf </td><td> 1 </td><td> adjusted MAP </td><td>  <a href="http://www.pgmfi.org/phorum/read.php?f=13&amp;i=4855&amp;t=4855" target="_top">more info...</a> </td></tr>
+<tr><td> 00C3 </td><td> 1 </td><td> Current <a href="RPM.html">RPM</a> </td><td>  also copied to 236h (look at 0816h)  </td></tr>
+<tr><td> 00C4 </td><td> 2 </td><td colspan="2"> Current <a href="RPM.html">RPM</a> </td></tr>
+<tr><td> 00CC </td><td> 1 </td><td> <a href="VSS.html">VSS</a> Sensor </td><td> km/h </td></tr>
+<tr><td> 00D1 </td><td> 1 </td><td> Current TPS </td><td> Throttle Position (see <a href="TpsSensor.html">Tps&nbsp;Sensor</a>) </td></tr>
+<tr><td> 00D4 </td><td> 1 </td><td colspan="2"> TP Sensor </td></tr>
+<tr><td> 00D5 </td><td> 1 </td><td colspan="2"> TPS Delta </td></tr>
+<tr><td> 00D7 </td><td> 1 </td><td> Input into ADCR5 </td><td> not connected to a sensor on <a href="USDM.html">USDM</a> P72 </td></tr>
+<tr><td> 00D8 </td><td> 1 </td><td colspan="2"> <a href="IAT.html">IAT</a> Sensor </td></tr>
+<tr><td> 00D9 </td><td> 1 </td><td> <a href="ECT.html">ECT</a> Sensor </td><td>  &nbsp;  </td></tr>
+<tr><td> 00DA </td><td> 1 </td><td colspan="2"> O2 Sensor </td></tr>
+<tr><td> 011a </td><td> 1 </td><td colspan="2"> <a href="CEL.html">CEL</a> byte 1 </td></tr>
+<tr><td> 011b </td><td> 1 </td><td colspan="2"> <a href="CEL.html">CEL</a> byte 2 </td></tr>
+<tr><td> 011c </td><td> 1 </td><td colspan="2"> <a href="CEL.html">CEL</a> byte 3 </td></tr>
+<tr><td> 011d </td><td> 1 </td><td colspan="2"> <a href="CEL.html">CEL</a> byte 4 </td></tr>
+<tr><td> 011E.3 </td><td> 1b </td><td colspan="2"> Auto/Manual config bit </td></tr>
+<tr><td> 0127.1 </td><td> 1b </td><td colspan="2"> VTEC bit </td></tr>
+<tr><td> 0131.0 </td><td> 1b </td><td> set if speed &gt; 15 kph, cleared if speed &lt; 10 kph </td><td> used to determine if VTEC should be on </td></tr>
+<tr><td> 0131.1 </td><td> 1b </td><td> set when <a href="RPM.html">RPM</a> is above VTEC switchover <a href="RPM.html">RPM</a> </td><td> has hysteresis, related to VTEC logic </td></tr>
+<tr><td> 0131.2 </td><td> 1b </td><td> set when <a href="RPM.html">RPM</a> is above some level </td><td> has hysteresis, related to VTEC logic </td></tr>
+<tr><td> 0131.6 </td><td> 1b </td><td> similar to 0131.2, but at a different level </td><td> not related to VTEC logic </td></tr>
+<tr><td> 0131.7 </td><td> 1b </td><td> similar to 0131.6, but looks at MAP, not <a href="RPM.html">RPM</a> </td><td> not related to VTEC logic </td></tr>
+<tr><td> 0192 </td><td>  &nbsp;  </td><td colspan="2"> Rev cut limit </td></tr>
+<tr><td> 0194 </td><td>  &nbsp;  </td><td colspan="2"> Rev resume limit </td></tr>
+<tr><td> 01D2 </td><td> 1 </td><td colspan="2"> Column of Fuel/Ignition Map </td></tr>
+<tr><td> 01D8 </td><td> 1 </td><td colspan="2"> Low Cam Row </td></tr>
+<tr><td> 01D9 </td><td> 1 </td><td colspan="2"> High Cam Row </td></tr>
+<tr><td> 0210.3 </td><td> 1b </td><td> Power Steering Pressure(PSP) switch input </td><td> If pin B8 (PSP) is grounded, 0x0210.3 will read 0 else it will read 1 </td></tr>
+<tr><td> 0211.2 </td><td> 1b </td><td> AC switch </td><td> <a href="http://www.pgmfi.org/phorum/read.php?f=13&amp;i=3345&amp;t=3309#reply_3345" target="_top">more info...</a> </td></tr>
+<tr><td> 0212.2 </td><td> 1b </td><td colspan="2"> Indicates MAP problem </td></tr>
+<tr><td> 0212.4 </td><td> 1b </td><td colspan="2"> Indicates other MAP problem </td></tr>
+<tr><td> 0212.6 </td><td> 1b </td><td colspan="2"> Indicates TPS problem </td></tr>
+<tr><td> 0216.4 </td><td> 1b </td><td colspan="2"> Vtec Enable Flag </td></tr>
+<tr><td> 0216.6 </td><td> 1b </td><td colspan="2"> Holds 02 Sensor Heater Enable Flag </td></tr>
+<tr><td> 0219.3 </td><td> 1b </td><td colspan="2"> ????????? </td></tr>
+<tr><td> 0227.4 </td><td> 1b </td><td colspan="2"> PA Sensor Enable Flag </td></tr>
+<tr><td> 0227.6 </td><td> 1b </td><td colspan="2"> Knock Sensor Enable Flag </td></tr>
+<tr><td> 022d.1 </td><td> 1b </td><td colspan="2"> VTEC <a href="VSS.html">VSS</a> Check Enable Flag </td></tr>
+<tr><td> 0236 </td><td> 1 </td><td colspan="2"> Current <a href="RPM.html">RPM</a> in 8bit form (<a href="IAB.html">IAB</a> Control @ 4393h routine) </td></tr>
+<tr><td> 0244 </td><td> 1 </td><td colspan="2"> Knock Retard </td></tr>
+<tr><td> 0246 </td><td> 1 </td><td colspan="2"> Ignition Advance </td></tr>
+<tr><td> 0257 </td><td> 1 </td><td> controls <a href="ADC.html">ADC</a> MUX Channel </td><td> 0 thru 7 </td></tr>
+<tr><td> 025A </td><td> 2 </td><td> Current target idle <a href="RPM.html">RPM</a> </td><td> function of <a href="ECT.html">ECT</a> and tbl_5ba7 </td></tr>
+<tr><td> 0356.1 </td><td> 1b </td><td> Serial comm mode </td><td> 1 for 9470 UART mode, 0 for 62500 9-bit mode </td></tr>
+<tr><td> 03A0 </td><td> 2 </td><td colspan="2"> Injector Duration </td></tr>
+<tr><td> 03CD </td><td> 1 </td><td colspan="2"> BARO Sensor </td></tr>
+<tr><td> 03D2 </td><td> 1 </td><td> ELD? </td><td> (<a href="ADC.html">ADC</a> input 1) </td></tr>
+<tr><td> 0f00 </td><td> 1 </td><td> 82C55 Port A </td><td> inputs </td></tr>
+<tr><td> 1f00 </td><td> 1 </td><td> 82C55 Port B </td><td> outputs </td></tr>
+<tr><td> 2f00 </td><td> 1 </td><td> 82C55 Port C </td><td> outputs </td></tr>
+<tr><td> 3f00 </td><td> 1 </td><td colspan="2"> 82C55 Command Register </td></tr>
+<tr><td> 4700 </td><td> 1 </td><td> memory-mapped digital inputs </td><td> bit values modified and copied to 0119 and 0211, includes feedback from A/C switch, VTEC solenoids and others </td></tr>
+<tr><td> P0.0 </td><td> 1b </td><td colspan="2"> A/C Clutch Output </td></tr>
+<tr><td> P0.1 </td><td> 1b </td><td colspan="2"> Purge Canister Output </td></tr>
+<tr><td> P0.5 </td><td> 1b </td><td> <a href="IAB.html">IAB</a> Output </td><td> previously thought to be P4.3 </td></tr>
+<tr><td> P1.0 </td><td> 1b </td><td colspan="2"> Left VTEC Transistor Output (IC14) </td></tr>
+<tr><td> P1.1 </td><td> 1b </td><td colspan="2"> Right VTEC Transistor Output (IC13) </td></tr>
+</table>
+*Some of these addresses were determined by comparing dasms of 273 vs. 203 and correlating known 203 addresses with the ones found in the 273.
+<p />
+<p />
+<h3><a name="ROM"> </a> <a href="ROM.html">ROM</a> </h3>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> <strong><em>Location</em></strong> </td><td> <strong><em>Bytes</em></strong> </td><td> <strong><em>Description</em></strong> </td><td> <strong><em>Notes</em></strong> </td></tr>
+<tr><td> 0630 </td><td> 3 </td><td> Injector test bypass #1 </td><td> Disable J label_063D(checked)03 3D 06 </td></tr>
+<tr><td> 0B85 </td><td> 2 </td><td> Low Speed Ignition Map Config, Column Size </td><td> <a href="http://www.pgmfi.org/phorum/read.php?f=13&amp;i=1391&amp;t=1366" target="_top">more info...</a> </td></tr>
+<tr><td> 0B87 </td><td> 2 </td><td> Low Speed Ignition Map Config, Row Size </td><td> <a href="http://www.pgmfi.org/phorum/read.php?f=13&amp;i=1391&amp;t=1366" target="_top">more info...</a> </td></tr>
+<tr><td> 0B95 </td><td> 3 </td><td> Low Speed Ignition Map at this jump </td><td> <a href="http://www.pgmfi.org/phorum/read.php?f=13&amp;i=1391&amp;t=1366" target="_top">more info...</a> </td></tr>
+<tr><td> 0BA1 </td><td> 2 </td><td> High Speed Ignition Map Config, Row Size </td><td> <a href="http://www.pgmfi.org/phorum/read.php?f=13&amp;i=1391&amp;t=1366" target="_top">more info...</a> </td></tr>
+<tr><td> 0BA9 </td><td> 2 </td><td> High Speed Ignition Map at this jump </td><td> <a href="http://www.pgmfi.org/phorum/read.php?f=13&amp;i=1391&amp;t=1366" target="_top">more info...</a> </td></tr>
+<tr><td> 11BA </td><td> 1 </td><td colspan="2"> VTEC On/Off Logic </td></tr>
+<tr><td> 120E </td><td> 1 </td><td> VTEC Coolant Temp Check </td><td> (enable=44/disable=FF) </td></tr>
+<tr><td> 1520 </td><td> 3 </td><td> Injector test bypass #2 </td><td> Disable J label_153A(ckecked)03 3A 15 </td></tr>
+<tr><td> 2315 </td><td> 3 </td><td> O2 Heater Jump Routine  </td><td> Change to "03 50 23" to disable O2 heater </td></tr>
+<tr><td> 2D43 </td><td> 2 </td><td> Rolling Target Idle </td><td> <a href="RPM.html">RPM</a> = 1875000/(word at 0x2D43) </td></tr>
+<tr><td> 2D58 </td><td> 2 </td><td> Cold Target Idle </td><td> <a href="RPM.html">RPM</a> = 1875000/(word at 0x2D58) </td></tr>
+<tr><td> 2D81 </td><td> 2 </td><td> Warm Target Idle </td><td> <a href="RPM.html">RPM</a> = 1875000/(word at 0x2D81) </td></tr>
+<tr><td> 3BE1 </td><td> 3 </td><td> VTP Sensor Disable </td><td> Change to "03 FF 3B" to disable VTP sensor check (tested!) </td></tr>
+<tr><td> 43A2 </td><td> 1 </td><td> <a href="IAB.html">IAB</a> on </td><td> <a href="IAB.html">IAB</a> open 8bit <a href="RPM.html">RPM</a> (byte at 0x43A2) </td></tr>
+<tr><td> 439D </td><td> 1 </td><td> <a href="IAB.html">IAB</a> off </td><td> <a href="IAB.html">IAB</a> close 8bit <a href="RPM.html">RPM</a> (byte at 0x439D) </td></tr>
+<tr><td> 5466 </td><td> 1 </td><td> Vtec Enable </td><td>  (enable=FF/disable=00)(Needs Testing?) </td></tr>
+<tr><td> 5467 </td><td> 1 </td><td> Knock Sensor </td><td>  (enable=FF/disable=00) </td></tr>
+<tr><td> 5468 </td><td> 1 </td><td> O2 Heater </td><td>  (enable=FF/disable=00)(Needs Testing?) </td></tr>
+<tr><td> 5469 </td><td> 1 </td><td> PA Sensor </td><td>  (enable=FF/disable=00) </td></tr>
+<tr><td> 546D </td><td> 1 </td><td colspan="2"> maybe injector test? </td></tr>
+<tr><td> 547D </td><td> 1 </td><td> VTEC <a href="VSS.html">VSS</a> Check </td><td> (enable=00/disable=FF) More info: <a href="DisableVtecVSSCheckP72.html">Disable&nbsp;Vtec&nbsp;VSSCheck&nbsp;P72</a> </td></tr>
+<tr><td> 547E </td><td> 1 </td><td> Debug Mode </td><td>  (0xFF enables, 0x00 disables) More info: <a href="P72DebugMode.html">P72&nbsp;Debug&nbsp;Mode</a> </td></tr>
+<tr><td> 5488 </td><td> 1 </td><td> Serial Mode </td><td>  (FFh Enables UART Norm 9470bps) </td></tr>
+<tr><td> 5489 </td><td> 1 </td><td> Iab control </td><td>  (0xFF enables, 0x00 disables) </td></tr>
+<tr><td> 58DA </td><td> 1 </td><td> Rev Resume #1 </td><td> <a href="RPM.html">RPM</a> = 1875000/(byte at this address) </td></tr>
+<tr><td> 58E0 </td><td> 1 </td><td colspan="2"> Rev Cut #1 </td></tr>
+<tr><td> 58E6 </td><td> 1 </td><td colspan="2"> Rev Resume #2 </td></tr>
+<tr><td> 58EC </td><td> 1 </td><td> Rev Cut #2 </td><td> i think the following 4 points are wrong </td></tr>
+<tr><td> 595A </td><td> 2 </td><td> Rev Limit #1 </td><td> <a href="http://pgmfi.org/phorum/read.php?f=13&amp;i=1391&amp;t=1366" target="_top">more info...</a> </td></tr>
+<tr><td> 5960 </td><td> 2 </td><td colspan="2"> Rev Limit #2 </td></tr>
+<tr><td> 5966 </td><td> 2 </td><td colspan="2"> Rev Limit #3 </td></tr>
+<tr><td> 596C </td><td> 2 </td><td colspan="2"> Rev Limit #4 </td></tr>
+<tr><td> 59A0 </td><td>  &nbsp;  </td><td> Vtec </td><td>  auto (?) </td></tr>
+<tr><td> 59A2 </td><td>  &nbsp;  </td><td> Vtec </td><td>  manual (?) </td></tr>
+<tr><td> 5BA7 </td><td>  &nbsp;  </td><td> Idle </td><td>  Lookup table for 16-bit target idle <a href="RPM.html">RPM</a> as a function of <a href="ECT.html">ECT</a> </td></tr>
+<tr><td> 6059 </td><td>  &nbsp;  </td><td> Serial Comm </td><td>  Lookup table for <a href="RAM.html">RAM</a> addresses that can be accessed using 9470 UART mode </td></tr>
+<tr><td> 7C9A </td><td>  &nbsp;  </td><td> Low Fuel (10x20) </td><td> <a href="http://pgmfi.org/phorum/read.php?f=13&amp;i=2073&amp;t=1366" target="_top">more info...</a> </td></tr>
+<tr><td> 7D6C </td><td>  &nbsp;  </td><td colspan="2"> High Fuel (10x15) </td></tr>
+<tr><td> 7E0C </td><td>  &nbsp;  </td><td colspan="2"> Low Timing (10x20) </td></tr>
+<tr><td> 7ED4 </td><td>  &nbsp;  </td><td colspan="2"> High Timing (10X15) </td></tr>
+<tr><td> 7C4A </td><td>  &nbsp;  </td><td> MAP sensor scalers </td><td> for fuel </td></tr>
+<tr><td> 7C54 </td><td>  &nbsp;  </td><td> MAP sensor scalers </td><td> for ignition </td></tr>
+<tr><td> 7C5E </td><td>  &nbsp;  </td><td> MAP sensor scalers </td><td> for lambda table </td></tr>
+<tr><td> 7C68 </td><td>  &nbsp;  </td><td> Rev scalers </td><td>  low cam fuel/ignition </td></tr>
+<tr><td> 7C7C </td><td>  &nbsp;  </td><td> Rev scalers </td><td>  high cam fuel/ignition </td></tr>
+<tr><td> 7C8B </td><td>  &nbsp;  </td><td> Rev scalers </td><td>  lambda table </td></tr>
+<tr><td> 7C9A </td><td>  &nbsp;  </td><td> Fuel map </td><td>  low cam </td></tr>
+<tr><td> 7D6C </td><td>  &nbsp;  </td><td> Fuel map </td><td>  high cam </td></tr>
+<tr><td> 7E0C </td><td>  &nbsp;  </td><td> Ignition map </td><td>  low cam </td></tr>
+<tr><td> 7ED4 </td><td>  &nbsp;  </td><td> Ignition map </td><td>  high cam </td></tr>
+<tr><td> 7F6A </td><td>  &nbsp;  </td><td colspan="2"> Lambda map </td></tr>
+</table>
+<p />
+<p />
+<font size = "-1"><center>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th align="center" bgcolor="#D0D1E0"> <strong><span style='background : #FFFFCE;'><font color="#0000FF">Attachment</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FileAttachment?topicparent=Library.P72">?</a>:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Modify:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Size:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Date:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Who:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Comment:</strong> </th></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/P72/P72OBD1top.jpg">P72OBD1top.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/P72?filename=P72OBD1top.jpg&amp;revInfo=1">mod</a>     </td><td>  227251  </td><td>  04 Mar 2004 - 00:44  </td><td>  blundar  </td><td>  Picture of <a href="OBD.html">OBD</a>1 P72 (thanks Katman)  </td></tr>
+<tr><td>  <img src="../../../pub/icn/else.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/P72/P72NoKnockGoodchksum.bin">P72NoKnockGoodchksum.bin</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/P72?filename=P72NoKnockGoodchksum.bin&amp;revInfo=1">mod</a>     </td><td>  32768  </td><td>  05 Mar 2004 - 18:32  </td><td>  blundar  </td><td>  P72 <a href="ROM.html">ROM</a> with knock disabled + good checksum  </td></tr>
+</table>
+<p />
+</font></center>
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.18 - 02 Apr 2006 - 02:18 GMT - 91crxsi 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/P72?t=1194413478"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/P72">Attach</a>
+   |  <a href="../../rdiff/Library/P72.html">History</a>
+   |  <a href="../../oops/Library/P72%3Ftemplate=oopsmore&amp;param1=1.18&amp;param2=1.18.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.P72">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#ee99878587ae9e89838887c0819c89d19d9b8c848b8d9ad3bab9878587cea88b8b8a8c8f8d85">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#7a0e15173a1e131d130e1b161c0f0913151415141613141f54191517" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>
