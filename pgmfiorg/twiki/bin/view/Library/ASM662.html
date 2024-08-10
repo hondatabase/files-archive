@@ -1,0 +1,155 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . ASM662   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="ASM662.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>ASM662</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+ASM662 is an Oki 66201/66207/66301 assembler/disassembler which is still a work in progress.  It's released under the BSD license, so you may use the code for anything you like.  The best way to get the latest code is in CVS, but there are Windows executables released periodically:
+<p />
+<a href="http://sourceforge.net/projects/pgmfi/" target="_top">http://sourceforge.net/projects/pgmfi/</a>
+<p />
+It also apparently works on NEC 66911 chips used in P13/P14/P0D <a href="ECU.html">ECU</a>s.
+<p />
+<hr />
+<h2> News </h2>
+<h3> October 8, 2003 </h3>
+<a href="http://prdownloads.sourceforge.net/pgmfi/asm662-win32-v1.2.zip?download" target="_top">asm662 version 1.2 for Win32</a> has been released.  This code is in the same experimental stage mentioned below -- extra commandline arguments are addresses not to consider as tables.
+<p />
+<hr />
+<h2> Notes </h2>
+I'm working towards a perfectly relocatable disassembly of various <a href="ROM.html">ROM</a>s, starting with P30, and to that end the disassembler code in CVS is in an experimental stage.  You can supply additional commandline arguments which are addresses it should <em>not</em> consider as a pointer to <a href="ROM.html">ROM</a> tables.  i.e.:
+<p />
+dasm662 p30.bin p30.asm 5e20 5e59 7133 72fa
+<p />
+<hr />
+<p />
+A problem with disassembly/code analysis on the Oki 66k architecture is that the same opcode can have different meanings at runtime depending on the status flag called DD.  The disassembler tracks this flag in a naïve manner which works most of the time.
+<p />
+It doesn't handle two code constructs properly: indirect jumps and subroutine calls.
+<p />
+Indirect jumps do not occur anywhere in P28, P30, P72 <a href="ROM.html">ROM</a>s, but they do occur in P13 (at least).  I've been mostly working with P30, though, I'm ignoring the problem for now.
+<p />
+Subroutine calls ''which change DD before returning'' do occur in all <a href="ROM.html">ROM</a>s, however, and that causes inaccuracies in the disassembly (but it always outputs code which will re-assemble to the same sequence of bytes, so it's safe to use even if it isn't 100% correct).  It is able to detect DD flag violations in some cases because certain opcodes/instructions <strong><em>require</em></strong> DD to be a certain value, and thus it issues a warning if it is not, changes it so that it is consistent, and then outputs the corrected instruction mnemonic.
+<p />
+To really properly handle subroutine calls, it would have to defer disassembly after a call instruction until it's worked out what the subroutine's impact on DD (and LRB and USP for that matter, but I won't get into that here) is before the RT instruction.  I haven't gotten a chance to make it that smart.  If I do go that far into code analysis, it starts encroaching on the realm of decompilation instead of disassembly, and many other things are possible.
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.1 - 19 Feb 2004 - 22:01 GMT - guest 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/ASM662?t=1194409766"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/ASM662">Attach</a>
+   |  <a href="../../rdiff/Library/ASM662.html">History</a>
+   |  <a href="../../oops/Library/ASM662%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.ASM662">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#5a2d3331331a2a3d373c337435283d65292f38303f392e670e0d3331337a1c3f3f3e383b3931">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#6f1b00022f0b0608061b0e03091a1c06000100010306010a410c0002" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>
