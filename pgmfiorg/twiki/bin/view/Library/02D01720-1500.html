@@ -1,0 +1,207 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . 02D01720-1500   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="02D01720-1500.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>02D01720-1500</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+To convert a "1720" board from non-vtec to vtec add the following parts:
+<p />
+<strong><em>Required:</em></strong>
+<p />
+<ul>
+<li> Q26: <a href="C2785.html">C2785</a> (*note: I used a C144 and it worked fine - NPN switching transistor)
+</li>
+<li> C60: 1uF 35v tantalum (marked "1 ... 35" and blue w/+ mark)
+</li>
+<li> IC14: <a href="515XHighSideSwitch.html">515&nbsp;X High Side Switch</a>
+</li>
+<li> J10: jumper wire
+</li>
+<li> R67: 820 Ohm, 1/8w 5% resistor (1k work fine says Deluded)
+</li>
+<li> <a href="RM11.html">RM11</a>: weird voltage divider (<strong>this is KEY</strong> but can be replaced.  Click link for more info)this could be replace by a 10k 8pin resistor module work really well
+</li>
+<li> D11: <a href="ClampingDiode.html">Clamping&nbsp;Diode</a>
+</li>
+</ul>
+<p />
+<strong><em>Optional:</em></strong>
+<p />
+<ul>
+<li> C75,C89,C72,C74,C88:  22pF ceramic (marked "22")
+</li>
+<li> IC13: <a href="515XHighSideSwitch.html">515&nbsp;X High Side Switch</a> (<a href="02D01720-1500.html#IC13note">note</a>)
+</li>
+<li> R66: 820 Ohm, 1/8w 5% resistor (1k work fine says Deluded)
+</li>
+</ul>
+<p />
+This is Honda's first <a href="OBD1.html">OBD1</a>  Civic/Integra vtec design.  It is more complicated than it needs to be - the optional components are overkill.
+<p />
+<strong>#IC13note :</strong> IC13 is entirely superfluous.  You can 100% safely remove it and install J10 to bypass it.  IC13+IC14 are run in series, so if you have both installed you actually increase the probability of failure becuase you have 5x5x to possibly fail, not one.
+<p />
+Find the <a href="PartsForECUs.html">Parts&nbsp;For&nbsp;ECUs</a> Here
+<ul>
+<li> C60 and J10 - Top left of the case: <br /> <img src="../../../pub/Library/02D01720-1500/DSCF1764.JPG" alt="DSCF1764.JPG" width="1280" height="960"  />
+</li>
+</ul>
+<p />
+<ul>
+<li> Resistor setup in RM11: <br /> <img src="../../../pub/Library/02D01720-1500/DSCF1766.JPG" alt="DSCF1766.JPG" width="1280" height="960"  />
+</li>
+</ul>
+<p />
+<ul>
+<li> Q26 NPN Transistor: <br /> <img src="../../../pub/Library/02D01720-1500/DSCF1765.JPG" alt="DSCF1765.JPG" width="1280" height="960"  />
+</li>
+</ul>
+<p />
+<ul>
+<li> IC14 5151S (thanks to Xenocron) AND R67 Resistor: <br /> <img src="../../../pub/Library/02D01720-1500/DSCF1763.JPG" alt="DSCF1763.JPG" width="1280" height="960"  />
+</li>
+</ul>
+<p />
+<ul>
+<li> D11 Diode - upper left in the case: <br /> <img src="../../../pub/Library/02D01720-1500/DSCF1762.JPG" alt="DSCF1762.JPG" width="1280" height="960"  />
+</li>
+</ul>
+<p />
+<ul>
+<li> overview with comment: <br /> <img src="../../../pub/Library/02D01720-1500/DSCF1759_modified.JPG" alt="DSCF1759_modified.JPG" width="2304" height="1728"  />
+</li>
+</ul>
+<p />
+<p />
+<p />
+<p />
+<font size = "-1"><center>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th align="center" bgcolor="#D0D1E0"> <strong><span style='background : #FFFFCE;'><font color="#0000FF">Attachment</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FileAttachment?topicparent=Library.02D01720-1500">?</a>:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Modify:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Size:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Date:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Who:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Comment:</strong> </th></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/02D01720-1500/DSCF1764.JPG">DSCF1764.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/02D01720-1500?filename=DSCF1764.JPG&amp;revInfo=1">mod</a>     </td><td>  466150  </td><td>  14 Mar 2007 - 01:41  </td><td>  defensio  </td><td>  C60 and J10 - Top left of the case  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/02D01720-1500/DSCF1766.JPG">DSCF1766.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/02D01720-1500?filename=DSCF1766.JPG&amp;revInfo=1">mod</a>     </td><td>  467869  </td><td>  14 Mar 2007 - 01:43  </td><td>  defensio  </td><td>  Resistor setup in RM11  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/02D01720-1500/DSCF1765.JPG">DSCF1765.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/02D01720-1500?filename=DSCF1765.JPG&amp;revInfo=1">mod</a>     </td><td>  480298  </td><td>  14 Mar 2007 - 01:44  </td><td>  defensio  </td><td>  Q26 NPN Transistor  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/02D01720-1500/DSCF1762.JPG">DSCF1762.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/02D01720-1500?filename=DSCF1762.JPG&amp;revInfo=1">mod</a>     </td><td>  475259  </td><td>  14 Mar 2007 - 01:45  </td><td>  defensio  </td><td>  D11 Diode - upper left in the case  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/02D01720-1500/DSCF1759_modified.JPG">DSCF1759_modified.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/02D01720-1500?filename=DSCF1759_modified.JPG&amp;revInfo=1">mod</a>     </td><td>  1179213  </td><td>  14 Mar 2007 - 02:28  </td><td>  defensio  </td><td>  overview with comment  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/02D01720-1500/DSCF1763.JPG">DSCF1763.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/02D01720-1500?filename=DSCF1763.JPG&amp;revInfo=1">mod</a>     </td><td>  468390  </td><td>  14 Mar 2007 - 05:10  </td><td>  defensio  </td><td>  IC14 5151S (thanks to Xenocron) AND R67 Resistor  </td></tr>
+</table>
+<p />
+</font></center>
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.5 - 14 Mar 2007 - 05:11 GMT - defensio 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/02D01720-1500?t=1194410065"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/02D01720-1500">Attach</a>
+   |  <a href="../../rdiff/Library/02D01720-1500.html">History</a>
+   |  <a href="../../oops/Library/02D01720-1500%3Ftemplate=oopsmore&amp;param1=1.5&amp;param2=1.5.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.02D01720-1500">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#32455b595b7242555f545b1c5d40550d414750585751460f66655b595b127457575650535159">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#394d5654795d505e504d58555f4c4a50565756575550575c175a5654" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>
