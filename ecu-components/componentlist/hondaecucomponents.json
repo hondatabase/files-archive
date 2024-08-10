@@ -1,0 +1,1403 @@
+{
+	"credits": [
+		{
+			"name" : "Blundar",
+			"group": "PGMFI.org",
+			"link" : "http://www.pgmfi.org"
+		},
+		{
+			"name": "BoostedNW",
+			"link": "http://www.boostednw.com"
+		},
+		{
+			"name" : "Ferenc Mikula",
+			"group": "HondaRulez",
+			"link" : "https://www.instagram.com/hondarulez"
+		},
+		{
+			"name" : "Apollo",
+			"group": "ApolloTuning",
+			"link" : "https://apollotuning.com/"
+		},
+		{
+			"name": "Wouters Jonas",
+			"link": "https://www.facebook.com/honda.ecu.repair.europe/"
+		},
+		{
+			"name": "Members of the Honda Tuning Suite's Discord",
+			"link": "http://discord.hondatuningsuite.com"
+		},
+		{
+			"name" : "Kevin Mh",
+			"group": "Miro Builds",
+			"link" : "https://www.mirobuilds.com/"
+		},
+		{
+			"name" : "Flávio Pereira",
+			"group": "Hondatabase.com",
+			"link" : "http://www.hondatabase.com/"
+		}
+	],
+	"components": [
+		{
+			"ids": [
+				"BR2",
+				"BR3",
+				"BR4",
+				"BR5"
+			],
+			"type": "",
+			"specs": "",
+			"notes": "Empty"
+		},
+		{
+			"ids": [
+				"BR1",
+				"R69"
+			],
+			"type": "Jumper/Resistor",
+			"specs": "(0 OHM)",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"C14"
+			],
+			"type": "Condensator",
+			"specs": "(220 uF) (35 V)",
+			"notes": "Low ESR RADIAL HF"
+		},
+		{
+			"ids": [
+				"C15",
+				"C19",
+				"C21"
+			],
+			"type": "Condensator",
+			"specs": "(33 uF) (35 V)",
+			"notes": "Low ESR RADIAL HF"
+		},
+		{
+			"ids": [
+				"C18"
+			],
+			"type": "Condensator",
+			"specs": "(220 uF) (10 V)",
+			"notes": "Low ESR RADIAL HF"
+		},
+		{
+			"ids": [
+				"C201"
+			],
+			"type": "Condensator",
+			"specs": "(100 uF) (35 V)",
+			"notes": "Low ESR RADIAL HF"
+		},
+		{
+			"ids": [
+				"C24"
+			],
+			"type": "Condensator",
+			"specs": "(47 uF) (10 V)",
+			"notes": "Low ESR RADIAL HF"
+		},
+		{
+			"ids": [
+				"C26",
+				"C30",
+				"C37"
+			],
+			"type": "Capacitor",
+			"specs": "(33 uF) (35 V)",
+			"notes": "Low ESR RADIAL HF"
+		},
+		{
+			"ids": [
+				"C28"
+			],
+			"type": "Capacitor",
+			"specs": "(330 uF) (35 V)",
+			"notes": "Main / Low ESR RADIAL HF"
+		},
+		{
+			"ids": [
+				"C31",
+				"C36",
+				"C47"
+			],
+			"type": "Capacitor",
+			"specs": "(470 uF) (10 V)",
+			"notes": "Low ESR RADIAL HF"
+		},
+		{
+			"ids": [
+				"C40"
+			],
+			"type": "Condensator",
+			"specs": "(100 uF) (10 V)",
+			"notes": "Low ESR RADIAL HF"
+		},
+		{
+			"ids": [
+				"C40",
+				"C71"
+			],
+			"type": "Capacitor",
+			"specs": "",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"C49",
+				"C50"
+			],
+			"type": "Capacitor",
+			"specs": "Surface mount, (0.004 uF)",
+			"notes": "JDM and alike ECU"
+		},
+		{
+			"ids": [
+				"C51",
+				"C52"
+			],
+			"type": "Capacitor",
+			"specs": "(0.1 uF)",
+			"notes": "Non-polarized capacitor, 104 marking. Non-polarized capacitor."
+		},
+		{
+			"ids": [
+				"C56",
+				"C57"
+			],
+			"type": "Capacitor",
+			"specs": "(100 pF Ceramic)",
+			"notes": "Digital Test Circuit"
+		},
+		{
+			"ids": [
+				"C58",
+				"C59"
+			],
+			"type": "Capacitor",
+			"specs": "(100 pF Ceramic)",
+			"notes": "Digital Test Circuit"
+		},
+		{
+			"ids": [
+				"C60"
+			],
+			"type": "Capacitor",
+			"specs": "(1 uF Polar)",
+			"notes": "",
+			"boards": [
+				"11F0"
+			]
+		},
+		{
+			"ids": [
+				"C60"
+			],
+			"type": "Capacitor",
+			"specs": "(1 uF Polar) (+/- 35 V)",
+			"notes": "Check Polarity!"
+		},
+		{
+			"ids": [
+				"C65"
+			],
+			"type": "Capacitor",
+			"specs": "",
+			"notes": "External compensation of the O2 sensor"
+		},
+		{
+			"ids": [
+				"C72",
+				"C74",
+				"C75",
+				"C89"
+			],
+			"type": "Capacitor",
+			"specs": "Ceramic disk, (2.2 pF)",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"C86"
+			],
+			"type": "Capacitor",
+			"specs": "",
+			"notes": "External barometric sensor"
+		},
+		{
+			"ids": [
+				"C87"
+			],
+			"type": "Capacitor",
+			"specs": "PSP",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"C91",
+				"C92"
+			],
+			"type": "Capacitor",
+			"specs": "Surface mount, (0.00001 uF)",
+			"notes": "JDM and alike ECU"
+		},
+		{
+			"ids": [
+				"C94"
+			],
+			"type": "Capacitor",
+			"specs": "TANTALIUM, (4.7 uF)",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"CM1"
+			],
+			"type": "",
+			"specs": "C103Z",
+			"notes": "7 Pins"
+		},
+		{
+			"ids": [
+				"CN2"
+			],
+			"type": "Pin Header",
+			"specs": "Datalog",
+			"notes": "1234 = GND/RX/5V/TX. 2.54 DIP 4 pin, 2.54 mm between pins, 3 mm length"
+		},
+		{
+			"ids": [
+				"CN3"
+			],
+			"type": "SOLDER PORT",
+			"specs": "",
+			"notes": "Related to Datalogging"
+		},
+		{
+			"ids": [
+				"D1",
+				"R6"
+			],
+			"type": "",
+			"specs": "",
+			"notes": "A/T, Gear input 4"
+		},
+		{
+			"ids": [
+				"D10"
+			],
+			"type": "Rectifier Diode",
+			"specs": "sf34, RM4Z/RG4Z grey RU4Z red",
+			"notes": "EGR Valve Protection (SANKEN)"
+		},
+		{
+			"ids": [
+				"D11"
+			],
+			"type": "Diode",
+			"specs": "1N4002",
+			"notes": "",
+			"boards": [
+				"11F0"
+			]
+		},
+		{
+			"ids": [
+				"D11",
+				"D14"
+			],
+			"type": "Diode",
+			"specs": "1N4002, (100 V) (1/4/0.25 W)",
+			"notes": "PWM"
+		},
+		{
+			"ids": [
+				"D11"
+			],
+			"type": "Diode",
+			"specs": "1N4001 (50 V)",
+			"notes": "VTEC with high switch SK5151S",
+			"boards": [
+				"11F0",
+				"1720",
+				"1980"
+			]
+		},
+		{
+			"ids": [
+				"D11",
+				"D3",
+				"D7"
+			],
+			"type": "Diode",
+			"specs": "1N4001",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"D14"
+			],
+			"type": "Diode",
+			"specs": "1N4002",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"D14"
+			],
+			"type": "Zener Diode",
+			"specs": "1N5230BTR (4.7 V) 1N5261BTR (4.7 V)",
+			"notes": "Must be under the Transistor C-E voltage"
+		},
+		{
+			"ids": [
+				"D20"
+			],
+			"type": "Protector",
+			"specs": "",
+			"notes": "External BARO sensor"
+		},
+		{
+			"ids": [
+				"D24"
+			],
+			"type": "Sanken Rectifier Diode",
+			"specs": "RU4Z red",
+			"notes": "EGR Valve Protection"
+		},
+		{
+			"ids": [
+				"D26"
+			],
+			"type": "",
+			"specs": "JDM?",
+			"notes": "MIL CHECK LIGHT"
+		},
+		{
+			"ids": [
+				"D34"
+			],
+			"type": "",
+			"specs": "USDM?",
+			"notes": "MIL CHECK LIGHT"
+		},
+		{
+			"ids": [
+				"D4"
+			],
+			"type": "Diode",
+			"specs": "",
+			"notes": "(Input) Gear 3 in A/T ECU"
+		},
+		{
+			"ids": [
+				"D5"
+			],
+			"type": "Diode",
+			"specs": "SR4418/SR4416 1.5KE27A",
+			"notes": "Digital to analog (DAC)"
+		},
+		{
+			"ids": [
+				"D6"
+			],
+			"type": "Supressor",
+			"specs": "1AZ24/1.5KE20A, (21 V)",
+			"notes": "Protects IC17 (circuit, v)ery rare to mount."
+		},
+		{
+			"ids": [
+				"DM1",
+				"DM2",
+				"DM3"
+			],
+			"type": "Transistor",
+			"specs": "S233 IT",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"DM11",
+				"DM7",
+				"DM8",
+				"DM9"
+			],
+			"type": "Transistor",
+			"specs": "S235 IT",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"DM4"
+			],
+			"type": "PSP SWITCH",
+			"specs": "",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"HIC1"
+			],
+			"type": "",
+			"specs": "AH1-D",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"HIC3"
+			],
+			"type": "",
+			"specs": "D IS168 8P17",
+			"notes": "BAROMETRIC sensor. Little hole in it"
+		},
+		{
+			"ids": [
+				"IC1"
+			],
+			"type": "",
+			"specs": "OKI M66X301",
+			"notes": "Main Processor"
+		},
+		{
+			"ids": [
+				"IC11",
+				"RM4"
+			],
+			"type": "",
+			"specs": "Current measurement circuit",
+			"notes": "IACV"
+		},
+		{
+			"ids": [
+				"IC12"
+			],
+			"type": "High-side Switch",
+			"specs": "SK3001S",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"IC13"
+			],
+			"type": "High-side switch",
+			"specs": "Same as Q37",
+			"notes": "Safety switch/prevent VTEC on the CPU code fly away"
+		},
+		{
+			"ids": [
+				"IC14"
+			],
+			"type": "High-side switch",
+			"specs": "SK5050S / SK5151S / SI5151S / SI5151SG / IR-6220",
+			"notes": "5050 > 5151 > 5154 can be replaced with a bigger number, but not smaller due to power difference",
+			"boards": [
+				"11F0",
+				"1720",
+				"1980"
+			]
+		},
+		{
+			"ids": [
+				"IC15"
+			],
+			"type": "",
+			"specs": "IDEM NR AS IC14 (wat?)",
+			"notes": "A/T SWITCH. Up and down shift ic15+ic16"
+		},
+		{
+			"ids": [
+				"IC16"
+			],
+			"type": "",
+			"specs": "IDEM NR AS IC13 (wat?)",
+			"notes": "A/T SWITCH. With solenoid gearbox valves"
+		},
+		{
+			"ids": [
+				"IC17"
+			],
+			"type": "",
+			"specs": "TA8903SN",
+			"notes": "Component for fuel pump and more.. @. R25 = RESET PULSE ON (HONDARULEZ* BOOSTEDNW APOLLO)"
+		},
+		{
+			"ids": [
+				"IC19"
+			],
+			"type": "Integrated Switch",
+			"specs": "TOSHIBA TA8001S",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"IC22"
+			],
+			"type": "",
+			"specs": "M51945BL",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"IC3"
+			],
+			"type": "EEPROM Memory",
+			"specs": "OKI M38256AP",
+			"notes": "(256/512) 28 PIN. SST/ATMEL/27C,SF/ 29C,SF dip 2.54 and PLCC options. PLCC32 to 28 dip. MTP ALSO. You need a socket for it."
+		},
+		{
+			"ids": [
+				"IC4"
+			],
+			"type": "Integrated Circuit",
+			"specs": "74HC373 / MC74HC373N / MM74HC373",
+			"notes": "20 PIN. You need a socket for it"
+		},
+		{
+			"ids": [
+				"IC4"
+			],
+			"type": "Integrated circuit",
+			"specs": "74HC373N/MC/MM",
+			"notes": "20 PIN. You need a socket for it."
+		},
+		{
+			"ids": [
+				"IC4"
+			],
+			"type": "",
+			"specs": "NEC EC-BACK0003-454",
+			"notes": "Backup Memory"
+		},
+		{
+			"ids": [
+				"IC5"
+			],
+			"type": "Integrated Switch Circuit",
+			"specs": "TOSHIBA TA7900S-D",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"J1"
+			],
+			"type": "Resistor",
+			"specs": "(0.0 OHM)",
+			"notes": "Must be bridged for the ECU to read from the EEPROM memory."
+		},
+		{
+			"ids": [
+				"J10"
+			],
+			"type": "Bridge",
+			"specs": "",
+			"notes": "Must be bridged for IC14 to work",
+			"boards": [
+				"11F0",
+				"1980"
+			]
+		},
+		{
+			"ids": [
+				"J12"
+			],
+			"type": "Resistor",
+			"specs": "(0.0 OHM)",
+			"notes": "Must be cut/disconnected for datalog to work."
+		},
+		{
+			"ids": [
+				"PA1"
+			],
+			"type": "",
+			"specs": "D IS168",
+			"notes": "BAROMETRIC SENSOR"
+		},
+		{
+			"ids": [
+				"Q10",
+				"Q11",
+				"Q12",
+				"Q13",
+				"Q46"
+			],
+			"type": "PNP Transistor",
+			"specs": "A143XSA",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"Q101"
+			],
+			"type": "PNP Transistor",
+			"specs": "NTE2368 / FJN4305 / BC556 (ECB pinout)",
+			"notes": "NTE2368/R4305 are with EBC pinout",
+			"boards": [
+				"11F0"
+			]
+		},
+		{
+			"ids": [
+				"Q101"
+			],
+			"type": "Transistor",
+			"specs": "11FO BOARD P28,P06..A143XSZ FJN4305/NTE2368/",
+			"notes": "PNP Transistor A1048/2SB1030, are with ECB pin holder (R4305)(dta) Transistors.",
+			"boards": [
+				"11F0"
+			]
+		},
+		{
+			"ids": [
+				"Q102",
+				"Q103"
+			],
+			"type": "Transistor",
+			"specs": "",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"Q11"
+			],
+			"type": "Transistor",
+			"specs": "NECB965 NPN",
+			"notes": "Green Color"
+		},
+		{
+			"ids": [
+				"Q16"
+			],
+			"type": "PNP Transistor",
+			"specs": "DTA143XSA",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"Q17"
+			],
+			"type": "Transistor",
+			"specs": "",
+			"notes": "IAB Transistor > Interlock output > Intake air butterfly's",
+			"boards": [
+				"1980"
+			]
+		},
+		{
+			"ids": [
+				"Q17"
+			],
+			"type": "PNP Transistor",
+			"specs": "A143XSA",
+			"notes": "(A/T) INTERLOCK/IAB* INTAKE AIR BUTTERFLY",
+			"boards": [
+				"1980"
+			]
+		},
+		{
+			"ids": [
+				"Q20"
+			],
+			"type": "PNP Transistor",
+			"specs": "A143XSA",
+			"notes": "2SB1030, PWM digital"
+		},
+		{
+			"ids": [
+				"Q20"
+			],
+			"type": "PNP Transistor",
+			"specs": "B1030",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"Q20"
+			],
+			"type": "PNP Transistor",
+			"specs": "Digital",
+			"notes": "DTA143XSA/2SB1030"
+		},
+		{
+			"ids": [
+				"Q21"
+			],
+			"type": "Transistor",
+			"specs": "NEC 01594",
+			"notes": "IACV"
+		},
+		{
+			"ids": [
+				"Q22",
+				"Q23",
+				"Q24",
+				"Q25",
+				"Q43",
+				"Q44"
+			],
+			"type": "PNP Transistor",
+			"specs": "DTA144, A144 dta144xsa/esa NTE2361",
+			"notes": "Digital Test Circuit"
+		},
+		{
+			"ids": [
+				"Q26",
+				"Q37"
+			],
+			"type": "NPN Transistor",
+			"specs": "D1423 / C2785",
+			"notes": "",
+			"boards": [
+				"1980"
+			]
+		},
+		{
+			"ids": [
+				"Q26"
+			],
+			"type": "NPN Transistor",
+			"specs": "2SC2785/2SD1423",
+			"notes": "",
+			"boards": [
+				"1720",
+				"1820"
+			]
+		},
+		{
+			"ids": [
+				"Q27",
+				"Q28"
+			],
+			"type": "NPN Transistor",
+			"specs": "2SC2785",
+			"notes": "",
+			"boards": [
+				"1720"
+			]
+		},
+		{
+			"ids": [
+				"Q29"
+			],
+			"type": "Transistor",
+			"specs": "3055T",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"Q29"
+			],
+			"type": "MOSFET Transistor",
+			"specs": "(10 A) (60 V) (75 W)",
+			"notes": "MJE3055T PWM"
+		},
+		{
+			"ids": [
+				"Q3"
+			],
+			"type": "NPN Transistor",
+			"specs": "NEC 2SD1779",
+			"notes": "IAT"
+		},
+		{
+			"ids": [
+				"Q30"
+			],
+			"type": "NPN Transistor",
+			"specs": "DTC144XSC/Z",
+			"notes": "",
+			"boards": [
+				"11F0",
+				"1720"
+			]
+		},
+		{
+			"ids": [
+				"Q30"
+			],
+			"type": "NPN Transistor",
+			"specs": "AIL4L / FJN3302RTA",
+			"notes": "",
+			"boards": [
+				"11F0",
+				"1720"
+			]
+		},
+		{
+			"ids": [
+				"Q30"
+			],
+			"type": "NPN Transistor",
+			"specs": "Built-in bias resistor",
+			"notes": "AIL4L on the \"1720 BOARD\". Replacement: \"FJN3302RTA\". DTC144XSC on the \"11FO BOARD\". Option to D14 A/F 5V reading.",
+			"boards": [
+				"11F0",
+				"1720"
+			]
+		},
+		{
+			"ids": [
+				"Q31"
+			],
+			"type": "Transistor",
+			"specs": "2SD1780 (RACT-ND)",
+			"notes": "EVAP (PCS)"
+		},
+		{
+			"ids": [
+				"Q31"
+			],
+			"type": "SANKEN Transistor",
+			"specs": "D1796",
+			"notes": "Black Color"
+		},
+		{
+			"ids": [
+				"Q34",
+				"R135"
+			],
+			"type": "",
+			"specs": "INTERLOCK",
+			"notes": "(A/T) Q17/Q34 together output."
+		},
+		{
+			"ids": [
+				"Q35"
+			],
+			"type": "NPN Transistor",
+			"specs": "C124XSZ",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"Q36"
+			],
+			"type": "NPN Transistor",
+			"specs": "C3225 1K",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"Q37"
+			],
+			"type": "NPN Transistor",
+			"specs": "Digital SK5151 high side switch",
+			"notes": "Used with IC14 only, not needed with IC14 and IC13. Prevents ROM disappearing. 2SD1430/2SC2785* P28/P06. 2SD1423 P30 C2785*.",
+			"boards": [
+				"11F0"
+			]
+		},
+		{
+			"ids": [
+				"Q38"
+			],
+			"type": "NPN Transistor",
+			"specs": "C2240 GR1K",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"Q38",
+				"Q39"
+			],
+			"type": "NPN Transistor",
+			"specs": "Ignition",
+			"notes": "",
+			"boards": [
+				"11F0",
+				"1720"
+			]
+		},
+		{
+			"ids": [
+				"Q39"
+			],
+			"type": "NPN Transistor",
+			"specs": "C144ESA",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"Q4"
+			],
+			"type": "Transistor",
+			"specs": "B1068",
+			"notes": "",
+			"boards": [
+				"1720"
+			]
+		},
+		{
+			"ids": [
+				"Q41"
+			],
+			"type": "PNP Transistor",
+			"specs": "A1175\u00c2\u00b0",
+			"notes": "PSP RELATED SWITCH",
+			"boards": [
+				"11F0"
+			]
+		},
+		{
+			"ids": [
+				"Q41",
+				"Q42"
+			],
+			"type": "NEC Transistor",
+			"specs": "A1442",
+			"notes": "Green Color"
+		},
+		{
+			"ids": [
+				"Q45"
+			],
+			"type": "Transistor",
+			"specs": "J103GR1",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"Q6",
+				"Q7",
+				"Q8",
+				"Q9"
+			],
+			"type": "PNP Transistor",
+			"specs": "A143XSA",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"Q6",
+				"Q7",
+				"Q8",
+				"Q9"
+			],
+			"type": "PNP Transistor",
+			"specs": "Integrated bias resistor (resistor or Transistor?)",
+			"notes": "A143 dta143xsa/NTE2362, digital Test Circuit"
+		},
+		{
+			"ids": [
+				"QM1",
+				"QM2"
+			],
+			"type": "NPN Transistor Array",
+			"specs": "INJECTOR DRIVER",
+			"notes": "SK STA460C"
+		},
+		{
+			"ids": [
+				"QM1"
+			],
+			"type": "SANKEN MODULE",
+			"specs": "SLA4010",
+			"notes": "Black Color/MULTY PIN"
+		},
+		{
+			"ids": [
+				"QM3"
+			],
+			"type": "NPN Transistor Array",
+			"specs": "FUEL PUMP DRIVER SK STA413A",
+			"notes": "FLR, ACC, 02HTR, FANC.."
+		},
+		{
+			"ids": [
+				"R4"
+			],
+			"type": "Resistor",
+			"specs": "(10k OHM) (0.25 W)",
+			"notes": "Vref input OPamp"
+		},
+		{
+			"ids": [
+				"R5"
+			],
+			"type": "Resistor",
+			"specs": "",
+			"notes": "Input resistor for the O2 input"
+		},
+		{
+			"ids": [
+				"R23"
+			],
+			"type": "Resistor",
+			"specs": "(10k OHM) (0.25 W)",
+			"notes": "For digital Test Circuit"
+		},
+		{
+			"ids": [
+				"R25"
+			],
+			"type": "Resistor",
+			"specs": "",
+			"notes": "Reset pulse for TA8903SN"
+		},
+		{
+			"ids": [
+				"R52"
+			],
+			"type": "Resistor",
+			"specs": "(1.2k OHM) (0.25 W)",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"R54"
+			],
+			"type": "Resistor",
+			"specs": "(1.0k OHM) (0.25 W)",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"R54"
+			],
+			"type": "Resistor",
+			"specs": "(1k OHM) (1/4 W)",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"R66",
+				"R67"
+			],
+			"type": "Resistor",
+			"specs": "(820 OHM) (0.25 W)",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"R67"
+			],
+			"type": "Resistor",
+			"specs": "(820 OHM) (0.25 W)",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"R70"
+			],
+			"type": "Resistor",
+			"specs": "(220 OHM) (0.25 W)",
+			"notes": "EGR boost control output."
+		},
+		{
+			"ids": [
+				"R70"
+			],
+			"type": "Resistor",
+			"specs": "(220 OHM)",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"R71"
+			],
+			"type": "Resistor",
+			"specs": "(330 OHM) (0.25 W)",
+			"notes": "EGR solenoid between the wastegate and turbo cold side/not after the TB."
+		},
+		{
+			"ids": [
+				"R71"
+			],
+			"type": "Resistor",
+			"specs": "(330 OHM)",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"R75",
+				"R76",
+				"R77"
+			],
+			"type": "Resistor",
+			"specs": "",
+			"notes": "CEL light"
+		},
+		{
+			"ids": [
+				"R85"
+			],
+			"type": "Resistor",
+			"specs": "",
+			"notes": "External compensation of the O2 sensor"
+		},
+		{
+			"ids": [
+				"R89"
+			],
+			"type": "Resistor",
+			"specs": "(10k OHM) (0.25 W)",
+			"notes": "Starter signal"
+		},
+		{
+			"ids": [
+				"R90",
+				"R93",
+				"R97"
+			],
+			"type": "Resistor",
+			"specs": "",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"R94"
+			],
+			"type": "Resistor",
+			"specs": "",
+			"notes": "Part of the starter input"
+		},
+		{
+			"ids": [
+				"R98"
+			],
+			"type": "Resistor",
+			"specs": "",
+			"notes": "External barometric sensor"
+		},
+		{
+			"ids": [
+				"R99"
+			],
+			"type": "Resistor",
+			"specs": "PSP RELATED",
+			"notes": "To correct idle"
+		},
+		{
+			"ids": [
+				"R101"
+			],
+			"type": "Resistor",
+			"specs": "PSP RELATED option",
+			"notes": "Idle when used steering wheel"
+		},
+		{
+			"ids": [
+				"R103",
+				"R104",
+				"R105",
+				"R106"
+			],
+			"type": "Resistor",
+			"specs": "(3.3k OHM) (0.25 W)",
+			"notes": "Digital Test Circuit"
+		},
+		{
+			"ids": [
+				"R107",
+				"R93"
+			],
+			"type": "Resistor",
+			"specs": "",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"R107"
+			],
+			"type": "Resistor",
+			"specs": "(220 OHM) (1/4 W)",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"R109",
+				"R116",
+				"R140",
+				"R141"
+			],
+			"type": "",
+			"specs": "",
+			"notes": "Knock Board related"
+		},
+		{
+			"ids": [
+				"R135"
+			],
+			"type": "Resistor",
+			"specs": "(10 OHM) (0.25 W)",
+			"notes": "Engine mount control between with Q34"
+		},
+		{
+			"ids": [
+				"R136"
+			],
+			"type": "Resistor 1",
+			"specs": "",
+			"notes": "Pull up 1+2. For setting the (default v)oltage on input if sensor not present/voltage set."
+		},
+		{
+			"ids": [
+				"R137"
+			],
+			"type": "Resistor 3",
+			"specs": "",
+			"notes": "ELD input"
+		},
+		{
+			"ids": [
+				"R138"
+			],
+			"type": "Resistor 2",
+			"specs": "",
+			"notes": "Pull down"
+		},
+		{
+			"ids": [
+				"R142",
+				"R143",
+				"R144"
+			],
+			"type": "Resistor",
+			"specs": "(10k OHM) (0.25 W)",
+			"notes": "",
+			"boards": [
+				"1980"
+			]
+		},
+		{
+			"ids": [
+				"R142"
+			],
+			"type": "Resistor",
+			"specs": "(10k OHM) (0.25 W)",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"R143"
+			],
+			"type": "Resistor",
+			"specs": "(51k OHM) (0.25 W)",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"R144"
+			],
+			"type": "Resistor",
+			"specs": "(12k OHM) (0.25 W)",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"R201"
+			],
+			"type": "Resistor",
+			"specs": "(10k OHM) (0.25 W)",
+			"notes": "Most of the times present in all ECUs",
+			"boards": [
+				"11F0"
+			]
+		},
+		{
+			"ids": [
+				"RM1"
+			],
+			"type": "",
+			"specs": "M-5431 00",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"RM10"
+			],
+			"type": "Resistor Array",
+			"specs": "(2.2k OHM)",
+			"notes": "2.54 DIP 6 pin"
+		},
+		{
+			"ids": [
+				"RM11"
+			],
+			"type": "Resistor",
+			"specs": "2.54 DIP 8 pin (resistor board)",
+			"notes": "VTEC Activation. PIN 1/2 (10k OHM), PIN 2/3 (51k OHM), PIN 3/8 (12k OHM)",
+			"boards": [
+				"11F0",
+				"1720"
+			]
+		},
+		{
+			"ids": [
+				"RM3",
+				"RM13"
+			],
+			"type": "Resistor Array",
+			"specs": "(10k OHM)",
+			"notes": "2.54 DIP 9 pin"
+		},
+		{
+			"ids": [
+				"RM2",
+				"RM4"
+			],
+			"type": "Resistor Array",
+			"specs": "(4.7k OHM)",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"RM7"
+			],
+			"type": "",
+			"specs": "M-5432 07",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"RM8"
+			],
+			"type": "",
+			"specs": "6E223/152J",
+			"notes": "2.54 DIP 7 pin"
+		},
+		{
+			"ids": [
+				"RP17"
+			],
+			"type": "Resistor",
+			"specs": "(1.5k OHM)",
+			"notes": "A/T - Resistor 2X (RP17 + RP18)"
+		},
+		{
+			"ids": [
+				"RP18"
+			],
+			"type": "Resistor",
+			"specs": "(0 OHM)",
+			"notes": ""
+		},
+		{
+			"ids": [
+				"XTL1"
+			],
+			"type": "",
+			"specs": "10akss4b, 10 MHz",
+			"notes": "Quartz Crystal Resonator"
+		},
+		{
+			"ids": [
+				"XTL1"
+			],
+			"type": "",
+			"specs": "7.90KSSOG, 7.90 Mhz",
+			"notes": "Quartz Crystal Resonator"
+		},
+		{
+			"ids": [
+				"XTL2"
+			],
+			"type": "",
+			"specs": "500E, CSB (Control Station Board)?",
+			"notes": ""
+		}
+	]
+}

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" class="notranslate">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Find all components of OBD0/1/2 Honda ECUs, with their specs and notes.">
+	<meta name="keywords" content="honda, honda tuning, honda ecu, honda engine, honda components, obd0, obd1, obd2, obd2a, obd2b">
+	<meta name="google" content="notranslate">
+
+	<title>Hondatabase - OBD0/1/2 Honda ECU Component List</title>
+
+	<style>
+		body {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			margin     : 0;
+			padding    : 20px;
+		}
+
+		a { color: #f15d5d; }
+
+		#table-container { overflow-x: auto; }
+
+		table {
+			width          : max-content;
+			border-collapse: collapse;
+			table-layout   : 100%;
+		}
+
+		th {
+			background-color: #c9c9c9;
+			border          : 1px solid black;
+			padding         : 8px;
+		}
+			
+		td {
+			border    : 1px solid black;
+			padding   : 8px;
+			text-align: left;
+		}
+
+		td:first-of-type { font-weight: 500; }
+
+		tr:first-of-type > th { font-weight: 500; }
+
+		tr:nth-of-type(2) > th { font-weight: 100; }
+
+		tr { transition: background-color 200ms ease-in-out; }
+
+		tr:nth-child(odd) { background-color: #f2f2f2; }
+
+		tr:not(:has(th)):hover {
+			color           : white;
+			background-color: #f15d5d;
+		}
+
+		sup {
+			margin-left: 4px;
+			font-size  : 0.7rem;
+		}
+
+		span.eletrical-spec {
+			margin-right : 4px;
+			border-radius: 25px;
+			border       : .1px solid black;
+			font-style   : italic;
+			font-size    : -0.5rem;
+			font-weight  : 500;
+			padding      : 0 5px;
+			white-space  : nowrap;
+		}
+
+		#legend {
+			position        : fixed;
+			bottom          : 0;
+			left            : 0;
+			padding         : 4px 10px;
+			font-size       : small;
+			background-color: #f2f2f2;
+			width           : 100%;
+		}
+
+		#legend * { display: inline; }
+
+		#credits {
+			font-size: small;
+			margin   : 20px 0;
+		}
+
+		#credits ul { margin: 0; }
+
+		#author {
+			position: fixed;
+			top     : 1px;
+			right   : 2px;
+		}
+
+		@media print {
+			header p, header small { display: none; }
+
+			a {
+				color          : inherit;
+				text-decoration: none;
+			}
+
+			table { width: 100%; }
+
+			tr { page-break-inside: avoid; }
+
+			span.eletrical-spec { line-height: 2em; }
+
+			#author {
+				position      : static;
+				text-transform: uppercase;
+			}
+
+			#legend { position: static; }
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<span id="author">hondatabase.com</span>
+		<h1>OBD0/1/2 Honda ECU Component List</h1>
+		<p>This table is an ongoing effort to enumerate all components (and their specs) of OBD0/1/2 Honda ECUs. <span style="color: red;">(It has been pointed out that some of this information is mixed up. Take caution.)</span></p>
+		<p>If you would like to share data or simply fix something, <u>please edit each row/cell directly directly and your changes will be submited</u>, as soon as you click out of a row.</p>
+		<p>This page is both print and smaller-device friendly.</p>
+		<small>
+			<p>You can download this list, as JSON, from my <a href="https://gist.github.com/VIRUXE/3187356a6d001f96c0c3a71c43b38ba4" target="_blank" rel="noopener noreferrer">Gist</a> on github.com.</p>
+			<p>If you would like to look at the source images, from where this data was extracted, visit the <a href="images" target="_blank">images</a> directory.</p>
+			<p>For any feedback, please <a href="mailto:hondatabase@flaviopereira.dev?subject=Contribute to Honda ECU Component List">e-mail</a> me.</p>
+		</small>
+	</header>
+	<main>
+		<h2>Components</h2>
+		<div id="table-container">
+			<table>
+				<thead>
+					<th style="width: auto;">ID(s)</th>
+					<th>Type</th>
+					<th>Specs</th>
+					<th>Notes</th>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+		<div id="legend">
+			<p>Boards:</p>
+			<ul>
+				<li><strong>OBD0</strong>: N/A</li>
+				<li><strong>OBD1</strong>: 11F0, 1720, 1980</li>
+				<li><strong>OBD2</strong>: N/A</li>
+			</ul>
+		</div>
+	</main>
+	<footer>
+		<div id="credits">
+			<h2>Credits:</h2>
+			<ul></ul>
+		</div>
+	<footer>
+
+	<script>
+		let user = localStorage.getItem('username');
+
+		function saveRow(index, cells) {
+			if (!user) {
+				while (user === null || user === '') user = prompt('Please enter your name/nickname/e-mail to be credited for your contribution:');
+
+				localStorage.setItem('username', user);
+			}
+
+			const formData = new FormData();
+			formData.append('user', user);
+			formData.append('rowIndex', index);
+			formData.append('rowData', JSON.stringify(Array.from(cells).map(cell => cell.textContent.trim())));
+
+			fetch('componentlist_contribute.php', {
+				method: 'POST',
+				body  : formData
+			}).then(response => {
+				if (response.ok) return;
+				console.error('Failed to save the data:', response);
+				alert(`An error occurred while trying to save the data. Please try again later. (${response.statusText})`);
+			}).catch(error => {
+				console.error('Failed to save the data:', error);
+				alert('An error occurred while trying to save the data. Please try again later.');
+			});
+		}
+
+		function handleRowEdit(event) {
+			const row      = event.target;
+			const rowIndex = Array.from(row.parentElement.children).indexOf(row);
+			const cells    = Array.from(row.children);
+			let   edited  = false;
+		
+			// Check if any cell within the row was edited
+			for (const cell of cells) {
+				const newValue = cell.textContent.trim() || '';
+				const oldValue = cell.dataset.original || '';
+
+				if (newValue != oldValue) {
+					edited = true;
+					break;
+				}
+			}
+		
+			if (!edited) return;
+		
+			let save = confirm('Do you want to save the changes you made to this row?');
+
+			if (save) saveRow(rowIndex, row.children)
+		
+			cells.forEach(cell => {
+				// Only do something with the cells that were edited
+				const newValue = cell.textContent.trim() || '';
+				const oldValue = cell.dataset.original || '';
+
+				if (newValue === oldValue) return;
+
+				if (save) {
+					cell.dataset.original = cell.textContent.trim();
+					cell.style.backgroundColor = 'rgba(241, 93, 93, 0.5)';
+				} else {
+					if(cell.dataset.original) cell.textContent = oldValue;
+					cell.style.backgroundColor = '';
+				}
+			});
+		}
+
+		fetch(location.port === 3000 ? 'hondaecucomponents.json' : 'https://gist.githubusercontent.com/VIRUXE/3187356a6d001f96c0c3a71c43b38ba4/raw')
+			.then(data => data.json())
+			.then(json => {
+			// Render rows for all component nodes
+			const tbody = document.getElementsByTagName('tbody')[0];
+	
+			json.components.forEach(componentsNode => {
+				const tr = document.createElement('tr');
+
+				tr.setAttribute('contenteditable', 'true');
+				tr.onblur = event => handleRowEdit(event);
+				
+				Object.values(componentsNode).forEach((property, propertyIndex) => {
+					if (propertyIndex > 3) return; // Only render the first 4 properties
+
+					const td = document.createElement('td')
+					let html = property;
+			
+					if (propertyIndex === 0) {
+						html = property.join(', ');
+						
+						if (componentsNode.boards) {
+							const sup = document.createElement('sup');
+							sup.title     = 'ECU Board(s)';
+							sup.innerHTML = componentsNode.boards.join(', ');
+							html += sup.outerHTML;
+						}
+
+						td.dataset.original = html;
+					} else if (propertyIndex === 2) {
+						const regex = /\(([^)]*(OHM|A|V|W|uF|pF|MHz)[^)]*)\)/g;
+						let match;
+
+						while ((match = regex.exec(property)) !== null) {
+							let content = match[1];
+							let symbol  = unit = content.split(' ').pop();
+					
+							switch (unit) {
+								case 'OHM': symbol = 'Ω'; break;
+								case 'A'  : symbol = 'Amps'; break;
+								case 'V'  : symbol = 'Volts'; break;
+								case 'W'  : symbol = 'Watts'; break;
+								case 'uF' : symbol = 'µF'; break;
+							}
+
+							content = content.replace(unit, symbol);
+					
+							html = html.replace(match[0], `<span class="eletrical-spec">${content}</span>`);
+
+							if (td.dataset.original) td.dataset.original += ` ${content}`; else td.dataset.original = content;
+						}
+					} else {
+						if (property !== '') td.dataset.original = property;
+					}
+			
+					td.innerHTML = html;
+					tr.appendChild(td);
+				});
+			
+				tbody.appendChild(tr);
+			});
+	
+			// Render credits
+			const credits = document.querySelector('#credits > ul');
+			json.credits.forEach(node => {
+				const li = document.createElement('li');
+	
+				if (node.link) {
+					with (a = document.createElement('a')) {
+						href      = node.link;
+						target    = '_blank';
+						rel       = 'noopener noreferrer';
+						innerHTML = node?.group ? `${node.name} (<i>${node.group}</i>)` : node.name;
+					}
+	
+					li.appendChild(a);
+				} else
+					li.innerHTML = node.name;
+	
+				credits.appendChild(li);
+			});
+		}).catch(error => {
+			console.error('Failed to fetch the data:', error);
+			alert('An error occurred while fetching the data. Please try again later.');
+		});
+	</script>
+</body>
+</html>
