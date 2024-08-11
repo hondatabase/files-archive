@@ -1,0 +1,174 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . TroubleshootingSolidCEL (r1.1 vs. r1.2)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/TroubleshootingSolidCEL.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>TroubleshootingSolidCEL</b> (r1.1 vs. r1.2)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/TroubleshootingSolidCEL.html">TroubleshootingSolidCEL</a></b>
+		(<a href="../../view/Library/TroubleshootingSolidCEL%3Frev=r1.2.html">r1.2</a> - 27&nbsp;Dec&nbsp;2004 - Home.markolson)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+<p />
+<ol>
+<li> If you have added capacitors to any of the non-power signals (C91 &amp; C92 on a <a href="../../view/Library/JDM.html">JDM</a> P30 for example), make sure they are not too large.  I put 0.1uF decoupling caps there, and got a solid <a href="../../view/Library/CEL.html">CEL</a> because the low reactance pulled the PSEN signal down to a solid 3V and held the ALE signal at ground.  Per info on the General Hardware Assistance Forum, C91 &amp; C92 should be 0.00001uF, should you choose to use them.  
+</li>
+<li> If you want to check your soldering for opens/shorts/cold solder joints, you can check for continuity using the <a href="../../view/Library/EcuChippingWirelist.html">Ecu&nbsp;Chipping&nbsp;Wirelist</a>.  Others will have to check to see if this wirelist is appropriate for other <a href="../../view/Library/ECU.html">ECU</a>s -- markolson - 27 Dec 2004   
+</li>
+</ol></td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/TroubleshootingSolidCEL.html">TroubleshootingSolidCEL</a></b>
+		(<a href="../../view/Library/TroubleshootingSolidCEL%3Frev=r1.1.html">r1.1</a> - 18&nbsp;Nov&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="blundar" date="1100799000" format="1.0" version="1.1"}%
+%META:TOPICPARENT{name="EcuTroubleshooting"}%
+Solid <a href="../../view/Library/CEL.html">CEL</a>s are arguably one of the easier problems to troubleshoot because there are relatively few things that cause them to happen.  A "solid" <a href="../../view/Library/CEL.html">CEL</a> occurs when there is a serious hardware failure on the <a href="../../view/Library/ECU.html">ECU</a>.  The <a href="../../view/Library/EcuBackupProcessor.html">Ecu&nbsp;Backup&nbsp;Processor</a> will kick into gear and (minimally) try to run the car.  This generally results in the car running really rough if at all.
+<p />
+In <a href="../../view/Library/OBD.html">OBD</a>0 for instance, there are only 12 things that the <a href="../../view/Library/ECU.html">ECU</a> checks: SFRs of <a href="../../view/Library/MCU.html">MCU</a>, Checksum, internal <a href="../../view/Library/RAM.html">RAM</a> of <a href="../../view/Library/MCU.html">MCU</a>, external <a href="../../view/Library/RAM.html">RAM</a>, Further checksums, Analog to digital converter failure, 6260 Error, ...  All of these things are <strong>very low level</strong>.  Rarely are any of these things the problem with a solid <a href="../../view/Library/CEL.html">CEL</a> on a chipped <a href="../../view/Library/ECU.html">ECU</a>, however.
+<p />
+95% of the time, solid <a href="../../view/Library/CEL.html">CEL</a>s on a chipped <a href="../../view/Library/ECU.html">ECU</a> come from one of two problems
+<ul>
+<li> Improper soldering of components necessary to chip the <a href="../../view/Library/ECU.html">ECU</a>
+</li>
+<li> Inappropriate or bad program burned in chip installed in <a href="../../view/Library/ECU.html">ECU</a>
+</li>
+</ul>
+<p />
+To troubleshoot a solid <a href="../../view/Library/CEL.html">CEL</a> on a chipped <a href="../../view/Library/ECU.html">ECU</a>:
+<ol>
+<li> Burn a "stock" program for the <a href="../../view/Library/ECU.html">ECU</a>.  If the <a href="../../view/Library/ECU.html">ECU</a> originally was a P06, use an unmodified P06 program.  If the <a href="../../view/Library/ECU.html">ECU</a> was a P72, use an unmodified P72 program.  If the <a href="../../view/Library/ECU.html">ECU</a> is a non-vtec <a href="../../view/Library/ECU.html">ECU</a> converted to vtec, try the original non-vtec program first and a stock P28 program second.  You can find stock programs <a href="../../view/Library/EcuDefinitionCodes.html">here</a>.<BR><Br>
+</li>
+<li> Install the <a href="../../view/Library/ECU.html">ECU</a> in a car (or power it up on a bench) with the stock program installed.  Check to see that the dash <a href="../../view/Library/CEL.html">CEL</a> clicks on, the fuel pump pressurizes the rail for approximately 2 seconds and then the pump and <a href="../../view/Library/CEL.html">CEL</a> kick off.  <strong>If the <a href="../../view/Library/ECU.html">ECU</a> behaves normally with a stock chip, your problem was with the program you were trying to use.</strong>  Verify that the <a href="../../view/Library/CheckSum.html">Check&nbsp;Sum</a> is correct and that the <a href="../../view/Library/ROM.html">ROM</a> has the appropriate hardware features disabled, if necessary.  See <a href="../../view/Library/OBD.html">OBD</a>1CodeCompatibility and <a href="../../view/Library/OBD.html">OBD</a>0CodeCompatibility for more information.<BR><BR>
+</li>
+<li> If the <a href="../../view/Library/ECU.html">ECU</a> still has a solid <a href="../../view/Library/CEL.html">CEL</a> and identical behavior with the stock program intended for it, 99% of the time there are poor solder connections on the <a href="../../view/Library/EPROM.html">EPROM</a> or latch used to chip it.  For <a href="../../view/Library/OBD.html">OBD</a>1 <a href="../../view/Library/ECU.html">ECU</a>s, cut <a href="../../view/Library/OBD1J1.html">J1</a> for an additional test.  With J1 cut, the <a href="../../view/Library/ECU.html">ECU</a> should be returned to stock and no longer have a solid <a href="../../view/Library/CEL.html">CEL</a>.  Rubbing alcohol is a good solvent to use to clean up flux and other residues from soldering in order to inspect parts for poor connections.  Whenever possible, inspect the top side of the board to ensure adaquate penetration for connections.  (<strong>someone please add more here - maybe pictures of bad solder joints?</strong>)<BR><BR>
+</li>
+<li> If the <a href="../../view/Library/OBD.html">OBD</a>1 <a href="../../view/Library/ECU.html">ECU</a> will not work with J1 cut, in all likehood it is fried and should be used for parts and / or replaced.
+</li>
+</ol>
+<p />
+This is intended to be a <strong>basic</strong> introduction and nothing more.  Please add your own experience and wisdom to it.</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/TroubleshootingSolidCEL.html">View</a>
+  |  <a href="TroubleshootingSolidCEL.html">Diffs</a>  | <a href="../../view/Library/TroubleshootingSolidCEL%3Frev=1.2.html">r1.2</a> | &gt; | <a href="../../view/Library/TroubleshootingSolidCEL%3Frev=1.1.html">r1.1</a>
+  |  <a href="../../oops/Library/TroubleshootingSolidCEL%3Ftemplate=oopsmore&amp;param1=1.2&amp;param2=1.2.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.TroubleshootingSolidCEL">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#384f51535178485f555e5116574a5f074b4d5a525d5b4c056c6f515351187e5d5d5c5a595b53">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#dda9b2b09db9b4bab4a9bcb1bba8aeb4b2b3b2b3b1b4b3b8f3beb2b0" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision r1.1 - 18 Nov 2004 - 17:30 GMT - Home.blundar<br />
+    Revision r1.2 - 27 Dec 2004 - 18:16 GMT - Home.markolson
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

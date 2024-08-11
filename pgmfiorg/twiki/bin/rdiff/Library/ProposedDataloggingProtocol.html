@@ -1,0 +1,196 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . ProposedDataloggingProtocol ( vs. r1.1)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/ProposedDataloggingProtocol.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>ProposedDataloggingProtocol</b> ( vs. r1.1)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/ProposedDataloggingProtocol.html">ProposedDataloggingProtocol</a></b>
+		(<a href="../../view/Library/ProposedDataloggingProtocol%3Frev=r1.1.html">r1.1</a> - 20&nbsp;Feb&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="blundar" date="1077237440" format="1.0" version="1.1"}%
+This is a <strong><em>working draft</em></strong> of a proposed protocol to replace the stock serial interrupt handler.
+<p />
+It is intended to be cross platform (i.e. both <a href="../../view/Library/OBD0MPFI.html">OBD0&nbsp;MPFI</a> <a href="../../view/Library/ECU.html">ECU</a>s and <a href="../../view/Library/OBD1CivicIntegraECUs.html">OBD1&nbsp;Civic&nbsp;Integra&nbsp;ECUs</a>)
+<p />
+<h2> Key points: </h2>
+<ul>
+<li> NOT BE POLLING - send continuous stream of data.
+</li>
+<li> Allow for polling in the event stream data is not adaquate
+</li>
+<li> Allow for all memory space (<a href="../../view/Library/OBD.html">OBD</a>1) / all memory chips (<a href="../../view/Library/OBD.html">OBD</a>0) to be queried
+</li>
+<li> Allow for <a href="../../view/Library/RTP.html">RTP</a> - writes to high address space with data validation
+</li>
+<li> Eventually allow a bulk update method for rapid re-flashes.  Not a priority.
+</li>
+</ul>
+<p />
+<h3> Normal operation: </h3>
+<ul>
+<li> <a href="../../view/Library/ECU.html">ECU</a> continously sends a pre-set data stream
+</li>
+<li> first byte of packet identifies which data is being sent
+</li>
+</ul>
+<p />
+<h3><a name="Querying_ECU_"> </a> Querying <a href="../../view/Library/ECU.html">ECU</a>: </h3>
+# PC: send 02h/03h/04h/05h command to query for additional data
+# ECu: send 80h/81h/82h/83h reply packet to satisfy PC
+<p />
+<h3> Two way comm for updating idea: </h3>
+# PC: send data (byte/word) to <a href="../../view/Library/ECU.html">ECU</a> using byte write/word write packet (10h/11h).
+# <a href="../../view/Library/ECU.html">ECU</a>: Byte / word stored in "byte storage" or "word storage" (temp space)
+# <a href="../../view/Library/ECU.html">ECU</a>: send byte/word destination request, containing original data (84/85)
+# PC: receive byte/word destination request, verify data.  Go to #1 if data not intact, otherwise continue
+# PC: send appropriate destination packet (20h/21h/22h/23h)
+# <a href="../../view/Library/ECU.html">ECU</a>: recieve destination packet, move data from byte storage" or "word storage" accordingly
+<p />
+<h3> PC-&gt;ECU packets: </h3>
+<p />
+|__Name|__Byte 1 | __Byte 2 | __Byte 3 | __Byte 4 | __Byte 5| __Function
+|byte <a href="../../view/Library/RAM.html">RAM</a> read| 02h |Addr(hi)|Addr(lo)|8bitchecksum(addr hi+lo)| 02h |Read byte from <a href="../../view/Library/RAM.html">RAM</a> at 16 bit address Byte2Byte3 - reply with <a href="../../view/Library/RAM.html">RAM</a> byte reply packet
+|word <a href="../../view/Library/RAM.html">RAM</a> read| 03h |Addr(hi)|Addr(lo)|8bitchecksum(addr hi+lo)|03h|Read word from <a href="../../view/Library/RAM.html">RAM</a> at 16 bit address Byte2Byte3 - reply with <a href="../../view/Library/RAM.html">RAM</a> word reply packet
+|byte <a href="../../view/Library/ROM.html">ROM</a> read| 04h |Addr(hi)|Addr(lo)|8bitchecksum(addr hi+lo)|04h|Read byte from <a href="../../view/Library/ROM.html">ROM</a> at 16 bit address Byte2Byte3 - reply with <a href="../../view/Library/ROM.html">ROM</a> byte reply packet
+|word <a href="../../view/Library/ROM.html">ROM</a> read| 05h |Addr(hi)|Addr(lo)|8bitchecksum(addr hi+lo)|05h|Read word from <a href="../../view/Library/ROM.html">ROM</a> at 16 bit address Byte2Byte3 - reply with <a href="../../view/Library/ROM.html">ROM</a> word reply packet
+|byte write| 10h |Data Byte|Complement of Data Byte|Data byte +Data byte|10h| <a href="../../view/Library/RAM.html">RAM</a> byte to write - reply with byte destination request packet
+|word write| 11h |Data Byte 1|Data Byte 2|Data Byte 1 + Data byte 2|11h|RAM word to write - reply with word destination request packet
+|8bit byte <a href="../../view/Library/RAM.html">RAM</a> destination| 20h |Addr(8bit)|Addr(8bit)|8bitchecksum(addr)|20h| Write data in "byte storge" to 8bit <a href="../../view/Library/RAM.html">RAM</a> address
+|16bit byte <a href="../../view/Library/RAM.html">RAM</a> destination| 21h |Addr(hi)|Addr(lo)|8bitchecksum(addr hi+lo)|21h|Write data in "byte storge" to 16bit <a href="../../view/Library/RAM.html">RAM</a> address
+|16bit byte <a href="../../view/Library/ROM.html">ROM</a> destination| 22h |Addr(hi)|Addr(lo)|8bitchecksum(addr hi+lo)|22h| Write data in "byte storge" to 16bit <a href="../../view/Library/ROM.html">ROM</a> address
+|16bit word <a href="../../view/Library/ROM.html">ROM</a> destination| 23h |Addr(hi)|Addr(lo)|8bitchecksum(addr hi+lo)|23h|Write data in "word storge" to 16bit <a href="../../view/Library/ROM.html">ROM</a> address
+|BULKWRITE Addr| 80h | Addr(hi) | Addr(lo) | N/A | n/A | Bulk update: set data pointer = addr, lock <a href="../../view/Library/ECU.html">ECU</a> in serial interrupt
+|BULKWRITE Start| 81h| length (bytes)  | data... | *|*|Bulk update: <a href="../../view/Library/RTP.html">RTP</a> write <em>__</em> bytes to <a href="../../view/Library/ROM.html">ROM</a> at address previously specified.
+<p />
+<h3><a name="ECU_PC_packets_"> </a> <a href="../../view/Library/ECU.html">ECU</a>-&gt;PC packets: </h3>
+<p />
+|__Name|Byte 1 | Byte 2 | Byte 3 | Byte 4 | Byte 5| Function__
+|continuous data| 01 | XX | YY | ZZ | checksum(XX+YY+ZZ)|These each correspond
+|...|...|XX|YY|ZZ|checksum(XX+YY+ZZ)| to some sensor you
+|continuous data| 7F | XX | YY | ZZ | checksum(XX+YY+ZZ)| are datalogging
+|BULKWRITE addr reply| 80 | Addr(hi) | Addr(low) | N/A | N/A | Let PC verify bulkwrite address before starting
+|BULKWRITE addr check| 81 | checksum | N/A | N/A | N/A | let PC verify integrity of data written after bulkwrite
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> read <a href="../../view/Library/RAM.html">RAM</a> byte reply  </td><td>  82  </td><td>  XX  </td><td>  CPL XX  </td><td>  XX  </td><td>  checksum(XX) </td></tr>
+<tr><td> read <a href="../../view/Library/RAM.html">RAM</a> word reply  </td><td>  83  </td><td>  XX  </td><td>  YY  </td><td>  checksum(XX)  </td><td>  checksum(YY) </td></tr>
+<tr><td> read <a href="../../view/Library/ROM.html">ROM</a> byte reply  </td><td>  84  </td><td>  XX  </td><td>  CPL XX  </td><td>  XX  </td><td>  checksum(XX) </td></tr>
+<tr><td> read <a href="../../view/Library/ROM.html">ROM</a> word reply  </td><td>  85  </td><td>  XX  </td><td>  YY  </td><td>  checksum(XX)  </td><td>  checksum(YY) </td></tr>
+<tr><td> byte desination request </td><td> A0  </td><td>  Data byte </td><td>  cpl data byte  </td><td>  checksum(databyte)  </td><td>  data byte  </td></tr>
+<tr><td> word desination request </td><td> A1  </td><td>  Data byte 1  </td><td>  data byte 2  </td><td>  checksum(data byte 1)  </td><td>  checksum(data byte 2)  </td></tr>
+</table>
+| NAK | FF| 00| FF| 00 | FF | invalid command received</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/ProposedDataloggingProtocol.html">View</a>
+  |  <a href="ProposedDataloggingProtocol.html">Diffs</a>  | <a href="../../view/Library/ProposedDataloggingProtocol%3Frev=1.1.html">r1.1</a>
+  |  <a href="../../oops/Library/ProposedDataloggingProtocol%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.ProposedDataloggingProtocol">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#26514f4d4f6656414b404f08495441195553444c4345521b72714f4d4f06604343424447454d">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#e89c8785a88c818f819c89848e9d9b81878687868481868dc68b8785" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision  - <br />
+    Revision r1.1 - 20 Feb 2004 - 00:37 GMT - Home.blundar
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

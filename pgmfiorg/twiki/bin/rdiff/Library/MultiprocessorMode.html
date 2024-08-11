@@ -1,0 +1,162 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . MultiprocessorMode ( vs. r1.1)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/MultiprocessorMode.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>MultiprocessorMode</b> ( vs. r1.1)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/MultiprocessorMode.html">MultiprocessorMode</a></b>
+		(<a href="../../view/Library/MultiprocessorMode%3Frev=r1.1.html">r1.1</a> - 03&nbsp;Jun&nbsp;2005 - Home.hondainfo)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="hondainfo" date="1117793220" format="1.0" version="1.1"}%
+%META:TOPICPARENT{name="DLCCommunication"}%
+MULTIPROCESSOR COMMUNICATIONS
+<p />
+In applications where multiple controllers jointly perform
+a task, the master controller must be able to communicate
+selectively with individual slaves. To do this,
+the master first identifies the target slave (or slaves)
+with an address byte and then transmits a block of data.
+The target slaves must be able to identify their own
+address before receiving any data bytes.
+The serial port on the 8051 provides a 9-bit mode to
+facilitate multiprocessor communication. The 9th bit
+allows the controller to distinguish between address
+and data bytes. In this mode, a total of 11 bits are
+received or transmitted: a start bit (0), 8 data bits (LSB
+first), a programmable 9th bit, and a stop bit (1). See
+Figure below.
+The 9th bit is set to 1 to identify address bytes and set
+to 0 for data bytes. A typical data stream is seen below:
+ADDRESS BYTE / DATA BYTE / DATA BYTE / . . .
+D8 e1 D8 e0 D8 e 0
+Initially the slave is set up to only receive address bytes.
+Once it receives its own address, the slave reconfigures
+itself to receive data. On the 8051 serial port, an address
+byte interrupts all slaves for an address comparison.
+On the 83C51FA, however, Automatic Address
+Recognition allows the addressed slave to be the only
+one interrupted; that is, the address comparison occurs
+in hardware, not software. With this feature, the master
+controller can establish communication with one or
+more slaves without all the slaves having to respond to
+the transmission.
+<p />
+<img src="../../../pub/Library/MultiprocessorMode/mpcomm.jpg" alt="mpcomm.jpg"  width="712" height="170"  />
+<p />
+%META:FILEATTACHMENT{name="mpcomm.jpg" attr="" comment="" date="1117793134" path="C:\Documents and Settings\Beci\Asztal\mpcomm.jpg" size="24229" user="hondainfo" version="1.1"}%</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/MultiprocessorMode.html">View</a>
+  |  <a href="MultiprocessorMode.html">Diffs</a>  | <a href="../../view/Library/MultiprocessorMode%3Frev=1.1.html">r1.1</a>
+  |  <a href="../../oops/Library/MultiprocessorMode%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.MultiprocessorMode">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#daadb3b1b39aaabdb7bcb3f4b5a8bde5a9afb8b0bfb9aee78e8db3b1b3fa9cbfbfbeb8bbb9b1">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#b6c2d9dbf6d2dfd1dfc2d7dad0c3c5dfd9d8d9d8dadfd8d398d5d9db" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision  - <br />
+    Revision r1.1 - 03 Jun 2005 - 10:07 GMT - Home.hondainfo
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

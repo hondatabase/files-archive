@@ -1,0 +1,441 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . AccordAutoOBD2-OBD1 (r1.1 vs. r1.4)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/AccordAutoOBD2-OBD1.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>AccordAutoOBD2-OBD1</b> (r1.1 vs. r1.4)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/AccordAutoOBD2-OBD1.html">AccordAutoOBD2-OBD1</a></b>
+		(<a href="../../view/Library/AccordAutoOBD2-OBD1%3Frev=r1.4.html">r1.4</a> - 13&nbsp;Oct&nbsp;2005 - Home.drdisco69)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Ok, this article deals with creating an automatic <a href="../../view/Library/OBD.html">OBD</a>2a&gt;OBD1 conversion harness and the parts necessary to run an auto <a href="../../view/Library/OBD.html">OBD</a>2a Accord on an auto <a href="../../view/Library/OBD.html">OBD</a>1 ecu. You ODB1 guys can also use this info to switch out your Accord ecu for a more ‘freeware friendly’ Integra ecu. Unless you specifically use the parts I did, you may not be successful. All parts discussed here will be <a href="../../view/Library/USDM.html">USDM</a> parts. I used a P75 auto ecu, a tcu from I believe a 1995 vtec Accord (F22B1) and my engine harness was an <a href="../../view/Library/OBD.html">OBD</a>2a harness. My car is a 1996 Accord LX sedan. 
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Ok, this article deals with creating an automatic <a href="../../view/Library/OBD.html">OBD</a>2a&gt;OBD1 conversion harness and the parts necessary to run an auto <a href="../../view/Library/OBD.html">OBD</a>2a Accord on an auto <a href="../../view/Library/OBD.html">OBD</a>1 ecu. You ODB1 guys can also use this info to switch out your Accord ecu for a more ‘freeware friendly’ Integra ecu. Unless you specifically use the parts I did, you may not be successful. All parts discussed here will be <a href="../../view/Library/USDM.html">USDM</a> parts. I used a P75 auto ecu, a tcu from a '94-'95 non-vtec Accord (F22B2) and my engine harness was an <a href="../../view/Library/OBD.html">OBD</a>2a harness. My car is a 1996 Accord LX sedan. </td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/AccordAutoOBD2-OBD1.html">AccordAutoOBD2-OBD1</a></b>
+		(<a href="../../view/Library/AccordAutoOBD2-OBD1%3Frev=r1.3.html">r1.3</a> - 28&nbsp;Aug&nbsp;2005 - Home.drdisco69)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> A20? </td><td> ICM </td><td> A09 </td><td>  &nbsp;  </td><td> DO NOT connect this to <a href="../../view/Library/OBD.html">OBD</a>2 A20.  Splice into Tach test wire </td></tr>
+</table>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> A20? </td><td> A09 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> DO NOT connect this to <a href="../../view/Library/OBD.html">OBD</a>2 A20.  Splice into Tach test wire </td></tr>
+</table>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> A23 </td><td>  &nbsp;  </td><td> A26 </td><td>  &nbsp;  </td><td> On TCU called 'Ground' </td></tr>
+</table>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> A23 </td><td> A26 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> On TCU called 'Ground' </td></tr>
+</table>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> A27 </td><td> A12 </td><td> A12 </td><td> FANC </td><td>  &nbsp;  </td></tr>
+</table>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> A27 </td><td>  &nbsp;  </td><td> A12 </td><td> A12 </td><td> FANC </td></tr>
+</table></td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/AccordAutoOBD2-OBD1.html">AccordAutoOBD2-OBD1</a></b>
+		(<a href="../../view/Library/AccordAutoOBD2-OBD1%3Frev=r1.2.html">r1.2</a> - 27&nbsp;Aug&nbsp;2005 - Home.drdisco69)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> A22 </td><td> A25 </td><td>  &nbsp;  </td><td> Grounds </td><td> On TCU called 'Ground' </td></tr>
+</table>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> A22 </td><td> A25 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> On TCU called 'Ground' </td></tr>
+</table>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> A23 </td><td> G114 </td><td> A26 </td><td> G120 </td><td> On TCU called 'Ground' </td></tr>
+<tr><td> A23 </td><td> G114 </td><td> A24 </td><td> G114 </td><td> A24 PG2 </td></tr>
+<tr><td> A24 </td><td> Power </td><td> A24 </td><td> Power </td><td> On TCU called 'Ignition Input' </td></tr>
+<tr><td> A24 </td><td> Power </td><td> B01 </td><td> Power </td><td> B01 IGP2 </td></tr>
+</table>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> A23 </td><td>  &nbsp;  </td><td> A26 </td><td>  &nbsp;  </td><td> On TCU called 'Ground' </td></tr>
+<tr><td> A23 </td><td>  &nbsp;  </td><td> A24 </td><td> A24 </td><td> PG2 </td></tr>
+<tr><td> A24 </td><td> A24 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> On TCU called 'Ignition Input' </td></tr>
+<tr><td> A24 </td><td>  &nbsp;  </td><td> B01 </td><td> B01 </td><td> IGP2 </td></tr>
+</table>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+1357…… 
+2468…… 
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> 1 </td><td> 3 </td><td> 5 </td><td> 7 </td><td> ... </td></tr>
+<tr><td> 2 </td><td> 4 </td><td> 6 </td><td> 8 </td><td> ... </td></tr>
+</table>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+12345 
+678910 
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> 1 </td><td> 2 </td><td> 3 </td><td> 4 </td><td> 5 </td><td> ... </td></tr>
+<tr><td> 6 </td><td> 7 </td><td> 8 </td><td> 9 </td><td> 10 </td><td> ... </td></tr>
+</table></td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/AccordAutoOBD2-OBD1.html">AccordAutoOBD2-OBD1</a></b>
+		(<a href="../../view/Library/AccordAutoOBD2-OBD1%3Frev=r1.1.html">r1.1</a> - 27&nbsp;Aug&nbsp;2005 - Home.drdisco69)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="drdisco69" date="1125114600" format="1.0" version="1.1"}%
+%META:TOPICPARENT{name="EcuConnections"}%
+<h3> Information provided by Bird333 </h3>
+<p />
+First off my disclaimer (gotta have one right ). I, nor anyone else is responsible (except you) if you screw up your car, house, life or anything else using this information. USE THIS AT YOUR OWN RISK. Now that’s out of the way, let’s proceed. 
+<p />
+I (like maybe some of you out there) wanted to turbo my Accord (still haven’t turboed it yet. One day, one day). As I began to research the idea, I discovered this thing called ‘engine management’. There are various ways to do this, but what seemed to be the safest and relatively cheap was ‘chipping’ a Honda ecu. Well of course I discovered that there was practically no freeware development for an Accord, it was all about Civics and Integras. Also, I discovered that it was all about MANUAL trannies and <a href="../../view/Library/OBD.html">OBD</a>1 cars. Luck would have it that I would have an automatic tranny and an <a href="../../view/Library/OBD.html">OBD</a>2 car. So, I thought ‘well I’ll just get an <a href="../../view/Library/OBD.html">OBD</a>2&gt;OBD1 conversion harness and all will be well’, but soon found out that these harnesses were designed for manual cars and I couldn’t find automatic pinout info for any of these cars. I also found out that <a href="../../view/Library/OBD.html">OBD</a>1 Accords had a separate tranny computer which further complicated matters. So I was forced to create my own custom <a href="../../view/Library/OBD.html">OBD</a>2&gt;OBD1 conversion harness that would work with a tranny computer (TCU). So I bought an automatic P06 (Civic) ecu and converted it to a P28 since this seemed to be a popular freeware platform. As I continued to research, I discovered that Civics didn’t use a separate tcu so this purchase was a mistake. I thought all was lost. I needed an <a href="../../view/Library/OBD.html">OBD</a>1 ecu that had freeware development that also controlled a separate tcu. Thankfully, I discovered that Integras used such an ecu. This article is the culmination of about 2 years (off and on Thanks to the family. ) of research and fabrication. 
+<p />
+Ok, this article deals with creating an automatic <a href="../../view/Library/OBD.html">OBD</a>2a&gt;OBD1 conversion harness and the parts necessary to run an auto <a href="../../view/Library/OBD.html">OBD</a>2a Accord on an auto <a href="../../view/Library/OBD.html">OBD</a>1 ecu. You ODB1 guys can also use this info to switch out your Accord ecu for a more ‘freeware friendly’ Integra ecu. Unless you specifically use the parts I did, you may not be successful. All parts discussed here will be <a href="../../view/Library/USDM.html">USDM</a> parts. I used a P75 auto ecu, a tcu from I believe a 1995 vtec Accord (F22B1) and my engine harness was an <a href="../../view/Library/OBD.html">OBD</a>2a harness. My car is a 1996 Accord LX sedan. 
+<p />
+Parts needed: 
+<ol>
+<li> An Automatic <a href="../../view/Library/OBD.html">OBD</a>2a&gt;OBD1 conversion harness 
+</li>
+<li> An AUTOMATIC P75 (94-95 Integra) ecu. (The code on the ecu should look like <strong>****-P75-x5</strong>. The ‘5’ in the last section of the code lets you know it is an automatic ecu. The ‘x’ should be an ‘A’ (US 49 state) or ‘L’ (California)) 
+</li>
+<li> A tcu for your engine block. (In my case a F22B2) 
+</li>
+<li> A <a href="../../view/Library/ROM.html">ROM</a> from an AUTOMATIC Integra ecu. (I used the <a href="../../view/Library/USDM.html">USDM</a> <a href="../../view/Library/OBD.html">OBD</a>1 ‘332’ rom from <a href="../../view/Library/EcuDefinitionCodes.html" target="_top">http://www.pgmfi.org/twiki/bin/view/Library/EcuDefinitionCodes</a>) 
+</li>
+<li> <a href="../../view/Library/ECU.html">ECU</a> fuel and ignition maps for your engine that will work in the above rom/bin. 
+</li>
+<li> Some type of bin editor like Uberdata or Crome. 
+</li>
+<li> Service manuals for the ecu, tcu and <a href="../../view/Library/OBD.html">OBD</a>2 engine harness you have. In my case, I needed a ‘94-‘95 Integra manual, a ’94-’95 Accord manual, and a ’96 Accord manual. 
+</li>
+<li> The necessary parts and equipment to chip your ecu. 
+</li>
+<li> A chip burner. 
+</li>
+</ol>
+<p />
+NOTES: You may be able to use a manual P75 bin as they may actually be the same code and only behave differently based on the hardware configuration of the circuitboard. If someone wants to test this, please do. You could buy an auto <a href="../../view/Library/OBD.html">OBD</a>2&gt;OBD1 conversion harness from a dealer, BUT you will need to check to be sure that all the wires match up to the equipment you will be using. Automatic <a href="../../view/Library/OBD.html">OBD</a>1 ecus and tcus from different cars have slightly different pinouts. 
+<p />
+Ok, for people who want to create their own custom harness, here is a parts list: 
+<p />
+<ol>
+<li> Somewhere in the neighborhood of 100-120 feet of 20 gauge wire. 
+</li>
+<li> About 10-20’ feet of 18 gauge wire. (Maybe 16 gauge) 
+</li>
+<li> Wire strippers 
+</li>
+<li> Crimpers (I got part WM9999-ND at Digikey) 
+</li>
+<li> 65 contact receptacles (small pins) Tyco part # 175061-1 (-2 is gold if you want them) 
+</li>
+<li> 26 contact receptacles (big pins) Tyco part # 173631-1 (-2 gold) 
+</li>
+<li> 2 x 26-pin <a href="../../view/Library/OBD.html">OBD</a>1 plugs (Tyco part # 174516-6) 
+</li>
+<li> 2 x 22-pin <a href="../../view/Library/OBD.html">OBD</a>1 plugs (Tyco part # 174515-6) 
+</li>
+<li> 1 x 16-pin <a href="../../view/Library/OBD.html">OBD</a>1 plug (Tyco part # 174514-6) 
+</li>
+<li> 1 x 104-pin <a href="../../view/Library/OBD.html">OBD</a>2a pin connector (Tyco part # 179686-6) 
+</li>
+<li> Soldering equipment (i.e. soldering iron and solder) 
+</li>
+<li> Digital multimeter. 
+</li>
+<li> Optional, heat shrink tubing 
+</li>
+</ol>
+<p />
+You can call Tyco and ask for samples of the above parts if you can’t get them from junk ecus and harnesses. They will limit the quantity you can have. DO NOT ABUSE THIS. Get only what you need. Also, try to get a few extra pins just in case you mess up. Here is the conversion table for creating your harness. NOTE: For <a href="../../view/Library/OBD.html">OBD</a>1 tcu A9 I connected this to the 'Tachometer test wire under the hood. You maybe able to get this signal from <a href="../../view/Library/OBD.html">OBD</a>2 A20 but I couldn't verify it. If someone could confirm that would make the install even cleaner.
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th colspan="5" bgcolor="#D0D1E0"> <strong>Conversion Table for Accord Automatics</strong> </th></tr>
+<tr><th colspan="5" bgcolor="#D0D1E0"> <strong>Differences in Accord <a href="../../view/Library/ECU.html">ECU</a> and P75</strong> </th></tr>
+<tr><th bgcolor="#D0D1E0"> <strong>1997 <a href="../../view/Library/OBD.html">OBD</a>2 Accord</strong> </th><th bgcolor="#D0D1E0"> <strong>1994 Accord TCU pins</strong> </th><th bgcolor="#D0D1E0"> <strong>1994 Accord <a href="../../view/Library/ECU.html">ECU</a> pinouts</strong> </th><th bgcolor="#D0D1E0"> <strong>P75/P72 Pinouts</strong> </th><th bgcolor="#D0D1E0"> <strong>NOTES</strong> </th></tr>
+<tr><td> A01 </td><td>  &nbsp;  </td><td> A02 </td><td> A02 </td><td> Injector 4 </td></tr>
+<tr><td> A02 </td><td>  &nbsp;  </td><td> A05 </td><td> A05 </td><td> Injector 3 </td></tr>
+<tr><td> A03 </td><td>  &nbsp;  </td><td> A03 </td><td> A03 </td><td> Injector 2 </td></tr>
+<tr><td> A04 </td><td>  &nbsp;  </td><td> A01 </td><td> A01 </td><td> Injector 1 </td></tr>
+<tr><td> A05 </td><td>  &nbsp;  </td><td> NOT CONNECTED </td><td> NOT CONNECTED </td></tr>
+<tr><td> A06 </td><td>  &nbsp;  </td><td> A11 </td><td> A06 </td><td> O2 Heater </td></tr>
+<tr><td> A08 </td><td>  &nbsp;  </td><td> A04 </td><td> A04 </td><td> VTS Vtec Sol </td></tr>
+<tr><td> A09 </td><td>  &nbsp;  </td><td> A26 </td><td> A26 </td><td> LG1 </td></tr>
+<tr><td> A10 </td><td>  &nbsp;  </td><td> A23 </td><td> A23 </td><td> PG1 </td></tr>
+<tr><td> A11 </td><td> A23 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> On TCU called 'Ignition Input' </td></tr>
+<tr><td> A11 </td><td>  &nbsp;  </td><td> A25 </td><td> A25 </td><td> IGP1 </td></tr>
+<tr><td> A12 </td><td>  &nbsp;  </td><td> A09 </td><td> A09 </td><td> IACV </td></tr>
+<tr><td> A13 </td><td>  &nbsp;  </td><td> A10 </td><td> NOT CONNECTED </td><td> MCS (Engine Mount Control Solenoid) </td></tr>
+<tr><td> A15 </td><td>  &nbsp;  </td><td> A20 </td><td> A20 </td><td> Evap Purge Control </td></tr>
+<tr><td> A16 </td><td>  &nbsp;  </td><td> A07 </td><td> A07 </td><td> FLR </td></tr>
+<tr><td> A17 </td><td> A22 </td><td> A15 </td><td> A15 </td><td> A/C Clutch relay </td></tr>
+<tr><td> A18 </td><td>  &nbsp;  </td><td> A13 </td><td> A13 </td><td> MIL </td></tr>
+<tr><td> A19 </td><td>  &nbsp;  </td><td> A16 </td><td> A16 </td><td> ALT C </td></tr>
+<tr><td> A20 </td><td>  &nbsp;  </td><td> A21 </td><td> A21 </td><td> ICM </td></tr>
+<tr><td> A20? </td><td> ICM </td><td> A09 </td><td>  &nbsp;  </td><td> DO NOT connect this to <a href="../../view/Library/OBD.html">OBD</a>2 A20.  Splice into Tach test wire </td></tr>
+<tr><td> A22 </td><td> A25 </td><td>  &nbsp;  </td><td> Grounds </td><td> On TCU called 'Ground' </td></tr>
+<tr><td> A22 </td><td>  &nbsp;  </td><td> B02 </td><td> B02 </td><td> LG2 </td></tr>
+<tr><td> A23 </td><td> G114 </td><td> A26 </td><td> G120 </td><td> On TCU called 'Ground' </td></tr>
+<tr><td> A23 </td><td> G114 </td><td> A24 </td><td> G114 </td><td> A24 PG2 </td></tr>
+<tr><td> A24 </td><td> Power </td><td> A24 </td><td> Power </td><td> On TCU called 'Ignition Input' </td></tr>
+<tr><td> A24 </td><td> Power </td><td> B01 </td><td> Power </td><td> B01 IGP2 </td></tr>
+<tr><td> A27 </td><td> A12 </td><td> A12 </td><td> FANC </td><td>  &nbsp;  </td></tr>
+<tr><td> A28 </td><td>  &nbsp;  </td><td> NOT CONNECTED </td><td> NOT CONNECTED </td><td>  &nbsp;  </td></tr>
+<tr><td> A29 </td><td>  &nbsp;  </td><td> NOT CONNECTED </td><td> NOT CONNECTED </td><td>  &nbsp;  </td></tr>
+<tr><td> B03 </td><td> A05 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> Shift Control Solenoid 'A' </td></tr>
+<tr><td> B04 </td><td> A04 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> Lock Up Control Solenoid 'B' </td></tr>
+<tr><td> B05 </td><td> A06 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> Lock Up Control Solenoid 'A' </td></tr>
+<tr><td> B08 </td><td> A15 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> ATP D3 </td></tr>
+<tr><td> B11 </td><td> A03 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> Shift Control Solenoid 'B' </td></tr>
+<tr><td> B12 </td><td> A18 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> Shift Interlock </td></tr>
+<tr><td> B13 </td><td> A08 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> D4 INDICATOR </td></tr>
+<tr><td> B14 </td><td> D12 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> Mainshaft speed sensor ground </td></tr>
+<tr><td> B15 </td><td> D19 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> Mainshaft speed sensor </td></tr>
+<tr><td> B16 </td><td> A21 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> ATP Reverse </td></tr>
+<tr><td> B17 </td><td> A13 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> ATP 2 </td></tr>
+<tr><td> B18 </td><td> A11 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> ATP 1 </td></tr>
+<tr><td> B22 </td><td> D15 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> Countershaft speed sensor ground </td></tr>
+<tr><td> B23 </td><td> D17 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> Countershaft speed sensor </td></tr>
+<tr><td> B24 </td><td> A17 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> ATP D4 </td></tr>
+<tr><td> B25 </td><td> A19 </td><td> B07 </td><td> B07 </td><td> ATP PN (A/T Only) </td></tr>
+<tr><td> C02 </td><td>  &nbsp;  </td><td> B15 </td><td> B15 </td><td> CKP P </td></tr>
+<tr><td> C03 </td><td>  &nbsp;  </td><td> B13 </td><td> B13 </td><td> <a href="../../view/Library/TDC.html">TDC</a> P </td></tr>
+<tr><td> C04 </td><td>  &nbsp;  </td><td> B11 </td><td> B11 </td><td> CYP P </td></tr>
+<tr><td> C05 </td><td>  &nbsp;  </td><td> B05 </td><td> B05 </td><td> A/C SWITCH </td></tr>
+<tr><td> C06 </td><td>  &nbsp;  </td><td> B09 </td><td> B09 </td><td> STS </td></tr>
+<tr><td> C07 </td><td> D06 </td><td> D04 </td><td> D04 </td><td> SCS </td></tr>
+<tr><td> C08 </td><td>  &nbsp;  </td><td> D07 </td><td> D07 </td><td> K-Line, Data Link </td></tr>
+<tr><td> C10 </td><td> A20 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> On TCU called 'Battery Input' </td></tr>
+<tr><td> C10 </td><td>  &nbsp;  </td><td> D01 </td><td> D01 </td><td> VBU (<a href="../../view/Library/ECU.html">ECU</a> power I think) </td></tr>
+<tr><td> C12 </td><td>  &nbsp;  </td><td> B16 </td><td> B16 </td><td> CKP M </td></tr>
+<tr><td> C13 </td><td>  &nbsp;  </td><td> B14 </td><td> B14 </td><td> <a href="../../view/Library/TDC.html">TDC</a> M </td></tr>
+<tr><td> C14 </td><td>  &nbsp;  </td><td> B12 </td><td> B12 </td><td> CYP M </td></tr>
+<tr><td> C15 </td><td>  &nbsp;  </td><td> D06 </td><td> D06 </td><td> Vtec pressure switch (connect to VTS)  There is no connection for a <a href="../../view/Library/OBD.html">OBD</a>2 Accord.  I.E. there is no connection on <a href="../../view/Library/OBD.html">OBD</a>2 C15 </td></tr>
+<tr><td> C16 </td><td>  &nbsp;  </td><td> B08 </td><td> B08 </td><td> PSP Switch </td></tr>
+<tr><td> C17 </td><td>  &nbsp;  </td><td> D09 </td><td> D09 </td><td> ALT F </td></tr>
+<tr><td> C18 </td><td> D09 </td><td> B10 </td><td> B10 </td><td> <a href="../../view/Library/VSS.html">VSS</a> </td></tr>
+<tr><td> C20 </td><td>  &nbsp;  </td><td> NOT CONNECTED </td><td> NOT CONNECTED </td><td>  &nbsp;  </td></tr>
+<tr><td> D01 </td><td> D07 </td><td> D11 </td><td> D11 </td><td> TPS </td></tr>
+<tr><td> D02 </td><td> D05 </td><td> D13 </td><td> D13 </td><td> <a href="../../view/Library/ECT.html">ECT</a> </td></tr>
+<tr><td> D03 </td><td>  &nbsp;  </td><td> D17 </td><td> D17 </td><td> MAP </td></tr>
+<tr><td> D04 </td><td>  &nbsp;  </td><td> D19 </td><td> D19 </td><td> VCC1 </td></tr>
+<tr><td> D05 </td><td> D02 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> Brake Switch Input </td></tr>
+<tr><td> D05 </td><td>  &nbsp;  </td><td> D02 </td><td> D02 </td><td> Brake Switch </td></tr>
+<tr><td> D06 </td><td>  &nbsp;  </td><td>  &nbsp;  </td><td> NOT CONNECTED </td><td> Knock sensor not connected s/b D3 on other ecu's </td></tr>
+<tr><td> D07 </td><td>  &nbsp;  </td><td> D14 </td><td> D14 </td><td> O2 sensor </td></tr>
+<tr><td> D08 </td><td>  &nbsp;  </td><td> D15 </td><td> D15 </td><td> <a href="../../view/Library/IAT.html">IAT</a> </td></tr>
+<tr><td> D09 </td><td>  &nbsp;  </td><td> D12 </td><td> NOT CONNECTED </td><td> Exhaust gas recirc. Don't see this for P72/P75. Possibly on D12 </td></tr>
+<tr><td> D10 </td><td>  &nbsp;  </td><td> D20 </td><td> D20 </td><td> VCC2 </td></tr>
+<tr><td> D11 </td><td>  &nbsp;  </td><td> D22 </td><td> D22 </td><td> SG2 </td></tr>
+<tr><td> D12 </td><td>  &nbsp;  </td><td> D21 </td><td> D21 </td><td> SG1 </td></tr>
+<tr><td> D13 </td><td>  &nbsp;  </td><td> NOT CONNECTED </td><td> NOT CONNECTED </td><td> SECONDARY O2 Sensor Ground </td></tr>
+<tr><td> D14 </td><td>  &nbsp;  </td><td> NOT CONNECTED </td><td> NOT CONNECTED </td><td> SECONDARY O2 Sensor </td></tr>
+<tr><td> D15 </td><td>  &nbsp;  </td><td> NOT CONNECTED </td><td> NOT CONNECTED </td><td> Fuel Tank Pressure Sensor </td></tr>
+<tr><td> D16 </td><td>  &nbsp;  </td><td> D10 </td><td> D10 </td><td> Electrical Load Detector </td></tr>
+<tr><td>  &nbsp;  </td><td> A10 </td><td>  &nbsp;  </td><td> NOT NEEDED </td><td>  &nbsp;  </td></tr>
+<tr><td>  &nbsp;  </td><td> D03 </td><td> D05 </td><td> D08 </td><td> BARO OUT   This seems to be D5 on a P06/P28 ecu with Integra bin. </td></tr>
+<tr><td>  &nbsp;  </td><td> D11 </td><td> B04 </td><td> B04 </td><td> AFSB </td></tr>
+<tr><td>  &nbsp;  </td><td> D13 </td><td> B03 </td><td> B03 </td><td> AFSA </td></tr>
+<tr><td>  &nbsp;  </td><td> D16 </td><td> A18 </td><td> A19 </td><td> FAS </td></tr>
+<tr><td>  &nbsp;  </td><td> D18 </td><td> D18 </td><td> D16 </td><td> VREF </td></tr>
+</table>
+<p />
+<p />
+<p />
+The <a href="../../view/Library/OBD.html">OBD</a>2a connector will be at right angles so you will have to bend/cut them straight. 
+Now what I did was measure and cut all my wires first and crimped the pins on them before anything else. There will be two parts on each pin to crimp. On the outer end, the crimp should dig into the insulation of the wire. In the middle of the pin, that crimp should go around bare wire. The bare wire should NOT go up inside the socket of the pin. So strip your wires accordingly. If you arrange your ecu and tcu like I did (see pics here about halfway down the page); you will need approx. these wire lengths: 
+<p />
+47 pieces of 4-5” wire (you could shorter if you wanted, but it would probably make it hard to work with) these are the wires that will go from the <a href="../../view/Library/OBD.html">OBD</a>2a connector to the <a href="../../view/Library/OBD.html">OBD</a>1 ecu plugs. 
+<p />
+27 pieces of 21” wire (these go from the ODB2a connector to the <a href="../../view/Library/OBD.html">OBD</a>1 tcu plugs.) 
+<p />
+5 pieces of 19” wire (These go from the <a href="../../view/Library/OBD.html">OBD</a>1 ecu plugs to the <a href="../../view/Library/OBD.html">OBD</a>1 tcu plugs. They will have pins at both ends.) 
+<p />
+Take note of which <a href="../../view/Library/OBD.html">OBD</a>1 pin number the pins will go in. The larger openings will use the larger wire and bigger pins. IMPORTANT: This is how you count <a href="../../view/Library/OBD.html">OBD</a>1 pins. Looking from the side that the wires go in (wire side) with the clip at the top; pin 1 will be the first pin from the left on the top row. Pin 2 will be below it (i.e. first pin from the left on the bottom row. 
+<p />
+For example: 
+1357…… 
+2468…… 
+<p />
+IMPORTANT: Counting <a href="../../view/Library/OBD.html">OBD</a>2 pins is different. Looking from the pin (side opposite the soldering leads) with the clip receptacle at the top, you count across and then go down to the next row. 
+<p />
+For example: 
+12345 
+678910 
+<p />
+On the <a href="../../view/Library/OBD.html">OBD</a>1 ‘A’ plug pins 1,2,3,4,5,6 and 23,24,25,26 are the bigger holes. On the <a href="../../view/Library/OBD.html">OBD</a>1 ‘D’ plug pins 1,2 and 19,20,21,22 are the bigger holes. <a href="../../view/Library/OBD.html">OBD</a>1 ‘B’ plug all holes are small. 
+<p />
+A good method I found for soldering my wires to the <a href="../../view/Library/OBD.html">OBD</a>2 connector was to wrap the wire around a large paper clip in a spiral and then slide the wire over the lead. This helps hold the wire on the lead since most of us don’t have 3 hands. Then just solder the wire to the lead making sure solder gets all around the wire/lead. Try not to heat the lead up too long (no more than 3-4 seconds) or you could melt the plastic that it’s held in. If the lead does get loose try to even it up inside the connector with a similar pin and use a little superglue around the base of it. Be sure you don’t cover the pin with superglue or it won’t have continuity. If you do cover it, just scrap the pin with a sharp knife or something to get the dried glue off. 
+<p />
+Once you got all the wires soldered to the <a href="../../view/Library/OBD.html">OBD</a>2 connector. You will probably want to slide some heat shrink tubing over them down to the base to prevent any shorts. Once I had them all in place, I used a hair dryer to heat them up so they would shrink to the wires. Now it is time to insert the wires into the <a href="../../view/Library/OBD.html">OBD</a>1 plugs. The wires go in the plugs with the ‘crimp’ side facing up toward the clip. Be careful putting them in the correct locations. They are practically impossible to get back out. You should hear/feel a slight ‘click’ when you have gotten it in all the way. NOTE: You might have to ‘reshape’ the outer crimp a little if you squeezed too flat so it can get in the plug holes. However, be sure the outer crimp is still gripping the wire’s insulation after you reshape it. 
+<p />
+Once you got your conversion harness together, it is a good idea to check each pin for continuity with your multimeter. 
+<p />
+Now all you need to do is ‘chip’ your ecu. I won’t explain how to do that here. There is plenty of info on how to do that. Finally, take the Integra bin and copy the fuel and ignition maps for your engine into it. Be sure to disable vtec if you don’t have it. Then burn your bin on a chip and install in your ecu. If you did everything right; your car should start with no <a href="../../view/Library/CEL.html">CEL</a>s. 
+<p />
+<p />
+I would like to thank AD, tallh22a, Superorb, Andrew and everyone at Pgmfi.org. 
+<p />
+Attached is the conversion spreadsheet sorted by <a href="../../view/Library/OBD.html">OBD</a>2, <a href="../../view/Library/OBD.html">OBD</a>1 ecu and <a href="../../view/Library/OBD.html">OBD</a>1 tcu, and the Integra bin I used.
+<p />
+-Wikied by drdisco69.27.Aug.2005-
+<ul>
+<li> <a href="../../../pub/Library/AccordAutoOBD2-OBD1/AutoOBDconvertinfoandIntegrabin.zip" target="_top">AutoOBDconvertinfoandIntegrabin.zip</a>: Accord Auto Files
+</li>
+</ul>
+<p />
+%META:FILEATTACHMENT{name="AutoOBDconvertinfoandIntegrabin.zip" attr="" comment="Accord Auto Files" date="1125114859" path="C:\Documents and Settings\Mike\Desktop\Auto <a href="../../view/Library/OBD.html">OBD</a> convert info and Integra bin.zip" size="38825" user="drdisco69" version="1.1"}%</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/AccordAutoOBD2-OBD1.html">View</a>
+  |  <a href="AccordAutoOBD2-OBD1.html">Diffs</a>  | <a href="../../view/Library/AccordAutoOBD2-OBD1%3Frev=1.4.html">r1.4</a> | <a href="AccordAutoOBD2-OBD1%3Frev1=1.4&amp;rev2=1.3.html">&gt;</a> | <a href="../../view/Library/AccordAutoOBD2-OBD1%3Frev=1.3.html">r1.3</a> | <a href="AccordAutoOBD2-OBD1%3Frev1=1.3&amp;rev2=1.2.html">&gt;</a> | <a href="../../view/Library/AccordAutoOBD2-OBD1%3Frev=1.2.html">r1.2</a>
+  |  <a href="../../oops/Library/AccordAutoOBD2-OBD1%3Ftemplate=oopsmore&amp;param1=1.4&amp;param2=1.4.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.AccordAutoOBD2-OBD1">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#5e293735371e2e3933383770312c39612d2b3c343b3d2a630a093735377e183b3b3a3c3f3d35">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#3642595b76525f515f42575a5043455f595859585a5f58531855595b" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision r1.1 - 27 Aug 2005 - 03:50 GMT - Home.drdisco69<br />
+    Revision r1.4 - 13 Oct 2005 - 22:25 GMT - Home.drdisco69
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

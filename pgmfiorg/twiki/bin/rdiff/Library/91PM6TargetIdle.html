@@ -1,0 +1,140 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . 91PM6TargetIdle ( vs. r1.1)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/91PM6TargetIdle.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>91PM6TargetIdle</b> ( vs. r1.1)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/91PM6TargetIdle.html">91PM6TargetIdle</a></b>
+		(<a href="../../view/Library/91PM6TargetIdle%3Frev=r1.1.html">r1.1</a> - 19&nbsp;Feb&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+Author: xtensive Date: 01-04-03 20:47
+<p />
+Ok, here's what I found:
+<p />
+That whole area is data tables. The routine that calls the idle value is @279A for the pm6. The stock idle is set to 768 from what I can tell. It looks up the value at 398F. There are 6 idle settings there...do you know which one it picks for different circumstances? ELD, etc. I assue?
+<p />
+George, can you answer a quick question? (This is pm6 code, but should be close to the pm7) The routine that calls this value moves the value @ x3995 to the data pointer, then checks if bit 26h.2 is set. If it isn then it skips the next step and continues through the code. If it's not set it moves the value @ x398f into the data pointer and continues. My question is why? The value @ x3995 is exactly the same as @ 398f. Weird?
+<p />
+Mike
+<hr />
+Author: George Date: 01-04-03 23:51
+<p />
+There are quite a few instances of this in the code, as it seems the PM6 code was derived from the PM7. If you look at the PM7 tables you'll see there is a slight difference - my guess is that when they reused the PM7 code they didn't bother removing that section, instead they made both tables the same.
+<p />
+Another instance of this type of thing is in the speed limiter - the code to implement the speed limiter is still in the PM6 code, it's just been set to an extremely high speed.</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/91PM6TargetIdle.html">View</a>
+  |  <a href="91PM6TargetIdle.html">Diffs</a>  | <a href="../../view/Library/91PM6TargetIdle%3Frev=1.1.html">r1.1</a>
+  |  <a href="../../oops/Library/91PM6TargetIdle%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.91PM6TargetIdle">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#d6a1bfbdbf96a6b1bbb0bff8b9a4b1e9a5a3b4bcb3b5a2eb8281bfbdbff690b3b3b2b4b7b5bd">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#93e7fcfed3f7faf4fae7f2fff5e6e0fafcfdfcfdfffafdf6bdf0fcfe" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision  - <br />
+    Revision r1.1 - 19 Feb 2004 - 23:25 GMT - Home.blundar
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

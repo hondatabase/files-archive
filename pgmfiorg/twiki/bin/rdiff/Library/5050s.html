@@ -1,0 +1,172 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . 5050s ( vs. r1.1)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/5050s.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>5050s</b> ( vs. r1.1)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/5050s.html">5050s</a></b>
+		(<a href="../../view/Library/5050s%3Frev=r1.1.html">r1.1</a> - 27&nbsp;Jan&nbsp;2007 - Home.b16a2)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="b16a2" date="1169907900" format="1.0" version="1.1"}%
+%META:TOPICPARENT{name="NonVtec-To-Vtec"}%
+<p />
+<p />
+<p />
+<p />
+Use this method if you install a 5050s in IC14 and you get a MIL code 21.
+<p />
+<p />
+<strong>STEP 1</strong> modify and install the VTEC parts as normal but stop at the installation of IC14 
+<p />
+<p />
+<strong>STEP 2</strong> install the 5050s in the IC14 position and do not solder pin 4 of the 5050s 
+<p />
+<img src="../../../pub/Library/5050s/image003.jpg" />
+<p />
+<strong>STEP 3</strong> on the <a href="../../view/Library/PCB.html">PCB</a> of the <a href="../../view/Library/ECU.html">ECU</a> bridge pads 2 and 4 ( do not bridge the legs of the 5050s ) 
+<p />
+<img src="../../../pub/Library/5050s/5050s-VTEC007.jpg" />
+<p />
+<p />
+<strong>STEP 4</strong> get a 820R resistor and solder 4cm of wire to one side and solder the other end of the resistor to the emitter of Q102 ( as a 5v ref ) 
+<p />
+<p />
+<strong>STEP 5</strong> solder the other side of the wire to pin 4 of the 5050s, you might want to trim back the leg a bit so it doesn’t stick out to much. 
+<p />
+<img src="../../../pub/Library/5050s/5050s-VTEC006.jpg" />
+<p />
+<p />
+and thats it, enjoy your VTEC 
+<p />
+<p />
+I tested a <a href="../../view/Library/ECU.html">ECU</a> with this method on the Engine Simulator in VTEC for over 5 minuits continuously and it did not mis a beat and nothing got to hot. 
+<p />
+link to thread  <a href="http://forum.pgmfi.org/viewtopic.php?t=12672" target="_top">http://forum.pgmfi.org/viewtopic.php?t=12672</a>
+<p />
+<p />
+<p />
+<p />
+cheers 
+<p />
+John 
+<p />
+b16A2
+%META:FILEATTACHMENT{name="5050s-VTEC007.jpg" attr="" comment="link pin 2 and 4" date="1169908209" path="W:\b16a2.kicks-ass.net\web\tech\5050s-VTEC007.jpg" size="37420" user="b16a2" version="1.1"}%
+%META:FILEATTACHMENT{name="5050s-VTEC006.jpg" attr="" comment="final layout" date="1169908289" path="W:\b16a2.kicks-ass.net\web\tech\5050s-VTEC006.jpg" size="46044" user="b16a2" version="1.1"}%
+%META:FILEATTACHMENT{name="image003.jpg" attr="" comment="5050s layout" date="1169908325" path="W:\b16a2.kicks-ass.net\web\tech\image003.jpg" size="2848" user="b16a2" version="1.1"}%</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/5050s.html">View</a>
+  |  <a href="5050s.html">Diffs</a>  | <a href="../../view/Library/5050s%3Frev=1.1.html">r1.1</a>
+  |  <a href="../../oops/Library/5050s%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.5050s">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#b6c1dfdddff6c6d1dbd0df98d9c4d189c5c3d4dcd3d5c28be2e1dfdddf96f0d3d3d2d4d7d5dd">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#285c4745684c414f415c49444e5d5b41474647464441464d064b4745" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision  - <br />
+    Revision r1.1 - 27 Jan 2007 - 14:25 GMT - Home.b16a2
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

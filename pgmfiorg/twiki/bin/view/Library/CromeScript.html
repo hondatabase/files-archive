@@ -1,0 +1,827 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . CromeScript   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="CromeScript.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>CromeScript</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+Crome has a powerful scripting language.  There are many functions you can call to do things.  It would be good to document them here.
+<p />
+<strong>3/5/04 see below for additional information</strong> - Lego
+<p />
+<strong><em>Java Functions</em></strong>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> <strong><em>Variable</em></strong> </td><td> <strong><em>Use for</em></strong> </td><td> <strong><em>How to create</em></strong> </td><td> <strong><em>Note</em></strong> </td></tr>
+<tr><td> Array </td><td> when you need more then one value  </td></tr>
+<tr><td> new array(x,y) </td><td> x and y are the values </td></tr>
+<tr><td> Var </td><td> When you need 1 variable </td></tr>
+<tr><td>  var test </td><td>  test is the new variable </td></tr>
+<tr><td> select() </td><td> Use when you want the user to select your options </td><td> usage: select (sPrompt, sVar); </td><td> Use a pipe for sVar </td></tr>
+<tr><td> input() </td><td> Use when you need input from a user </td><td> usage: input(sPromt,sVar,sArray) </td><td> sVar:"'no1','no2'; sSrray(1,2) the values for no1, no2; Return a string with commas </td></tr>
+<tr><td> string.spilt(',') </td><td> Split a string in a array </td><td>  &nbsp;  </td><td> String is split at ',' </td></tr>
+<tr><td> isNaN(string) </td><td>  Java function to check if the string is numric </td><td>  &nbsp;  </td></tr>
+<tr><td> Alert('str'); </td><td> Shows a msg box with the msg: str </td><td>  &nbsp;  </td></tr>
+</table>
+<p />
+<p />
+<strong><em>Crome Functions</em></strong>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> <strong><em>Function</em></strong> </td><td> <strong><em>What does it do?</em></strong> </td><td> <strong><em>Explain Variables</em></strong> </td><td> <strong><em>Notes</em></strong> </td></tr>
+<tr><td> _rom_write(start, v, count) </td><td> Write an array of bytes to the rom file </td><td> start:Startadrress; v:array; count: </td><td> Needed most of the time to write something to the rom </td></tr>
+<tr><td> _rom_fill(fromAdr, toAdr, byteFill) </td><td> Write any area of the rom with the same bytes </td><td> fromAdr:Where to start; toAdr:Where to stop; byteFill:Which byte(if left empty 0x00 is assumed </td><td>  Usefull when you need to put NOP a locations </td></tr>
+<tr><td> refresh() </td><td> Refersh the rom to seen new values </td><td>  &nbsp;  </td><td>  &nbsp;  </td></tr>
+<tr><td> rom.gup() </td><td> Group Unupdate </td><td>  &nbsp;  </td><td> When your script changes a lot of values use this so you can undo </td></tr>
+<tr><td> rom.byteAt(0xFF) </td><td> point to a location in the rom(1 byte) </td><td> (0xFF) is the location </td></tr>
+<tr><td> rom.wordAt(0xFFFF) </td><td> point to a location in the rom(1 word) </td><td> (0xFFFF) is the location </td></tr>
+<tr><td> rom.hasLaunchControl </td><td>  Tells Crome the bin has FTL </td><td>  Set to 1 for FTL </td></tr>
+<tr><td> rom.hasFullThrottleShift </td><td>  Tells Crome the bin has FTS </td><td>  Set to 1 for FTS  </td></tr>
+<tr><td> rom.hasBoost </td><td>  Tells Crome the bin has Boost </td><td>  Set to 1 for 1bar\2 for 3bar </td></tr>
+<tr><td> rom.addressOf('') </td><td> Tells Crome Where something is </td><td>  &nbsp;  </td><td> Works for tables\scalers\rev limits\ </td></tr>
+<tr><td> rom.title </td><td> Tells Crome the title of the bin </td><td> needs to be string </td></tr>
+<tr><td> rom.type </td><td> Tells Crome the type of the bin </td><td> rp30/rp72/rp28/rpCustom </td></tr>
+<tr><td> addPlugin (strAuthor, strCaption, strExecCall, strInfoCall, intCategory); </td><td>  Add a plugin in Crome  </td><td>  &nbsp;  </td><td> read it in Crome </td></tr>
+<tr><td> addRomHandler (ecuType, strAuthor, strHandlerCall </td><td>  Add a rom handler in Crome  </td><td>  &nbsp;  </td><td> read it in Crome </td></tr>
+<tr><td> eval('0x' + <span style='background : #FFFFCE;'><font color="#0000FF">Dec&nbsp;To&nbsp;Hex</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/DecToHex?topicparent=Library.CromeScript">?</a>(dec_value) </td><td> convert a decimal value to hex 0xab </td><td>  &nbsp;  </td><td> dev_value exmaple 125 </td></tr>
+</table>
+<p />
+<strong>New documentation follows</strong> -- <span style='background : #FFFFCE;'><font color="#0000FF">Lego&nbsp;Z81</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/LegoZ81?topicparent=Library.CromeScript">?</a> - 06 Mar 2004
+<p />
+CROME JAVASCRIPT <a href="API.html">API</a>
+<p />
+These javascript objects and their members are accessible directly
+through CROME scripts.  If you plan to write an html based plugin,
+these objects are accessible through the 'window.external' call.
+<p />
+Here are some example:
+<p />
+To access the window object in CROME scripts, you can use window.MEMBER
+or simply call the MEMBER directly. eg. window.refresh() = refresh().
+To access the window object in an html plugin you have to use:
+window.external.window.refresh() or window.external.refresh().
+<p />
+The rom object is a member of the window object so to access a member
+of the rom object you can use window.rom.MEMBER or rom.MEMBER in 
+CROME scripts and window.external.window.rom.MEMBER or
+window.external.rom.MEMBER in html plugins.
+<p />
+Any other javascript objects, methods, properties are still accessible,
+but I will not comment on them since there are websites/books that can
+do a better job than me.
+<p />
+Any other confusions contact me @ <a href="/cdn-cgi/l/email-protection#a8c2c7c0c6e8dac9ccc1cbc9c4d8cddacec7dac5c9c6cbcd86cbc7c5"><span class="__cf_email__" data-cfemail="600a0f080e201201040903010c100512060f120d010e03054e030f0d">[email&#160;protected]</span></a> and make
+the subject 'crome script api'.
+<p />
+<p />
+<hr />
+ C R O M E  O B J E C T S  S T R U C T U R E
+<hr />
+<p />
++(o)window (default object)
+<p />
++-(f)addRomHandler(romtype: byte; author, jscmd: string)
+<p />
++-(f)addPlugin(author, mnucaption, jscmd: string; category: byte)
+<p />
++-(f)alert(msg: string)
+<p />
++-(f)confirm(msg: string): boolean
+<p />
++-(f)DecToHex(dec: longword): string
+<p />
++-(f)exal(cipherstring: string)
+<p />
++-(f)GetFilePath(filename: string): string
+<p />
++-(f)GetFileName(filename: string): string
+<p />
++-(f)HiByte(w: word): byte
+<p />
++-(f)input(msg, options, values: string): string
+<p />
++-(f)include(filename: string)
+<p />
++-(f)LoByte(w: word): byte
+<p />
++-(f)prompt(caption, msg, default: string): boolean
+<p />
++-(f)select(prompt, selection: string): integer
+<p />
++-(f)shell(filename, params: string; windowstate: byte)
+<p />
++-(f)shelld(doscmd: string): string
+<p />
++-(f)shellw(filename, params: string; windowstate: byte)
+<p />
++-(f)showBrowser(url: string; width, height: integer)
+<p />
++-(f)refresh()
+<p />
++-(o)rom
+<p />
++-(p)byteAt(addr: word): byte
+<p />
++-(p)wordAt(addr: word): word
+<p />
++-(p)working_table: byte
+<p />
++-(p)tableByte(col, row: byte): byte
+<p />
++-(p)tableValue(col, row: byte): single
+<p />
++-(p*)tableWidth: byte
+<p />
++-(p*)tableHeight: byte
+<p />
++-(p)addressOf(SPECIALSTR: string): word
+<p />
++-(p)addressIn(index: byte): word
+<p />
++-(p)hasLaunchControl: byte
+<p />
++-(p)hasFullThrottleShift: byte
+<p />
++-(p)hasBoost: byte
+<p />
++-(p)hasFinalMultiplier: byte
+<p />
++-(p)hasShiftLight: byte
+<p />
++-(p)hasIAB: byte
+<p />
++-(p)mapScalar(tbl, col: byte): word
+<p />
++-(p)revScalar(tbl, row: byte): word
+<p />
++-(p)base: byte
+<p />
++-(p)title: string
+<p />
++-(p*)filename: string
+<p />
++-(f)gup()
+<p />
++-(p)OBDMode: byte
+<p />
++-(p)notes: string
+<p />
++-files
+<p />
++-(f)showSave(filter: string; filterindex: integer): string
+<p />
++-(f)exists(filename: string): boolean
+<p />
++-(f)getFile(filename: string): string
+<p />
++-(f)putFile(filename, data: string)
+<p />
++-(f)browseFolder: string
+<p />
++-(f)showOpen(filter: string; filterindex: integer): string
+<p />
+note: (f) = function
+      (p) = property (read/write)
+      (p*) = property (read only)
+      (o) = object
+<p />
+<hr />
+ W I N D O W  O B J E C T  U S A G E
+<hr />
+<p />
+addRomHandler(romtype: byte; author, jscmd: string)
+<p />
+  desc      : used to add a rom handler for a non-stock rom such as
+              roms with boost options, launch control, full throttle shift,
+              etc.
+<p />
+  ecutype   : integer value specifying for which rom type this handler
+              will be called for
+  author    : name/handle of script writer
+  jscmd     : javascript command used to handle the a rom
+<p />
+  eg. addRomHandler(rtP30, 'John Cui', '_handle_p30_rom()');
+<p />
+<hr />
+<p />
+addPlugin(author, mnucaption, jscmd: string; category: byte)
+<p />
+  desc      : used to add a plugin to the plugins list on the CROME
+              main window
+<p />
+  author    : name/handle of script writer
+  mnucaption: visible caption that apears on plugins menu
+  jscmd     : javascript command called when plugin is executed
+<p />
+  eg. addPlugin('John Cui', 'Test Plugin', '_run_test_plugin()', 0);
+<p />
+<hr />
+<p />
+alert(msg: string)
+<p />
+  desc      : displays an alert message with 'OK' button as an option
+<p />
+  msg       : message displayed on alert message box
+<p />
+<hr />
+<p />
+confirm(msg: string): boolean
+<p />
+  desc      : displays a confirmation message with 'Yes' and 'No' buttons
+              as options
+<p />
+  msg       : message displayed on confirm box
+  return    : 0 -&gt; false
+              1 -&gt; true
+<p />
+<hr />
+<p />
+<span style='background : #FFFFCE;'><font color="#0000FF">Dec&nbsp;To&nbsp;Hex</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/DecToHex?topicparent=Library.CromeScript">?</a>(dec: longword): string
+<p />
+  dec       : decimal value to convert to hex
+  return    : hex value as a string
+<p />
+<hr />
+<p />
+exal(cipherstring: string)
+<p />
+  desc      : used to evaluate an encoded javascript code
+              encoding javascripts can be used to prevent copying of scripts
+<p />
+  cipherstring: an encoded string of javascript code
+<p />
+<hr />
+<p />
+<span style='background : #FFFFCE;'><font color="#0000FF">Get&nbsp;File&nbsp;Path</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/GetFilePath?topicparent=Library.CromeScript">?</a>(filename: string): string
+<p />
+  desc      : utility function used to get the path portion of a filename
+<p />
+  filename  : full filename of a file including path
+  return    : path portion of filename
+<p />
+<hr />
+<p />
+<span style='background : #FFFFCE;'><font color="#0000FF">Get&nbsp;File&nbsp;Name</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/GetFileName?topicparent=Library.CromeScript">?</a>(filename: string): string
+<p />
+  desc      : utility function used to get the file name portion of a filename
+<p />
+  filename  : full filename of a file including path
+  return    : file name portion of a filename
+<p />
+<hr />
+<p />
+<span style='background : #FFFFCE;'><font color="#0000FF">Hi&nbsp;Byte</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/HiByte?topicparent=Library.CromeScript">?</a>(w: word): byte
+<p />
+  desc      : utility function to retreive the high byte of a word value
+<p />
+  w         : a word value
+  return    : high byte of w
+<p />
+<hr />
+<p />
+input(msg, options, values: string): string
+<p />
+  desc      : displays a user prompt for an input
+<p />
+  msg       : instructions for user
+  options   : 
+<p />
+<hr />
+<p />
+include(filename: string)
+<p />
+  desc      : include a file containing scripts to current script
+<p />
+  filename  : filename of an existing script file
+<p />
+<hr />
+<p />
+<span style='background : #FFFFCE;'><font color="#0000FF">Lo&nbsp;Byte</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/LoByte?topicparent=Library.CromeScript">?</a>(w: word): byte
+<p />
+  desc      : utility function to retreive the low byte of a word value
+<p />
+  w         : a word value
+  return    : low byte of w
+<p />
+<hr />
+<p />
+prompt(caption, msg, default: string): boolean
+<p />
+  desc      : propmts a user for a response
+<p />
+  caption   : caption for prompt
+  msg       : message for user
+  default   : default input 
+  return    : user response
+              empty string if cancelled
+<p />
+<hr />
+<p />
+select(prompt, selection: string): integer
+<p />
+  desc      : prompt a user to pick from a list of items
+<p />
+  prompt    : message for user
+  selection : a list of selections for the user
+  return    : the index of selected item
+              -1 if cancelled
+<p />
+<hr />
+<p />
+shell(filename, params: string; windowstate: byte)
+<p />
+  desc      : call an external application
+<p />
+  filename  : filename of external app
+  params    : parameters passed to the external app
+  windowstate : window state for external app
+<p />
+  eg. shell('notepad.exe', 'C:\autoexec.bat', 0);
+<p />
+<hr />
+<p />
+shelld(doscmd: string): string
+<p />
+  desc      : call an external DOS app and retreive its message
+<p />
+  doscmd    : DOS command to call
+  return    : returned string from DOS prompt
+<p />
+  eg. m = shelld('dasm662.exe "my_file.bin"');
+      if (m) alert(m);
+<p />
+<hr />
+<p />
+shellw(filename, params: string; windowstate: byte)
+<p />
+  desc      : same as shell() function but waits for external app
+              to close before continuing execution
+<p />
+<hr />
+<p />
+showBrowser(url: string; width, height: integer)
+<p />
+  desc      : show CROME's built-in web browser to display html-based
+              scripts/plugins or web pages
+<p />
+  url       : address of an existing file or web page
+  width     : window width for the browser
+  height    : window height for the browser
+<p />
+  eg. showBrowser('my_html_plugin.html', 400, 250)
+<p />
+<hr />
+<p />
+refresh()
+<p />
+  desc      : refreshes the current display to show any updates
+              use this at the end of a script to make sure the current
+              changes are displayed
+<p />
+<hr />
+ R O M  O B J E C T  U S A G E
+<hr />
+<p />
+byteAt(addr: word): byte
+<p />
+  desc      : used to access any part of the rom and set/get a byte value
+<p />
+  addr      : <a href="ROM.html">ROM</a> file address
+<p />
+  eg. a = rom.byteAt(0x7FFF); // retreives the byte value at address 0x7FFF
+      rom.byteAt(0x7FFF) = 0xFF; // sets the byte value at address 0x7FFF to 0xFF
+<p />
+<hr />
+<p />
+wordAt(addr: word): word
+<p />
+  desc      : same as byteAt() but for word values
+              this function takes into account for endianess, an item in
+              the rom stored as [0xAB][0xCD] will be returned as 0xCDAB
+<p />
+<hr />
+<p />
+working_table: byte
+<p />
+  desc      : set/get current working table for CROME
+<p />
+  wt        : working table value
+              0 = low fuel
+              1 = high fuel
+              2 = low ignition
+              3 = high ignition
+<p />
+<hr />
+<p />
+tableByte(col, row: byte): byte
+<p />
+  desc      : set/get byte value of the the col:row of the current working table
+              does not change fuel multiplier values
+<p />
+  col,row   : column and row of the table
+<p />
+  eg. working_table = 2;
+      b = rom.tableByte(0, 5);
+<p />
+<hr />
+<p />
+tableValue(col, row: byte): single
+<p />
+  desc      : set/get actual value of the col:row of the current working table
+              this will also set the fuel multiplier for fuel tables if necessary
+<p />
+<hr />
+<p />
+tableWidth: byte
+<p />
+  desc      : gets the table width of the current working table
+<p />
+<hr />
+<p />
+tableHeight: byte
+<p />
+  desc      : gets the table height of the current working table
+<p />
+<hr />
+<p />
+addressOf(SPECIALSTR: string): word
+<p />
+  desc      : set/get word sized values in special registers in CROME
+<p />
+  SPECIALSTR : special names used to access the differents registers
+               see list for special names and usage
+<p />
+  eg. rom.addressOf('CHECKSUM') = 0x7FFF
+<p />
+<hr />
+<p />
+addressIn(index: byte): word
+<p />
+  desc      : set/get word sized values in special registers in CROME
+              these registers are accessible by index numbers
+<p />
+  index     : 0-63 corresponding to the index of the 64 special registers
+<p />
+  eg. rom.addressIn(40) = 0x1234
+<p />
+<hr />
+<p />
+hasLaunchControl: byte
+<p />
+  desc      : set/get launch control support
+              0 = off
+              1 = on
+<p />
+<hr />
+<p />
+hasFullThrottleShift: byte
+<p />
+  desc      : set/get full throttle shift support
+              0 = off
+              1 = on
+<p />
+<hr />
+<p />
+hasBoost: byte
+<p />
+  desc      : set/get boost support
+              0 = no boost
+              1 = stock map boost
+              2 = 3 bar boost
+              3 = custom
+<p />
+<hr />
+<p />
+hasFinalMultiplier: byte
+<p />
+  desc      : set/get final multiplier support
+              0 = off
+              1 = on
+<p />
+<hr />
+<p />
+hasShiftLight: byte
+<p />
+  desc      : set/get shift light support
+              0 = off
+              1 = on
+<p />
+<hr />
+<p />
+hasIAB: byte
+<p />
+  desc      : set/get <a href="IAB.html">IAB</a> support
+              0 = off
+              1 = on
+<p />
+<hr />
+<p />
+mapScalar(tbl, col: byte): word
+<p />
+  desc      : set/get map scalar values in millibars
+<p />
+  tbl       : 0 = low tables
+              1 = high tables
+  col       : column number of scalar
+<p />
+<hr />
+<p />
+revScalar(tbl, row: byte): word
+<p />
+  desc      : set/get rev scalar values in rpms
+<p />
+  tbl       : 0 = low tables
+              1 = high tables
+  row       : row number of scalar
+<p />
+<hr />
+<p />
+base: byte
+<p />
+  desc      : set/get base rom of to be loaded
+ =     this determines which default address locations to use for
+ =     a particular rom
+<p />
+<hr />
+<p />
+title: string
+<p />
+  desc      : set/get the value of the statusbar on the lower left of
+              the main window
+<p />
+<hr />
+<p />
+filename: string
+<p />
+  desc      : (read only) gets the full filename of the current <a href="ROM.html">ROM</a>
+<p />
+<hr />
+<p />
+gup()
+<p />
+  desc      : Group Undo Point
+              used in the begining and the end of a complex <a href="ROM.html">ROM</a> manipulation
+              in order to combine multiple changes as one undo/redo action
+<p />
+  eg. rom.gup();
+      for (i = 0; i &lt;= 0x7FFF; i++) {
+        rom.byteAt(i) = <span style='background : #FFFFCE;'><font color="#0000FF">Lo&nbsp;Byte</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/LoByte?topicparent=Library.CromeScript">?</a>(i);
+      }
+      rom.gup();
+<p />
+<hr />
+<p />
+OBDMode: byte
+<p />
+  desc      : set/get <a href="OBD.html">OBD</a> mode to determine which formulas to use
+              0 = <a href="OBD.html">OBD</a>0
+              1 = <a href="OBD.html">OBD</a>1
+              2 = <a href="OBD.html">OBD</a>2
+              3 = Unknown
+<p />
+<hr />
+<p />
+notes: string
+<p />
+  desc      : set/get notes for current <a href="ROM.html">ROM</a>
+<p />
+<hr />
+ F I L E  O B J E C T  U S A G E
+<hr />
+<p />
+showSave(filter: string; filterindex: integer): string
+<p />
+  desc      : display a save dialog
+<p />
+  filter    : list of file type filters
+  filterindex : index of default filter
+  return    : selected filename
+              empty string if cancelled
+<p />
+  eg. fn = showSave('HTML Files|*.htm;*.html|Text Files|*.txt|All Files|*.*', 0)
+<p />
+<hr />
+<p />
+exists(filename: string): boolean
+<p />
+  desc      : utility function to determine if a file exists
+<p />
+  filename  : filename of file to check
+  return    : 0 = file does not exist
+              1 = file exists
+<p />
+<hr />
+<p />
+getFile(filename: string): string
+<p />
+  desc      : gets the contents of a file (text files only)
+<p />
+  filename  : full filename
+  return    : content of the file
+<p />
+<hr />
+<p />
+putFile(filename, data: string)
+<p />
+  desc      : writes to a file
+<p />
+  filename  : full filename
+  data      : content to write to the file
+<p />
+<hr />
+<p />
+browseFolder: string
+<p />
+  desc      : displays the browser for folder dialog
+              returns path of selected folder
+              returns empty string if cancelled
+<p />
+<hr />
+<p />
+showOpen(filter: string; filterindex: integer): string
+<p />
+  desc      : display an open dialog
+<p />
+  filter    : list of file type filters
+  filterindex : index of default filter
+  return    : selected filename
+              empty string if cancelled
+<p />
+<hr />
+ S P E C I A L  N A M E S  L I S T
+<hr />
+<p />
+These are the special names and corresponding special register indexes
+that can be used with the rom.addressOf() or rom.addressIn() calls
+<p />
+<p />
+[SPECIAL NAMES]        [INDEX]      [COMMENT]
+<p />
+CHECKSUM                 0           address where to apply checksum correction
+LOW_MAP_SCALAR           1           address of low map scalar
+HIGH_MAP_SCALAR          2           address of high map scalar
+LOW_REV_SCALAR           3           address of low rev scalar
+HIGH_REV_SCALAR          4           address of high rev scalar
+LOW_FUEL                 5           address of low fuel table
+HIGH_FUEL                6           address of high fuel table
+LOW_IGNITION             7           address of low ignition table
+HIGH_IGNITION            8           address of high ignition table
+NFO_LOW_TABLE            9           low table size hibyte = height lobyte = width
+NFO_HIGH_TABLE           10          high table size hibyte = height lobyte = width
+REVCUT1                  11          address of 1st revcut value
+REVRES1                  12          address of 1st revres value
+REVCUT2                  13          address of 2nd revcut value
+REVRES2                  14          address of 2nd revres value
+VTEC_TABLE               15          address of vtec tables
+NFO_VTEC_TABLE           16          vtec table info hibyte = vtec pair count (2 or 4)
+VTEC                     17          address of VTEC config byte
+<p />
+IDLE                     25          address of idle value
+KNOCK                    26          address of knock config byte
+ELD                      27          address of eld config byte
+<p />
+BARO                     29          address of baro config byte
+VTECVSS                  30          address of vtec vss check config byte
+VTECCOOL                 31          address of vtec coolant check config byte
+DEBUGMODE                32          address of debug mode config byte
+OXYHEAT                  33          address of o2 heater check config byte
+<p />
+LAUNCH_CUT               40          address of lauch cut value
+LAUNCH_RES               41          address of lauch res value
+SHIFT_CUT                42          address of shift cut value
+SHIFT_RES                43          address of shift res value
+SPEED_LIMIT              44          address of speed limitter value
+NFO_MAP_MIN              45          
+NFO_MAP_MAX              46
+<p />
+MTX1                     50          address of final fuel multiplier value
+MTX2                     51
+MTX3                     52          address of cranking fuel multiplier value
+MTX4                     53
+MTX5                     54          address of tip-in fuel multiplier value
+MTX6                     55
+SL_BYTE                  56          address of shift light config byte
+SL_RPM                   57          address of shift light rpm value
+<p />
+Notes: in order to use the built-in editors in the options page of CROME you must
+       set the hasLaunchControl, hasFullThrottleShift, hasFinalMultiplier,
+       hasShiftLight, and hasIAB properties of the rom object to true (1).
+<p />
+Revision infromation
+05 Mar 2004 <span style='background : #FFFFCE;'><font color="#0000FF">Lego&nbsp;Z81</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/LegoZ81?topicparent=Library.CromeScript">?</a> fixed tables, added documentation written by <span style='background : #FFFFCE;'><font color="#0000FF">John&nbsp;Cui</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/JohnCui?topicparent=Library.CromeScript">?</a> for Crome.  E-mail me if you have any questions I saved a copy of this before I made and changes.  Thank you.
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.3 - 31 Mar 2007 - 03:08 GMT - racingsky 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/CromeScript?t=1194410961"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/CromeScript">Attach</a>
+   |  <a href="../../rdiff/Library/CromeScript.html">History</a>
+   |  <a href="../../oops/Library/CromeScript%3Ftemplate=oopsmore&amp;param1=1.3&amp;param2=1.3.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.CromeScript">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#23544a484a6353444e454a0d4c51441c505641494640571e77744a484a036546464741424048">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#d6a2b9bb96b2bfb1bfa2b7bab0a3a5bfb9b8b9b8babfb8b3f8b5b9bb" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

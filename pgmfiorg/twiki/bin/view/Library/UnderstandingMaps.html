@@ -1,0 +1,186 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . UnderstandingMaps   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="UnderstandingMaps.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>UnderstandingMaps</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+<h2> Understanding Fuel and Ignition Maps. </h2>
+<p />
+<p />
+<p />
+<strong><em>Fuel Maps</em></strong>
+<p />
+Below around 80% throttle, the <a href="ECU.html">ECU</a> uses the oxygen sensor in conjunction with the fuel tables to calculate how much fuel is needed for your engine. This is called "closed loop" mode because the <a href="ECU.html">ECU</a> is in a closed feedback loop using the <a href="OxygenSensor.html">Oxygen&nbsp;Sensor</a> to steer the <a href="AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratio</a> to the desired level.  Above the throttle position threshold, the <a href="ECU.html">ECU</a> exclusively uses look up tables. The <a href="ECU.html">ECU</a> looks through the lookup tables and, depending on engine speed and intake manifold vacuum, selects a length of time that the injectors will stay open. If you are interested in modifying your <a href="ECU.html">ECU</a>, chances are that your <a href="ECU.html">ECU</a> spends a fair amount of time in the look up table mode (open loop).
+<p />
+I will assume you are looking at an editor like this:
+<IMG SRC="http://www.ef-honda.com/ben/pw0fuel.gif">
+<p />
+The columns are split up into small segments based on intake manifold vacuum. The left most column is the most vacuum the <a href="ECU.html">ECU</a> accounts for (shut throttle plate) and the right is obviously <a href="WOT.html">WOT</a>. The <a href="OBD0.html">OBD0</a> <a href="ECU.html">ECU</a>s have 15 of these columns and use inches of mercury as a unit, typically. The <a href="OBD1.html">OBD1</a>  <a href="ECU.html">ECU</a>'s use 10 columns and use millibar (mBar) as a unit.  The editor can choose to display this information in two ways.  <a href="AbsolutePressure.html">Absolute&nbsp;Pressure</a> or <a href="RelativePressure.html">Relative&nbsp;Pressure</a>.
+<p />
+The rows are split up into little rev ranges.
+<p />
+The values in the cells are in what is believed to be milliseconds that the injector stays open. To calculate these values the editors use a formula (in this case: <a href="OBD0Fuel.html">OBD0&nbsp;Fuel</a>; <a href="OBD1_8bitFuel.html">OBD1_8bit&nbsp;Fuel</a> for <a href="OBD1.html">OBD1</a>  applications) that combines the raw 8 bit value at the location of the cell in the map with a <a href="ColumnMultiplier.html">Column&nbsp;Multiplier</a> to arrive at the value you see in the editor.  Some editors allow you to directly manipulate the raw value directly instead of interpreting it as a pulse-width
+<p />
+<strong><em>Ignition Maps</em></strong>
+<p />
+The <a href="ECU.html">ECU</a> also does the look up table thing with the ignition maps.
+<IMG SRC="http://www.ef-honda.com/ben/pw0ignition.gif">
+<p />
+Again, the columns are vacuum and the rows are <a href="RPM.html">RPM</a>. The value in the cells is degrees of ignition advance.
+<p />
+<strong><em>Interpolation</em></strong>
+<p />
+When choosing a value from any of the fuel or ignition tables, the <a href="ECU.html">ECU</a> interpolates between  the currently used cell and surrounding cells to ensure smoothness. For example, lets say you are at 5775 <a href="RPM.html">RPM</a> and 20 inhg (in the above maps). Your engine is in between column 3 and 4 and row 7 and 8 in the above tables. To find the actual value the ecu is using, you can go through essentially the same process that the <a href="ECU.html">ECU</a> uses. The <a href="ECU.html">ECU</a> code is actually doing a weighted average between the values in the cells (3,7) and (4,7) based on the map sensors value, then the same for (3,8) and (4,8) again with the map sensor, and then those values are averaged together based on <a href="RPM.html">RPM</a>. Now for some math:
+<p />
+<strong>Our process will be as follows:</strong> <br>
+Interpolate column wise for the current cell and the east cell.<br>
+Interpolate column wise for the south cell and the southeast cell.<br>
+Take values calculated above and interpolate between them in a row wise fashion.<br>
+<p />
+<strong>The data the fuel map provides:</strong> <br>
+(3,7) = 21 inhg, 5500 rpm, val = 2.16<br>
+(4,7) = 19 inhg, 5500 rpm, val = 2.56<br>
+(3,8) = 21 inhg, 6050 rpm, val = 2.25<br>
+(4,8) = 19 inhg, 6050 rpm, val = 2.62<br>
+<p />
+//notice that we are half way inbetween the rows<br>
+//and halfway inbetween the columns <br>
+rpmval = 5775<br>
+mapval = 20 inhg<br>
+<p />
+<strong>First we calc the column interpolation for (3,7) and (4,7):</strong> <br>
+(|cell'sColumnMapValue - mapval|)/intervalBetweenColumnValues * value = that cells x contribution
+<p />
+(21-20)/(21-19)*2.16 + ((20-19)/(21-19)*2.56) = .5 * 2.16 + .5 * 2.56 = 2.36
+<p />
+<strong>Then for (3,8) and (4,8):</strong>
+<p />
+(21-20)/(21-19)*2.25 + ((20-19)/(21-19)*2.62) = .5 * 2.25 + .5 * 2.62 = 2.435
+<p />
+<strong>Now, we do the row interpolation with our new values:</strong> <br>
+(|cell'sRowRPMValue - mapval|)/intervalBetweenRowValues * value = that cell's y contribution
+<p />
+(6050-5775)/(6050-5500)* 2.36 + (5775-5500)/(6050-5500) * 2.435 = .5* 2.36 + .5* 2.435 = 2.3975
+<p />
+The <a href="ECU.html">ECU</a> would then use 2.3975
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.2 - 21 Nov 2005 - 19:26 GMT - ben ogle 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/UnderstandingMaps?t=1194409648"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/UnderstandingMaps">Attach</a>
+   |  <a href="../../rdiff/Library/UnderstandingMaps.html">History</a>
+   |  <a href="../../oops/Library/UnderstandingMaps%3Ftemplate=oopsmore&amp;param1=1.2&amp;param2=1.2.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.UnderstandingMaps">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#3e495755577e4e5953585710514c59014d4b5c545b5d4a036a695755571e785b5b5a5c5f5d55">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#d3a7bcbe93b7bab4baa7b2bfb5a6a0babcbdbcbdbfbabdb6fdb0bcbe" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

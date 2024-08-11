@@ -1,0 +1,236 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . ChippingAn88-89ECU   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="ChippingAn88-89ECU.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>ChippingAn88-89ECU</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+<a href="OBD.html">OBD</a>0MPFI <a href="ECU.html">ECU</a>s have two main designs that affect how the <a href="ECU.html">ECU</a> is chipped.
+<p />
+<ul>
+<li> 90-91 <a href="ECU.html">ECU</a>s have an external 38256 (same as <a href="27C256.html">27&nbsp;C256</a>) <a href="ROM.html">ROM</a>.  This can be removed and replaced with any of the usual candidates.
+</li>
+<li> 88-89 <a href="ECU.html">ECU</a>s have an <a href="Oki83C154.html">Oki83&nbsp;C154</a> processor in them and lack the external <a href="ROM.html">ROM</a> so easy to replace in the later <a href="ECU.html">ECU</a>s.
+</li>
+<li> 88-91 <a href="USDM.html">USDM</a> PM8 (HF) <a href="ECU.html">ECU</a>s all use the <a href="Oki83C154.html">Oki83&nbsp;C154</a> design, even in 90-91.
+</li>
+</ul>
+<p />
+All is not lost, however.  There are THREE ways to chip a 88-89 <a href="ECU.html">ECU</a>, and neither are terribly hard:
+<p />
+NOTE to PM7-B020 owners: As <a href="http://forum.pgmfi.org/viewtopic.php?t=7209">this</a> topic suggests, pin 31 of the <a href="MCU.html">MCU</a> should be disconnected from the <a href="PCB.html">PCB</a> before it is grounded to enable the external <a href="ROM.html">ROM</a> chip. Failing to do so may result in solid <a href="CEL.html">CEL</a> and intermittent <a href="ECU.html">ECU</a> operation. This issue was found only on PM7-B020 and should be considered on other <a href="ECU.html">ECU</a>s only if the normal "jumpering" doesn't work AND there are no faults in adding the socket. This should also not be a problem if you're adding a daughter-board for the <a href="MCU.html">MCU</a>, but yet again, be careful.
+<p />
+1. Replace the 40 pin <a href="MCU.html">MCU</a> with another <a href="Intel8051.html">Intel8051</a>-compatible <a href="MCU.html">MCU</a> that has <a href="InternalROM.html">Internal ROM</a> like the <a href="Oki83C154.html">Oki83&nbsp;C154</a> and program the <a href="MCU.html">MCU</a> with an <a href="A5.html">A5</a>-free program. Requires modification of stock programs to remove the weird use of <a href="A5.html">A5</a>!!! Requires further mods to the program to make it tuly <a href="Intel8051.html">Intel8051</a> compatible] <strong><em>Note:</em></strong> As of 12/Jan/04, this has not been finished.(Current project sez Dave)  Requires a programmer that can program the <a href="Intel8051.html">Intel8051</a> chip you choose to use.  My method of choice. (Dave)
+<p />
+2. Replace the 40 pin <a href="MCU.html">MCU</a> with a daughterboard that has a socket for an <a href="EPROM.html">EPROM</a>, a <a href="74HC373.html">74&nbsp;HC373</a> <a href="Latch.html">Latch</a>, a socket for the original <a href="MCU.html">MCU</a> and <a href="_EA.html">_EA</a> setup for an external <a href="ROM.html">ROM</a> instead of internal <a href="ROM.html">ROM</a>.  Does not require modification of code - stock program will work fine because <a href="Oki83C154.html">Oki83&nbsp;C154</a> is still used.  Does require a circuit board, additional parts and significantly more soldering.  See also <a href="http://www.pgmfi.org/phorum/read.php?f=12&amp;i=2206&amp;t=2206" target="_top">here </a>
+<p />
+3. This is the easiest way..  You use the same programs as a 90-91.. And install a socket with 6 to 10 inches of wire to each pin. then follow the chart to install the wires from the eprom socket to the board.
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> <a href="EPROM.html">EPROM</a> PINS </td><td align="right">       <a href="MCU.html">MCU</a> PINS(m83c154) </td><td align="right">       74hc373 Pins </td></tr>
+<tr><td colspan="3">  </td></tr>
+<tr><td> 1 </td><td align="right">             40 </td><td>  &nbsp;  </td></tr>
+<tr><td> 2 </td><td align="right">             25 </td><td>  &nbsp;  </td></tr>
+<tr><td> 3 </td><td>  &nbsp;  </td><td align="right">             19 </td></tr>
+<tr><td> 4 </td><td>  &nbsp;  </td><td align="right">             2 </td></tr>
+<tr><td> 5 </td><td>  &nbsp;  </td><td align="right">             16 </td></tr>
+<tr><td> 6 </td><td>  &nbsp;  </td><td align="right">             5 </td></tr>
+<tr><td> 7 </td><td>  &nbsp;  </td><td align="right">             15 </td></tr>
+<tr><td> 8 </td><td>  &nbsp;  </td><td align="right">             6 </td></tr>
+<tr><td> 9 </td><td>  &nbsp;  </td><td align="right">             12 </td></tr>
+<tr><td> 10 </td><td>  &nbsp;  </td><td align="right">             9 </td></tr>
+<tr><td> 11 </td><td align="right">             39 </td><td>  &nbsp;  </td></tr>
+<tr><td> 12 </td><td align="right">             38 </td><td>  &nbsp;  </td></tr>
+<tr><td> 13 </td><td align="right">             37 </td><td>  &nbsp;  </td></tr>
+<tr><td> 14 </td><td align="right">             20 </td><td>  &nbsp;  </td></tr>
+<tr><td> 15 </td><td align="right">             36 </td><td>  &nbsp;  </td></tr>
+<tr><td> 16 </td><td align="right">             35 </td><td>  &nbsp;  </td></tr>
+<tr><td> 17 </td><td align="right">             34 </td><td>  &nbsp;  </td></tr>
+<tr><td> 18 </td><td align="right">             33 </td><td>  &nbsp;  </td></tr>
+<tr><td> 19 </td><td align="right">             32 </td><td>  &nbsp;  </td></tr>
+<tr><td> 20 </td><td>  &nbsp;  </td><td align="right">             10 </td></tr>
+<tr><td> 21 </td><td align="right">             23 </td><td>  &nbsp;  </td></tr>
+<tr><td> 22 </td><td align="right">             29 </td><td>  &nbsp;  </td></tr>
+<tr><td> 23 </td><td align="right">             24 </td><td>  &nbsp;  </td></tr>
+<tr><td> 24 </td><td align="right">             22 </td><td>  &nbsp;  </td></tr>
+<tr><td> 25 </td><td align="right">             21 </td><td>  &nbsp;  </td></tr>
+<tr><td> 26 </td><td align="right">             26 </td><td>  &nbsp;  </td></tr>
+<tr><td> 27 </td><td align="right">             27 </td><td>  &nbsp;  </td></tr>
+<tr><td> 28 </td><td>  &nbsp;  </td><td align="right">             20 </td></tr>
+</table>
+<p />
+Pin 31 of M83C154 to pin 20 of M83C154  (Jumper pin) to swicth to the eprom code..
+If you will, Pin 31 on the <a href="MCU.html">MCU</a> is the EA (External Addressing) ping, and when you tie it to Pin 20 (GND) you force the <a href="MCU.html">MCU</a> to execute from external <a href="ROM.html">ROM</a>.
+<p />
+Another possible way of doing this step involves creating a socket for your new chip that sits on top of the External <a href="RAM.html">RAM</a> chip. This approach greatly reduces the wires that need to be used, but the special socket board itself gets a bit triky and may present you with clearance problems ( two chips and a socket on top of each other may stand so tall that you may not be able to mount the top cover of the <a href="ECU.html">ECU</a>). Also, this approach is NOT recommended for people new to soldering. It involves some skills with the iron and a lot of caution.
+The idea is to mount a socket ( <a href="ZIF.html">ZIF</a> or not) on a small prototyping board and add 2 single-row headers on the bottom of the board. The headers get soldered to the External <a href="RAM.html">RAM</a> chip, and your newly burned chip goes into the socket. Some of the header pins have to be cut, but you can use a rule of thumb here. Leave only the pins that the table below says are connected to the XRAM. Or just look at the attached pictures to see which ones are missing.
+If you get stumbled upon something, Take out the datasheets and triple-check. One more thing i highly recommend is after you're done, check the circuit with a continuity tester, but use the table above! The two tables ARE be electricly identical.
+<p />
+Before you start, examine the photographs I did while chipping my PM6. This will help you get a better picture of what the final thing should look like. I made a small cut on the proto-board to denote PIN1 as is done on most ICs. Also, the below mentioned connection from <a href="EEPROM.html">EEPROM</a> Pin 28 to Pin 1 was made after the photos were shot, so You will not see it.
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> <a href="EPROM.html">EPROM</a> PINS </td><td> <a href="MCU.html">MCU</a> PINS(m83c154) </td><td>  External <a href="RAM.html">RAM</a> Pins </td></tr>
+<tr><td colspan="4">  </td></tr>
+<tr><td> 1 </td><td align="right">           40 </td><td colspan="2">  &nbsp;  </td></tr>
+<tr><td> 2 </td><td align="right">           25 </td><td colspan="2">  &nbsp;  </td></tr>
+<tr><td> 3 </td><td>  &nbsp;  </td><td colspan="2" align="right">             1 </td></tr>
+<tr><td> 4 </td><td>  &nbsp;  </td><td colspan="2" align="right">             2 </td></tr>
+<tr><td> 5 </td><td>  &nbsp;  </td><td colspan="2" align="right">             3 </td></tr>
+<tr><td> 6 </td><td>  &nbsp;  </td><td colspan="2" align="right">             4 </td></tr>
+<tr><td> 7 </td><td>  &nbsp;  </td><td colspan="2" align="right">             5 </td></tr>
+<tr><td> 8 </td><td>  &nbsp;  </td><td colspan="2" align="right">             6 </td></tr>
+<tr><td> 9 </td><td>  &nbsp;  </td><td colspan="2" align="right">             7 </td></tr>
+<tr><td> 10 </td><td>  &nbsp;  </td><td colspan="2" align="right">             8 </td></tr>
+<tr><td> 11 </td><td>  &nbsp;  </td><td colspan="2" align="right">             9 </td></tr>
+<tr><td> 12 </td><td>  &nbsp;  </td><td colspan="2" align="right">             10 </td></tr>
+<tr><td> 13 </td><td>  &nbsp;  </td><td colspan="2" align="right">             11 </td></tr>
+<tr><td> 14 </td><td>  &nbsp;  </td><td colspan="2" align="right">             12 </td></tr>
+<tr><td> 15 </td><td>  &nbsp;  </td><td colspan="2" align="right">             13 </td></tr>
+<tr><td> 16 </td><td>  &nbsp;  </td><td colspan="2" align="right">             14 </td></tr>
+<tr><td> 17 </td><td>  &nbsp;  </td><td colspan="2" align="right">             15 </td></tr>
+<tr><td> 18 </td><td>  &nbsp;  </td><td colspan="2" align="right">             16 </td></tr>
+<tr><td> 19 </td><td>  &nbsp;  </td><td colspan="2" align="right">             17 </td></tr>
+<tr><td> 20 </td><td>  Connect to <a href="EEPROM.html">EEPROM</a> Pin 14 </td></tr>
+<tr><td> 21 </td><td align="right">          23 </td><td colspan="2">  &nbsp;  </td></tr>
+<tr><td> 22 </td><td align="right">          29 </td><td colspan="2">  &nbsp;  </td></tr>
+<tr><td> 23 </td><td align="right">          24 </td><td colspan="2">  &nbsp;  </td></tr>
+<tr><td> 24 </td><td align="right">          22 </td><td colspan="2">  &nbsp;  </td></tr>
+<tr><td> 25 </td><td>  &nbsp;  </td><td colspan="2" align="right">             23 </td></tr>
+<tr><td> 26 </td><td align="right">          26 </td><td colspan="2">  &nbsp;  </td></tr>
+<tr><td> 27 </td><td align="right">          27 </td><td colspan="2">  &nbsp;  </td></tr>
+<tr><td> 28 </td><td>  Connect to <a href="EEPROM.html">EEPROM</a> Pin 1 </td></tr>
+</table>
+<p />
+Just to make it clear, Pin 20 of the <a href="EEPROM.html">EEPROM</a> is connected to <a href="EEPROM.html">EEPROM</a> pin 14 which (as the table suggests) is connected to <a href="RAM.html">RAM</a> pin12 and therefor it is connected to GND. <a href="EEPROM.html">EEPROM</a> Pin 28 is connected to <a href="EEPROM.html">EEPROM</a> pin 1 and they both are connected to the <a href="MCU.html">MCU</a> pin40 which is the +5V Vcc.
+<p />
+And don't forget to connect "Pin 31 of M83C154 to pin 20 of M83C154  (Jumper pin) to swicth to the eprom code..."
+<p />
+<p />
+<font size = "-1"><center>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th align="center" bgcolor="#D0D1E0"> <strong><span style='background : #FFFFCE;'><font color="#0000FF">Attachment</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FileAttachment?topicparent=Library.ChippingAn88-89ECU">?</a>:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Modify:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Size:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Date:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Who:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Comment:</strong> </th></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/ChippingAn88-89ECU/DSC00663.jpg">DSC00663.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/ChippingAn88-89ECU?filename=DSC00663.jpg&amp;revInfo=1">mod</a>     </td><td>  65387  </td><td>  10 May 2005 - 13:47  </td><td>  1net  </td><td>  Socket Board ( Top)  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/ChippingAn88-89ECU/DSC00662.jpg">DSC00662.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/ChippingAn88-89ECU?filename=DSC00662.jpg&amp;revInfo=1">mod</a>     </td><td>  67627  </td><td>  10 May 2005 - 13:48  </td><td>  1net  </td><td>  Socket Board ( Bottom)  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/ChippingAn88-89ECU/DSC00667.jpg">DSC00667.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/ChippingAn88-89ECU?filename=DSC00667.jpg&amp;revInfo=1">mod</a>     </td><td>  99145  </td><td>  10 May 2005 - 13:49  </td><td>  1net  </td><td>  Soldered Socket Board 1  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/ChippingAn88-89ECU/DSC00672.JPG">DSC00672.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/ChippingAn88-89ECU?filename=DSC00672.JPG&amp;revInfo=1">mod</a>     </td><td>  125029  </td><td>  10 May 2005 - 13:50  </td><td>  1net  </td><td>  Soldered Socket Board 2  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/ChippingAn88-89ECU/DSC01263_small.jpg">DSC01263_small.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/ChippingAn88-89ECU?filename=DSC01263_small.jpg&amp;revInfo=1">mod</a>     </td><td>  157074  </td><td>  17 Aug 2005 - 06:45  </td><td>  1net  </td><td>  Soldered Socket Board 3 ( all done)  </td></tr>
+</table>
+<p />
+</font></center>
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.8 - 21 Sep 2005 - 08:24 GMT - 1net 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/ChippingAn88-89ECU?t=1194410774"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/ChippingAn88-89ECU">Attach</a>
+   |  <a href="../../rdiff/Library/ChippingAn88-89ECU.html">History</a>
+   |  <a href="../../oops/Library/ChippingAn88-89ECU%3Ftemplate=oopsmore&amp;param1=1.8&amp;param2=1.8.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.ChippingAn88-89ECU">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#f7809e9c9eb787909a919ed9988590c88482959d929483caa3a09e9c9ed7b19292939596949c">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#087c6765486c616f617c69646e7d7b61676667666461666d266b6765" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

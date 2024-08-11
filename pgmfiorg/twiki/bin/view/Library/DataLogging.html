@@ -1,0 +1,170 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . DataLogging   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="DataLogging.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>DataLogging</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+Data logging refers to recording the conditions of a running engine.  It normally happens using <a href="SerialCommunication.html">serial communication</a> with the <a href="ECU.html">ECU</a>
+<p />
+There are two way for Data Logging:
+<p />
+1. Data Logging through stock <a href="DLC.html">DLC</a> Data Link Connector. For more information, see <a href="DLCCommunication.html">DLC communication</a>
+<p />
+2. Data Logging using <a href="ECU.html">ECU</a>s inside serial connector (CN2/CN3) with a modified serial handler of <a href="ECU.html">ECU</a> code
+<p />
+For more information on the serial port of an <a href="OBD1.html">OBD1</a> <a href="ECU.html">ECU</a>, see <a href="OBD1CN2.html">OBD1&nbsp;CN2</a>.
+<p />
+For more information on <a href="OBD0.html">OBD0</a> <a href="ECU.html">ECU</a> serial ports, see <a href="OBD0CN3.html">OBD0&nbsp;CN3</a>
+<p />
+Stock <a href="OBD1.html">OBD1</a> and <a href="OBD0.html">OBD0</a> <a href="ECU.html">ECU</a>s have datalogging capability built-in as part of the standard on-board diagnostics <a href="OBD.html">OBD</a>. However, the serial port operates at a baudrate which is not standard for PC serial ports. I can't remember offhand what baudrate it actually is, and PCs may be capable of using it, but most of us who do <a href="OBD1.html">OBD1</a>  datalogging use code based off of Doc's original datalogging code (which contained a bug).
+<p />
+Below are several programs members have written for datalogging with <a href="ROM.html">ROM</a>s using doc's modified serial handler.
+<ul>
+<li> <a href="ECUControl.html">ECUControl</a> - The original PGMFI datalogging software, now expanded to cover both <a href="OBD0.html">OBD0</a> &amp; <a href="OBD1.html">OBD1</a> on Windows (by <span style='background : #FFFFCE;'><font color="#0000FF">Nicolas&nbsp;Mailloux</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/NicolasMailloux?topicparent=Library.DataLogging">?</a>), <span style='background : #FFFFCE;'><font color="#0000FF">Palm&nbsp;OS</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/PalmOS?topicparent=Library.DataLogging">?</a> (by <span style='background : #FFFFCE;'><font color="#0000FF">Frederic&nbsp;Maheu</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FredericMaheu?topicparent=Library.DataLogging">?</a>) , and soon <span style='background : #FFFFCE;'><font color="#0000FF">Pocket&nbsp;PC</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/PocketPC?topicparent=Library.DataLogging">?</a>.
+</li>
+<li> <a href="http://forum.pgmfi.org/viewforum.php?f=37" target="_top">Cuddle</a> - <span style='background : #FFFFCE;'><font color="#0000FF">John&nbsp;Cui</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/JohnCui?topicparent=Library.DataLogging">?</a>'s <a href="OBD1.html">OBD1</a>  datalogging and <a href="RTP.html">RTP</a> control software.
+</li>
+<li> <a href="TurboEdit.html">Turbo&nbsp;Edit</a> - <span style='background : #FFFFCE;'><font color="#0000FF">Jason&nbsp;Parker</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/JasonParker?topicparent=Library.DataLogging">?</a>'s <a href="OBD0.html">OBD0</a> datalogging and off-line auto-tuning software.
+</li>
+</ul>
+<p />
+If the outboard hardware does not support 5v <a href="TTL.html">TTL</a> communication, a <a href="SerialAdapter.html">Serial&nbsp;Adapter</a> will be needed.
+<p />
+See <a href="http://www.ecucontrol.com/" target="_top">http://www.ecucontrol.com/</a> for more information on datalogging with <a href="OBD.html">OBD</a>0 and <a href="OBD.html">OBD</a>1  <a href="ECU.html">ECU</a>s.  This site contains <a href="ROM.html">ROM</a>s for <a href="OBD.html">OBD</a>0 and <a href="OBD.html">OBD</a>1  <a href="ECU.html">ECU</a>s and the <a href="ECUControl.html">ECUControl</a> datalogging software.
+<p />
+<a href="JDM.html">JDM</a> P30 <a href="ECU.html">ECU</a>'s J12 = J4 (may apply to other <a href="JDM.html">JDM</a> ecu's, Not sure)-- badboypolar - 24 Mar 2004
+<p />
+Newer notebook computers have USB ports, but no serial ports.  Here are detailed instructions on how to integrate a <a href="SecondGenUsbToSerialConverter.html">USBMOD3 datalogging circuit</a> into your <a href="ECU.html">ECU</a>.  -- markolson - 29 Oct 2004
+<p />
+I've documented a how-to on <a href="DebuggingDataLogging.html">Debugging&nbsp;Data&nbsp;Logging</a> based on the debugging of the datalogging circuit in a <a href="JDM.html">JDM</a> P30-901 <a href="ECU.html">ECU</a>.  -- markolson - 01 Jan 2005
+<p />
+Thanks to taphonomist for finding a good site documenting USB to serial adapter cables.  Check out <a href="http://pinouts.ru/" target="_top">http://pinouts.ru/</a>.  Here's the pinout for popular Nokia phones: <a href="http://pinouts.ru/data/nokia_pop_pinout.shtml" target="_top">http://pinouts.ru/data/nokia_pop_pinout.shtml</a>  -- markolson - 05 Feb 2005
+<p />
+Jim Truett's writeup is a pretty good overview of what is required to get a USB Nokia cable working with datalogging.  See <a href="NokiaCableDatalogging.html">Nokia&nbsp;Cable&nbsp;Datalogging</a> -- blundar - 28 Mar 2005
+<p />
+Here is an explanation of <a href="FullDuplexDatalogging.html">Full&nbsp;Duplex&nbsp;Datalogging</a>  -- markolson - 24 Oct 2005 
+<p />
+<a href="HowDoesDataLoggingWork.html">How&nbsp;Does&nbsp;Data&nbsp;Logging&nbsp;Work</a>  -- markolson - 24 Oct 2005     
+<p />
+<a href="HowToLogExternalDataSuchAsAnEgtSensor.html">How&nbsp;To&nbsp;Log&nbsp;External&nbsp;Data&nbsp;Such&nbsp;As&nbsp;An&nbsp;Egt&nbsp;Sensor</a>   -- markolson - 24 Oct 2005
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.14 - 24 Oct 2005 - 06:02 GMT - markolson 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/DataLogging?t=1194409664"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/DataLogging">Attach</a>
+   |  <a href="../../rdiff/Library/DataLogging.html">History</a>
+   |  <a href="../../oops/Library/DataLogging%3Ftemplate=oopsmore&amp;param1=1.14&amp;param2=1.14.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.DataLogging">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#99eef0f2f0d9e9fef4fff0b7f6ebfea6eaecfbf3fcfaeda4cdcef0f2f0b9dffcfcfdfbf8faf2">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#89fde6e4c9ede0eee0fde8e5effcfae0e6e7e6e7e5e0e7eca7eae6e4" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

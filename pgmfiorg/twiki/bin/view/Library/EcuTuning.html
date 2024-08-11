@@ -1,0 +1,353 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . EcuTuning   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="EcuTuning.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>EcuTuning</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+.
+ Author: blundar
+ Date:   08-12-03 14:12
+<p />
+EGT (or <a href="ExhaustGasTempSensor.html">Exhaust&nbsp;Gas&nbsp;Temp&nbsp;Sensor</a>) and <a href="WideBandO2.html">Wide&nbsp;Band&nbsp;O2</a> used in combination with <a href="DataLogging.html">Data&nbsp;Logging</a> can be a really powerful tool. Timing changes produce more effects in EGT and fuel changes produce more effects on wideband. Deluded explained some basics to me but most of it flew over my head. :)
+<p />
+<p />
+ Author: Deluded
+ Date:   08-12-03 22:25
+<p />
+Blundar nailed it WBO2, datalogging, EGT , and <a href="RealTimeProgramability.html">RTP</a> helps loads too.  you are just guessing without at least the first two tools. if more timing advance is needed, it will result in a leaner O2 reading...limited by detonation. We break very few street engines with these tuning parameters:
+<p />
+<ul>
+<li> less than 10psi: 12:1 <a href="AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratio</a>
+</li>
+<li> up to 16psi: 11:1 <a href="AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratio</a>
+</li>
+<li> 9.5:1 compression or less: 1 degree retard/#boost
+</li>
+<li> above 9.5:1 compression at least 1.25 degrees per psi
+</li>
+</ul>
+<p />
+A little knowledge can be a dangerous thing.
+<p />
+You can find a howto for tuning to pass a smog test by checking out <a href="TuningForSmog.html">Tuning&nbsp;For&nbsp;Smog</a> -- markolson - 19 Feb 2005   
+<p />
+Here is a log from MSN conversation between Synoptic and Blundar.
+An how-to for tunning the maps of the <a href="ECU.html">ECU</a> for <a href="WOT.html">WOT</a> operation. It is very basic, but it gives a good idea of how it works.
+<p />
+<p />
+LOG START 
+<hr />
+11:54:14 AM  Dave B.   you have a wideband, I presume?
+<p />
+11:54:18 AM  Synoptic.  hmm
+<p />
+11:54:21 AM  Synoptic.  no
+<p />
+11:54:23 AM  Synoptic.  :P
+<p />
+11:54:24 AM  Blundar  if not, forget it
+<p />
+11:54:28 AM  Synoptic.  i need to fix civic1990si one's
+<p />
+11:54:31 AM  Synoptic.  we do that today 
+<p />
+11:54:40 AM  Synoptic.  its the <a href="DIY.html">DIY</a> one 
+<p />
+11:54:54 AM  Synoptic.  lets say i'm gonna have one this afternboon 
+<p />
+11:55:05 AM  Blundar  then put it on the car 
+<p />
+11:55:07 AM  Blundar  wait 
+<p />
+11:55:13 AM  Blundar  do you have a narrowband out or not? 
+<p />
+11:55:35 AM  Blundar  the <a href="ECU.html">ECU</a> will get pissed off about not having a narrowband 
+<p />
+11:55:36 AM  Synoptic.  i have 2 o2 input on my header 
+<p />
+11:55:43 AM  Synoptic.  so i'll simply add the wb 
+<p />
+11:55:44 AM  Blundar  ok then you're set 
+<p />
+11:55:52 AM  Blundar  drive around with the WB 
+<p />
+11:56:04 AM  Blundar  you'll see what afrs you're at 
+<p />
+11:56:18 AM  Synoptic.  k 
+<p />
+11:56:28 AM  Synoptic.  will AFr change a lot while dringin ? 
+<p />
+11:56:33 AM  Synoptic.  or it will stabilize ? 
+<p />
+11:56:48 AM  Blundar  change a LOT 
+<p />
+11:56:56 AM  Synoptic.  and how to i modify my afr, using te, timing, fuel? how does it 
+ork?
+<p />
+11:56:58 AM  Synoptic.  okok 
+<p />
+11:57:06 AM  Synoptic.  so how do i tune my car then.. 
+<p />
+11:57:08 AM  Blundar  afr is mostly fuel 11:57:08 AM  Synoptic.  i'm a morron 
+<p />
+11:57:09 AM  Synoptic.  help me 
+<p />
+11:57:13 AM  Blundar  heheheh 
+<p />
+11:57:14 AM  Synoptic.  ok 
+<p />
+11:57:24 AM  Blundar  nick, I honestly don't have time to hold your hand on this 
+<p />
+11:57:58 AM  Blundar  I'm trying to recover a crashed reiserfs in another window :) 
+<p />
+11:58:03 AM  Synoptic.  basically, do I run at steady <a href="RPM.html">RPM</a> to see what AFR it is ? average),
+<p />
+i do that for all RPMS, tak enote, enrich, then try again ? 
+<p />
+11:58:13 AM  Synoptic.  i love linux 
+<p />
+11:58:18 AM  Blundar  its much more difficult than that 
+<p />
+11:58:32 AM  Blundar  because you won't be able to hold a steady <a href="RPM.html">RPM</a> @WOT without a dyno 
+<p />
+11:58:37 AM  Blundar  you'll be able to do a pull 
+<p />
+11:58:49 AM  Blundar  start at low <a href="RPM.html">RPM</a> in e=3rd or 4th geat 
+<p />
+11:58:53 AM  Blundar  floor it 
+<p />
+11:59:01 AM  Blundar  watch the AFRs as you gradually accelerate 
+<p />
+11:59:04 AM  Blundar  watch tach 
+<p />
+11:59:13 AM  Blundar  you'll see it change wtih <a href="RPM.html">RPM</a> 
+<p />
+11:59:21 AM  Blundar  make some changes to fuel, observe changes in AFR 
+<p />
+11:59:24 AM  Blundar  repeat 
+<p />
+11:59:36 AM  Synoptic.  k 
+<p />
+11:59:38 AM  Synoptic.  ok 
+<p />
+11:59:39 AM  Synoptic.  i get it 
+<p />
+11:59:41 AM  Blundar  you'll quickly learn how much to change fuel to get disred afr 
+<p />
+11:59:49 AM  Blundar  start relatively small 
+<p />
+11:59:52 AM  Synoptic.  then engine need to have force applyed.. 
+<p />
+11:59:58 AM  Blundar  you';d be amazed what 3-5% will do 
+<p />
+12:00:03 PM  Synoptic.  kk 
+<p />
+12:00:09 PM  Synoptic.  keep stock timing 
+<p />
+12:00:15 PM  Synoptic.  then adjust if i hear detonation 
+<p />
+12:00:23 PM  Synoptic.  but if i put more fuel, i should advance it 
+<p />
+12:00:25 PM  Synoptic.  i know that 
+<p />
+12:00:34 PM  Synoptic.  timing will only change the powerband curve, right ? 
+<p />
+12:00:45 PM  Blundar  timing will change everything 
+<p />
+12:00:48 PM  Blundar  nail your fuel first 
+<p />
+12:00:52 PM  Synoptic.  ok 
+<p />
+12:00:53 PM  Blundar  then go back and play with timing 
+<p />
+12:00:54 PM  Synoptic.  stock timing 
+<p />
+12:00:56 PM  Synoptic.  stock pressure 
+<p />
+12:01:00 PM  Synoptic.  go for fuel 
+<p />
+12:01:01 PM  Synoptic.  then 
+<p />
+12:01:03 PM  Synoptic.  timing 
+<p />
+12:01:05 PM  Synoptic.  then 
+<p />
+12:01:08 PM  Synoptic.  pressure  
+<p />
+12:01:14 PM  Blundar  yessssssss 
+<p />
+12:01:15 PM  Synoptic.  kk 
+<p />
+12:01:18 PM  Blundar  pretty much 
+<p />
+12:01:19 PM  Synoptic.  k 
+<p />
+12:01:38 PM  Synoptic.  and floor it on 4th or 3rd so rpm doesnt go up super fast and ngine
+<p />
+stil have a load. 
+<p />
+12:01:50 PM  Synoptic.  that will do a base tune.. 
+<p />
+12:01:59 PM  Synoptic.  and with that i could go on a dyno. 
+<p />
+12:02:00 PM  Blundar  yeah 
+<p />
+12:02:02 PM  Synoptic.  kk 
+<p />
+12:02:03 PM  Synoptic.  i get it 
+<p />
+12:02:04 PM  Blundar  that will do <a href="WOT.html">WOT</a> 
+<p />
+12:02:07 PM  Synoptic.  okoko 
+<p />
+12:02:10 PM  Synoptic.  yes yes 
+<p />
+12:02:12 PM  Synoptic.  <a href="WOT.html">WOT</a> 
+<p />
+12:02:14 PM  Blundar  part throttle is much tougher 
+<p />
+12:02:21 PM  Synoptic.  meaning, the less vaccum in the table 
+<p />
+12:02:33 PM  Blundar  you kinda have to infer things from <a href="WOT.html">WOT</a> changes 
+<p />
+12:02:39 PM  Synoptic.  so I should be playing in the last colums of the table 
+<p />
+12:02:44 PM  Blundar  you want part throttle much leaner than <a href="WOT.html">WOT</a> 
+<p />
+12:02:59 PM  Blundar  rightmost 3-4 columns is all you should really touch
+<p />
+12:03:06 PM  Synoptic.  kk 
+<p />
+12:03:09 PM  Synoptic.  cool 
+<p />
+12:03:15 PM  Synoptic.  I feel 0.5% less morron 
+<p />
+12:03:17 PM  Synoptic.  :) 
+<p />
+12:03:30 PM  Synoptic.  we should write this howto on the wiki 
+<p />
+12:03:33 PM  Blundar  :)
+<p />
+<hr />
+LOG END
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.2 - 19 Feb 2005 - 21:45 GMT - markolson 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/EcuTuning?t=1194409674"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EcuTuning">Attach</a>
+   |  <a href="../../rdiff/Library/EcuTuning.html">History</a>
+   |  <a href="../../oops/Library/EcuTuning%3Ftemplate=oopsmore&amp;param1=1.2&amp;param2=1.2.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.EcuTuning">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#37405e5c5e7747505a515e19584550084442555d5254430a63605e5c5e17715252535556545c">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#d4a0bbb994b0bdb3bda0b5b8b2a1a7bdbbbabbbab8bdbab1fab7bbb9" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

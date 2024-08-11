@@ -1,0 +1,153 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . OBD1CodeCompatibility ( vs. r1.1)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/OBD1CodeCompatibility.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>OBD1CodeCompatibility</b> ( vs. r1.1)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/OBD1CodeCompatibility.html">OBD1CodeCompatibility</a></b>
+		(<a href="../../view/Library/OBD1CodeCompatibility%3Frev=r1.1.html">r1.1</a> - 22&nbsp;Jun&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="blundar" date="1087918440" format="1.0" version="1.1"}%
+<a href="../../view/Library/OBD1CivicIntegra.html">OBD1&nbsp;Civic&nbsp;Integra</a> <a href="../../view/Library/ECU.html">ECU</a>s are a common hardware platform.
+<p />
+What this means is that you can (with minor modifications) run essentially any code on any <a href="../../view/Library/ECU.html">ECU</a> in the family.  There are rules however:
+<ul>
+<li> <a href="../../view/Library/Vtec.html">Vtec</a> programs (<a href="../../view/Library/P28.html">P28</a>, <a href="../../view/Library/P30.html">P30</a>, <a href="../../view/Library/P72.html">P72</a>, ...) require a <a href="../../view/Library/Vtec.html">Vtec</a> <a href="../../view/Library/ECU.html">ECU</a> or a <a href="../../view/Library/NonVtec-To-Vtec.html">Non&nbsp;Vtec-To-Vtec</a> conversion.
+</li>
+<li> Non-<a href="../../view/Library/Vtec.html">Vtec</a> programs run in a <a href="../../view/Library/Vtec.html">Vtec</a> <a href="../../view/Library/ECU.html">ECU</a> without any problems.
+</li>
+<li> <a href="../../view/Library/Vtec.html">Vtec</a> programs run in non-Vtec <a href="../../view/Library/ECU.html">ECU</a>s with vtec disabled.  (DB: they may even work with vtec xover above redline although I think the sensor checks for VTP/VTS will cause issues.)
+</li>
+<li> 1-wire O2 <a href="../../view/Library/ECU.html">ECU</a>s like <a href="../../view/Library/P05.html">P05</a>, <a href="../../view/Library/P08.html">P08</a> require <strong><em>either</em></strong> <a href="../../view/Library/OneWireTo4WireO2Sensor.html">One&nbsp;Wire&nbsp;To4&nbsp;Wire&nbsp;O2&nbsp;Sensor</a> conversion of the hardware <strong><em>or</em></strong> to disable the <a href="../../view/Library/O2HeaterCircuit.html">O2&nbsp;Heater&nbsp;Circuit</a> in the <a href="../../view/Library/ROM.html">ROM</a>.
+</li>
+<li> <a href="../../view/Library/DOHC.html">DOHC</a> <a href="../../view/Library/Vtec.html">Vtec</a> programs (<a href="../../view/Library/P30.html">P30</a>, <a href="../../view/Library/P72.html">P72</a>, ...) generally have a <a href="../../view/Library/KnockSensor.html">Knock&nbsp;Sensor</a> enabled.  To use these programs on <a href="../../view/Library/ECU.html">ECU</a>s lacking the <a href="../../view/Library/KnockBoard.html">Knock&nbsp;Board</a> (<a href="../../view/Library/P28.html">P28</a>, <a href="../../view/Library/P08.html">P08</a>, conversions, ...) you must first disable the <a href="../../view/Library/KnockSensor.html">Knock&nbsp;Sensor</a>.
+</li>
+</ul>
+<p />
+For information on disabling <a href="../../view/Library/KnockSensor.html">Knock&nbsp;Sensor</a> or the <a href="../../view/Library/O2HeaterCircuit.html">O2&nbsp;Heater&nbsp;Circuit</a> in software, please consult the <a href="../../view/Library/RomMaps.html">Rom&nbsp;Maps</a> for the code you are working with.
+<p />
+Additionally, different markets received different features in their <a href="../../view/Library/ECU.html">ECU</a>s.  
+<ul>
+<li> <a href="../../view/Library/USDM.html">USDM</a> <a href="../../view/Library/ECU.html">ECU</a>s are by far the most full-featured.  Almost any code will run in a <a href="../../view/Library/USDM.html">USDM</a> <a href="../../view/Library/ECU.html">ECU</a> if the above rules are followed.
+</li>
+<li> <a href="../../view/Library/JDM.html">JDM</a> <a href="../../view/Library/ECU.html">ECU</a>s generally lack several things that must either be physically added to the <a href="../../view/Library/ECU.html">ECU</a> or disabled in the <a href="../../view/Library/ROM.html">ROM</a>.  The <a href="../../view/Library/PressureAtmosphere.html">Pressure&nbsp;Atmosphere</a> (PA) sensor <a href="../../view/Library/ElectricalLoadDetector.html">Electrical&nbsp;Load&nbsp;Detector</a> (ELD) and <a href="../../view/Library/InjectorTestCircuit.html">Injector&nbsp;Test&nbsp;Circuit</a> are the most notable things here.
+</li>
+<li> <a href="../../view/Library/EDM.html">EDM</a> <a href="../../view/Library/ECU.html">ECU</a>s are generally the most bare.  They generally lack PA, ELD, Injector test like the <a href="../../view/Library/JDM.html">JDM</a> <a href="../../view/Library/ECU.html">ECU</a>s, and will occaisonally lack the <a href="../../view/Library/KnockSensor.html">Knock&nbsp;Sensor</a> and knock board present in <a href="../../view/Library/JDM.html">JDM</a> <a href="../../view/Library/ECU.html">ECU</a>s too.
+</li>
+</ul></td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/OBD1CodeCompatibility.html">View</a>
+  |  <a href="OBD1CodeCompatibility.html">Diffs</a>  | <a href="../../view/Library/OBD1CodeCompatibility%3Frev=1.1.html">r1.1</a>
+  |  <a href="../../oops/Library/OBD1CodeCompatibility%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.OBD1CodeCompatibility">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#2c5b4547456c5c4b414a4502435e4b135f594e46494f5811787b4547450c6a4949484e4d4f47">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#3c4853517c58555b55485d505a494f555352535250555259125f5351" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision  - <br />
+    Revision r1.1 - 22 Jun 2004 - 15:34 GMT - Home.blundar
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

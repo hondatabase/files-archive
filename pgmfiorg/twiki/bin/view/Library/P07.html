@@ -1,0 +1,164 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . P07   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="P07.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>P07</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+P07
+<p />
+92-95 <a href="OBD1.html">OBD1</a>  Civic VX (D15Z1)
+<p />
+Unique in that it has two 66207 processors (one presumably for the wideband O2)
+<p />
+Note: 303 P07 Code is very similar to 304 P28-A01 Code, at least vectors are the same!
+<p />
+<h3><a name="RAM"> </a> <a href="RAM.html">RAM</a> </h3>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> <strong><em>Location</em></strong> </td><td> <strong><em>Bytes</em></strong> </td><td> <strong><em>Description</em></strong> </td><td> <strong><em>Notes</em></strong> </td></tr>
+<tr><td> 00CC </td><td> 1 </td><td> Speed sensor </td><td> Km/h </td></tr>
+<tr><td> 00D9 </td><td> 1 </td><td> <a href="ECT.html">ECT</a> sensor </td><td> 0v-5v 0x00-0xFF </td></tr>
+</table>
+<p />
+<h3><a name="ROM"> </a> <a href="ROM.html">ROM</a> </h3>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> <strong><em>Location</em></strong> </td><td> <strong><em>Bytes</em></strong> </td><td> <strong><em>Description</em></strong> </td><td> <strong><em>Notes</em></strong> </td></tr>
+<tr><td> 1292 </td><td> 1 </td><td> Vtec Coolant Temp Check </td><td> (0xD8 enables, 0xFF disables)  </td></tr>
+<tr><td> 1997 </td><td> 1 </td><td> Speed limiter Value  </td><td> B7 is 183 km/h (114mph); FE is 254 km/h (158 mph) </td></tr>
+<tr><td> 1998 </td><td> 2 </td><td> Speed Limiter Routine Bypass </td><td>  Change from jge label_something to two NOPs (00 00) to disable speed limiter  </td></tr>
+<tr><td> 2BA3 </td><td> 2 </td><td> Checksum Jump Instruction </td><td> Change JEQ 2BB6 (C9 10) to SJ 2BB6 (CB ??) to disable checksum   </td></tr>
+<tr><td> 60E6 </td><td> 1 </td><td> Vtec Enable </td><td> (0xFF enables, 0x00 disables) need to verify ? </td></tr>
+<tr><td> 60E7 </td><td> 1 </td><td> Knock Enable </td><td> (0xFF enables, 0x00 disables) need to verify ? </td></tr>
+<tr><td> 60FA </td><td> 1 </td><td> Vtec <a href="VSS.html">VSS</a> Check  </td><td> (0x00 enables, 0xFF disables) need to verify ? </td></tr>
+<tr><td> 60FB </td><td> 1 </td><td> Debug Mode </td><td> (0xFF enables, 0x00 disables) need to verify ? </td></tr>
+</table>
+<p />
+<p />
+<p />
+<p />
+<font size = "-1"><center>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th align="center" bgcolor="#D0D1E0"> <strong><span style='background : #FFFFCE;'><font color="#0000FF">Attachment</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FileAttachment?topicparent=Library.P07">?</a>:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Modify:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Size:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Date:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Who:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Comment:</strong> </th></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/P07/P07top.jpg">P07top.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/P07?filename=P07top.jpg&amp;revInfo=1">mod</a>     </td><td>  213503  </td><td>  25 Feb 2004 - 20:31  </td><td>  blundar  </td><td>  thanks Katman  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/P07/P07_6wire1.jpg">P07_6wire1.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/P07?filename=P07_6wire1.jpg&amp;revInfo=1">mod</a>     </td><td>  705288  </td><td>  25 Feb 2004 - 20:32  </td><td>  blundar  </td><td>  Thanks RaVer Motorsports  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/P07/P07_6wire2.jpg">P07_6wire2.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/P07?filename=P07_6wire2.jpg&amp;revInfo=1">mod</a>     </td><td>  744257  </td><td>  25 Feb 2004 - 20:32  </td><td>  blundar  </td><td>  Thanks RaVer Motorsports  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/P07/P07_6wire3.jpg">P07_6wire3.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/P07?filename=P07_6wire3.jpg&amp;revInfo=1">mod</a>     </td><td>  693560  </td><td>  25 Feb 2004 - 20:33  </td><td>  blundar  </td><td>  Thanks RaVer Motorsports  </td></tr>
+</table>
+<p />
+</font></center>
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.3 - 26 Jun 2005 - 05:29 GMT - markese 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/P07?t=1194413173"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/P07">Attach</a>
+   |  <a href="../../rdiff/Library/P07.html">History</a>
+   |  <a href="../../oops/Library/P07%3Ftemplate=oopsmore&amp;param1=1.3&amp;param2=1.3.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.P07">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#73041a181a3303141e151a5d1c01144c000611191610074e27241a181a533516161711121018">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#afdbc0c2efcbc6c8c6dbcec3c9dadcc6c0c1c0c1c3c6c1ca81ccc0c2" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

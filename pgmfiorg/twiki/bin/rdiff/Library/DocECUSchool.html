@@ -1,0 +1,262 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . DocECUSchool ( vs. r1.1)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/DocECUSchool.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>DocECUSchool</b> ( vs. r1.1)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/DocECUSchool.html">DocECUSchool</a></b>
+		(<a href="../../view/Library/DocECUSchool%3Frev=r1.1.html">r1.1</a> - 05&nbsp;Mar&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="blundar" date="1078508443" format="1.0" version="1.1"}%
+ From post: Doc Teaches <a href="../../view/Library/ECU.html">ECU</a> School
+<p />
+A while ago, Doc and I had a conversation on IM that turned into a very informative post.
+<p />
+It is now archived here for your reading pleasure:
+<p />
+Author: blundar Date:   05-28-03 19:55
+<p />
+Today, I spent some time in <a href="../../view/Library/ECU.html">ECU</a> school learning about <a href="../../view/Library/OBD1.html">OBD1</a>  <a href="../../view/Library/ECU.html">ECU</a>s. You should read this.  I’ve cleaned it up and edited a little, but for the most part is just a conversation. Thanks to Doc for being willing to help the rest of us catch up.
+<p />
+<strong><em>Note:</em></strong> all code snippets and memory addresses refer to P30_203 (<a href="../../view/Library/JDM.html">JDM</a> P30 stock)
+<p />
+doc: ya, what do you want to know?
+<p />
+blundar: inputs: are they more or less direct to <a href="../../view/Library/IO.html">IO</a> pins or is there an IO controller in the middle?
+<p />
+doc: the <a href="../../view/Library/IO.html">IO</a> controller (<a href="../../view/Library/82C55.html">82&nbsp;C55</a>) has 2 output ports, and 1 input port (if i remember right), and near the eprom is a other 20pin IC (can't remember it's number) which is a 8bit input, too ... and some direct IO on the <a href="../../view/Library/CPU.html">CPU</a>, like for <a href="../../view/Library/VSS.html">VSS</a>, injector test circuit, and some others.  of course, the analog inputs are direct on the <a href="../../view/Library/CPU.html">CPU</a> but the analog are multiplexed - 2 ic's left of the <a href="../../view/Library/CPU.html">CPU</a>
+<p />
+blundar: you remember which ICs?
+<p />
+doc: don't have it in mind, need to check there numbers
+<p />
+<p />
+blundar: are the <a href="../../view/Library/TTL.html">TTL</a> inputs like the ones for a clutch switch multiplexed?
+<p />
+doc: if i remember right, the input for the clutch switch (AT PN we used) is connected to the 20 pin (Latch or similar part) near the eprom
+<p />
+blundar: could you point to me in the code (or give me an example) of how to tell if the switch is on or off?
+<p />
+doc: sniplet out of the P30 stock: as example the A/C control routine - here you see the A/C switch, and as output the A/C clutch:
+<pre>
+4306- DA 11 17 : JBR off 11.2, 4320 ; A/C switch @ bit 11.2
+4309- C4 26 1C : SB off 26.4
+430C- F4 E2 : LB A, off E2
+430E- CE 1B : JNE 432B
+4310- C4 E3 98 32 : MOVB off E3, #32
+4314- C4 1B 18 : SB off 1B.0
+4317- 95 : RC
+4318- CB 15 : SJ 432F
+431A- C4 B8 15 : CLRB off B8
+431D- C4 E3 15 : CLRB off E3
+
+4320- C4 26 0C : RB off 26.4
+4323- F4 E3 : LB A, off E3
+4325- CE ED : JNE 4314
+4327- C4 E2 98 32 : MOVB off E2, #32
+432B- C4 1B 08 : RB off 1B.0
+432E- 85 : SC
+432F- C5 20 38 : MB 20.0, C ; A/C Clutch?! @ bit 20.0
+</pre>
+doc: so: "off 11.2" is a digital input and 20.0 is a output on the 82C55
+<p />
+blundar: So the <a href="../../view/Library/ECU.html">ECU</a> buffers inputs... how many are there for on/off <a href="../../view/Library/TTL.html">TTL</a> inputs?
+<p />
+doc: i found off 10h and off 11h for the inputs in the 203 code but this can vary from ecu code to ecu code!
+<p />
+blundar: how did you figure it out?
+doc: i checked almost every input by applying a signal on the input and measure with the scope where the signal goes - in the code: hours of reading :-)
+<p />
+blundar: are all the outputs driven off the 89C55?
+<p />
+doc: i'm not 100% sure, i'm sure some are direct driven by the <a href="../../view/Library/MCU.html">MCU</a> (<a href="../../view/Library/PWM.html">PWM</a> outputs), and the injectors are dirven by a "injector controller", maybe the ignition output signal is controlled by this controller, too. need to check this in deep
+<p />
+blundar: vtec, auto trans lockup, AC, ?
+<p />
+doc: all these signals are driven by the <a href="../../view/Library/82C55.html">82&nbsp;C55</a>
+<p />
+blundar: how does the 66K communicate with the 89C55?
+<p />
+blundar: MB 20.0, C
+<p />
+blundar: that looks to me like the 89C55 is mapped into the memory space... (I'm a 66K ASM idiot tho)
+<p />
+doc: a bit weird! yes, in the code on the addresses 20, 22, 24 ... but, then these memory locations are copied to 0f00, 1f00, 2f00 (which is now really the 82C55 … ya, there is no real address decoder in the obd1 ecu, so they did it with a little trick, but now it uses this addresses :-( )
+<p />
+blundar: ahh I c
+<p />
+blundar: so those memory addresses 20h 22h 24h are like a buffer?
+<p />
+doc: right
+<p />
+blundar: can I take my guesswork a little bit further? 20.0 = AC out, 20.1 = another out, 20.2 = another out :)
+<p />
+doc: yes
+<p />
+doc: 22.0 is vtec solenoid
+<p />
+blundar: is 22.1 the auto tranny lockup solenoid?
+<p />
+doc: don't know - i don't spend any time on the automatic parts, cause i don't have a auto ecu - i can find it out on a manual, too, but will be more work to trace back the wires from the transistors back to the 82c55
+<p />
+blundar: do you understand the pattern between pins on the 82c55 and memory locations?
+<p />
+doc: no, cause i never worry about it. btw: we don't have a datasheet (pinout) of the 82c55 cause it a unusual 44pin type (as opposed to the normal 40 pin type)
+<p />
+doc: i guess, the feedback signals are connected to the 82c55
+<p />
+blundar: hmm
+<p />
+doc: i.e. it looks like that the VTS (feedback) is on address 10.5
+<p />
+doc: VTS check routine:
+<p />
+<pre>
+3D06- DC 16 1B : JBR off 16.4, 3D24 ; Jmp if VTEC disabled
+3D09- EC 14 18 : JBS off 14.4, 3D24 ; jmp if VTS error
+3D0C- DA 1F 0C : JBR off 1F.2, 3D1B ; jmp if Vtec not active
+3D0F- C4 C0 98 14 : MOVB off C0, #14
+3D13- F4 BF : LB A, off BF
+3D15- ED 10 0C : JBS off 10.5, 3D24
+3D18- 85 : SC
+3D19- CB 09 : SJ 3D24
+3D1B- C4 BF 98 14 : MOVB off BF, #14
+3D1F- F4 C0 : LB A, off C0
+3D21- ED 10 F4 : JBS off 10.5, 3D18
+3D24- C5 9A 38 : MB 9A.0, C ; Error #21 VTS ???
+</pre>
+blundar: VTS check routine: if you were to remove / disable that you wouldn't throw a code when the vtec solenoid was unplugged right?
+<p />
+doc: right
+<p />
+blundar: do the configuration jumpers (RP17, RP18, etc) correspond with inputs that are multiplexed in?
+<p />
+doc: RP17, RP18 are on the multiplexed ANALOG inputs !
+<p />
+blundar: OMG
+<p />
+doc: :-) ya, it's fun… They’re mostly for configuration, and some engine bay singals
+<p />
+blundar: hmm
+<p />
+blundar: so in summary, the <a href="../../view/Library/ECU.html">ECU</a> buffers inputs and outputs 20h, 22h and 24h are output bytes, and 10h + 11h are input bytes, with individual bits of each byte corresponding to on/off
+<p />
+doc: right
+<p />
+doc: also, 14h is a error byte</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/DocECUSchool.html">View</a>
+  |  <a href="DocECUSchool.html">Diffs</a>  | <a href="../../view/Library/DocECUSchool%3Frev=1.1.html">r1.1</a>
+  |  <a href="../../oops/Library/DocECUSchool%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.DocECUSchool">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#97e0fefcfed7e7f0faf1feb9f8e5f0a8e4e2f5fdf2f4e3aac3c0fefcfeb7d1f2f2f3f5f6f4fc">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#7d0912103d19141a14091c111b080e141213121311141318531e1210" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision  - <br />
+    Revision r1.1 - 05 Mar 2004 - 17:40 GMT - Home.blundar
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

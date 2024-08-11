@@ -1,0 +1,179 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . ChippingOBD2 ( vs. r1.1)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/ChippingOBD2.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>ChippingOBD2</b> ( vs. r1.1)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/ChippingOBD2.html">ChippingOBD2</a></b>
+		(<a href="../../view/Library/ChippingOBD2%3Frev=r1.1.html">r1.1</a> - 31&nbsp;Mar&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="blundar" date="1080759600" format="1.0" version="1.1"}%
+<h2><a name="How_to_chip_a_ODB2_ECU"> </a> How to chip a ODB2 ECU  </h2>
+by Doc (edited by Dave)
+<p />
+<h3> Table of Contents: </h3>
+<p />
+<ul>
+<li> <a href="../../view/Library/ChippingOBD2.html#How_to_chip_a_ODB2_ECU">How to chip a ODB2 ECU </a>
+<ul>
+<li> <a href="../../view/Library/ChippingOBD2.html#Introduction">Introduction</a>
+</li>
+<li> <a href="../../view/Library/ChippingOBD2.html#Inside_an_OBD2_ECU">Inside an OBD2 ECU</a>
+</li>
+<li> <a href="../../view/Library/ChippingOBD2.html#Programming_a_66P507_using_the_a">Programming a 66P507 using the adaptor</a>
+</li>
+<li> <a href="../../view/Library/ChippingOBD2.html#Schematic_for_programming_adapte">Schematic for programming adapter</a>
+</li>
+</ul>
+</li>
+</ul>
+<p />
+<h3> Introduction </h3>
+Contrary to popular belief, it is possible to chip a ODB2 <a href="../../view/Library/ECU.html">ECU</a>. It's not cheap like chipping an ODB0 or ODB1 <a href="../../view/Library/ECU.html">ECU</a>, but it works in a similar way. The ODB2 <a href="../../view/Library/ECU.html">ECU</a>'s stores the program in the processor (such as the OKI 66507 used in <a href="../../view/Library/OBD2A.html">OBD2&nbsp;A</a> <a href="../../view/Library/ECU.html">ECU</a>s) like the ODB1 <a href="../../view/Library/ECU.html">ECU</a>. Unlike <a href="../../view/Library/OBD.html">OBD</a>1, there is no place on the board for a eprom.  In this case, we've to replace the processor with an reprogrammed one instead of replacing or adding an <a href="../../view/Library/EPROM.html">EPROM</a>.
+<p />
+There is a programmable version of the 66507 available, called 66P507. Unfortunately, they are quite expensive and <strong>very</strong> hard to get. Additionally, they can only be programmed once!  You can program this processor with a normal e-prom programmer and an adaptor socket for the processor. More about this later.
+<p />
+<h3> Inside an OBD2 ECU </h3>
+    <img src="../../../pub/Library/ChippingOBD2/spoon_p73_top.jpg" alt="spoon_p73_top.jpg"  width="519" height="791"  />
+<p />
+You can see on the picture of the P73 the sqare processor (highlighted). The
+processor is surface mounted, so you need experience in soldering surface mount
+devices. One trick for beginners: a hot-air-gun (which you can get in your local hardware
+store) works well and is a really effective SMT soldering tool for the price.
+<p />
+Chipping the <a href="../../view/Library/ECU.html">ECU</a> is straighforward: desolder the original processor, solder in a socket (PLCC84 for 66507), and finally put a preprogrammed replacement processor in to socket.  There isn't really a lot more to say about this process, so let's take a look at the
+programming adaptor.
+<p />
+<h3> Programming a 66P507 using the adaptor </h3>
+    <img src="../../../pub/Library/ChippingOBD2/66P507_progadaptorsized.jpg" alt="66P507_progadaptorsized.jpg"  width="650" height="522"  />
+<p />
+Plug the adaptor on your e-prom programmer like a normal 27xxx eprom. Put a blank
+66P507 in the empty (PLCC) socket on the top of the adaptor. Set your programmer
+software to 27C512 and modify the target address to $0000-$BFFF. Use 12.5 Volt
+programming voltage and a normal/slow programming alogorithm. Make sure the jumper
+on the adaptor is set to the position "D". Now program the processor like it was an <a href="../../view/Library/EPROM.html">EPROM</a>.
+If you want to  copy protect this processor so it cannot be read (easily - heh see <a href="../../view/Library/McuReaders.html">Mcu&nbsp;Readers</a>), you have to set the jumper to the position "S", and write to the address $0000 the value $00. DO THIS AFTER PROGRAMMING DATA, OTHERWISE THE PROCESSOR IS UNUSEABLE!
+<p />
+<h3> Schematic for programming adapter </h3>
+If you want to build a programming adapter yourself: (click to enlarge)
+<A HREF="../../../pub/Library/ChippingOBD2/66p507prog_cheap.GIF"><img src="../../../pub/Library/ChippingOBD2/66p507prog_cheap.GIF" alt="66p507prog_cheap.GIF"  width="750"/></A>
+<p />
+%META:FILEATTACHMENT{name="66p507prog_cheap.GIF" attr="h" comment="image schematic for a cheap 66P507 programmer" date="1080759145" path="C:\Documents and Settings\Administrator\Desktop\temp\wiki\obd2\66p507prog_cheap.GIF" size="23901" user="blundar" version="1.1"}%
+%META:FILEATTACHMENT{name="spoon_p73_top.jpg" attr="h" comment="Chipped Spoon P73 <a href="../../view/Library/ECU.html">ECU</a>" date="1080759196" path="C:\Documents and Settings\Administrator\Desktop\temp\wiki\obd2\spoon_p73_top.jpg" size="88194" user="blundar" version="1.1"}%
+%META:FILEATTACHMENT{name="66P507_progadaptorsized.jpg" attr="h" comment="Photo of adapter board" date="1080759224" path="C:\Documents and Settings\Administrator\Desktop\temp\wiki\obd2\66P507_progadaptor sized.jpg" size="90435" user="blundar" version="1.1"}%</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/ChippingOBD2.html">View</a>
+  |  <a href="ChippingOBD2.html">Diffs</a>  | <a href="../../view/Library/ChippingOBD2%3Frev=1.1.html">r1.1</a>
+  |  <a href="../../oops/Library/ChippingOBD2%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.ChippingOBD2">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#0b7c6260624b7b6c666d622564796c34787e69616e687f365f5c6260622b4d6e6e6f696a6860">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#8efae1e3ceeae7e9e7faefe2e8fbfde7e1e0e1e0e2e7e0eba0ede1e3" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision  - <br />
+    Revision r1.1 - 31 Mar 2004 - 19:00 GMT - Home.blundar
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,162 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . TuningForSmog ( vs. r1.1)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/TuningForSmog.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>TuningForSmog</b> ( vs. r1.1)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/TuningForSmog.html">TuningForSmog</a></b>
+		(<a href="../../view/Library/TuningForSmog%3Frev=r1.1.html">r1.1</a> - 19&nbsp;Feb&nbsp;2005 - Home.markolson)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="markolson" date="1108850880" format="1.0" version="1.1"}%
+%META:TOPICPARENT{name="EcuTuning"}%
+<p />
+<h2> How to tune to pass a smog test </h2>
+<p />
+<h3> The situation: </h3>
+<p />
+We are trying to get our 88CRX B16A swap past the CA smog ref, so tuning for smog is exactly what we are trying to do at this point in the project. The car had been labeled a gross polluter with the old engine, so we are trapped in the system till we get a <a href="../../view/Library/BAR.html">BAR</a> sticker. In fact, we have to pass a visual inspection, so we can't have anything non-stock for a '94 Del Sol VTEC on the car unless it has a CARB EO sticker. This means no Wideband O2 sensor, no EGT sensor, and the <a href="../../view/Library/ECU.html">ECU</a> is even supposed to be stock, so no visible datalogging connector on the <a href="../../view/Library/ECU.html">ECU</a> case. 
+<p />
+We did a port and polish job on the head, port matched the JG header and Skunk2 intake and we're running a '94 GSR throttlebody. We've put in CTR pistons, pumping the compression way up.  We're naturally aspirated with stock injectors.  We have a new <a href="../../view/Library/OBD.html">OBD</a>2 cat.  We're running 100 octane unleaded race gas.
+<p />
+Apparently, we've tweaked the motor enough that the stock P30 <a href="../../view/Library/ECU.html">ECU</a> is unable to keep it at stoich in closed loop mode. Per the last trip to the smog ref, we're running high in HC, CO and NOX.
+<p />
+<pre>NOx (PPM) max: 708, measured: 1584, FAIL
+HC(PPM) max: 89, measured: 188, FAIL
+CO(%) max: 0.53, measured: 0.66, FAIL </pre>
+<p />
+<h3> The advice: </h3>
+(Thank you Blundar!)
+<p />
+Suggestions for passing smog based on what you have said: 
+<p />
+In the first 4-6 columns take out 3 degrees of timing versus a stock <a href="../../view/Library/JDM.html">JDM</a> P30 program. You won't need as much advance with the higher compression - you'll be on the shit side of the EGT scale if I'm guessing right. 
+<p />
+Aim for 14.7 as a compromise value. Disable the O2 sensor in code after you're done with the wideband. You can do better w/o the O2 at all than with it. Do not let the AFR drop below 13.0 EVER - tip in, startup, <a href="../../view/Library/WOT.html">WOT</a>. Especially with 100 unleaded, you should be shooting for 13.3 as your lowest AFR at <a href="../../view/Library/WOT.html">WOT</a>. Remember, leaner mixtures will like marginally more timing so advance it a degree or two in the 3 highest load columns. 
+<p />
+If you're using bigger than stock injectors, be VERY mindful of your trims. (TPS, Main, O2, Cold) 
+<p />
+I got my turbocharged motorswapped b18b powered CRX to pass Ohio emissions testing on the rollers with the sniffer without a catalytic converter. If you lack a cat, shoot for more like 15.0-15.3 AFRs in high-vacuum. 
+<p />
+Good luck. I managed to get 29mpg CITY out of the CRX's setup after the emissions tuning work. What you're doing now will benefit you down the road.
+<p />
+<h3> Notes: </h3>
+<p />
+FYI, "Tip in" is what happens when you open the throttle to begin accelerating. The manifold pressure drop is too fast for the <a href="../../view/Library/ECU.html">ECU</a> to accurately compensate, so it adjusts it by dumping in a set amount per %TPS change. (Thanks ltdannear)
+<p />
+-- markolson - 19 Feb 2005   </td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/TuningForSmog.html">View</a>
+  |  <a href="TuningForSmog.html">Diffs</a>  | <a href="../../view/Library/TuningForSmog%3Frev=1.1.html">r1.1</a>
+  |  <a href="../../oops/Library/TuningForSmog%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.TuningForSmog">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#93e4faf8fad3e3f4fef5fabdfce1f4ace0e6f1f9f6f0e7aec7c4faf8fab3d5f6f6f7f1f2f0f8">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#493d2624092d202e203d28252f3c3a20262726272520272c672a2624" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision  - <br />
+    Revision r1.1 - 19 Feb 2005 - 22:08 GMT - Home.markolson
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

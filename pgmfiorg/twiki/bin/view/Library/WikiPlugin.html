@@ -1,0 +1,223 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . WikiPlugin   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="WikiPlugin.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>WikiPlugin</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+The latest hacks include support for !WikiPlugins.
+<p />
+<h3><a name="WikiPlugins_allow_one_to_easily_"> </a> <a href="WikiPlugin.html">Wiki&nbsp;Plugins</a> allow one to easily add new types of dynamic content (as well as other functionality) to wiki pages within <a href="PhpWiki.html">Php&nbsp;Wiki</a>.  In this very wiki, the <a href="RecentChanges.html">Recent&nbsp;Changes</a>,  <a href="BackLinks.html">Back&nbsp;Links</a>, <a href="LikePages.html">Like&nbsp;Pages</a> and <a href="DebugInfo.html">Debug&nbsp;Info</a> pages are all implemented using plugins. </h3>
+I expect that the search result pages, as well as much <a href="PhpWikiAdministration.html">Php&nbsp;Wiki&nbsp;Administration</a> will soon be implemented via plugins as well.  (I think the oh-so-ugly <a href="MagicPhpWikiURLs.html">Magic&nbsp;Php&nbsp;Wiki&nbsp;URLs</a> can be replaced by plugins, too.)
+<p />
+<h3> Example </h3>
+<p />
+Currently, one invokes a plugin by putting something like:
+<p />
+  <?''''plugin !BackLinks?>
+<p />
+into a regular wiki-page.  That particular example produces as list
+of pages which link to the current page.  Here it is:
+<p />
+<?plugin <a href="/twiki/bin/view/Library/BackLinks">Back&nbsp;Links</a>?>
+<p />
+(This is great for Category and Topic pages.  You can use this to get
+an automatic in-line listing of pages in the Category or Topic.)
+<p />
+<h3> Details </h3>
+<p />
+(This is all subject to change.)
+<p />
+Plugins can take certain named arguments (most do).
+The values of these arguments can be determined four different ways.
+In order of precedence:
+# The plugin invocation can specify the value for an argument, like so:
+;;: <?''''plugin !BackLinks page=!OtherPage ?>
+# The argument can be specified via an HTTP query argument.  This doesn't happen (is not allowed) unless the argument is mentioned in the plugin invocation:
+;;: <?''''plugin !BackLinks page ?>
+# Default values specified in the plugin invocation:
+;;: <?''''plugin !BackLinks page||=!OtherPage ?>
+# The plugin must supply default values for each argument it uses.  (The <a href="BackLinks.html">Back&nbsp;Links</a> plugin uses
+the current page as the default value for the ''page'' argument.
+<p />
+<h3> Existing Plugins </h3>
+<ul>
+<li>  <a href="BackLinks.html">Back&nbsp;Links</a>
+</li>
+<li>  <a href="CalendarPlugin.html">Calendar&nbsp;Plugin</a>
+</li>
+<li>  <a href="DebugInfo.html">Debug&nbsp;Info</a>
+</li>
+<li>  <a href="FullTextSearch.html">Full&nbsp;Text&nbsp;Search</a>
+</li>
+<li>  <span style='background : #FFFFCE;'><font color="#0000FF">Include&nbsp;Page</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/IncludePage?topicparent=Library.WikiPlugin">?</a>
+</li>
+<li>  <a href="LikePages.html">Like&nbsp;Pages</a>
+</li>
+<li>  <a href="MostPopular.html">Most&nbsp;Popular</a>
+</li>
+<li>  <a href="PageHistory.html">Page&nbsp;History</a>
+</li>
+<li>  <a href="RecentChanges.html">Recent&nbsp;Changes</a>
+</li>
+<li>  text2png
+</li>
+<li>  <a href="TitleSearch.html">Title&nbsp;Search</a>
+</li>
+<li>  <span style='background : #FFFFCE;'><font color="#0000FF">View&nbsp;Source</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/ViewSource?topicparent=Library.WikiPlugin">?</a>
+</li>
+<li>  walkabout
+</li>
+</ul>
+<p />
+<h3> More Ideas for Plugins </h3>
+<ul>
+<li>  Integrate Search form with individual <a href="InterWiki.html">Inter&nbsp;Wiki</a> map entries
+</li>
+</ul>
+<p />
+<p />
+  e.g. Search Php Website for:[[]] (Search)
+<ul>
+<li>  <span style='background : #FFFFCE;'><font color="#0000FF">Wanted&nbsp;Pages</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/WantedPages?topicparent=Library.WikiPlugin">?</a>, <a href="OrphanedPages.html">Orphaned&nbsp;Pages</a>, other various indexing schemes.
+</li>
+<li>  Diff, <a href="PageHistory.html">Page&nbsp;History</a>
+</li>
+<li>  Redirect plugin -- <?''''plugin Redirect target=!OtherPage ?>
+</li>
+<li>  Insert XML/RSS/RDF news content from location=xxx where location is a parameter to the plugin, maybe include some formatting control of the output generated.
+</li>
+</ul>
+<hr />
+Pages in this category:
+<?plugin <a href="/twiki/bin/view/Library/BackLinks">Back&nbsp;Links</a> page=<span style='background : #FFFFCE;'><font color="#0000FF">pagename</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/Pagename?topicparent=Library.WikiPlugin">?</a> noheader=1?>
+<p />
+<ul>
+<li>  <a href="FullTextSearch.html">Full&nbsp;Text&nbsp;Search</a>: <a href="FindPage.html">Find&nbsp;Page</a>
+</li>
+<li>  <a href="TitleSearch.html">Title&nbsp;Search</a>: <a href="LikePages.html">Like&nbsp;Pages</a> (match_head, match_tail).
+</li>
+</ul>
+<p />
+<hr />
+<a href="PhpWikiDocumentation.html">Php&nbsp;Wiki&nbsp;Documentation</a>
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.1 - 19 Feb 2004 - 22:01 GMT - guest 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/WikiPlugin?t=1194415138"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/WikiPlugin">Attach</a>
+   |  <a href="../../rdiff/Library/WikiPlugin.html">History</a>
+   |  <a href="../../oops/Library/WikiPlugin%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.WikiPlugin">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#b2c5dbd9dbf2c2d5dfd4db9cddc0d58dc1c7d0d8d7d1c68fe6e5dbd9db92f4d7d7d6d0d3d1d9">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#54203b3914303d333d2035383221273d3b3a3b3a383d3a317a373b39" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

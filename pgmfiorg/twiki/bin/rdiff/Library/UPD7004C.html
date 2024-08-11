@@ -1,0 +1,430 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . UPD7004C (r1.1 vs. r1.7)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/UPD7004C.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>UPD7004C</b> (r1.1 vs. r1.7)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/UPD7004C.html">UPD7004C</a></b>
+		(<a href="../../view/Library/UPD7004C%3Frev=r1.7.html">r1.7</a> - 27&nbsp;Jun&nbsp;2005 - Home.1net)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+*note by 1net: Please take the above description with a grain of salt as it is NOT for 7004.
+In upd7004, we have only 2 registers: 4000 and 4001. The upd7004 has only 10bit mode, but since the code only reads 4001, the resolution is effectively 8bit... the 2lsb are discarded and not read.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<ul>
+<li> the external interrupt 1 routine jumpes to 006Ch, where it reads the value from 4001h (A/D low byte).
+</li>
+</ul>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<ul>
+<li> the external interrupt 1 routine jumpes to 0064h, where it reads the value from 4001h (A/D HIGH byte).
+</li>
+</ul>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> Channel 6 </td><td> CH4 </td><td> 3 </td><td> uPD7004C </td><td> 26 </td><td> CH3 </td><td> Channel 1 </td></tr>
+<tr><td> Channel 7 </td><td> CH5 </td><td> 4 </td><td> uPD7004C </td><td> 25 </td><td> CH2 </td><td> Channel 0 </td></tr>
+</table>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> Channel 6 </td><td> CH6 </td><td> 3 </td><td> uPD7004C </td><td> 26 </td><td> CH1 </td><td> Channel 1 </td></tr>
+<tr><td> Channel 7 </td><td> CH7 </td><td> 4 </td><td> uPD7004C </td><td> 25 </td><td> CH0 </td><td> Channel 0 </td></tr>
+</table></td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/UPD7004C.html">UPD7004C</a></b>
+		(<a href="../../view/Library/UPD7004C%3Frev=r1.6.html">r1.6</a> - 04&nbsp;Feb&nbsp;2005 - Home.l3st4rd)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> 2 </td><td> - </td><td> Alternator </td></tr>
+</table>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> 2 </td><td> - </td><td> Alternator (voltage regulator) </td></tr>
+</table>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> 7 </td><td> 7 </td><td> ? </td></tr>
+</table>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> 7 </td><td> 7 </td><td> Connector B18 (unused ???) </td></tr>
+</table></td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/UPD7004C.html">UPD7004C</a></b>
+		(<a href="../../view/Library/UPD7004C%3Frev=r1.5.html">r1.5</a> - 03&nbsp;Feb&nbsp;2005 - Home.l3st4rd)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> 6 </td><td> - </td><td> ? </td></tr>
+</table>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> 6 </td><td> - </td><td> '89-91 <a href="../../view/Library/JDM.html">JDM</a> <span style='background : #FFFFCE;'><font color="#0000FF">Si&nbsp;R</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/SiR?topicparent=Library.UPD7004C">?</a> : secondary O2; '88-91 US Si / HF, '88-89 US teg: EGR </td></tr>
+</table></td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/UPD7004C.html">UPD7004C</a></b>
+		(<a href="../../view/Library/UPD7004C%3Frev=r1.4.html">r1.4</a> - 11&nbsp;Jan&nbsp;2005 - Home.l3st4rd)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> 2 </td><td> - </td><td> ? </td></tr>
+</table>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> 2 </td><td> - </td><td> Alternator </td></tr>
+</table></td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/UPD7004C.html">UPD7004C</a></b>
+		(<a href="../../view/Library/UPD7004C%3Frev=r1.3.html">r1.3</a> - 07&nbsp;Nov&nbsp;2004 - Home.l3st4rd)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#FFD7D7" colspan ="2"><b> Deleted: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+hope this helps,
+daniel
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+<p />
+<p />
+channel mapping (including MUX):
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> <a href="../../view/Library/ADC.html">ADC</a>-channel </td><td> MUX-channel </td><td> sensor </td></tr>
+<tr><td> 0 </td><td> - </td><td> MAP sensor </td></tr>
+<tr><td> 1 </td><td> - </td><td> TP sensor </td></tr>
+<tr><td> 2 </td><td> - </td><td> ? </td></tr>
+<tr><td> 3 </td><td> - </td><td> PA sensor </td></tr>
+<tr><td> 4 </td><td> - </td><td> <a href="../../view/Library/ECT.html">ECT</a> sensor </td></tr>
+<tr><td> 5 </td><td> - </td><td> <a href="../../view/Library/IAT.html">IAT</a> sensor </td></tr>
+<tr><td> 6 </td><td> - </td><td> ? </td></tr>
+<tr><td> 7 </td><td> 0 </td><td> O2 sensor </td></tr>
+<tr><td> 7 </td><td> 1 </td><td> voltage reference for <a href="../../view/Library/ADC.html">ADC</a> ? </td></tr>
+<tr><td> 7 </td><td> 2 </td><td> ? </td></tr>
+<tr><td> 7 </td><td> 3 </td><td> ? </td></tr>
+<tr><td> 7 </td><td> 4 </td><td> ? </td></tr>
+<tr><td> 7 </td><td> 5 </td><td> ? </td></tr>
+<tr><td> 7 </td><td> 6 </td><td> ELD </td></tr>
+<tr><td> 7 </td><td> 7 </td><td> ? </td></tr>
+</table></td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/UPD7004C.html">UPD7004C</a></b>
+		(<a href="../../view/Library/UPD7004C%3Frev=r1.2.html">r1.2</a> - 05&nbsp;Mar&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Documentation on it was very hard to find.  :)
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Documentation on it was very hard to find.  :)  We looked and googled for months, and then finally I emailed NEC and they got back to me within 10 hours!!! Talk about customer service!  <strong><em>Download the <a href="../../../pub/Library/UPD7004C/uPD7004C.PDF" target="_top">uPD7004C.PDF datasheet</a></em></strong>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<a href="http://www.pgmfi.org/phorum/download.php/66,22/uk_LAD02.pdf" target="_top">This</a> PDF talks about the UPD7004C on page 31-35.  George found <a href="http://www.pgmfi.org/phorum/download.php/66,23/UPD7402.pdf" target="_top">this</a> PDF on a NEC <a href="../../view/Library/ADC.html">ADC</a> that is only 4 channel, but of the same family.
+<p />
+I emailed NEC and they got back to me within 10 hours!!! Talk about customer service!  <strong><em>Download the uPD7004C datasheet <a href="http://www.pgmfi.org/phorum/download.php/66,28/uPD7004C.PDF" target="_top">here</a></em></strong>
+<p />
+<strong><em>l3st4rd says:</em></strong>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<strong>l3st4rd says:</strong>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Note to self: need to determine whether chip is being used in serial or parallel mode and make appropriate changes to the following table.  Highly suspect parallel mode.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Note to self:  chip is used exclusively in parallel mode.  Make appropriate changes to the following table.
+<p />
+Further note: Channel 7 is multiplexed using a Toshiba 8 channel analog MUX.  15 channels total A/D capability in <a href="../../view/Library/ECU.html">ECU</a>.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+|function|short|pin|uPD7004C|pin|short|function
+|Channel 4|CH4|1|uPD7004C|28|CH3|Channel 3
+|Channel 5|CH5|2|uPD7004C|27|CH2|Channel 2
+|Channel 6|CH4|3|uPD7004C|26|CH3|Channel 1
+|Channel 7|CH5|4|uPD7004C|25|CH2|Channel 0
+|Reference Voltage|VREF|5|uPD7004C|24|A.GND|Analog Ground
+|Digital GND|D.GND|6|uPD7004C|23|A.VDD|Analog supply
+| |DB7/SO|7|uPD7004C|22|_CS|Chip select
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td>  &nbsp;  </td><td> DB6/SI </td><td> 8 </td><td> uPD7004C </td><td> 21 </td><td> _RD/SCI </td></tr>
+</table>
+| |BD5/_SHIFT|9|uPD7004C|20|A0|control address input
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td>  &nbsp;  </td><td> DB4/SCKO </td><td> 10 </td><td> uPD7004C </td><td> 19 </td><td> _WR/_STB </td></tr>
+</table>
+| |DB3/SOEN|11|uPD7004C|18|MC|Mode select (high=parallel)
+| |DB2/CODE|12|uPD7004C|17|CLK|Clock
+| |DB1/DEV1|13|uPD7004C|16|EOC|End Of Converstion (Active low)
+| |DB0/DEV0|14|uPD7004C|15|D.VDD|Digital Power suppply
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> function </td><td> short </td><td> pin </td><td> uPD7004C </td><td> pin </td><td> short </td><td> function </td></tr>
+<tr><td> Channel 4 </td><td> CH4 </td><td> 1 </td><td> uPD7004C </td><td> 28 </td><td> CH3 </td><td> Channel 3 </td></tr>
+<tr><td> Channel 5 </td><td> CH5 </td><td> 2 </td><td> uPD7004C </td><td> 27 </td><td> CH2 </td><td> Channel 2 </td></tr>
+<tr><td> Channel 6 </td><td> CH4 </td><td> 3 </td><td> uPD7004C </td><td> 26 </td><td> CH3 </td><td> Channel 1 </td></tr>
+<tr><td> Channel 7 </td><td> CH5 </td><td> 4 </td><td> uPD7004C </td><td> 25 </td><td> CH2 </td><td> Channel 0 </td></tr>
+<tr><td> Reference Voltage </td><td> VREF </td><td> 5 </td><td> uPD7004C </td><td> 24 </td><td> GND </td><td> Analog Ground </td></tr>
+<tr><td> Digital GND </td><td> GND </td><td> 6 </td><td> uPD7004C </td><td> 23 </td><td> VDD </td><td> Analog supply </td></tr>
+<tr><td>  &nbsp;  </td><td> DB7/SO </td><td> 7 </td><td> uPD7004C </td><td> 22 </td><td> _CS </td><td> Chip select </td></tr>
+<tr><td>  &nbsp;  </td><td> DB6/SI </td><td> 8 </td><td> uPD7004C </td><td> 21 </td><td> _RD/SCI </td><td>  &nbsp;  </td></tr>
+<tr><td>  &nbsp;  </td><td> BD5/_SHIFT </td><td> 9 </td><td> uPD7004C </td><td> 20 </td><td> A0 </td><td> control address input </td></tr>
+<tr><td>  &nbsp;  </td><td> DB4/SCKO </td><td> 10 </td><td> uPD7004C </td><td> 19 </td><td> _WR/_STB </td><td>  &nbsp;  </td></tr>
+<tr><td>  &nbsp;  </td><td> DB3/SOEN </td><td> 11 </td><td> uPD7004C </td><td> 18 </td><td> MC </td><td> Mode select (high=parallel) </td></tr>
+<tr><td>  &nbsp;  </td><td> DB2/CODE </td><td> 12 </td><td> uPD7004C </td><td> 17 </td><td> CLK </td><td> Clock </td></tr>
+<tr><td>  &nbsp;  </td><td> DB1/DEV1 </td><td> 13 </td><td> uPD7004C </td><td> 16 </td><td> EOC </td><td> End Of Converstion (Active low) </td></tr>
+<tr><td>  &nbsp;  </td><td> DB0/DEV0 </td><td> 14 </td><td> uPD7004C </td><td> 15 </td><td> VDD </td><td> Digital Power suppply </td></tr>
+</table>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:FILEATTACHMENT{name="uPD7004C.PDF" attr="" comment="Datasheet for UPD 7004C" date="1078511865" path="C:\Documents and Settings\Administrator\Desktop\temp\wiki\uPD7004C.PDF" size="556339" user="blundar" version="1.1"}%</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/UPD7004C.html">UPD7004C</a></b>
+		(<a href="../../view/Library/UPD7004C%3Frev=r1.1.html">r1.1</a> - 20&nbsp;Feb&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="blundar" date="1077237440" format="1.0" version="1.1"}%
+The NEC UPD7004C is an <a href="../../view/Library/ADC.html">ADC</a> chip found in <a href="../../view/Library/OBD0MPFI.html">OBD0&nbsp;MPFI</a> <a href="../../view/Library/ECU.html">ECU</a>s.
+<p />
+Documentation on it was very hard to find.  :)
+<p />
+<a href="http://www.pgmfi.org/phorum/download.php/66,22/uk_LAD02.pdf" target="_top">This</a> PDF talks about the UPD7004C on page 31-35.  George found <a href="http://www.pgmfi.org/phorum/download.php/66,23/UPD7402.pdf" target="_top">this</a> PDF on a NEC <a href="../../view/Library/ADC.html">ADC</a> that is only 4 channel, but of the same family.
+<p />
+I emailed NEC and they got back to me within 10 hours!!! Talk about customer service!  <strong><em>Download the uPD7004C datasheet <a href="http://www.pgmfi.org/phorum/download.php/66,28/uPD7004C.PDF" target="_top">here</a></em></strong>
+<p />
+<strong><em>l3st4rd says:</em></strong>
+i got a description of the uPD7002.  it has 3 internal registers(here 4000, 4001, 4002):
+<ul>
+<li> 4000h is the control register
+</li>
+<li> 4001 and 4002 are the data registers.
+</li>
+</ul>
+<p />
+a measure is started by sending one byte to the control register. it can operate in 8 and 12 bit mode. the control bits are:
+<ul>
+<li> bit 0: } control bits for channel multiplexer
+</li>
+<li> bit 1: } 00 = channel 0, 01 = channel 1, 10 = channel 3...
+</li>
+<li> bit 2: no function (or possilby 3rd channel ctrl bit for 7004?)
+</li>
+<li> bit 3: 1 = 12bit mode, 0 = 8bit mode
+</li>
+<li> bit 4 to 7: no function
+</li>
+</ul>
+<p />
+In practice, use of the chip is somewhat like what follows:
+<ul>
+<li> the external interrupt 1 routine jumpes to 006Ch, where it reads the value from 4001h (A/D low byte).
+</li>
+<li> then it resets the A/D low byte by writing 0 to 4001h
+</li>
+<li> then it starts the next 8bit measure by sending 0 - 7 to 4000h(control register).
+</li>
+<li> the first seven times it takes the values from channel 0 to 6 and stores them at external ram 0000h - 0006h. *the next 8 times, it's called, it takes the value from channel 7 and stores it at external ram 0007h - 000Eh (this all assuming that internal mem 07Dh is a counter from 0 to 0Eh)
+</li>
+</ul>
+<p />
+hope this helps,
+daniel
+<p />
+Now that we have the datasheet, this can more definitively be settled.
+<p />
+Note to self: need to determine whether chip is being used in serial or parallel mode and make appropriate changes to the following table.  Highly suspect parallel mode.
+<p />
+|function|short|pin|uPD7004C|pin|short|function
+|Channel 4|CH4|1|uPD7004C|28|CH3|Channel 3
+|Channel 5|CH5|2|uPD7004C|27|CH2|Channel 2
+|Channel 6|CH4|3|uPD7004C|26|CH3|Channel 1
+|Channel 7|CH5|4|uPD7004C|25|CH2|Channel 0
+|Reference Voltage|VREF|5|uPD7004C|24|A.GND|Analog Ground
+|Digital GND|D.GND|6|uPD7004C|23|A.VDD|Analog supply
+| |DB7/SO|7|uPD7004C|22|_CS|Chip select
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td>  &nbsp;  </td><td> DB6/SI </td><td> 8 </td><td> uPD7004C </td><td> 21 </td><td> _RD/SCI </td></tr>
+</table>
+| |BD5/_SHIFT|9|uPD7004C|20|A0|control address input
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td>  &nbsp;  </td><td> DB4/SCKO </td><td> 10 </td><td> uPD7004C </td><td> 19 </td><td> _WR/_STB </td></tr>
+</table>
+| |DB3/SOEN|11|uPD7004C|18|MC|Mode select (high=parallel)
+| |DB2/CODE|12|uPD7004C|17|CLK|Clock
+| |DB1/DEV1|13|uPD7004C|16|EOC|End Of Converstion (Active low)
+| |DB0/DEV0|14|uPD7004C|15|D.VDD|Digital Power suppply</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/UPD7004C.html">View</a>
+  |  <a href="UPD7004C.html">Diffs</a>  | <a href="../../view/Library/UPD7004C%3Frev=1.7.html">r1.7</a> | <a href="UPD7004C%3Frev1=1.7&amp;rev2=1.6.html">&gt;</a> | <a href="../../view/Library/UPD7004C%3Frev=1.6.html">r1.6</a> | <a href="UPD7004C%3Frev1=1.6&amp;rev2=1.5.html">&gt;</a> | <a href="../../view/Library/UPD7004C%3Frev=1.5.html">r1.5</a>
+  |  <a href="../../oops/Library/UPD7004C%3Ftemplate=oopsmore&amp;param1=1.7&amp;param2=1.7.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.UPD7004C">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#d9aeb0b2b099a9beb4bfb0f7b6abbee6aaacbbb3bcbaade48d8eb0b2b0f99fbcbcbdbbb8bab2">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#3a4e55577a5e535d534e5b565c4f4953555455545653545f14595557" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision r1.1 - 20 Feb 2004 - 00:37 GMT - Home.blundar<br />
+    Revision r1.7 - 27 Jun 2005 - 10:08 GMT - Home.1net
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

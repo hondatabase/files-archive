@@ -1,0 +1,204 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . OBD0InterChipCommunication ( vs. r1.1)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/OBD0InterChipCommunication.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>OBD0InterChipCommunication</b> ( vs. r1.1)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/OBD0InterChipCommunication.html">OBD0InterChipCommunication</a></b>
+		(<a href="../../view/Library/OBD0InterChipCommunication%3Frev=r1.1.html">r1.1</a> - 17&nbsp;Feb&nbsp;2004 - Home.tungsten2k)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="tungsten2k" date="1077011095" format="1.0" version="1.1"}%
+There are several chips connected to the <a href="../../view/Library/Oki83C154.html">Oki83&nbsp;C154</a> or <a href="../../view/Library/Oki80C154.html">Oki80&nbsp;C154</a> <a href="../../view/Library/MCU.html">MCU</a>:
+<ul>
+<li> NEC <a href="../../view/Library/UPD7004C.html">UPD7004&nbsp;C</a> <a href="../../view/Library/ADC.html">ADC</a>
+</li>
+<li> <a href="../../view/Library/5128XRAM.html">5128&nbsp;XRAM</a> external <a href="../../view/Library/SRAM.html">SRAM</a>
+</li>
+<li> <a href="../../view/Library/Oki6260A.html">Oki6260&nbsp;A</a> IO controller
+</li>
+<li> 38256 <a href="../../view/Library/EPROM.html">EPROM</a> (32k) in some cases.
+</li>
+</ul>
+<p />
+as far as we can tell, the <a href="../../view/Library/MCU.html">MCU</a> can communicate with each chip independently due to logic gates being present on some address lines.  Any <strong><em>MOVX A,@DPTR or MOVX @DPTR,A</em></strong> instructions will talk to chips on the bus.  The following table summarizes what lives where on the bus (note: all addreses are in HEX):
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> Start Address </td><td>  End Address  </td><td>  Chip  </td><td>  Notes </td></tr>
+<tr><td>  1000  </td><td>  1FFF/11FF (?)  </td><td>  <a href="../../view/Library/5128XRAM.html">5128&nbsp;XRAM</a> </td><td>  external <a href="../../view/Library/SRAM.html">SRAM</a> </td></tr>
+<tr><td>  2000  </td><td>  2FFF/3FFF (?)  </td><td>  <a href="../../view/Library/Oki6260A.html">Oki6260&nbsp;A</a> </td><td>  <a href="../../view/Library/IO.html">IO</a> Controller </td></tr>
+<tr><td>  4000  </td><td>  4FFF (?)  </td><td>  NEC <a href="../../view/Library/UPD7004C.html">UPD7004&nbsp;C</a> </td><td>  <a href="../../view/Library/ADC.html">ADC</a> </td></tr>
+</table>
+;:__Note__: 8XXX is unused in the <a href="../../view/Library/ECU.html">ECU</a> and is earmarked for <a href="../../view/Library/RTP.html">RTP</a>|
+<p />
+Some jumbled background info about this:
+<p />
+These are <strong>all</strong> the addresses that the <a href="../../view/Library/ECU.html">ECU</a> loads into the dptr. I'm thinking that the address itself can control which of the support chips (6260A, 5128, <a href="../../view/Library/ROM.html">ROM</a>) are enabled.
+<p />
+ #0110Bh (0001000100001011)
+ #0110Eh (0001000100001110)
+ #01120h (0001000100100000)
+ #0112Bh (0001000100101011)
+ #0112Eh (0001000100101110)
+ #01150h (0001000101010000)
+ #01151h (0001000101010001)
+ #01152h (0001000101010010)
+ #01154h (0001000101010100)
+ #01160h (0001000101100000)
+ #011F5h (0001000111110101)
+ #02000h (0010000000000000)
+ #02001h (0010000000000001)
+ #02002h (0010000000000010)
+ #02003h (0010000000000011)
+ #02004h (0010000000000100)
+ #02006h (0010000000000110)
+ #0200Ah (0010000000001010)
+ #0200Bh (0010000000001011)
+ #0200Eh (0010000000001110)
+ #0200Fh (0010000000001111)
+ #04000h (0100000000000000)
+ #04001h (0100000000000001)
+<p />
+<p />
+ The logic chips control which peripheral IC the <a href="../../view/Library/MCU.html">MCU</a> is talking to.
+ The <span style='background : #FFFFCE;'><font color="#0000FF">74&nbsp;HC04</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/74HC04?topicparent=Library.OBD0InterChipCommunication">?</a> is a hex inverter.
+ When the high nibble high bit is 0 (2000h-4001h), pin 22 of the <a href="../../view/Library/UPD7004C.html">UPD7004&nbsp;C</a> is low and vise versa.
+<p />
+ M5128 Pin 18 (CE - chip enable) -&gt; 74HC132 pin 8 (Out 3Y)
+ From this we can figure that the NAND schmitt trigger out 3 enables/disables the <a href="../../view/Library/RAM.html">RAM</a> chip. Where do inputs 3A +3B go?
+ 74HC132 pin 9 (In 3A) -&gt; 80C154 pin 25 (A8) -&gt; 6260 pin 11 (??)
+ 74HC132 pin 10 (In 3B) -&gt; 74HC132 pin 5 (In 2B) -&gt; 74HC04 pin 13 (in 6y)
+ 74HC04 pin 12 (out 6y) -&gt; 80C154 pin 9 (RST)
+<p />
+ 74HC132 pin 11 (4 out) -&gt; R143 -&gt; 74HC132 pin 1 (in 1A)
+ 74HC132 Pin6 (2 out) -&gt; 74HC132 pin 2 (In 1B)
+ 74HC132 Pin3 (1 out) goes to 74HC132 pin 12 (In 4A)
+ 74HC04 pin 13 (out 6y) -&gt; 74HC132 pin5 (In 2B) -&gt; 74HC04 pin 13 (in 6y)
+ 74HC132 pin 13 (in 4B) -&gt; IC13 Pin5
+<p />
+ 74HC04 Pin 2 (out 1Y) -&gt; 74HC132 pin4 (in 2A)
+ 74HC04 Pin 3 (in 2A) -&gt; 6260A pin 24 (??)
+ 74HC04 Pin 4 (out 2Y) -&gt; R55 -&gt; C55 -&gt;
+ 74HC04 pin 6 (out 3Y) -&gt; D7004C pin 22 ??
+ 74HC04 pin 8 (out 4Y) -&gt; <a href="../../view/Library/ADC.html">ADC</a> board pin 5
+ 74HC04 pin 10 (out 5Y) -&gt; 83C154 pin 14 (P3.4)
+<p />
+ 6260 pin 20 -&gt; <a href="../../view/Library/ADC.html">ADC</a> board pin 3
+<p />
+ 6260 pin 12 -&gt; 80C154 pin 30 (ALE)
+ 6260 pin 13 -&gt; 80C154 pin 16 (WR)
+ 6260 pin 14 -&gt; D7004C pin 19</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/OBD0InterChipCommunication.html">View</a>
+  |  <a href="OBD0InterChipCommunication.html">Diffs</a>  | <a href="../../view/Library/OBD0InterChipCommunication%3Frev=1.1.html">r1.1</a>
+  |  <a href="../../oops/Library/OBD0InterChipCommunication%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.OBD0InterChipCommunication">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#12657b797b5262757f747b3c7d60752d616770787771662f46457b797b325477777670737179">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#45312a2805212c222c3124292330362c2a2b2a2b292c2b206b262a28" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision  - <br />
+    Revision r1.1 - 17 Feb 2004 - 09:44 GMT - Home.tungsten2k
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

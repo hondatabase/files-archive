@@ -1,0 +1,157 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . SpeedDensity ( vs. r1.1)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/SpeedDensity.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>SpeedDensity</b> ( vs. r1.1)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/SpeedDensity.html">SpeedDensity</a></b>
+		(<a href="../../view/Library/SpeedDensity%3Frev=r1.1.html">r1.1</a> - 26&nbsp;May&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="blundar" date="1085593140" format="1.0" version="1.1"}%
+What is a <a href="../../view/Library/SpeedDensity.html">Speed&nbsp;Density</a> engine managment scheme?
+<p />
+<a href="../../view/Library/SpeedDensity.html">Speed&nbsp;Density</a> systems calculate the amount of air entering a motor using sensors that monitor engine operating conditions.  The <a href="../../view/Library/IdealGasLaw.html">Ideal&nbsp;Gas&nbsp;Law</a> (<strong>PV = nRT</strong>) is the basis for this type of engine management.  Instead of directly measuring the amount of air entering the motor ("n" in the above equation), speed-density systems estimate it using <strong>n = PV / RT</strong>, and then applying additional corrections.  Fuel tables in a honda <a href="../../view/Library/ECU.html">ECU</a> (from a theoretical standpoint) are Volumetric Efficiency (VE) tables.
+<p />
+Basic operation:
+<ul>
+<li> A <a href="../../view/Library/MapSensor.html">Map&nbsp;Sensor</a> is used to measure the pressure of air in the intake manifold (DENSITY term in speed-density).  This provides the <strong>P</strong> term in the <a href="../../view/Library/IdealGasLaw.html">Ideal&nbsp;Gas&nbsp;Law</a> calulation.
+</li>
+<li> The engine's rotational speed (SPEED term in speed-density) is used to estimate the volume of air entering the motor by multiplying how much air is sucked into the cylinder each stroke (usually displacement divide by two) by the number of engine revolutions.  This provides the <strong>V</strong> term in the <a href="../../view/Library/IdealGasLaw.html">Ideal&nbsp;Gas&nbsp;Law</a> calculation.
+</li>
+<li> The <a href="../../view/Library/IntakeAirTemperatureSensor.html">Intake&nbsp;Air&nbsp;Temperature&nbsp;Sensor</a> measures the temperature of air entering the engine, providing the <strong>T</strong> term in the <a href="../../view/Library/IdealGasLaw.html">Ideal&nbsp;Gas&nbsp;Law</a> calculation.
+</li>
+<li> <strong>R</strong> is a constant
+</li>
+<li> Knowing <strong>P</strong>, <strong>V</strong>, <strong>R</strong> and <strong>T</strong>, the <a href="../../view/Library/ECU.html">ECU</a> can then calculate an estimate of <strong>n</strong> (moles of air entering motor) from sensor data and <strong>n = PV / RT</strong>
+</li>
+</ul>
+<p />
+Because speed-density calculates airflow instead of directly measuring it, additional factors are often used to provide a better estimate.  The <a href="../../view/Library/TpsSensor.html">Tps&nbsp;Sensor</a> is key in many of these - TPS tip-in enrichment is used to provide more fuel that the <a href="../../view/Library/IdealGasLaw.html">Ideal&nbsp;Gas&nbsp;Law</a> calculation suggests in order to provide fueling for a rush of new air prior to the <a href="../../view/Library/MapSensor.html">Map&nbsp;Sensor</a> reaching a steady state.  Off-throttle leaning is used to prevent the motor running rich after sudden decreases in throttle.
+<p />
+Here are some links to more information about speed-density systems:
+<ul>
+<li> <a href="http://www.asashop.org/autoinc/jan97/techtotech.htm" target="_top">http://www.asashop.org/autoinc/jan97/techtotech.htm</a> - decent link, not TOO techy.
+</li>
+<li> <a href="http://www.wincom.net/trog/efi.html" target="_top">http://www.wincom.net/trog/efi.html</a> - quite technical but practically oriented
+</li>
+<li> <a href="http://www.simcar.com/literature/sae940759/sae940759.htm" target="_top">http://www.simcar.com/literature/sae940759/sae940759.htm</a> - <strong>highly technical</strong> paper on practical use of speed density systems for air/fuel management.  Has <strong>excellent</strong> figures illustrating the role of secondary correction factors, like TPS accel/decel.
+</li>
+<li> <a href="http://baen.tamu.edu/users/lepori/Teaching/BSEN265/Lectures/Energy_Basics.ppt" target="_top">One</a> <a href="http://baen.tamu.edu/users/lepori/Teaching/BSEN265/Lectures/ICEng_Power_Eff.PPT" target="_top">Two</a> <a href="http://baen.tamu.edu/users/lepori/Teaching/BSEN265/Lectures/Revu_GasLaws.ppt" target="_top">Three</a> <a href="http://baen.tamu.edu/users/lepori/Teaching/BSEN265/Lectures/Engine_cycles.PPT" target="_top">Four</a> <a href="http://baen.tamu.edu/users/lepori/Teaching/BSEN265/Lectures/PowerTrans_notes.ppt" target="_top">Five</a> Microsoft Powerpoint presentations from a College Engineering class on gas laws, thermodynamics and engines.
+</li>
+</ul></td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/SpeedDensity.html">View</a>
+  |  <a href="SpeedDensity.html">Diffs</a>  | <a href="../../view/Library/SpeedDensity%3Frev=1.1.html">r1.1</a>
+  |  <a href="../../oops/Library/SpeedDensity%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.SpeedDensity">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#82f5ebe9ebc2f2e5efe4ebacedf0e5bdf1f7e0e8e7e1f6bfd6d5ebe9eba2c4e7e7e6e0e3e1e9">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#e89c8785a88c818f819c89848e9d9b81878687868481868dc68b8785" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision  - <br />
+    Revision r1.1 - 26 May 2004 - 17:39 GMT - Home.blundar
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,159 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . OBD1_8bitLowCamRPM   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="OBD1_8bitLowCamRPM.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>OBD1_8bitLowCamRPM</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+This is the conversion from the "low cam" 8-bit <a href="RPM.html">RPM</a> values used for VTEC crossover points and in the low-cam tables.
+<p />
+It involves some modular arithmetic, so it's easier to break it up into a couple extra steps.
+<p />
+# Y = input value, 0 to 256
+# let H = floor(Y/64) ''Where floor(x) = trunc(x) = int(x) = integer part of x. Fractional part truncated. Whatever you want to call it''
+# let L = Y - (H-1)*64
+# <a href="RPM.html">RPM</a> = 1875000 * L * 2^H / 240000
+<p />
+You can also do it this way, using the modulo operator:
+# Y = input value, 0 to 256
+# Q = Y div 64 ''(integer division, same as floor(Y/64) above)''
+# R = Y mod 64 ''(modulus, i.e. remainder after division)''
+# <a href="RPM.html">RPM</a> = (2^Q)*(floor(R*500/64) + 500)
+<p />
+This turns out to be a piecewise linear scale:
+<p />
+<ul>
+<li>  00h-40h = 500-1000 <a href="RPM.html">RPM</a>
+</li>
+<li>  40h-80h = 1000-2000 <a href="RPM.html">RPM</a>
+</li>
+<li>  80h-C0h = 2000-4000 <a href="RPM.html">RPM</a>
+</li>
+<li>  C0h-100h = 4000-8000 <a href="RPM.html">RPM</a>
+</li>
+</ul>
+<p />
+<hr />
+EDITED COMMENT: &lt;---- Linear scale??? yeah right!...this formula need to go back to the "drawing board". The values below shows a perfect exponential scale! I have trying this equation and it does not get exact values. Ben's equation on <a href="BRE.html">BRE</a> are more accurate at least on test values...( I don't know the formula for <a href="BRE.html">BRE</a>))
+<p />
+That's ''piecewise''-linear.  Four linear ranges.  It's not a smooth exponential curve.  The first formula fairly closely follows the <a href="OBD1.html">OBD1</a>  code, while the second is a simplification which gets slightly different results with integer math.  By what measure do you consider which is more accurate?  See <a href="http://pgmfi.org/phorum/read.php?f=13&amp;i=3314&amp;t=2968" target="_top">http://pgmfi.org/phorum/read.php?f=13&amp;i=3314&amp;t=2968</a> for reference. --AndySloane
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.1 - 19 Feb 2004 - 22:01 GMT - guest 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/OBD1_8bitLowCamRPM?t=1194412972"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/OBD1_8bitLowCamRPM">Attach</a>
+   |  <a href="../../rdiff/Library/OBD1_8bitLowCamRPM.html">History</a>
+   |  <a href="../../oops/Library/OBD1_8bitLowCamRPM%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.OBD1_8bitLowCamRPM">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#c9bea0a2a089b9aea4afa0e7a6bbaef6babcaba3acaabdf49d9ea0a2a0e98facacadaba8aaa2">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#b5c1dad8f5d1dcd2dcc1d4d9d3c0c6dcdadbdadbd9dcdbd09bd6dad8" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

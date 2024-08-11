@@ -1,0 +1,152 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . OBD0Oki83C154Reader ( vs. r1.1)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/OBD0Oki83C154Reader.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>OBD0Oki83C154Reader</b> ( vs. r1.1)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/OBD0Oki83C154Reader.html">OBD0Oki83C154Reader</a></b>
+		(<a href="../../view/Library/OBD0Oki83C154Reader%3Frev=r1.1.html">r1.1</a> - 05&nbsp;Mar&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="blundar" date="1078509360" format="1.0" version="1.1"}%
+%META:TOPICPARENT{name="McuReaders"}%
+Dave says: Well, borrowing an idea from Nico-HRED/Doc used in the 66Ks, here is a program that should read out the contents of a 83C154 <a href="../../view/Library/MCU.html">MCU</a>. 
+<p />
+It assumes that you have the <a href="../../view/Library/MCU.html">MCU</a> connected to an external <a href="../../view/Library/EPROM.html">EPROM</a>. 
+<p />
+The program jumps to 4100h, and then dumps the contents of the first 16K of memory after flipping <a href="../../view/Library/_EA.html">_EA</a> to mask the internal <a href="../../view/Library/ROM.html">ROM</a> onto 0000-4000h. 
+<p />
+The use of a MAX233 serial conversion board is required. 
+<p />
+Doc says: 
+<p />
+for the hardware - you just need to open the -EA jumper and connect the -EA line of the processor to the P1.7 of the processor. (cause the P1.7 is initially LOW). 
+<p />
+On the DOWNLOADER, set serial to 4800,n,8,1. 
+<p />
+New feature in the downloader: show memory dump, and set the memory range to save. I've added this, cause the ODB1 ecu's send one junk byte over the serial when the <a href="../../view/Library/ECU.html">ECU</a> is powered on. The ODB0 don't do this. 
+<p />
+So you first take a look at the downloaded dump and decide what do you want to save. 
+<p />
+I dumped a PM5 (will post in the rom dumps) - looks funny, but have at least aignition and fuel table. So you ODB0 gurus can take a look on it. I think the tables are really small? 
+<p />
+cu, Doc ... 
+%META:FILEATTACHMENT{name="Read83C154_12mhz.bin" attr="" comment="BIN of code to dump <a href="../../view/Library/MCU.html">MCU</a>" date="1078508948" path="C:\Documents and Settings\Administrator\Desktop\temp\wiki\Read83C154_12mhz.bin" size="16711" user="blundar" version="1.1"}%
+%META:FILEATTACHMENT{name="read83c154_12mhz.asm" attr="" comment="assembly code of DASM" date="1078508974" path="C:\Documents and Settings\Administrator\Desktop\temp\wiki\read83c154_12mhz.asm" size="2733" user="blundar" version="1.1"}%
+%META:FILEATTACHMENT{name="downloader.exe" attr="" comment="Win32 Dowloader application" date="1078508994" path="C:\Documents and Settings\Administrator\Desktop\temp\wiki\downloader.exe" size="522752" user="blundar" version="1.1"}%
+%META:TOPICMOVED{by="blundar" date="1078509287" from="Library.OBD0Oki83C154ReaderBlundar" to="Library.OBD0Oki83C154Reader"}%</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/OBD0Oki83C154Reader.html">View</a>
+  |  <a href="OBD0Oki83C154Reader.html">Diffs</a>  | <a href="../../view/Library/OBD0Oki83C154Reader%3Frev=1.1.html">r1.1</a>
+  |  <a href="../../oops/Library/OBD0Oki83C154Reader%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.OBD0Oki83C154Reader">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#0f786664664f7f6862696621607d68307c7a6d656a6c7b325b586664662f496a6a6b6d6e6c64">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#25514a4865414c424c5144494350564c4a4b4a4b494c4b400b464a48" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision  - <br />
+    Revision r1.1 - 05 Mar 2004 - 17:56 GMT - Home.blundar
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

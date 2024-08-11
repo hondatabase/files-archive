@@ -1,0 +1,110 @@
+<!--
+<STYLE>
+.topdirectorylinks				{COLOR: white;	FONT-FAMILY: Verdana, Helvetica, Arial;	FONT-SIZE: 9pt;	LINE-HEIGHT: 12pt;	TEXT-DECORATION: none}
+.topdirectorylinks A			{COLOR: white;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 9pt;	LINE-HEIGHT: 12pt;	TEXT-DECORATION: none}
+.topdirectorylinks A:active		{COLOR: white;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 9pt;	LINE-HEIGHT: 12pt;	TEXT-DECORATION: none}
+.topdirectorylinks A:hover		{COLOR: white;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 9pt;	LINE-HEIGHT: 12pt;	TEXT-DECORATION: none}
+.topdirectorylinks A:Visted		{COLOR: white;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 9pt;	LINE-HEIGHT: 12pt;	TEXT-DECORATION: none}
+
+.Disclaimer				{COLOR: #909090; FONT-FAMILY: Verdana, Helvetica, Arial;	FONT-SIZE: 8pt;	LINE-HEIGHT: 9pt;	TEXT-DECORATION: none}
+.Disclaimer A			{COLOR: #909090; FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 8pt;	LINE-HEIGHT: 9pt;	TEXT-DECORATION: underline}
+.Disclaimer A:active	{COLOR: #909090; FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 8pt;	LINE-HEIGHT: 9pt;	TEXT-DECORATION: none}
+.Disclaimer A:hover		{COLOR: #909090; FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 8pt;	LINE-HEIGHT: 9pt;	TEXT-DECORATION: none}
+.Disclaimer A:Visted	{COLOR: #909090; FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 8pt;	LINE-HEIGHT: 9pt;	TEXT-DECORATION: underline}
+
+.smallred				{COLOR: red;  FONT-FAMILY: Verdana, Helvetica, Arial;	FONT-SIZE: 8pt;	TEXT-DECORATION: none}
+.smallred	A			{COLOR: red;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: underline}
+.smallred 	A:active	{COLOR: red;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: none}
+.smallred	A:hover		{COLOR: red;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: none}
+.smallred	A:Vistied	{COLOR: red;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: underline}
+
+.smallwhite				{COLOR: white;  FONT-FAMILY: Verdana, Helvetica, Arial;	FONT-SIZE: 8pt;	TEXT-DECORATION: none}
+.smallwhite	A			{COLOR: white;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: underline}
+.smallwhite	A:active	{COLOR: white;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: none}
+.smallwhite	A:hover		{COLOR: white;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: none}
+.smallwhite	A:Vistied	{COLOR: white;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: underline}
+
+.regwhite				{COLOR: white;  FONT-FAMILY: Verdana, Helvetica, Arial;	FONT-SIZE: 9pt;	TEXT-DECORATION: none}
+.regwhite	A			{COLOR: white;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: underline}
+.regwhite	A:active	{COLOR: white;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: none}
+.regwhite	A:hover		{COLOR: white;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: none}
+.regwhite	A:Visited	{COLOR: white;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: underline}
+
+.bigwhite				{COLOR: white;  FONT-FAMILY: Verdana, Helvetica, Arial;	FONT-SIZE: 11pt;	TEXT-DECORATION: none}
+.bigwhite	A			{COLOR: white;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 11pt;	TEXT-DECORATION: underline}
+.bigwhite	A:active	{COLOR: white;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 11pt;	TEXT-DECORATION: none}
+.bigwhite	A:hover		{COLOR: white;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 11pt;	TEXT-DECORATION: none}
+.bigwhite	A:Visted	{COLOR: white;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 11pt;	TEXT-DECORATION: underline}
+
+.smallblack				{COLOR: black;  FONT-FAMILY: Verdana, Helvetica, Arial;	FONT-SIZE: 8pt;	TEXT-DECORATION: none}
+.smallblack	A			{COLOR: black;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: underline}
+.smallblack	A:active	{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: none}
+.smallblack	A:hover		{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: none}
+.smallblack	A:Visited	{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: underline}
+
+.smallblackstrike			{COLOR: black;  FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: none}
+.smallblackstrike A			{COLOR: black;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: none}
+.smallblackstrike A:active	{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: none}
+.smallblackstrike A:hover	{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: none}
+.smallblackstrike A:Visited	{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: none}
+
+.body				{COLOR: black;  FONT-FAMILY: Verdana, Helvetica, Arial;	FONT-SIZE: 9pt;	TEXT-DECORATION: none}
+.body		A			{COLOR: black;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: underline}
+.body		A:active	{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: none}
+.body		A:hover		{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: none}
+.body		A:Vistited	{COLOR: black;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: underline}
+
+.td				{COLOR: black;  FONT-FAMILY: Verdana, Helvetica, Arial;	FONT-SIZE: 9pt;	TEXT-DECORATION: none}
+.td			A			{COLOR: black;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: underline}
+.td			A:active	{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: none}
+.td			A:hover		{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: none}
+.td			A:Vistited	{COLOR: black;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: underline}
+
+
+.regblack				{COLOR: black;  FONT-FAMILY: Verdana, Helvetica, Arial;	FONT-SIZE: 9pt;	TEXT-DECORATION: none}
+.regblack	A			{COLOR: black;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: underline}
+.regblack	A:active	{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: none}
+.regblack	A:hover		{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: none}
+.regblack	A:Vistited	{COLOR: black;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: underline}
+
+.bigblack				{COLOR: black;  FONT-FAMILY: Verdana, Helvetica, Arial;	FONT-SIZE: 11pt;	TEXT-DECORATION: none}
+.bigblack	A			{COLOR: black;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 11pt;	TEXT-DECORATION: underline}
+.bigblack	A:active	{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 11pt;	TEXT-DECORATION: none}
+.bigblack	A:hover		{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 11pt;	TEXT-DECORATION: none}
+.bigblack	A:Vistied	{COLOR: black;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 11pt;	TEXT-DECORATION: underline}
+
+
+.smallblue				{COLOR: #006699;  FONT-FAMILY: Verdana, Helvetica, Arial;	FONT-SIZE: 8pt;	TEXT-DECORATION: none}
+.smallblue	A			{COLOR: #006699;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: underline}
+.smallblue	A:active	{COLOR: #006699;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: none}
+.smallblue	A:hover		{COLOR: #006699;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: none}
+.smallblue	A:Visted	{COLOR: #006699;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 8pt;	TEXT-DECORATION: underline}
+
+.regblue				{COLOR: #006699;  FONT-FAMILY: Verdana, Helvetica, Arial;	FONT-SIZE: 9pt;	TEXT-DECORATION: none}
+.regblue	A			{COLOR: #006699;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: underline}
+.regblue	A:active	{COLOR: #006699;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: none}
+.regblue	A:hover		{COLOR: #006699;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: none}
+.regblue	A:Visted	{COLOR: #006699;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 9pt;	TEXT-DECORATION: underline}
+
+.bigblue				{COLOR: #006699;  FONT-FAMILY: Verdana, Helvetica, Arial;	FONT-SIZE: 11pt;	TEXT-DECORATION: none}
+.bigblue	A			{COLOR: #006699;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 11pt;	TEXT-DECORATION: underline}
+.bigblue	A:active	{COLOR: #006699;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 11pt;	TEXT-DECORATION: none}
+.bigblue	A:hover		{COLOR: #006699;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 11pt;	TEXT-DECORATION: none}
+.bigblue	A:Vistied	{COLOR: #006699;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 11pt;	TEXT-DECORATION: underline}
+
+.disclaimer				{COLOR: black;  FONT-FAMILY: Verdana, Helvetica, Arial;	FONT-SIZE: 7pt;	TEXT-DECORATION: none}
+.disclaimer	A			{COLOR: black;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 7pt;	TEXT-DECORATION: underline}
+.disclaimer	A:active	{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 7pt;	TEXT-DECORATION: none}
+.disclaimer	A:hover		{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 7pt;	TEXT-DECORATION: none}
+.disclaimer	A:Visited	{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 7pt;	TEXT-DECORATION: underline}
+
+.credits				{COLOR: black;  FONT-FAMILY: Verdana, Helvetica, Arial;	FONT-SIZE: 7pt;	TEXT-DECORATION: none}
+.credits	A			{COLOR: black;	FONT-FAMILY: Verdana, Arial, helvetica;	FONT-SIZE: 7pt;	TEXT-DECORATION: underline}
+.credits	A:active	{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 7pt;	TEXT-DECORATION: none}
+.credits	A:hover		{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 7pt;	TEXT-DECORATION: none}
+.credits	A:Visited	{COLOR: black;	FONT-FAMILY: verdana, arial, helvetica;	FONT-SIZE: 7pt;	TEXT-DECORATION: underline}
+
+
+.tableborder { border: thin solid black}
+</style>
+-->

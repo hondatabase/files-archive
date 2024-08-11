@@ -1,0 +1,738 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . EasyRtpV10 (r1.1 vs. r1.10)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/EasyRtpV10.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>EasyRtpV10</b> (r1.1 vs. r1.10)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/EasyRtpV10.html">EasyRtpV10</a></b>
+		(<a href="../../view/Library/EasyRtpV10%3Frev=r1.10.html">r1.10</a> - 22&nbsp;Dec&nbsp;2004 - Home.synoptic)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+<p />
+<p />
+<h3><a name="Modification_for_OBD0_Applicatio"> </a> Modification for <a href="../../view/Library/OBD.html">OBD</a>0 Application </h3>
+<p />
+<strong>Modification for <a href="../../view/Library/OBD.html">OBD</a>0 Application(while we make a version 2 of the board)</strong>
+<p />
+Okay then, here goes.
+This is just one way of doing it. I´m sure someone can come up with a much cleaner way, but this was how I did it.
+Needless to say, this is not my own design... l3st4rd is the evil genious here, not me Very Happy
+<p />
+You will need the following:
+-PCB, resistors, sockets, pins, <a href="../../view/Library/NVSRAM.html">NVSRAM</a> etc. as found in the excellent current kit (as sold by joshuavillasenor)
+-1 pcs 74LS86N <a href="../../view/Library/TTL.html">TTL</a> chip
+-1 pcs additional 10K ohm resistor
+-Some thin insulated wire for making interconnections on the board
+<p />
+How-to build/modify the board itself:
+-Cut the connections marked RED in the first picture
+-Assemble the <a href="../../view/Library/RTP.html">RTP</a> as per the excellent instructions in <a href="../../view/Library/WiKi.html">Wi&nbsp;Ki</a>
+-Cut or break off all pins except 4,5,6,7 and 14 from the 74LS86N (see picture 3)
+-Solder the 74LS86N on top of the 74LS00 (piggy backed!) - but ONLY pins 4, 7 and 14.
+-Bend the remaining pins 5 and 6 upwards so you can solder wires to them.
+-Using thin wire, make the connections as indicated in the first and second picture. The chip shown is the 74LS86N. This assumes of course that it is soldered on top of the 74LS00 as shown in the <a href="../../view/Library/WiKi.html">Wi&nbsp;Ki</a> directions.
+-The resistor shown(or rather, crudely drawn!) in the second picture is 10Kohm
+<p />
+Shielding (optional):
+One of the connections made is pin 2 on the 3-pin header. If you make this connection, you will have a nice ground signal for connecting to a shield on a shielded cable.
+The A15 signal for which pin 2 was originally intended is now connected elsewhere.
+<p />
+Connecting to the <a href="../../view/Library/ECU.html">ECU</a>:
+You will need to isolate pin 16 from the <a href="../../view/Library/ECU.html">ECU</a>. Sorry no pictures, as I don´t have my <a href="../../view/Library/ECU.html">ECU</a> with me at the moment.
+-One connection must be cut going to the 24-pin <a href="../../view/Library/SRAM.html">SRAM</a> on the top of the board.
+-Another must be cut on the bottom of the board.
+-These two points must be re-connected so that only the <a href="../../view/Library/ECU.html">ECU</a> pin is "disconnected" and the rest of the circuit is complete.
+-Connect one <a href="../../view/Library/RTP.html">RTP</a> wire to pin 16 on the <a href="../../view/Library/ECU.html">ECU</a> (connect this to the INPUT on <a href="../../view/Library/RTP.html">RTP</a>)
+-Connect one <a href="../../view/Library/RTP.html">RTP</a> wire to pin 21 on the 24-pin <a href="../../view/Library/SRAM.html">SRAM</a> (M5128)
+<p />
+That´s all I have time for now - hope it helps.
+<p />
+/Bindegal 
+<p />
+<img src="http://forum.pgmfi.org/files/rtpmod3.jpg" alt="rtpmod3.jpg" height="350" />
+<img src="http://forum.pgmfi.org/files/rtpmod2.jpg" alt="rtpmod2.jpg" width="350" />
+<img src="http://forum.pgmfi.org/files/rtpmod1.jpg" alt="rtpmod1.jpg" width="350" /></td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/EasyRtpV10.html">EasyRtpV10</a></b>
+		(<a href="../../view/Library/EasyRtpV10%3Frev=r1.9.html">r1.9</a> - 03&nbsp;Dec&nbsp;2004 - Home.synoptic)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+This page is a construction design for the Easy-RTP V1.0 board.  This is the single sided design for a DS1230 style 28 pin DIP <a href="../../view/Library/NVSRAM.html">NVSRAM</a>.  You can find the eagle design files attached in a zipfile at the end of this thread.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+This page is a construction design for the Easy-RTP V1.0 board.  This is the single sided design for a DS1230 style 28 pin DIP <a href="../../view/Library/NVSRAM.html">NVSRAM</a>.  You can find the eagle design files attached in a zipfile at the end of this thread. THIS ONLY WORKS WITH <a href="../../view/Library/OBD.html">OBD</a>1 <a href="../../view/Library/ECU.html">ECU</a> FOR NOW.</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/EasyRtpV10.html">EasyRtpV10</a></b>
+		(<a href="../../view/Library/EasyRtpV10%3Frev=r1.8.html">r1.8</a> - 22&nbsp;Apr&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+    <img src="http://www.pgmfi.org/twiki/pub/Library/EasyRtpV10/boardlayout.jpg" alt="boardlayout.jpg"  width="700"  />
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+    <img src="../../../pub/Library/EasyRtpV10/boardlayout.png" alt="boardlayout.png"  width="700"  />
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+%META:FILEATTACHMENT{name="boardlayout.jpg" attr="" comment="picture of board layout in eagle" date="1077323092" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\boardlayout.jpg" size="115934" user="blundar" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000495.JPG" attr="" comment="bottom of rtp board" date="1077331195" path="IM000495.JPG" size="278192" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000496.JPG" attr="" comment="top of rtp board" date="1077331475" path="IM000496.JPG" size="264482" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000497.JPG" attr="" comment="board with pin headers - top" date="1077332328" path="IM000497.JPG" size="280526" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000498.JPG" attr="" comment="board with pin headers - bottom" date="1077332396" path="IM000498.JPG" size="294775" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000499.JPG" attr="" comment="Image of board front with socket" date="1077332685" path="IM000499.JPG" size="262052" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000500.JPG" attr="" comment="Image of board back with socket" date="1077332766" path="IM000500.JPG" size="294519" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000501.JPG" attr="" comment="Image of board front with 3 pin header" date="1077332920" path="IM000501.JPG" size="275413" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000502.JPG" attr="" comment="Image of board back with 3 pin header" date="1077333020" path="IM000502.JPG" size="313682" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000503.JPG" attr="" comment="Image of board front with Capacitors" date="1077333490" path="IM000503.JPG" size="275943" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000504.JPG" attr="" comment="Image of board back with Capacitors" date="1077333588" path="IM000504.JPG" size="301233" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000505.JPG" attr="" comment="Image of board front with resistors" date="1077333757" path="IM000505.JPG" size="278614" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000506.JPG" attr="" comment="Image of board back with resistors" date="1077333856" path="IM000506.JPG" size="303997" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000507.JPG" attr="" comment="Image of board front with 74HC00" date="1077333961" path="IM000507.JPG" size="291713" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000508.JPG" attr="" comment="Image of board back with 74HC00" date="1077334066" path="IM000508.JPG" size="312870" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000509.JPG" attr="" comment="Image of board front with DS1230Y" date="1077334568" path="IM000509.JPG" size="293858" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000510.JPG" attr="" comment="Image of board with DS1230Y" date="1077334689" path="IM000510.JPG" size="277072" user="the_doc" version="1.1"}%
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+%META:FILEATTACHMENT{name="IM000495.JPG" attr="" comment="bottom of rtp board" date="1082656464" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\ez-rtp\IM000495.JPG" size="54179" user="blundar" version="1.2"}%
+%META:FILEATTACHMENT{name="IM000496.JPG" attr="" comment="top of rtp board" date="1082656497" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\ez-rtp\IM000496.JPG" size="48789" user="blundar" version="1.2"}%
+%META:FILEATTACHMENT{name="IM000497.JPG" attr="" comment="board with pin headers - top" date="1082657272" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\ez-rtp\IM000497.JPG" size="60302" user="blundar" version="1.2"}%
+%META:FILEATTACHMENT{name="IM000498.JPG" attr="" comment="board with pin headers - bottom" date="1082657301" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\ez-rtp\IM000498.JPG" size="68144" user="blundar" version="1.2"}%
+%META:FILEATTACHMENT{name="IM000499.JPG" attr="" comment="Image of board front with socket" date="1082657380" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\ez-rtp\IM000499.JPG" size="48925" user="blundar" version="1.2"}%
+%META:FILEATTACHMENT{name="IM000500.JPG" attr="" comment="Image of board back with socket" date="1082657401" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\ez-rtp\IM000500.JPG" size="67878" user="blundar" version="1.2"}%
+%META:FILEATTACHMENT{name="IM000501.JPG" attr="" comment="Image of board front with 3 pin header" date="1082657431" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\ez-rtp\IM000501.JPG" size="56798" user="blundar" version="1.2"}%
+%META:FILEATTACHMENT{name="IM000502.JPG" attr="" comment="Image of board back with 3 pin header" date="1082657454" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\ez-rtp\IM000502.JPG" size="78703" user="blundar" version="1.2"}%
+%META:FILEATTACHMENT{name="IM000503.JPG" attr="" comment="Image of board front with Capacitors" date="1082657475" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\ez-rtp\IM000503.JPG" size="56249" user="blundar" version="1.2"}%
+%META:FILEATTACHMENT{name="IM000504.JPG" attr="" comment="Image of board back with Capacitors" date="1082657505" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\ez-rtp\IM000504.JPG" size="70396" user="blundar" version="1.2"}%
+%META:FILEATTACHMENT{name="IM000505.JPG" attr="" comment="Image of board front with resistors" date="1082657528" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\ez-rtp\IM000505.JPG" size="56663" user="blundar" version="1.2"}%
+%META:FILEATTACHMENT{name="IM000506.JPG" attr="" comment="Image of board back with resistors" date="1082657548" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\ez-rtp\IM000506.JPG" size="74566" user="blundar" version="1.2"}%
+%META:FILEATTACHMENT{name="IM000507.JPG" attr="" comment="Image of board front with 74HC00" date="1082657574" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\ez-rtp\IM000507.JPG" size="61984" user="blundar" version="1.2"}%
+%META:FILEATTACHMENT{name="IM000508.JPG" attr="" comment="Image of board back with 74HC00" date="1082657597" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\ez-rtp\IM000508.JPG" size="75290" user="blundar" version="1.2"}%
+%META:FILEATTACHMENT{name="IM000509.JPG" attr="" comment="Image of board front with DS1230Y" date="1082657626" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\ez-rtp\IM000509.JPG" size="64788" user="blundar" version="1.2"}%
+%META:FILEATTACHMENT{name="IM000510.JPG" attr="" comment="Image of board with DS1230Y" date="1082657646" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\ez-rtp\IM000510.JPG" size="57468" user="blundar" version="1.2"}%
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:FILEATTACHMENT{name="boardlayout.png" attr="" comment="picture of board layout in eagle" date="1082657128" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\boardlayout.png" size="33830" user="blundar" version="1.1"}%</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/EasyRtpV10.html">EasyRtpV10</a></b>
+		(<a href="../../view/Library/EasyRtpV10%3Frev=r1.7.html">r1.7</a> - 12&nbsp;Apr&nbsp;2004 - Home.tungsten2k)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+%META:FILEATTACHMENT{name="rtp_EasyRtpV10-v1.pdf" attr="" comment="This Page in PDF form" date="1079318103" path="rtp_EasyRtpV10-v1.pdf" size="482308" user="The_DoC" version="1.1"}%
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+%META:FILEATTACHMENT{name="rtp_EasyRtpV10-v1.pdf" attr="" comment="This Page in PDF form (no install instructions)" date="1079318103" path="rtp_EasyRtpV10-v1.pdf" size="482308" user="The_DoC" version="1.1"}%
+%META:FILEATTACHMENT{name="doc_RTP_OBD1.jpg" attr="" comment="doc's original design installed in <a href="../../view/Library/ECU.html">ECU</a>" date="1081805349" path="C:\Documents and Settings\speedster\Desktop\doc_RTP_OBD1.jpg" size="62057" user="tungsten2k" version="1.1"}%
+%META:FILEATTACHMENT{name="doc_RTP_OBD1_Cut_here.jpg" attr="" comment="doc's original info on where to cut WE line in <a href="../../view/Library/ECU.html">ECU</a>" date="1081805428" path="C:\Documents and Settings\speedster\Desktop\doc_RTP_OBD1_Cut_here.jpg" size="70898" user="tungsten2k" version="1.1"}%</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/EasyRtpV10.html">EasyRtpV10</a></b>
+		(<a href="../../view/Library/EasyRtpV10%3Frev=r1.6.html">r1.6</a> - 15&nbsp;Mar&nbsp;2004 - Home.The_DoC)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+<ul>
+<li> <a href="../../../pub/Library/EasyRtpV10/rtp_EasyRtpV10-v1.pdf" target="_top">rtp_EasyRtpV10-v1.pdf</a>: This Page in PDF form
+</li>
+</ul>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:FILEATTACHMENT{name="rtp_EasyRtpV10-v1.pdf" attr="" comment="This Page in PDF form" date="1079318103" path="rtp_EasyRtpV10-v1.pdf" size="482308" user="The_DoC" version="1.1"}%</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/EasyRtpV10.html">EasyRtpV10</a></b>
+		(<a href="../../view/Library/EasyRtpV10%3Frev=r1.5.html">r1.5</a> - 21&nbsp;Feb&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+This page is a construction design for the Easy-RTP V1.0 board.  This is the single sided design for a <span style='background : #FFFFCE;'><font color="#0000FF">DS1230&nbsp;Y</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/DS1230Y?topicparent=Library.EasyRtpV10">?</a> style 28 pin DIP <a href="../../view/Library/NVSRAM.html">NVSRAM</a>.  You can find the eagle design files attached in a zipfile at the end of this thread.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+This page is a construction design for the Easy-RTP V1.0 board.  This is the single sided design for a DS1230 style 28 pin DIP <a href="../../view/Library/NVSRAM.html">NVSRAM</a>.  You can find the eagle design files attached in a zipfile at the end of this thread.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+picture of board layout in eagle: <br />
+    <img src="http://www.pgmfi.org/twiki/pub/Library/EasyRtpV10/boardlayout.jpg" alt="boardlayout.jpg"  width="700"  />
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<ul>
+<li> First off, orient your board with the traces facing up. (bottom up)
+</li>
+<li> If you have the two 28 pin footprints facing left, the bottom set of holes (that are also larger diameter) are the ones to use for the <a href="../../view/Library/ECU.html">ECU</a>-board connectors. Solder in place the 2 - 1x14 pin headers (I'm ghetto, fuck off.) or whatever other contraption you are using to connect the board to the <a href="../../view/Library/ECU.html">ECU</a> in place and continue.
+</li>
+</ul>
+<p />
+<ul>
+<li> Orient your board with the traces on the BOTTOM.  Look at the top of the board (no traces). Orient your board so the 3 pin jumper connector faces left and the double 27C256 face right.  This is the orientation in which all the following instructions will assume you are looking at the board.
+</li>
+<li> Next, solder in a 28 pin DIP socket for the <a href="../../view/Library/NVSRAM.html">NVSRAM</a> in the top set of holes. The notch will face left.
+</li>
+<li> Next, solder in a 3pin - pin header or 3 wires for J1.
+</li>
+<li> Next, solder the two caps C1+C2 in place.
+</li>
+<li> Next, solder in R1 (10k, to the left) and R2 (10K, center).
+</li>
+</ul>
+<p />
+<ul>
+<li> Next decide whether you want/need 27C256 emulation. 
+</li>
+</ul>
+<p />
+IF YOU DON'T WANT 27C256 EMULATION:
+Solder in a wire link or 0-ohm resistor for D1 
+Skip to LAST STEP.
+<p />
+IF YOU DO WANT 27C256 EMULATION:
+Solder in the switching diode for D1.
+Solder in the NPN switching transistor Q1.
+Solder in R3 (10k - top resistor)
+Solder in R4 (100k - bottom resistor)
+continue...
+<p />
+LAST STEP:
+Solder in the 74HC00 Latch
+<p />
+<ul>
+<li> picture of board layout in eagle: <br />
+    <img src="http://www.pgmfi.org/twiki/pub/Library/EasyRtpV10/boardlayout.jpg" alt="boardlayout.jpg"  width="700"  />
+</li>
+<li> picture of the blank board front and back <br />
+</li>
+</ul>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<center>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<ul>
+<li> Picture of board with the 2 14 pin headers<br />
+</li>
+</ul>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+First off, orient your board with the traces facing up. (bottom up)
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<ul>
+<li> Picture of board with socket: <br />
+</li>
+</ul>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+If you have the two 28 pin footprints facing right, the top set of holes (that are also larger diameter) are the ones to use for the <a href="../../view/Library/ECU.html">ECU</a>-board connectors. Solder in place the 2 - 1x14 pin headers (I'm ghetto, fuck off.) or whatever other contraption you are using to connect the board to the <a href="../../view/Library/ECU.html">ECU</a> in place and continue.</center>
+<p />
+<ul>
+<li> Orient your board with the traces on the BOTTOM.  Look at the top of the board (no traces). Orient your board so the 3 pin jumper connector faces left and the double 27C256 face right.  This is the orientation in which all the following instructions will assume you are looking at the board.
+</li>
+</ul>
+<p />
+<center>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<ul>
+<li> Picture of board with 3 pin header: <br />
+</li>
+</ul>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Next, solder in a 28 pin DIP socket for the <a href="../../view/Library/NVSRAM.html">NVSRAM</a> in the top set of holes. The notch will face left.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<ul>
+<li> Picture of board with Capacitors: <br />
+</li>
+</ul>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Next, solder in a 3pin - pin header or 3 wires for J1.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<ul>
+<li> Picture of board with resistors: <br />
+</li>
+</ul>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Next, solder the two caps C1+C2 in place.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<ul>
+<li> Picture of board with 74HC00: <br />
+    <img src="../../../pub/Library/EasyRtpV10/IM000507.JPG" alt="IM000507.JPG"  width="350" />
+    <img src="../../../pub/Library/EasyRtpV10/IM000508.JPG" alt="IM000508.JPG"  width="350" /><br />
+</li>
+<li> Picture of board with DS1230Y: <br />
+</li>
+</ul>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Next, solder in R1 (10k, to the left) and R2 (10K, center).</center>
+<p />
+<ul>
+<li> Next decide whether you want/need 27C256 emulation. 
+</li>
+</ul>
+<p />
+IF YOU DON'T WANT 27C256 EMULATION:
+<ul>
+<li> Solder in a wire link or 0-ohm resistor for D1 
+</li>
+<li> Skip to <strong>FINAL STEPS</strong>.
+</li>
+</ul>
+<p />
+IF YOU DO WANT 27C256 EMULATION:
+<ul>
+<li> Solder in the switching diode for D1.
+</li>
+<li> Solder in the NPN switching transistor Q1.
+</li>
+<li> Solder in R3 (10k - top resistor)
+</li>
+<li> Solder in R4 (100k - bottom resistor)
+</li>
+<li> continue...
+</li>
+</ul>
+<p />
+<strong>FINAL STEPS</strong>:
+<ul>
+<li> Solder in the 74HC00 Latch
+</li>
+<li> Place the <a href="../../view/Library/NVSRAM.html">NVSRAM</a> in the 28 pin DIP socket
+</li>
+</ul>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+    <img src="../../../pub/Library/EasyRtpV10/IM000510.JPG" alt="IM000510.JPG"  width="350"  />
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+    <img src="../../../pub/Library/EasyRtpV10/IM000510.JPG" alt="IM000510.JPG"  width="350"  /><br/>
+Final board
+<p />
+You can download the design or full size versions of any of the images:
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+%META:FILEATTACHMENT{name="boardlayout.jpg" attr="h" comment="picture of board layout in eagle" date="1077323092" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\boardlayout.jpg" size="115934" user="blundar" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000495.JPG" attr="h" comment="" date="1077331195" path="IM000495.JPG" size="278192" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000496.JPG" attr="h" comment="" date="1077331475" path="IM000496.JPG" size="264482" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000497.JPG" attr="h" comment="" date="1077332328" path="IM000497.JPG" size="280526" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000498.JPG" attr="h" comment="" date="1077332396" path="IM000498.JPG" size="294775" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000499.JPG" attr="h" comment="Image of board front with socket" date="1077332685" path="IM000499.JPG" size="262052" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000500.JPG" attr="h" comment="Image of board back with socket" date="1077332766" path="IM000500.JPG" size="294519" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000501.JPG" attr="h" comment="Image of board front with 3 pin header" date="1077332920" path="IM000501.JPG" size="275413" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000502.JPG" attr="h" comment="Image of board back with 3 pin header" date="1077333020" path="IM000502.JPG" size="313682" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000503.JPG" attr="h" comment="Image of board front with Capacitors" date="1077333490" path="IM000503.JPG" size="275943" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000504.JPG" attr="h" comment="Image of board back with Capacitors" date="1077333588" path="IM000504.JPG" size="301233" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000505.JPG" attr="h" comment="Image of board front with resistors" date="1077333757" path="IM000505.JPG" size="278614" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000506.JPG" attr="h" comment="Image of board back with resistors" date="1077333856" path="IM000506.JPG" size="303997" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000507.JPG" attr="h" comment="Image of board front with 74HC00" date="1077333961" path="IM000507.JPG" size="291713" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000508.JPG" attr="h" comment="Image of board back with 74HC00" date="1077334066" path="IM000508.JPG" size="312870" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000509.JPG" attr="h" comment="Image of board front with DS1230Y" date="1077334568" path="IM000509.JPG" size="293858" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000510.JPG" attr="h" comment="Image of board with DS1230Y" date="1077334689" path="IM000510.JPG" size="277072" user="the_doc" version="1.1"}%
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+%META:FILEATTACHMENT{name="boardlayout.jpg" attr="" comment="picture of board layout in eagle" date="1077323092" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\boardlayout.jpg" size="115934" user="blundar" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000495.JPG" attr="" comment="bottom of rtp board" date="1077331195" path="IM000495.JPG" size="278192" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000496.JPG" attr="" comment="top of rtp board" date="1077331475" path="IM000496.JPG" size="264482" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000497.JPG" attr="" comment="board with pin headers - top" date="1077332328" path="IM000497.JPG" size="280526" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000498.JPG" attr="" comment="board with pin headers - bottom" date="1077332396" path="IM000498.JPG" size="294775" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000499.JPG" attr="" comment="Image of board front with socket" date="1077332685" path="IM000499.JPG" size="262052" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000500.JPG" attr="" comment="Image of board back with socket" date="1077332766" path="IM000500.JPG" size="294519" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000501.JPG" attr="" comment="Image of board front with 3 pin header" date="1077332920" path="IM000501.JPG" size="275413" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000502.JPG" attr="" comment="Image of board back with 3 pin header" date="1077333020" path="IM000502.JPG" size="313682" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000503.JPG" attr="" comment="Image of board front with Capacitors" date="1077333490" path="IM000503.JPG" size="275943" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000504.JPG" attr="" comment="Image of board back with Capacitors" date="1077333588" path="IM000504.JPG" size="301233" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000505.JPG" attr="" comment="Image of board front with resistors" date="1077333757" path="IM000505.JPG" size="278614" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000506.JPG" attr="" comment="Image of board back with resistors" date="1077333856" path="IM000506.JPG" size="303997" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000507.JPG" attr="" comment="Image of board front with 74HC00" date="1077333961" path="IM000507.JPG" size="291713" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000508.JPG" attr="" comment="Image of board back with 74HC00" date="1077334066" path="IM000508.JPG" size="312870" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000509.JPG" attr="" comment="Image of board front with DS1230Y" date="1077334568" path="IM000509.JPG" size="293858" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000510.JPG" attr="" comment="Image of board with DS1230Y" date="1077334689" path="IM000510.JPG" size="277072" user="the_doc" version="1.1"}%</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/EasyRtpV10.html">EasyRtpV10</a></b>
+		(<a href="../../view/Library/EasyRtpV10%3Frev=r1.4.html">r1.4</a> - 21&nbsp;Feb&nbsp;2004 - Home.the_doc)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+    <img src="../../../pub/Library/EasyRtpV10/IM000496.JPG" alt="IM000496.JPG"  width="350"  />
+    <img src="../../../pub/Library/EasyRtpV10/IM000495.JPG" alt="IM000495.JPG"  width="350" /><br />
+<ul>
+<li> Picture of board with the 2 14 pin headers<br />
+    <img src="../../../pub/Library/EasyRtpV10/IM000497.JPG" alt="IM000497.JPG"  width="350"  />
+    <img src="../../../pub/Library/EasyRtpV10/IM000498.JPG" alt="IM000498.JPG"  width="350"  /><br />
+</li>
+<li> Picture of board with socket: <br />
+    <img src="../../../pub/Library/EasyRtpV10/IM000499.JPG" alt="IM000499.JPG"  width="350"  />
+    <img src="../../../pub/Library/EasyRtpV10/IM000500.JPG" alt="IM000500.JPG"  width="350" /><br />
+</li>
+<li> Picture of board with 3 pin header: <br />
+    <img src="../../../pub/Library/EasyRtpV10/IM000501.JPG" alt="IM000501.JPG"  width="350" />
+    <img src="../../../pub/Library/EasyRtpV10/IM000502.JPG" alt="IM000502.JPG"  width="350" /><br />
+</li>
+<li> Picture of board with Capacitors: <br />
+    <img src="../../../pub/Library/EasyRtpV10/IM000503.JPG" alt="IM000503.JPG"  width="350"  />
+    <img src="../../../pub/Library/EasyRtpV10/IM000504.JPG" alt="IM000504.JPG"  width="350"  /><br />
+</li>
+<li> Picture of board with resistors: <br />
+    <img src="../../../pub/Library/EasyRtpV10/IM000505.JPG" alt="IM000505.JPG"  width="350"  />
+    <img src="../../../pub/Library/EasyRtpV10/IM000506.JPG" alt="IM000506.JPG"  width="350"  /><br />
+</li>
+<li> Picture of board with 74HC00: <br />
+    <img src="../../../pub/Library/EasyRtpV10/IM000507.JPG" alt="IM000507.JPG"  width="350" />
+    <img src="../../../pub/Library/EasyRtpV10/IM000508.JPG" alt="IM000508.JPG"  width="350" /><br />
+</li>
+<li> Picture of board with DS1230Y: <br />
+    <img src="../../../pub/Library/EasyRtpV10/IM000509.JPG" alt="IM000509.JPG"  width="350"  />
+    <img src="../../../pub/Library/EasyRtpV10/IM000510.JPG" alt="IM000510.JPG"  width="350"  />
+</li>
+</ul>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:FILEATTACHMENT{name="IM000495.JPG" attr="h" comment="" date="1077331195" path="IM000495.JPG" size="278192" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000496.JPG" attr="h" comment="" date="1077331475" path="IM000496.JPG" size="264482" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000497.JPG" attr="h" comment="" date="1077332328" path="IM000497.JPG" size="280526" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000498.JPG" attr="h" comment="" date="1077332396" path="IM000498.JPG" size="294775" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000499.JPG" attr="h" comment="Image of board front with socket" date="1077332685" path="IM000499.JPG" size="262052" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000500.JPG" attr="h" comment="Image of board back with socket" date="1077332766" path="IM000500.JPG" size="294519" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000501.JPG" attr="h" comment="Image of board front with 3 pin header" date="1077332920" path="IM000501.JPG" size="275413" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000502.JPG" attr="h" comment="Image of board back with 3 pin header" date="1077333020" path="IM000502.JPG" size="313682" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000503.JPG" attr="h" comment="Image of board front with Capacitors" date="1077333490" path="IM000503.JPG" size="275943" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000504.JPG" attr="h" comment="Image of board back with Capacitors" date="1077333588" path="IM000504.JPG" size="301233" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000505.JPG" attr="h" comment="Image of board front with resistors" date="1077333757" path="IM000505.JPG" size="278614" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000506.JPG" attr="h" comment="Image of board back with resistors" date="1077333856" path="IM000506.JPG" size="303997" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000507.JPG" attr="h" comment="Image of board front with 74HC00" date="1077333961" path="IM000507.JPG" size="291713" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000508.JPG" attr="h" comment="Image of board back with 74HC00" date="1077334066" path="IM000508.JPG" size="312870" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000509.JPG" attr="h" comment="Image of board front with DS1230Y" date="1077334568" path="IM000509.JPG" size="293858" user="the_doc" version="1.1"}%
+%META:FILEATTACHMENT{name="IM000510.JPG" attr="h" comment="Image of board with DS1230Y" date="1077334689" path="IM000510.JPG" size="277072" user="the_doc" version="1.1"}%</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/EasyRtpV10.html">EasyRtpV10</a></b>
+		(<a href="../../view/Library/EasyRtpV10%3Frev=r1.3.html">r1.3</a> - 21&nbsp;Feb&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+    <img src="http://www.pgmfi.org/twiki/pub/Library/EasyRtpV10/boardlayout.jpg" alt="boardlayout.jpg"  width="1024" height="768"  />
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+    <img src="http://www.pgmfi.org/twiki/pub/Library/EasyRtpV10/boardlayout.jpg" alt="boardlayout.jpg"  width="700"  /></td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/EasyRtpV10.html">EasyRtpV10</a></b>
+		(<a href="../../view/Library/EasyRtpV10%3Frev=r1.2.html">r1.2</a> - 21&nbsp;Feb&nbsp;2004 - Home.the_doc)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+<ul>
+<li> picture of the blank board front and back <br />
+</li>
+</ul></td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/EasyRtpV10.html">EasyRtpV10</a></b>
+		(<a href="../../view/Library/EasyRtpV10%3Frev=r1.1.html">r1.1</a> - 21&nbsp;Feb&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="blundar" date="1077323220" format="1.0" version="1.1"}%
+%META:TOPICPARENT{name="RealTimeProgramming"}%
+This page is a construction design for the Easy-RTP V1.0 board.  This is the single sided design for a <span style='background : #FFFFCE;'><font color="#0000FF">DS1230&nbsp;Y</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/DS1230Y?topicparent=Library.EasyRtpV10">?</a> style 28 pin DIP <a href="../../view/Library/NVSRAM.html">NVSRAM</a>.  You can find the eagle design files attached in a zipfile at the end of this thread.
+<p />
+<p />
+<ul>
+<li> <a href="../../view/Library/EasyRtpV10.html#Brief_Explanation">Brief Explanation</a>
+</li>
+<li> <a href="../../view/Library/EasyRtpV10.html#Parts_list_">Parts list:</a>
+</li>
+<li> <a href="../../view/Library/EasyRtpV10.html#Construction_">Construction:</a>
+</li>
+</ul>
+<p />
+<h3> Brief Explanation </h3>
+<p />
+<strong>A quick explanation:</strong> the "optional components" are only required if you want 27C256 emulation. This is intended for those who do not have an <a href="../../view/Library/EPROM.html">EPROM</a> programmer capable of natively programming their <a href="../../view/Library/NVSRAM.html">NVSRAM</a> of choice. Most programmers "28C256" setting seem to do the trick nicely, FYI. (Tested with Willem by Calvin and the Batronix by gimpy... Gimpy sez you have to disable the blank check for it to work)
+<p />
+<h3> Parts list: </h3>
+<ul>
+<li> DS1230Y or similar TI, ST, Simtek, ZMD, ... 32K 28 pin .600" DIP <a href="../../view/Library/NVSRAM.html">NVSRAM</a>
+</li>
+<li> 74HC00 DIP package quad NAND gate
+</li>
+<li> 2x 0.1 uF ceramic caps (decoupling)
+</li>
+<li> 2x 10K resistors
+</li>
+<li> 2x 1x14 pin headers or similar contraption to make contact with <a href="../../view/Library/ECU.html">ECU</a> socket
+</li>
+</ul>
+<p />
+Optional components: (required for 27C256 emulation)
+<ul>
+<li> 1x 10K resistor
+</li>
+<li> 1x 100k resistor
+</li>
+<li> 1x generic NPN switching transistor (2N4401 or equivalent)
+</li>
+<li> 1x switching diode (1n4148, etc... not too picky.)
+</li>
+</ul>
+<p />
+<h3> Construction: </h3>
+<p />
+<ul>
+<li> First off, orient your board with the traces facing up. (bottom up)
+</li>
+<li> If you have the two 28 pin footprints facing left, the bottom set of holes (that are also larger diameter) are the ones to use for the <a href="../../view/Library/ECU.html">ECU</a>-board connectors. Solder in place the 2 - 1x14 pin headers (I'm ghetto, fuck off.) or whatever other contraption you are using to connect the board to the <a href="../../view/Library/ECU.html">ECU</a> in place and continue.
+</li>
+</ul>
+<p />
+<ul>
+<li> Orient your board with the traces on the BOTTOM.  Look at the top of the board (no traces). Orient your board so the 3 pin jumper connector faces left and the double 27C256 face right.  This is the orientation in which all the following instructions will assume you are looking at the board.
+</li>
+<li> Next, solder in a 28 pin DIP socket for the <a href="../../view/Library/NVSRAM.html">NVSRAM</a> in the top set of holes. The notch will face left.
+</li>
+<li> Next, solder in a 3pin - pin header or 3 wires for J1.
+</li>
+<li> Next, solder the two caps C1+C2 in place.
+</li>
+<li> Next, solder in R1 (10k, to the left) and R2 (10K, center).
+</li>
+</ul>
+<p />
+<ul>
+<li> Next decide whether you want/need 27C256 emulation. 
+</li>
+</ul>
+<p />
+IF YOU DON'T WANT 27C256 EMULATION:
+Solder in a wire link or 0-ohm resistor for D1 
+Skip to LAST STEP.
+<p />
+IF YOU DO WANT 27C256 EMULATION:
+Solder in the switching diode for D1.
+Solder in the NPN switching transistor Q1.
+Solder in R3 (10k - top resistor)
+Solder in R4 (100k - bottom resistor)
+continue...
+<p />
+LAST STEP:
+Solder in the 74HC00 Latch
+<p />
+<ul>
+<li> picture of board layout in eagle: <br />
+    <img src="http://www.pgmfi.org/twiki/pub/Library/EasyRtpV10/boardlayout.jpg" alt="boardlayout.jpg"  width="1024" height="768"  />
+</li>
+</ul>
+<p />
+%META:FILEATTACHMENT{name="easyrtpv1-eagle.zip" attr="" comment="The design in eagle format" date="1077323051" path="C:\Documents and Settings\Administrator\Desktop\wikitemp\easyrtpv1-eagle.zip" size="34574" user="blundar" version="1.1"}%
+%META:FILEATTACHMENT{name="boardlayout.jpg" attr="h" comment="picture of board layout in eagle" date="1077323092" path="C:\Documents and Settings\Administrator\My Documents\My Pictures\boardlayout.jpg" size="115934" user="blundar" version="1.1"}%</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/EasyRtpV10.html">View</a>
+  |  <a href="EasyRtpV10.html">Diffs</a>  | <a href="../../view/Library/EasyRtpV10%3Frev=1.10.html">r1.10</a> | <a href="EasyRtpV10%3Frev1=1.10&amp;rev2=1.9.html">&gt;</a> | <a href="../../view/Library/EasyRtpV10%3Frev=1.9.html">r1.9</a> | <a href="EasyRtpV10%3Frev1=1.9&amp;rev2=1.8.html">&gt;</a> | <a href="../../view/Library/EasyRtpV10%3Frev=1.8.html">r1.8</a>
+  |  <a href="../../oops/Library/EasyRtpV10%3Ftemplate=oopsmore&amp;param1=1.10&amp;param2=1.10.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.EasyRtpV10">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#394e50525079495e545f5017564b5e064a4c5b535c5a4d046d6e505250197f5c5c5d5b585a52">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#cfbba0a28faba6a8a6bbaea3a9babca6a0a1a0a1a3a6a1aae1aca0a2" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision r1.1 - 21 Feb 2004 - 00:27 GMT - Home.blundar<br />
+    Revision r1.10 - 22 Dec 2004 - 20:36 GMT - Home.synoptic
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

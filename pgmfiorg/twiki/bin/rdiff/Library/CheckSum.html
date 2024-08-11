@@ -1,0 +1,177 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . CheckSum (r1.1 vs. r1.3)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/CheckSum.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>CheckSum</b> (r1.1 vs. r1.3)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/CheckSum.html">CheckSum</a></b>
+		(<a href="../../view/Library/CheckSum%3Frev=r1.3.html">r1.3</a> - 12&nbsp;Jul&nbsp;2004 - Home.synoptic)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+<p />
+<p />
+You can update the rom so the checksum stays 00 even after editing it. Here is how to (using <a href="../../view/Library/WinHex.html">Win&nbsp;Hex</a> in this example, but you can use the program posted below, but only to find checksum, not to edit the <a href="../../view/Library/ROM.html">ROM</a>) :
+<p />
+Open <a href="../../view/Library/WinHex.html">Win&nbsp;Hex</a> and select Tools Menu -&gt; Calculate Hash (Select 8 bit).
+Write down the number it gives you. This is the current Checksum.
+<p />
+<p />
+Open Windows Calculator (Start -&gt; Run -&gt; Calc then press enter)
+View -&gt; Scientific
+Select Hex Mode (or press F5)
+<p />
+Do this : FF - Current_checksum ( FF - AB for example)
+The number it gives you is tu be written in a memory location, toward the bottom, where no code is present, and where the value FF is already there.
+<p />
+Example : (FF - AB = 54)
+<p />
+lets say I go to memory location 7FFF, value is FF. I replace FF by 54.
+<p />
+if you dont have an address with a free FF value, but another value (lets say 00), use 00 in calc instead (00 - AB) and replace the free 00 with the result.</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/CheckSum.html">CheckSum</a></b>
+		(<a href="../../view/Library/CheckSum%3Frev=r1.2.html">r1.2</a> - 17&nbsp;May&nbsp;2004 - Home.cxigkakis)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td></td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/CheckSum.html">CheckSum</a></b>
+		(<a href="../../view/Library/CheckSum%3Frev=r1.1.html">r1.1</a> - 05&nbsp;Mar&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="blundar" date="1078511460" format="1.0" version="1.1"}%
+A Checksum is a very basic form of error checking.  A checksum is calculated by adding the values of a <a href="../../view/Library/ROM.html">ROM</a> together, without any form of carry or overflow checking.  Checksums can vary in size - 8bit, 16bit, 32bit checksums are all common.  <a href="../../view/Library/OBD0.html">OBD0</a> and <a href="../../view/Library/OBD1.html">OBD1</a> honda <a href="../../view/Library/ECU.html">ECU</a>s use exclusively 8 bit checksums i.e. checksums from 0 -&gt; 255 decimal, 00-FF hex.
+<p />
+There is a program called <a href="http://www.keil.com/download/files/check8.zip" target="_top">check8</a> (also available attached to this page) that can calculate 8bit checksums.
+%META:FILEATTACHMENT{name="Check8.exe" attr="" comment="Keil's 8 bit checksum utility" date="1078511385" path="C:\Documents and Settings\Administrator\Desktop\temp\wiki\Check8.exe" size="10308" user="blundar" version="1.1"}%</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/CheckSum.html">View</a>
+  |  <a href="CheckSum.html">Diffs</a>  | <a href="../../view/Library/CheckSum%3Frev=1.3.html">r1.3</a> | <a href="CheckSum%3Frev1=1.3&amp;rev2=1.2.html">&gt;</a> | <a href="../../view/Library/CheckSum%3Frev=1.2.html">r1.2</a> | <a href="CheckSum%3Frev1=1.2&amp;rev2=1.1.html">&gt;</a> | <a href="../../view/Library/CheckSum%3Frev=1.1.html">r1.1</a>
+  |  <a href="../../oops/Library/CheckSum%3Ftemplate=oopsmore&amp;param1=1.3&amp;param2=1.3.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.CheckSum">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#7a0d1311133a0a1d171c135415081d45090f18101f190e472e2d1311135a3c1f1f1e181b1911">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#c0b4afad80a4a9a7a9b4a1aca6b5b3a9afaeafaeaca9aea5eea3afad" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision r1.1 - 05 Mar 2004 - 18:31 GMT - Home.blundar<br />
+    Revision r1.3 - 12 Jul 2004 - 14:08 GMT - Home.synoptic
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,312 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . Sim (r1.1 vs. r1.3)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/Sim.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>Sim</b> (r1.1 vs. r1.3)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/Sim.html">Sim</a></b>
+		(<a href="../../view/Library/Sim%3Frev=r1.3.html">r1.3</a> - 28&nbsp;Jan&nbsp;2007 - Home.b16a2)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+- I have added 4x 5w resistors to simulate the injectors.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+- I have added 4x 12R 5w resistors to simulate the injectors.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+- Im going to add an ELD from a fues box I have to simulate that. or at least to figure out what it does and when it does it, to help build a simulator for it.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+- Iv added an ELD from a <a href="../../view/Library/JDM.html">JDM</a> ITR fuesbox, ran the main positive wire from the power supply through it to measure the current load. Even works with P13
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+On the side of the case, I cut out 3 holes to suit D25 computer connectors. simply A B and D, just like on the OBDI ecu, and to keep things simple everyting is wired the same as the OBDI standard which helps when probing with a multimeter for sensor signal.  I than have made Harneses to suit OBDIIa, OBDIIb OBDO, and when I get some conectors OBDI ( rather than using a harness.) 
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+On the side of the case, I cut out 3 holes to suit D25 computer connectors. simply A B and D, just like on the OBDI ecu, and to keep things simple everyting is wired the same as the OBDI standard which helps when probing with a multimeter for sensor signal.  I then have made Harneses to suit OBDIIa, OBDIIb OBDO, and when I get some conectors OBDI ( rather than using a harness.) 
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:FILEATTACHMENT{name="Engine_Sim019.jpg" attr="" comment="Close up of  Distributor" date="1169987148" path="I:\Automotive\Misc\Engine Simulator\Pics\Engine_Sim 019.jpg" size="110159" user="b16a2" version="1.1"}%
+%META:FILEATTACHMENT{name="Engine_Sim020.jpg" attr="" comment="Close up of O2 and <a href="../../view/Library/VSS.html">VSS</a> simulator" date="1169987200" path="I:\Automotive\Misc\Engine Simulator\Pics\Engine_Sim 020.jpg" size="104598" user="b16a2" version="1.1"}%
+%META:FILEATTACHMENT{name="Engine_Sim022.jpg" attr="" comment="Close up of ELD" date="1169987284" path="I:\Automotive\Misc\Engine Simulator\Pics\Engine_Sim 022.jpg" size="88001" user="b16a2" version="1.1"}%
+%META:FILEATTACHMENT{name="Engine_Sim023.jpg" attr="" comment="Close up back of control panel" date="1169987358" path="I:\Automotive\Misc\Engine Simulator\Pics\Engine_Sim 023.jpg" size="155808" user="b16a2" version="1.1"}%
+%META:FILEATTACHMENT{name="Engine_Sim024.jpg" attr="" comment="Close up of main relay, knock, O2 heater" date="1169987428" path="I:\Automotive\Misc\Engine Simulator\Pics\Engine_Sim 024.jpg" size="106593" user="b16a2" version="1.1"}%
+%META:FILEATTACHMENT{name="Engine_Sim025.jpg" attr="" comment="Close up of  VTS and EACV" date="1169987506" path="I:\Automotive\Misc\Engine Simulator\Pics\Engine_Sim 025.jpg" size="74211" user="b16a2" version="1.1"}%</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/Sim.html">Sim</a></b>
+		(<a href="../../view/Library/Sim%3Frev=r1.2.html">r1.2</a> - 28&nbsp;Jan&nbsp;2007 - Home.b16a2)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+The pannel was drawn up in ms paint and printed on normal paper. Then used as a template on a peice of plastic from a sign and once the holes where all drilled then glued to the plastic with a clear coat of contact paper. then all the LEDs and Switched go in.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+The pannel was drawn up in ms paint and printed on normal paper. Then used as a template on a peice of plastic from a sign and once the holes where all drilled then glued to the plastic with a clear coat of contact paper. then all the LEDs and switches go in.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+there are so many uses for this thing from fault finding faults on an <a href="../../view/Library/ECU.html">ECU</a> at the component level to testing code and PGMFI parts.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+There are so many uses for this thing from fault finding faults on an <a href="../../view/Library/ECU.html">ECU</a> at the component level to testing code and PGMFI parts. It is also interesting to see how and what ways you can upset the <a href="../../view/Library/ECU.html">ECU</a> by disconecting sensor ect whiel the engine sim is running.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Im working on an electronic distriblutor simulator. but for now I like the noise of something widing up. ( adds the fun to reving up the sim ) :)
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Im working on an electronic distriblutor simulator, but for now I like the noise of something widing up. ( adds the fun to reving up the sim ) :)</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/Sim.html">Sim</a></b>
+		(<a href="../../view/Library/Sim%3Frev=r1.1.html">r1.1</a> - 27&nbsp;Jan&nbsp;2007 - Home.b16a2)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="b16a2" date="1169911800" format="1.0" version="1.1"}%
+%META:TOPICPARENT{name="EngineSim"}%
+This is a Engine Simulator I build to help me out with hardware Development.  Its basicly built into a rack mount computer case and uses a ATX 350W power supply.  
+<p />
+<img src="../../../pub/Library/Sim/Engine_Sim016.jpg" alt="Engine_Sim016.jpg" />
+<p />
+<p />
+<p />
+Everything is wired up as in the two bellow schematics "gsrwiring1.gif and gsrwiring2.gif"
+<p />
+- I am using variable resistors for the <a href="../../view/Library/ECT.html">ECT</a>, <a href="../../view/Library/IAT.html">IAT</a>, TPS,  MAP, and EGR
+<p />
+- I have added 4x 5w resistors to simulate the injectors.
+<p />
+- I have wired up a EACV for the EACV
+<p />
+- I am using a distributor to achive the <a href="../../view/Library/TDC.html">TDC</a>, CYP, CKP from a OBDI car. Its driven by a 12v motor from an old cordless drill :). then the trigger from the cordless drill is conected to a varable resistor to be able to vary the speed of the motor which simulates the <a href="../../view/Library/RPM.html">RPM</a>s. The whole thing is built into a wooden jig that holds the dizzy and motor lined up together. I removed the camshaft drive from the dizzy and fit a 15 tooth tamiya gear from an RC car to the motor, then used fuel hose to link the two shafts. works great :)
+<p />
+- The ICM and coil has been wired up, 12v to the blk/yel wire from the main relay to prevent code 15 , but to control the coil Im switch the ground of the body of the dizzy.
+<p />
+- I made a circuit with a 555 timer IC to simulate the <a href="../../view/Library/VSS.html">VSS</a>, Ill add the schematic soon.
+<p />
+- EGR at the moment is just a varable resistor, Im working an a solution that will automaticly vary the trimpot with the pulses from the EGR sol output. It if works then Ill post the plans.
+<p />
+- using a real main relay for the main relay.
+<p />
+- I have added an actual VTEC solenoid for the VTEC solenoid. ( no better way to simulate the load of one.) its reasuring to hear the click when VTEC engages.  also driving a bi colour LED on the front panel 
+<p />
+- VTP is simply a relay driven from the VTS signal.
+<p />
+- I have added a knock sensor that I hit against the chassis of the thing to simulate knock. ( thanks to edgeauto for the sensor ) 
+<p />
+- there is 3x 3.7k 5w resistors ( all I could find on the day ) to simulate the Oxygen Sensor Heater. 
+<p />
+- a LED is the MIL, used a 560R resistor to limmit the current to it then a 1k resistor across the LED to stop it from staying iluminated when it should not be.
+<p />
+- I have built an O2 simulator circuit from a 555 timer IC. I found the plans on the web.
+<p />
+- a LED that changes colours is used as the fuel pump. this simply lets me know the fuel pump is powered.
+<p />
+- Im going to add an ELD from a fues box I have to simulate that. or at least to figure out what it does and when it does it, to help build a simulator for it.
+<p />
+- added an APEXI RSM for the dash board so I can see the <a href="../../view/Library/RPM.html">RPM</a>'s and Vehicle Speed and Battery Voltage. ( bit over the top but its well worth it ) 
+<p />
+<img src="../../../pub/Library/Sim/Engine_Sim009.jpg" alt="Engine_Sim009.jpg" />
+<p />
+<p />
+<p />
+<p />
+<strong>The Control Pannel</strong>
+<p />
+<img src="../../../pub/Library/Sim/Engine_Sim001.jpg" alt="Engine_Sim001.jpg" />
+<p />
+<p />
+On the top two rows of switches I have added a switch and LED for each PGMFI component vital to PGMFI operation. the Switch will open circuit the sensor to the <a href="../../view/Library/ECU.html">ECU</a> to force MIL. This is done to help <a href="../../view/Library/ECU.html">ECU</a> repair and to confirm that a circuit has been disabled in code. example VTP, HO2, ELD, EACV ect, and ensure you dont get a code while operating the <a href="../../view/Library/ECU.html">ECU</a>. When the circuit is disabled the LED lights up red.
+<p />
+Some LED's also act as a indicator of what that circuit is doing. for example, the AC switch is wired to the AC switch input, but the LED is wired to the AC clutch relay output from the <a href="../../view/Library/ECU.html">ECU</a>.
+<p />
+<p />
+A row of varable resistor pots is added for the <a href="../../view/Library/ECT.html">ECT</a>, <a href="../../view/Library/IAT.html">IAT</a>, <a href="../../view/Library/RPM.html">RPM</a>, <a href="../../view/Library/VSS.html">VSS</a>, TPS, MAP, EGR control.  I simply turn these knobs to achive the desired signal level.  You will get a MIL if you go out of range or simply move the <a href="../../view/Library/ECT.html">ECT</a> to fast. ( <a href="../../view/Library/ECU.html">ECU</a> gets worried when the <a href="../../view/Library/ECT.html">ECT</a> goes from 0deg to 90 deg in less than a second :).
+<p />
+On the bottom Row of switches and LED's are the basics to the simulator, like Acc then Ignition. I have wired up the start signal as in the schematic witch will also force the dizzy motor to run. If the dizzy motor pot is set to the low end the dizzy wont turn, however when you wind up the dizzy motor a little you can "Start the simulator" with the start switch, the dizzy motor will run Just as if the car was running. If I turn the <a href="../../view/Library/RPM.html">RPM</a>'s to low ( 500 rpm ) the dizzy motor stalls :) just like an engine.  
+<p />
+A LED to show injector and ICM pulse has been added to show whats happening their. Two LED's make up the <a href="../../view/Library/IAB.html">IAB</a> signal and its polarity.  and the fuel pump LED that changes colour as the main relay is engaged. I added a Immo Led for later when I add an IMMO unit to the sim. 
+<p />
+The pannel was drawn up in ms paint and printed on normal paper. Then used as a template on a peice of plastic from a sign and once the holes where all drilled then glued to the plastic with a clear coat of contact paper. then all the LEDs and Switched go in.
+<p />
+<p />
+<strong>The <a href="../../view/Library/ECU.html">ECU</a> Interface</strong>
+<p />
+<p />
+<img src="../../../pub/Library/Sim/Engine_Sim018.jpg" alt="Engine_Sim018.jpg" />
+<p />
+<p />
+On the side of the case, I cut out 3 holes to suit D25 computer connectors. simply A B and D, just like on the OBDI ecu, and to keep things simple everyting is wired the same as the OBDI standard which helps when probing with a multimeter for sensor signal.  I than have made Harneses to suit OBDIIa, OBDIIb OBDO, and when I get some conectors OBDI ( rather than using a harness.) 
+<p />
+there are so many uses for this thing from fault finding faults on an <a href="../../view/Library/ECU.html">ECU</a> at the component level to testing code and PGMFI parts.
+<p />
+Im working on an electronic distriblutor simulator. but for now I like the noise of something widing up. ( adds the fun to reving up the sim ) :)
+<p />
+<p />
+<p />
+<p />
+<p />
+If anyone else has built such a thing as this here please post up some pics and Ideas.
+<p />
+discussion thread <a href="http://forum.pgmfi.org/viewtopic.php?p=83194#83194" target="_top">http://forum.pgmfi.org/viewtopic.php?p=83194#83194</a>
+<p />
+<p />
+cheers
+<p />
+John
+<p />
+ <strong>b16a2 - 27 Jan 2007</strong>   from downunder 
+<p />
+<p />
+<p />
+<p />
+<p />
+.
+<p />
+<p />
+<p />
+<p />
+<p />
+<p />
+%META:FILEATTACHMENT{name="gsrwiring1.gif" attr="" comment="OBDI  PGMFI schematic part 1" date="1169909722" path="W:\b16a2.kicks-ass.net\web\tech\gsrwiring1.gif" size="102200" user="b16a2" version="1.1"}%
+%META:FILEATTACHMENT{name="gsrwiring2.gif" attr="" comment="OBDI PGMFI schematic part 2" date="1169909751" path="W:\b16a2.kicks-ass.net\web\tech\gsrwiring2.gif" size="71437" user="b16a2" version="1.1"}%
+%META:FILEATTACHMENT{name="Engine_Sim001.jpg" attr="" comment="control panel of engine sim" date="1169909960" path="W:\b16a2.kicks-ass.net\web\tech\Engine_Sim001.jpg" size="39532" user="b16a2" version="1.1"}%
+%META:FILEATTACHMENT{name="Engine_Sim009.jpg" attr="" comment="internals of engine sim" date="1169910006" path="W:\b16a2.kicks-ass.net\web\tech\Engine_Sim009.jpg" size="35521" user="b16a2" version="1.1"}%
+%META:FILEATTACHMENT{name="Engine_Sim016.jpg" attr="" comment="front view of engine sim" date="1169910039" path="W:\b16a2.kicks-ass.net\web\tech\Engine_Sim016.jpg" size="29824" user="b16a2" version="1.1"}%
+%META:FILEATTACHMENT{name="Engine_Sim018.jpg" attr="" comment="side view of engine sim" date="1169910092" path="W:\b16a2.kicks-ass.net\web\tech\Engine_Sim018.jpg" size="44419" user="b16a2" version="1.1"}%</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/Sim.html">View</a>
+  |  <a href="Sim.html">Diffs</a>  | <a href="../../view/Library/Sim%3Frev=1.3.html">r1.3</a> | <a href="Sim%3Frev1=1.3&amp;rev2=1.2.html">&gt;</a> | <a href="../../view/Library/Sim%3Frev=1.2.html">r1.2</a> | <a href="Sim%3Frev1=1.2&amp;rev2=1.1.html">&gt;</a> | <a href="../../view/Library/Sim%3Frev=1.1.html">r1.1</a>
+  |  <a href="../../oops/Library/Sim%3Ftemplate=oopsmore&amp;param1=1.3&amp;param2=1.3.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.Sim">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#ee99878587ae9e89838887c0819c89d19d9b8c848b8d9ad3bab9878587cea88b8b8a8c8f8d85">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#2f5b40426f4b4648465b4e43495a5c46404140414346414a014c4042" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision r1.1 - 27 Jan 2007 - 15:30 GMT - Home.b16a2<br />
+    Revision r1.3 - 28 Jan 2007 - 12:26 GMT - Home.b16a2
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

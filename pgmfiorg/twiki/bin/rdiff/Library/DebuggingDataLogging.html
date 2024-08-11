@@ -1,0 +1,230 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . DebuggingDataLogging (r1.1 vs. r1.4)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/DebuggingDataLogging.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>DebuggingDataLogging</b> (r1.1 vs. r1.4)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/DebuggingDataLogging.html">DebuggingDataLogging</a></b>
+		(<a href="../../view/Library/DebuggingDataLogging%3Frev=r1.4.html">r1.4</a> - 03&nbsp;Jan&nbsp;2005 - Home.markolson)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Before you start, use an ohmmeter to ensure you have good solder joints and connectors on the <a href="../../view/Library/TTL.html">TTL</a>-level asynchronous serial port of the <a href="../../view/Library/ECU.html">ECU</a>.  Ensure there are no solder bridges between any of the CN2 pads.  Ensure CN2 Pin 1 has connectivity to ground.  Ensure CN2 Pin 2 has connectivity to the 66207 processor Pin 42, Rx Data.  Ensure CN2 Pin 3 has connectivity to any Vcc pin of any IC, I used Pin 28 of the PROM socket.  Ensure CN2 Pin 4 has connectivity to IC19 Pin 6, must be Tx Data.  As of 1/2/05, this is backwards from Nicolas Mailloux's document on <a href="http://www.ecucontrol.com/seria_ladapter.htm" target="_top">http://www.ecucontrol.com/seria_ladapter.htm</a>.  I will ping him to resolve this.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Before you start, use an ohmmeter to ensure you have good solder joints and connectors on the <a href="../../view/Library/TTL.html">TTL</a>-level asynchronous serial port of the <a href="../../view/Library/ECU.html">ECU</a>.  Ensure there are no solder bridges between any of the CN2 pads.  Ensure CN2 Pin 1 has connectivity to ground.  Ensure CN2 Pin 2 has connectivity to the 66207 processor Pin 42 (surface mount) or Pin 39 (DIP), Rx Data.  Ensure CN2 Pin 3 has connectivity to any Vcc pin of any IC, I used Pin 28 of the PROM socket.  Ensure CN2 Pin 4 has connectivity to IC19 Pin 6 (surface mount), this must be Tx Data.  As of 1/2/05, this is backwards from Nicolas Mailloux's document on <a href="http://www.ecucontrol.com/seria_ladapter.htm" target="_top">http://www.ecucontrol.com/seria_ladapter.htm</a>.  I will ping him to resolve this.</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/DebuggingDataLogging.html">DebuggingDataLogging</a></b>
+		(<a href="../../view/Library/DebuggingDataLogging%3Frev=r1.3.html">r1.3</a> - 02&nbsp;Jan&nbsp;2005 - Home.markolson)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Before you start, use an ohmmeter to ensure you have good solder joints and connectors on the <a href="../../view/Library/TTL.html">TTL</a>-level asynchronous serial port of the <a href="../../view/Library/ECU.html">ECU</a>.  Ensure there are no solder bridges between any of the CN2 pads.  Ensure CN2 Pin 1 has connectivity to any of the <a href="../../view/Library/ECU.html">ECU</a> harness connector ground pins.  I’ll post the pins that CN2 Pins 2 and 4 should have connectivity to later.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Before you start, use an ohmmeter to ensure you have good solder joints and connectors on the <a href="../../view/Library/TTL.html">TTL</a>-level asynchronous serial port of the <a href="../../view/Library/ECU.html">ECU</a>.  Ensure there are no solder bridges between any of the CN2 pads.  Ensure CN2 Pin 1 has connectivity to ground.  Ensure CN2 Pin 2 has connectivity to the 66207 processor Pin 42, Rx Data.  Ensure CN2 Pin 3 has connectivity to any Vcc pin of any IC, I used Pin 28 of the PROM socket.  Ensure CN2 Pin 4 has connectivity to IC19 Pin 6, must be Tx Data.  As of 1/2/05, this is backwards from Nicolas Mailloux's document on <a href="http://www.ecucontrol.com/seria_ladapter.htm" target="_top">http://www.ecucontrol.com/seria_ladapter.htm</a>.  I will ping him to resolve this.</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/DebuggingDataLogging.html">DebuggingDataLogging</a></b>
+		(<a href="../../view/Library/DebuggingDataLogging%3Frev=r1.2.html">r1.2</a> - 01&nbsp;Jan&nbsp;2005 - Home.markolson)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Using this version of lt’s datalogger, I haven't figured out how to save the captured data any other way than to highlight, copy and then paste the data from the capture window into a notepad app, then save the file and rename as a .csv file.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+To log data using lt’s datalogger, select the file name and folder you want it to save your datalog to and click save. Start datalogging. Every few minutes (400 samples of data) it will append that data to the file.  If you check the auto-save option. just start datalogging afterwards. It will dump to the C:\ directory (or to whatever directory you specify in the Communications tab). File will be named 01-01-05.csv (or whatever the current date is.) </td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/DebuggingDataLogging.html">DebuggingDataLogging</a></b>
+		(<a href="../../view/Library/DebuggingDataLogging%3Frev=r1.1.html">r1.1</a> - 01&nbsp;Jan&nbsp;2005 - Home.markolson)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="markolson" date="1104568260" format="1.0" version="1.1"}%
+%META:TOPICPARENT{name="DataLogging"}%
+Thanks to ltdannear for lots of help in getting this to work.
+<p />
+The following is a guideline for how to debug the datalogging circuit you have added to your <a href="../../view/Library/ECU.html">ECU</a>.  This guidline is based on the <a href="../../view/Library/SecondGenUsbToSerialConverter.html">USBMOD3 datalogging circuit</a> I integrated into my <a href="../../view/Library/JDM.html">JDM</a> P30-901 <a href="../../view/Library/ECU.html">ECU</a> (converted to manual).
+<p />
+Before you start, use an ohmmeter to ensure you have good solder joints and connectors on the <a href="../../view/Library/TTL.html">TTL</a>-level asynchronous serial port of the <a href="../../view/Library/ECU.html">ECU</a>.  Ensure there are no solder bridges between any of the CN2 pads.  Ensure CN2 Pin 1 has connectivity to any of the <a href="../../view/Library/ECU.html">ECU</a> harness connector ground pins.  I’ll post the pins that CN2 Pins 2 and 4 should have connectivity to later.
+<p />
+For my <a href="../../view/Library/ROM.html">ROM</a> Editor, I used “CROME Beta 1.1.0 w/ BoostTools+”, downloaded from the “Sticky: RELEASE: CROME Beta 1.1.0 w/ BoostTools+” topic in the CROME Forum, post dated: Sun Dec 26, 2004 5:51 am.  <a href="http://forum.pgmfi.org/viewtopic.php?p=30368#30368" target="_top">http://forum.pgmfi.org/viewtopic.php?p=30368#30368</a>
+<p />
+After you have installed CROME, go to the “Sticky: Quick Datalogger” topic in the CROME Forum.  Download and unzip John Cui's second quickDLRTP.js plugin file (post is dated: Mon Nov 22, 2004 1:24 pm, not the one in the first post).  <a href="http://forum.pgmfi.org/viewtopic.php?p=28536#28536" target="_top">http://forum.pgmfi.org/viewtopic.php?p=28536#28536</a>  Go into Crome plugin manager, select the built-in quickDLRTP.js entry, and click on delete to get rid of it. Click on "Install New Plugin" and point to the directory you put quickDLRTP.js into, and finish adding it into Crome. This replaces the DT5 code that gets put into the PROM by CROME Beta 1.1.o w/ BoostTools+. 
+<p />
+Start CROME.  Open the .bin you want to use (I used a stock P30-203). Under Plugins, Enhancements, select "Remove Checksum Routine" to remove the checksum. Under Plugin, Enhancements, select "Quick Datalogger +RTP" to add in the DT5 datalogger code. Since I am running a <a href="../../view/Library/JDM.html">JDM</a> P30, I need to select the options tab, uncheck the Disable Knock Sensor box, and check the Disable ELD, Disable PA Sensor and Disable Injector Test boxes. Save the binary into a new .bin file.  The DT5 datalogging code automatically sets the <a href="../../view/Library/ECU.html">ECU</a> communications to 38,400 baud, 8 bits, 1 stop bit, no parity, no flow control.
+<p />
+Burn the .bin into a PROM, and put it in the <a href="../../view/Library/ECU.html">ECU</a>.  BTW, just to be safe, make sure you power down the <a href="../../view/Library/ECU.html">ECU</a> before swapping proms.  If it’s on the bench, turn off the power supply.  If it is in the car, pull the two <a href="../../view/Library/ECU.html">ECU</a> fuses, just to be safe.
+<p />
+The <a href="../../view/Library/ECU.html">ECU</a> only needs to be powered up to test the link. I tested mine on the bench, with just the power and ground pins hooked up, an LED and resistor on the <a href="../../view/Library/CEL.html">CEL</a> signal and a switch on the Service Check Connector circuit.  Here’s a picture of my bench setup,
+<img src="../../../pub/Library/DebuggingDataLogging/BenchSetUpA.JPG" alt="BenchSetUpA.JPG"  width="800" height="600"  /> 
+and here’s one of my bench harness.
+<img src="../../../pub/Library/DebuggingDataLogging/BenchHarnessA.JPG" alt="BenchSetUpA.JPG"  width="800" height="600"  /> 
+  Of course, on this bench, the data coming from the <a href="../../view/Library/ECU.html">ECU</a> is garbage, because nothing is hooked up.  I also see a solid <a href="../../view/Library/CEL.html">CEL</a> with this setup (no solid <a href="../../view/Library/CEL.html">CEL</a> in the car), but the datalogging still will work.  You can do the same thing in the car by turning the ignition on without starting the engine, but the data will report whatever the sensors are reading without the engine running. If the engine is running, you'll get changing data.
+<p />
+Make sure your USBMOD3 driver is set to 38,400 baud, 8 bits per character, 1 stop bit, no parity, no flow control. You set this via Device Manager under system in the Control Panel.
+<p />
+I really like ltdannear's new open source datalogger. I am using version 20 from the <a href="../../view/Library/OBD.html">OBD</a>1 Forum, in the "We need some open source datalogging." topic. It is from the 9th page, and the post is dated: Sat Dec 18, 2004 4:19 pm.  <a href="http://forum.pgmfi.org/viewtopic.php?p=30016#30016" target="_top">http://forum.pgmfi.org/viewtopic.php?p=30016#30016</a>
+<p />
+After you’ve started the datalogger, select the communications tab to set the com port and parameters. Select the Data Capture tab and click on the Data Capture button.  The Data Capture window will start to fill with data after you select the Live Data Tab, and click on "Start".  At that point, the datalogger starts sending commands to the <a href="../../view/Library/ECU.html">ECU</a> and the <a href="../../view/Library/ECU.html">ECU</a> sends data back.  I hooked the lower trace of my scope to the Rx Data signal of the <a href="../../view/Library/ECU.html">ECU</a> (CN2 Pin 4) and the upper trace of my scope to the Tx Data signal if the <a href="../../view/Library/ECU.html">ECU</a> (CN2 Pin 2).  I triggered off the lower trace, negative slope.  Here is the first picture I took of the scope,
+<img src="../../../pub/Library/DebuggingDataLogging/Datalogging1A.JPG" alt="Datalogging1A.JPG"  width="800" height="600"  />
+and here is the second.
+<img src="../../../pub/Library/DebuggingDataLogging/Datalogging2A.JPG" alt="Datalogging2A.JPG"  width="800" height="600"  />
+While you are looking at live data coming from the <a href="../../view/Library/ECU.html">ECU</a>, you can go to the "Gauges" menu item and select the "Display gauges 800x600" item. I haven't tested the 640x480 display. With the live data started, you can select "Activate Gauges" and the gauges will work.  BTW, I triple, triple checked the Tx Data and Rx Data wiring to ensure I got the crossover right between the <a href="../../view/Library/ECU.html">ECU</a> and the USBMOD3.  If you are not able to see datalogging after you have started it, the first thing to do is swap the Tx Data and Rx Data pins in the connector.  
+<p />
+Using this version of lt’s datalogger, I haven't figured out how to save the captured data any other way than to highlight, copy and then paste the data from the capture window into a notepad app, then save the file and rename as a .csv file.
+<p />
+If you use John Cui’s old Cuddle datalogger (Cuddle Forum, Topic: "ATTN: John Cui your site is down (temporary download here)", post dated: Fri Oct 03, 2003 3:22 pm) <a href="http://forum.pgmfi.org/viewtopic.php?p=20462#20462" target="_top">http://forum.pgmfi.org/viewtopic.php?p=20462#20462</a>, make sure you select the correct port and set the baud rate to 43,800 baud. Once the gauges come up on the PC screen, nothing happens until you click on the red button below the A/F gauge and the Speedometer. At that point, the button turns green and Cuddle starts sending DT5 commands to the <a href="../../view/Library/ECU.html">ECU</a>, and the <a href="../../view/Library/ECU.html">ECU</a> starts ending data back, and the gauges move if the car is running. You can click on the "Start Datalogging" button to start logging the data for saving to a file. 
+<p />
+The new Cuddle gauges, Duddle.beta.0.0.1 (The first Cuddle download in the Cuddle Forum, RELEASE topic, Dated: Mon Oct 25, 2004 9:02 pm) works ok.  <a href="http://forum.pgmfi.org/viewtopic.php?p=27027#27027" target="_top">http://forum.pgmfi.org/viewtopic.php?p=27027#27027</a>  You need to set the communications port and parameters in the associated .ini file before you start it. Just click on the start/stop button and it starts sending DT5 commands to the <a href="../../view/Library/ECU.html">ECU</a>, and the <a href="../../view/Library/ECU.html">ECU</a> starts ending data back, and the gauges move if the car is running. 
+<p />
+I was getting weird results from Uberdata 1.7, <a href="http://www.ecimulti.org/uberdata/" target="_top">http://www.ecimulti.org/uberdata/</a> until I figured out that I need to open their P30 import only .bin. Then I click on the Datalogging tab.  Check the sensors you want to log, then go to the "Select O2" dropdown box to select your O2 sensor. I needed to select the stock O2 sensor. Finally, after you have everything else is set up, go to the "Select Port" dropdown box to select the proper port. Selecting the port starts Uberdata sending commands to the <a href="../../view/Library/ECU.html">ECU</a>, and the <a href="../../view/Library/ECU.html">ECU</a> starts sending data back. There are no gauges I can find.
+<p />
+I hope this helps you to debug your datalogging setup.  Feel free to add your input.
+-- markolson - 01 Jan 2005
+<p />
+<p />
+%META:FILEATTACHMENT{name="BenchHarnessA.JPG" attr="" comment="Bench test harness: Power, Ground, <a href="../../view/Library/CEL.html">CEL</a>, SCS Switch" date="1104567497" path="C:\Documents and Settings\mwolson\My Documents\Chron\HondaProject\DataLogging\BenchHarnessA.JPG" size="132604" user="markolson" version="1.1"}%
+%META:FILEATTACHMENT{name="BenchSetUpA.JPG" attr="" comment="Bench Setup: Test Harness, Power Supply, PC, Scope" date="1104567671" path="C:\Documents and Settings\mwolson\My Documents\Chron\HondaProject\DataLogging\BenchSetUpA.JPG" size="157732" user="markolson" version="1.1"}%
+%META:FILEATTACHMENT{name="Datalogging1A.JPG" attr="" comment="Scope shot of working datalogging signals" date="1104568039" path="C:\Documents and Settings\mwolson\My Documents\Chron\HondaProject\DataLogging\Datalogging1A.JPG" size="101087" user="markolson" version="1.1"}%
+%META:FILEATTACHMENT{name="Datalogging2A.JPG" attr="" comment="Scope shot with longer exposure" date="1104568235" path="C:\Documents and Settings\mwolson\My Documents\Chron\HondaProject\DataLogging\Datalogging2A.JPG" size="103893" user="markolson" version="1.1"}%</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/DebuggingDataLogging.html">View</a>
+  |  <a href="DebuggingDataLogging.html">Diffs</a>  | <a href="../../view/Library/DebuggingDataLogging%3Frev=1.4.html">r1.4</a> | <a href="DebuggingDataLogging%3Frev1=1.4&amp;rev2=1.3.html">&gt;</a> | <a href="../../view/Library/DebuggingDataLogging%3Frev=1.3.html">r1.3</a> | <a href="DebuggingDataLogging%3Frev1=1.3&amp;rev2=1.2.html">&gt;</a> | <a href="../../view/Library/DebuggingDataLogging%3Frev=1.2.html">r1.2</a>
+  |  <a href="../../oops/Library/DebuggingDataLogging%3Ftemplate=oopsmore&amp;param1=1.4&amp;param2=1.4.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.DebuggingDataLogging">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#07706e6c6e4777606a616e29687560387472656d6264733a53506e6c6e27416262636566646c">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#1e6a71735e7a7779776a7f72786b6d77717071707277707b307d7173" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision r1.1 - 01 Jan 2005 - 08:31 GMT - Home.markolson<br />
+    Revision r1.4 - 03 Jan 2005 - 05:58 GMT - Home.markolson
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

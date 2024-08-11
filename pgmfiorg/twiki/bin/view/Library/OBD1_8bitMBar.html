@@ -1,0 +1,341 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . OBD1_8bitMBar   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="OBD1_8bitMBar.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>OBD1_8bitMBar</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+Assuming that the stock map sensor's maximum reading is 1764 Mbar, the formula to convert MAP byte value is ((1764 / 255) * [[OBD1]] _8bitMBar / 2).  When the rom's map value has been [[uncorked]], simply remove the last division which results in the formula ((1764 / 255) * [[OBD1]] _8bitMbar).
+
+<hr>
+
+
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>New Page 1</title>
+</head>
+
+<body>
+<p />
+<p align="center"><b><font size="5">OBD1 Honda Map Sensor Information</font></b></p>
+<p align="center" style="line-height: 100%"><img border="0" src="../../../pub/Library/MapSensor/honda_stock_map_volt.jpg" width="353" height="236"></p>
+<p align="center" style="line-height: 100%"><br>
+<img border="0" src="../../../pub/Library/OBD1_8bitMBar/mapsensor.jpg" width="600" height="370"></p>
+<table border="1" width="100%">
+  <tr>
+    <td width="100%">
+      <p align="center"><b>Stock Map:</b>5/255*((Raw/2)+Fuel Cut)<br>
+      <b>Boost Map</b>: volts=(5/255)*(Raw+fuelcut)<br>
+      **Fuel cut stock is 24 and editable at 0x4dcc**</td>
+  </tr>
+</table>
+<table border="1" width="100%">
+  <tr>
+    <td width="50%">
+      <p style="line-height: 100%" align="center">
+2.85 V=0<br>
+      "1.0V=20"<br>
+      (20-0)/(2.85-1)=m<br>
+      (y-0)=20/1.85(x-2.85)<br>
+      inHG=20(volts)/1.85-30.81</td>
+    <td width="50%">
+      <p style="line-height: 100%" align="center">
+2.85V=1013mbar<br>
+      "1.0 V=336mbar"<br>
+      (1013-336)/(2.85-1)=m<br>
+      (y-1013)=<font FACE="Arial" SIZE="2">365.9</font>(x-2.85)<br>
+      mbar=<font FACE="Arial" SIZE="2">365.9</font>(volts)-29.9</td>
+  </tr>
+</table>
+<p align="center">
+<br>
+<table BORDER="1" CELLSPACING="0" BORDERCOLOR="#000000" CELLPADDING="2" WIDTH="470">
+  <tr>
+    <td WIDTH="11%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">Raw</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">0</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">24</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">48</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">80</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">128</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">176</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">208</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">224</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">240</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">256</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="11%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">Volt</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">0.471</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">0.706</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">0.941</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">1.255</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">1.725</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">2.196</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">2.51</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">2.667</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">2.824</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">2.98</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="11%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">mbar</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">142.3</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">228.4</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">314.5</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">429.3</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">601.5</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">773.6</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">888.4</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">945.8</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">1003</font></td>
+    <td WIDTH="9%" HEIGHT="16"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">1061</font></td>
+  </tr>
+</table>
+<center>
+<p style="line-height: 100%" align="center">&nbsp;</p>
+<table BORDER="1" CELLSPACING="0" BORDERCOLOR="#000000" CELLPADDING="2" WIDTH="470">
+  <tr>
+    <td WIDTH="11%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">Raw</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">0</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">12</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">24</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">40</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">64</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">88</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">104</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">112</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">120</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">128</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="11%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">Volt</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">0.471</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">0.706</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">0.941</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">1.255</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">1.725</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">2.196</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">2.51</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">2.667</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">2.824</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">2.98</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="11%" HEIGHT="16" align="center"><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">mbar</font></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><b><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">142.3</font></b></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><b><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">228.4</font></b></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><b><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">314.5</font></b></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><b><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">429.3</font></b></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><b><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">601.5</font></b></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><b><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">773.6</font></b></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><b><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">888.4</font></b></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><b><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">945.8</font></b></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><b><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">1003</font></b></td>
+    <td WIDTH="9%" HEIGHT="16" align="center"><b><font FACE="Arial" SIZE="2">
+      <p ALIGN="center">1061</font></b></td>
+  </tr>
+</table>
+</center>
+</body>
+<p />
+</html>
+<p />
+Raw values shown above are for a P72/75.  Most if not all <a href="OBD.html">OBD</a>1 <a href="ECU.html">ECU</a>'s follow this rule though so its just a matter of plugging in different raw values.  Feel free to edit anything that is deemed incorrect.
+<p />
+-- bigwig - 21 May 2005
+<p />
+<p />
+<font size = "-1"><center>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th align="center" bgcolor="#D0D1E0"> <strong><span style='background : #FFFFCE;'><font color="#0000FF">Attachment</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FileAttachment?topicparent=Library.OBD1_8bitMBar">?</a>:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Modify:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Size:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Date:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Who:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Comment:</strong> </th></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/OBD1_8bitMBar/mapsensor.jpg">mapsensor.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/OBD1_8bitMBar?filename=mapsensor.jpg&amp;revInfo=1">mod</a>     </td><td>  10674  </td><td>  21 May 2005 - 03:46  </td><td>  bigwig  </td><td>  &nbsp;  </td></tr>
+</table>
+<p />
+</font></center>
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.1 - 21 May 2005 - 03:50 GMT - bigwig 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/OBD1_8bitMBar?t=1194412982"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/OBD1_8bitMBar">Attach</a>
+   |  <a href="../../rdiff/Library/OBD1_8bitMBar.html">History</a>
+   |  <a href="../../oops/Library/OBD1_8bitMBar%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.OBD1_8bitMBar">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#90e7f9fbf9d0e0f7fdf6f9beffe2f7afe3e5f2faf5f3e4adc4c7f9fbf9b0d6f5f5f4f2f1f3fb">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#90e4fffdd0f4f9f7f9e4f1fcf6e5e3f9fffefffefcf9fef5bef3fffd" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

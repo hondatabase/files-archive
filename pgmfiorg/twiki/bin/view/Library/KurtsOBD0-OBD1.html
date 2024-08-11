@@ -1,0 +1,325 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . KurtsOBD0-OBD1   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="KurtsOBD0-OBD1.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>KurtsOBD0-OBD1</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+<strong><em>First attempt to post this <a href="OBD1.html">OBD1</a>  conversion write-up on wiki.pgmfi.org. Some sections need revision still and they are in italics/bold print. Please send any suggestions to me at <a href="/cdn-cgi/l/email-protection#73180601072c0441434340331b1c071e121a1f5d101c1e"><span class="__cf_email__" data-cfemail="046f7176705b7336343437446c6b7069656d682a676b69">[email&#160;protected]</span></a> .</em></strong>
+<p />
+<h1><a name="D16Z6_installation_and_OBD0_88_9"> </a> D16Z6 installation and <a href="OBD0.html">OBD0</a> (88-91) to <a href="OBD1.html">OBD1</a>  (92-95) wiring conversion - By Kurt_W </h1>
+<p />
+<h3><a name="Contributions_by_StorminMatt_and"> </a> Contributions by ~StorminMatt and Noahk (of CRX Resource) </h3>
+<h3> Original April 2001 version reviewed by Lynne R </h3>
+<h3> Slightly improved starting Nov. 2 2003 </h3>
+<p />
+This conversion is to an 89 CRX Si though it can also be done to any 4th generation Civic or 2nd generation CRX. It should be also be noted that this conversion can be done using any of the newer D-series Honda engines even though this particular write-up is specifically for a D16Z6 installation. The newer D16Y8 is also a suitable alternative to the D16Z6. I personally have not done a D16Y8 swap, so all particulars are not known to me therefore no information about swapping a Y8 will be included in this write-up (at this time.)
+<p />
+Any references to sources for parts are simply for reference. The writers and contributors do not necessarily endorse this institutions.
+<p />
+List of the parts used/modified
+<p />
+#One slightly used 89 CRX Si
+#93 D16Z6 (also known as Z6) 1.6L <a href="SOHC.html">SOHC</a> VTEC
+#Partial engine harness from the 93 D16Z6 and harness parts (specifically <a href="ECU.html">ECU</a> plugs) from a 92 Civic DX (automatic)
+#95 Civic EX P28 <a href="ECU.html">ECU</a> (manual)
+#92 Civic Si distributor
+# #4107 fuel injectors years unknown (more on this later)
+# 1984-1991 Chiltons Honda Civic/CRX and 1992-1995 Haynes Honda Civic/Del Sol manual or suitable Helms/Honda shop manuals
+<p />
+<h2><a name="OBD0_to_OBD1_conversion"> </a> <a href="OBD.html">OBD</a>0 to <a href="OBD1.html">OBD1</a>  conversion </h2>
+<p />
+This was interesting, ordealyes, ordeal was the correct word. Over all, the process took about 15 hours. Several hours were spent looking over the instructions received from ~StorminMatt for the process making sure theyre correct (listed below). The engine harness had to be modified and either the dash harness modified or a converter built to allow the <a href="OBD1.html">OBD1</a>  <a href="ECU.html">ECU</a> to be plugged into the 89 dash harness.
+<p />
+UPDATE: Since I originally wrote this write-up, the <a href="OBD1.html">OBD1</a>  conversion has become much more popular therefore pre-built conversion harnesses are available. Most are home built by private individuals, but I dont know of anyone in particular that makes them.
+<p />
+Engine Harness Conversion
+It is necessary to convert the stock harness from the car to which the swap is being done. The <a href="OBD1.html">OBD1</a>  engine harness will not plug into the <a href="OBD0.html">OBD0</a> engine harness due to incompatible plugs. It may be possible to change all the plugs (by removing the gray plugs from the <a href="OBD1.html">OBD1</a>  harness and replacing the white ones with them on the <a href="OBD0.html">OBD0</a> harness) and use the complete <a href="OBD1.html">OBD1</a>  harness. This was not attempted due to not having the complete <a href="OBD1.html">OBD1</a>  to work with.
+<p />
+Note: Removing the engine harness is recommended to make it easier to modify. Wire colors will be listed in this manner red/grn (indicates red wire with a green stripe). Many wires can be pulled out of plugs by pushing in the front with a small screwdriver for example while giving a gentle tug on the back of the wire.
+<p />
+1.   Injection Resistor: There are two ways to deal with the injection resistor and fuel injectors:
+<p />
+<ul>
+<li> Retain the original <a href="MPFI.html">MPFI</a> fuel injectors and injection resistor. This is the simplest way to go. (Thanks Noahk)
+</li>
+<li> Convert to the newer injectors. To do this, pull the yel/blk wire from the green plug on the injection resistor. It will be relocated into an open space in a gray 8 wire plug from the <a href="OBD1.html">OBD1</a>  harness. This <a href="OBD1.html">OBD1</a>  plug has 8 yel/blk wires leading from it and has a gray cap on it. Removing the cap shows that it has an integrated metal clip that connects all the yel/blk wires together.
+</li>
+</ul>
+<p />
+2.   Injector wiring:
+<ul>
+<li> When retaining the original <a href="MPFI.html">MPFI</a> injectors and injection resistor, nothing needs to be done.
+</li>
+<li> To use the <a href="OBD1.html">OBD1</a>  injectors, the injector plugs from the <a href="OBD1.html">OBD1</a>  harness must be used. Each plug has a different color line (brown, red, light blue and plain yellow = 1, 2,3,4 injectors respectively) and a yel/blk wire leading from it. The yel/blk wire from each of the injector plugs leads back to the 8 wire plug mentioned in step #1. The <a href="OBD0.html">OBD0</a> injector plugs must be cut off and the <a href="OBD1.html">OBD1</a>  injector plugs soldered on. Match the injector colors to each other, as they are the same on both the <a href="OBD0.html">OBD0</a> and <a href="OBD1.html">OBD1</a>  harnesses. Note: On the <a href="OBD0.html">OBD0</a> harness, the wire leading from the injector plug to the injector resistor is red/blk. Dont worry about these wires as they only connect the <a href="OBD0.html">OBD0</a> injector plug to the injector resistor.
+</li>
+</ul>
+<p />
+3. Oxygen Sensor (O2): A 4-wire O2 sensor must be added. To do this, 3 lines must be added to the harness. One line runs from the O2 sensor plug to the 8 wire plug mentioned in step #1. This wire is yel/blk. If you did not use the 8 wire plug, i.e. did not convert to <a href="OBD1.html">OBD1</a>  injectors, you will have to find another power source for the O2 sensor. The second line is a grn/wht line that runs from the O2 sensor plug to any location on the grn/wht wire on the <a href="OBD0.html">OBD0</a> harness. The third line is an org/blk line that leads to the <a href="ECU.html">ECU</a>. The final wire is white and serves the same purpose on both the <a href="OBD0.html">OBD0</a> and <a href="OBD1.html">OBD1</a>  cars. This white wire is the O2 sensor wire itself. On the <a href="OBD0.html">OBD0</a> engine harness, its a single wire and has a rather large plug on it. This plug must be cut off and the white wire for the <a href="OBD1.html">OBD1</a>  plug soldered on. ''This section has been deems unclear by some readers, but useful feedback on how to make it more clear has not been forthcoming....if anyone has any suggestions...''
+<p />
+4. Distributor Rewiring: There are two plugs to be concerned with, a 7 wire and a 2 wire plug. The lines for the distributors 7 wire plug can be pulled on both the engine harnesses. Pull the gray <a href="OBD1.html">OBD1</a>  7 wire plug for the distributor off the <a href="OBD1.html">OBD1</a>  engine harness and the replace the 7 wire plug on the <a href="OBD0.html">OBD0</a> harness with it. Make sure to match the wires coming from the distributor with the matching colors being put into the 7 wire plug. As for the 2 wire plug, the plug has to be cut off the <a href="OBD0.html">OBD0</a> harness and <a href="OBD1.html">OBD1</a>  plug spliced on.
+<p />
+5. VTEC: A wire must be added to the harness for the VTEC activation wire. Its a grn/yel 1 wire plug on the <a href="OBD1.html">OBD1</a>  harness. This wire must be run into the car and attached to the <a href="ECU.html">ECU</a>.
+<p />
+6. VTEC Oil Pressure Sensor: 2 wire plug, one wire is black and the other blue/blk. The black wire must be run to a ground and the blue/blk wire runs to the <a href="ECU.html">ECU</a>.
+<p />
+Thats it for the engine harness conversion.
+<p />
+<h3> Dash/In Car Harness conversion </h3>
+<p />
+This is the fun stuff. There are two ways to do this.
+<p />
+Note: Using 92 Civic <a href="ECU.html">ECU</a> (<a href="OBD.html">OBD</a>1) plugs is best for this conversion because it has all the necessary wires for the Z6 <a href="ECU.html">ECU</a>. If 92 <a href="ECU.html">ECU</a> plugs cant be found try to get the plugs from a Si or EX, otherwise additional wires will need to be added. If these instructions are used for an <a href="OBD1.html">OBD1</a>  B-series, a knock sensor wire will also need to be added to the plugs (unless <a href="ECU.html">ECU</a> plugs from an <a href="OBD1.html">OBD1</a>  Del Sol VTEC are used).
+<p />
+1. Build a conversion harness using the male <a href="ECU.html">ECU</a> plugs from a 92 Civic or similar and the female plugs from an <a href="OBD0.html">OBD0</a> <a href="ECU.html">ECU</a>. To get the plugs off the <a href="OBD0.html">OBD0</a> <a href="ECU.html">ECU</a>, unsolder or if necessary cut the <a href="ECU.html">ECU</a> board with a Dremel tool equipped with a cutoff blade. After the plugs are taken out and cleaned up, the wires from the <a href="OBD1.html">OBD1</a>  <a href="ECU.html">ECU</a> plugs can be soldered onto the proper pins from the <a href="OBD0.html">OBD0</a> plugs. See below for proper combinations.
+<p />
+In addition to matching the wires, 3 wires will have to be routed into the harness to meet up with the <a href="OBD1.html">OBD1</a>  plugs. These wires are the VTEC wire, the VTEC oil pressure wire and an O2 sensor wire.
+<p />
+This is more easily accomplished if done using the a pre-built <a href="OBD0.html">OBD0</a> -OBD1 conversion harness as mentioned about in UPDATE
+<p />
+OR
+<p />
+2. Cut off the <a href="OBD0.html">OBD0</a> <a href="ECU.html">ECU</a> wire plugs and splice the wires from the <a href="OBD1.html">OBD1</a>  <a href="ECU.html">ECU</a> plugs to the wires from the <a href="OBD0.html">OBD0</a> harness as listed below. You will also have to attach the 3 extra wires mentioned above in method #1.
+<p />
+OR
+<p />
+3. Unpin all the wires from the <a href="OBD0.html">OBD0</a> connectors.  The majority of them are the same size as the "small" <a href="OBD1.html">OBD1</a>  pins and can simply be inserted into the appropriate spot.  The "large" <a href="OBD1.html">OBD1</a>  pins will need to be crimped or spliced on. (Dave's note)
+<p />
+Here is the information on the wiring the <a href="OBD1.html">OBD1</a>  <a href="ECU.html">ECU</a>. Its originally by ~StorminMatt (thanks Matt) from CRX Resource. Several additions have been made to the listing in the hope of making it more helpful and easy to understand, however, his post has been mostly left intact because he explained it well.
+<p />
+A number of people have asked me how to change the 1988-1991 <a href="ECU.html">ECU</a> plugs to 1992-1995 plugs in order to use a 1992-1995 <a href="ECU.html">ECU</a> for any one of a number of applications (<a href="SOHC.html">SOHC</a> VTEC, 2G B16A, 1992+ B18A/B18B, B17A, B18C, etc.). I figured it would be best to just make one post with this information rather than having to email everybody separately with this information. There are a couple of things to remember here. I personally prefer the numbering system where Honda numbers the pins across rather than the zig-zag system. But I realize a lot of people may prefer or are used to the zig-zag system. So for each pin (on each plug style), I list two locations for the same pin. The first is given by numbering across. The second (in parenthesis) is by the zig-zag numbering (I hope it is correct). In case I made any errors in conversion AND to make the process of changing the plugs over more goof proof, I also give the color of the wire on the 1992-1995 plug and 1988-1991 plug for the given pins. This should give you a better idea of whether you are connecting the wires together correctly. Also, the first set of pin numbers and wire colors are all on the 1992-1995 plugs and the second set of pin numbers in brackets are the 1988-1991 plugs.
+<p />
+<pre>
+A plug (1992-1995 plug)
+A1 (A1) ----> A1 (A1)   Injector 1
+brn --------> brn
+A2 (A3) ----> A2 (A3)   Injector 2
+red --------> red
+A3 (A5) ----> A3 (A5)   Injector 3
+lt. blu ----> lt. blu
+A4 (A7) ----> A14 (A12)   Main Relay
+grn/yel ----> grn/blk
+A5 (A9) ----> A5 (A11)   EACV
+grn/wht ----> blu/yel
+A7 (A13) ---> B13 (B6)   Check Engine Light
+grn/org ----> grn/org
+A8 (A15) ---> B2 (B3)   A/C Clutch Relay
+blk/red ----> yel
+A11 (A21) --> B8 (B15)   Ignition Unit Signal
+red/grn ----> wht
+A12 (A23) --> A9 (A2)   Main Relay
+blk --------> blk
+A13 (A25) --> A6 (A13)   Main Relay
+yel/blk ----> yel/blk
+A14 (A2) ---> A4 (A7)   Injector 4
+yel --------> yel
+A15 (A4) ---> (VTEC)   grn/yel on the engine harness, your choice elsewhere
+org/wht ----> (your choice)
+A16 (A6) ---> (O2S heater)   to org/blk on engine harness, your choice elsewhere
+org/blk ----> (your choice)
+A17 (A8) ---> A15 (A14)   Main Relay
+grn/yel ----> grn/blk
+A19 (A12) --> B12 (B4)   Radiator Fan Relay
+yel/grn ----> yel/grn
+A21 (A16) --> B3 (B5)   Alternator
+wht/yel ----> wht/yel
+A23 (A20) --> A11 (A6)   Purge Control Solenoid
+red --------> grn
+A24 (A22) --> B9 (B17)   Ignitor Unit
+red/grn --------> wht
+A25 (A24) --> A10 (A4)   Ground
+blk --------> blk
+A26 (A26) --> A17 (A18)   Multiground
+blk/red ----> blk/red
+
+B Plug (1992-1995 plug)
+B1 (B1) ----> A7 (A15)   Main Relay
+yel/blk ----> yel/blk
+B3 (B5) ----> B14 (B8)   A/C Switch
+blu/red ----> blu/red
+B5 (B9) ----> B7 (B13)   Main Relay
+blu/wht ----> blu/wht
+B6 (B11) ---> B15 (B10) *
+org --------> org
+B7 (B13) ---> C2 (C3) *
+org/blu ----> org/blu
+B8 (B15) ---> C1 (C1) *
+blu/grn ----> blu/grn
+B9 (B2) ----> A16 (A16)   Multiground
+brn/blk ----> brn/blk
+B13 (B10) --> B18 (B16)   Vehicle Speed Sensor
+yel/blu ----> yel/red
+B14 (B12) --> B16 (B12) *
+wht --------> wht
+B15 (B14) --> C10 (C4) *
+wht/blu ----> wht/blu
+B16 (B16) --> C9 (C2) *
+blu/yel ----> blu/yel
+
+D Plug (1992-1995 Plug - No C plug on 1992-1995 Plugs)
+D1 (D1) ----> B1 (B1)   Hazard
+wht/blu ----> wht/grn
+D2 (D3) ----> (Knock Sensor)   B-series engines only!
+red/blu ----> (your choice shielded wire)
+D5 (D9) ----> B17 (B14)   Alternator
+pnk --------> blu
+D6 (D11) ---> C4 (C7)   Throttle Position Sensor
+red/blu(or pastel green)  ----> red/blu
+D7 (D13) ---> C11 (C6)   Coolant Temperature Sensor
+red/wht ----> red/wht
+D8 (D15) ---> C3 (C5)   Intake temperature
+red/yel ----> red/yel
+D9 (D17) ---> C6 (C11)   Map Sensor
+wht --------> wht
+D10 (D19) --> C8 (C15)   Map Sensor
+yel/grn ----> yel/red
+D11 (D21) --> C15 (C14)   Map Sensor
+grn/blu ----> grn/wht
+D12 (D2) ---> C13 (C10)   Brake Switch
+grn/wht ----> grn/wht
+D13 (D4) ---> B20 (B20)   Service Connector
+brn --------> brn
+D14 (D6) ---> (VTEC Pressure Switch)   Blue/blk wire in engine harness
+org/blu ----> (your choice)
+D16 (D10) --> B10 (B19)   Electronic Load Sensor
+grn/red ----> grn/red
+D18 (D14) --> C16 (C16)   O2 Sensor
+wht --------> wht
+D21 (D20) --> C7 (C13)   Throttle Position Sensor
+yel/wht ----> yel/wht
+D22 (D22) --> C14 (C12)   Coolant temp/TPS/O2/etcground kind of thing
+grn/wht ----> grn/wht
+</pre>
+<p />
+The pins marked * connect to the distributor sensors (crank angle, <a href="TDC.html">TDC</a>, and CYP) and while 1988-1991 and 1992-1995 cars both use the same color wires collectively for these sensors (org, org/blu, wht, wht/blu, blu/grn, blu/yel), wires of a given color do NOT necessarily connect to the same sensors in the 1992-1995 cars as in 1988-1991 cars. So if you check the Hasport pin-out, the connections I gave will be incorrect. However, its actually easier to just match up like colors. If you do this, just remember to match the proper colors on the distributor plug as well. In other words, the org wire on the 1988-1991 engine harness goes into the same spot on the 1992-1995 distributor plug that the org wire went to on the 1992-1995 engine harness.
+Just don't confuse the fat white wire with the thin white wire on the distributor plug of the 1988-1991 engine harness. The fat white wire on the 1988-1991 harness goes where the fat yel/grn wire on the 1992-1995 harness went (on the 1992-1995 distributor plug). But the thin white wire on the 1988-1991 harness goes where the thin white wire on the 1992-1995 harness went. <strong><em>This section needs further revisement for clarity, I will get to this before long...(KEW)</em></strong>
+<p />
+To clarify the information on the distributor wiring, match the like color wires at the distributor plugs (for example: org with org) and at the <a href="ECU.html">ECU</a>. In other words, the same color wire should go from distributor clear through to the <a href="ECU.html">ECU</a>.
+<p />
+<h3> Other assorted necessary items </h3>
+<p />
+Fuel injectors:   Model #4106 and #4107 fuel injectors were available for this swap from personal stock. The fuel injectors actually used were the #4107s, however its not known what year these injectors were (either 93 or 94) as injectors from both years were available. The #4107 injectors were used because they worked with the 95 P28 <a href="ECU.html">ECU</a> that was used and the #4106 injectors didnt though it isnt known why the #4106s didnt work. The utmost effort should be made to get injectors that match the P28 <a href="ECU.html">ECU</a> to be used.
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.1 - 19 Feb 2004 - 22:01 GMT - guest 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/KurtsOBD0-OBD1?t=1194412224"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/KurtsOBD0-OBD1">Attach</a>
+   |  <a href="../../rdiff/Library/KurtsOBD0-OBD1.html">History</a>
+   |  <a href="../../oops/Library/KurtsOBD0-OBD1%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.KurtsOBD0-OBD1">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#6f180604062f1f0802090641001d08501c1a0d050a0c1b523b380604064f290a0a0b0d0e0c04">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#1e6a71735e7a7779776a7f72786b6d77717071707277707b307d7173" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

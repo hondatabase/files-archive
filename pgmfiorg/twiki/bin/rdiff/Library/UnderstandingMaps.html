@@ -1,0 +1,151 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . UnderstandingMaps ( vs. r1.1)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/UnderstandingMaps.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>UnderstandingMaps</b> ( vs. r1.1)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/UnderstandingMaps.html">UnderstandingMaps</a></b>
+		(<a href="../../view/Library/UnderstandingMaps%3Frev=r1.1.html">r1.1</a> - 29&nbsp;Mar&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="blundar" date="1080583318" format="1.0" version="1.1"}%
+<h2> Understanding Fuel and Ignition Maps. </h2>
+<p />
+<p />
+<p />
+<strong><em>Fuel Maps</em></strong>
+<p />
+Below around 80% throttle, the <a href="../../view/Library/ECU.html">ECU</a> uses the oxygen sensor in conjunction with the fuel tables to calculate how much fuel is needed for your engine. This is called "closed loop" mode because the <a href="../../view/Library/ECU.html">ECU</a> is in a closed feedback loop using the <a href="../../view/Library/OxygenSensor.html">Oxygen&nbsp;Sensor</a> to steer the <a href="../../view/Library/AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratio</a> to the desired level.  Above the throttle position threshold, the <a href="../../view/Library/ECU.html">ECU</a> exclusively uses look up tables. The <a href="../../view/Library/ECU.html">ECU</a> looks through the lookup tables and, depending on engine speed and intake manifold vacuum, selects a length of time that the injectors will stay open. If you are interested in modifying your <a href="../../view/Library/ECU.html">ECU</a>, chances are that your <a href="../../view/Library/ECU.html">ECU</a> spends a fair amount of time in the look up table mode (open loop).
+<p />
+I will assume you are looking at an editor like this:
+<IMG SRC="http://www.ef-honda.com/ben/BREshot.gif">
+<p />
+The columns are split up into small segments based on intake manifold vacuum. The left most column is the most vacuum the <a href="../../view/Library/ECU.html">ECU</a> accounts for (shut throttle plate) and the right is obviously <a href="../../view/Library/WOT.html">WOT</a>. The <a href="../../view/Library/OBD0.html">OBD0</a> <a href="../../view/Library/ECU.html">ECU</a>s have 15 of these columns and use inches of mercury as a unit. The <a href="../../view/Library/OBD1.html">OBD1</a>  <a href="../../view/Library/ECU.html">ECU</a>'s use 10 columns and use millibar (mBar) as a unit.  The editor can choose to display this information in two ways.  <a href="../../view/Library/AbsolutePressure.html">Absolute&nbsp;Pressure</a> or <a href="../../view/Library/RelativePressure.html">Relative&nbsp;Pressure</a>.
+<p />
+The rows are split up into little rev ranges.
+<p />
+The values in the cells are in what is believed to be milliseconds that the injector stays open. To calculate these values the editors use a formula (in this case: <a href="../../view/Library/OBD0Fuel.html">OBD0&nbsp;Fuel</a>; <a href="../../view/Library/OBD1_8bitFuel.html">OBD1_8bit&nbsp;Fuel</a> for <a href="../../view/Library/OBD1.html">OBD1</a>  applications) that combines the raw 8 bit value at the location of the cell in the map with a <a href="../../view/Library/ColumnMultiplier.html">Column&nbsp;Multiplier</a> to arrive at the value you see in the editor.  Some editors allow you to directly manipulate the raw value directly instead of interpreting it as a pulse-width
+<p />
+<strong><em>Ignition Maps</em></strong>
+<p />
+The <a href="../../view/Library/ECU.html">ECU</a> also does the look up table thing with the ignition maps.
+<IMG SRC="http://www.ef-honda.com/ben/BREshot1.gif">
+<p />
+Again, the columns are vacuum and the rows are <a href="../../view/Library/RPM.html">RPM</a>. The value in the cells is degrees of ignition advance.
+<p />
+<a href="../../view/Library/BenOgle.html">Ben&nbsp;Ogle</a></td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/UnderstandingMaps.html">View</a>
+  |  <a href="UnderstandingMaps.html">Diffs</a>  | <a href="../../view/Library/UnderstandingMaps%3Frev=1.1.html">r1.1</a>
+  |  <a href="../../oops/Library/UnderstandingMaps%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.UnderstandingMaps">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#27504e4c4e6757404a414e09485540185452454d4244531a73704e4c4e07614242434546444c">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#92e6fdffd2f6fbf5fbe6f3fef4e7e1fbfdfcfdfcfefbfcf7bcf1fdff" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision  - <br />
+    Revision r1.1 - 29 Mar 2004 - 18:01 GMT - Home.blundar
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,195 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . EasyRtpInstall   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="https://files.boostednw.com/www.pgmfi.org/twiki/bin/view/Library/" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="EasyRtpInstall.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <a href="RealTimeProgramming.html">Real&nbsp;Time&nbsp;Programming</a> &gt;<b>EasyRtpInstall</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+Please Note: These installation instructions are preliminary. Please double check the instructions and report any errors.
+<p />
+Once you've completed the construction of Blundar's <a href="EasyRtpV10.html">Easy&nbsp;RTP board</a> you must make some minor modifications to your <a href="ECU.html">ECU</a> so the <a href="RTP.html">RTP</a> features may be used. These hardware mods require good soldering skills and a few parts obtainable at any electronics supply store. 
+<p />
+In these examples the install is being completed on a P28 <a href="OBD.html">OBD</a>1 <a href="ECU.html">ECU</a> but they should be no different for any <a href="OBD.html">OBD</a>1 board. 
+<p />
+*For <a href="JDM.html">JDM</a> P30-900 mose likely other jdm ecu's see below for correct pins for the surface mount chips 
+<p />
+Parts: With this installation we will be severing a trace on the <a href="ECU.html">ECU</a> to interrupt the WE signal from the <a href="CPU.html">CPU</a>. Soldering this trace back together, although not impossible would be very difficult so by using a removable plug to connect the <a href="RTP.html">RTP</a> board we can build a small jumper plug to install when the <a href="RTP.html">RTP</a> board is not installed.
+<p />
+<ul>
+<li> Here you can see the plugs I used on the <a href="RTP.html">RTP</a> board. If you look really closely you can see the severed trace in the background. A better choice here would be to use a header on the <a href="RTP.html">RTP</a> board that comes out at a 90 degree angle. This would give more clearance to close the <a href="ECU.html">ECU</a> case: <br />
+    <img src="../../../pub/Library/EasyRtpInstall/rtp1.jpg" alt="rtp1.jpg"  width="583" height="364"  />
+</li>
+</ul>
+<p />
+I recommend using small gauge wires for the plug as the spots for soldering these wires are fairly small. Wire-wrap would probably be ideal. Do as I say not as I do - I've been soldering for years.
+<p />
+<ul>
+<li> The next step is to sever the WE connection from the <a href="MCU.html">MCU</a>. Thanks to doc for providing the following picture from his install. <br />
+    <img src="../../../pub/Library/EasyRtpV10/doc_RTP_OBD1_Cut_here.jpg" alt="doc_RTP_OBD1_Cut_here.jpg"/>
+</li>
+</ul>
+<p />
+<ul>
+<li> Now we solder the wires from the <a href="RTP.html">RTP</a> board to their respective pins on the chips. Far easier than trying to solder to a trace on the board. The A15 line on the <a href="MCU.html">MCU</a> is used to address the writable image in the <a href="ROM.html">ROM</a>. It is otherwise unused so we simply solder the A15 wire to P16 on the <a href="MCU.html">MCU</a>. Thanks to Denshigiken/IPT for screening on pin numbers for us. It works best if you tin the pin on the chip before soldering the (tinned) wire to it. Pin 25 is the <a href="MCU.html">MCU</a> side of the WE trace we severed earilier. It goes to WE in on the <a href="RTP.html">RTP</a> board. <br />
+    <img src="../../../pub/Library/EasyRtpInstall/rtp2.jpg" alt="rtp2.jpg"  width="400" height="260"  />
+</li>
+</ul>
+<p />
+<ul>
+<li> The final connection goes to the other side of our severed circuit. This allows the <a href="RTP.html">RTP</a> board to decode the addressing and enable the writes to the <a href="NVSRAM.html">NVSRAM</a> only when the A15 line is high. This can be soldered to pin 38 of the M82C55A chip. <br />
+    <img src="../../../pub/Library/EasyRtpInstall/rtp3.jpg" alt="rtp3.jpg"  width="400" height="282"  />
+</li>
+</ul>
+<p />
+<ul>
+<li> Finished product. Ready to run out and test: <br />
+    <img src="../../../pub/Library/EasyRtpInstall/rtp4.jpg" alt="rtp4.jpg"  width="640" height="411"  />
+</li>
+</ul>
+<p />
+<ul>
+<li> Now in the beginning of this article we spoke of being able to undo our modifications... If you recall we cut the WE circuit but then redirected each half to pins 1 and 3 on the <a href="RTP.html">RTP</a> board so it's onboard addressing could allow the <a href="MCU.html">MCU</a> to write to the <a href="NVSRAM.html">NVSRAM</a> and only the NVRSRAM. Well restoring this back to "stock" is as easy as making a dummy plug that connects wires 1 and 3 (orange and yellow here) together. Of course then you can put in your standard chip.
+</li>
+</ul>
+<p />
+<ul>
+<li> After You done all the <a href="RTP.html">RTP</a> componnent to the <a href="ECU.html">ECU</a>, You guy will need the Rs232 to <a href="TTL.html">TTL</a> converter to communicate the <a href="ECU.html">ECU</a> to the PC. Go to the <a href="DataLogging.html" target="_top">Dataloging</a> section for more info   
+</li>
+</ul>
+<p />
+-- <span style='background : #FFFFCE;'><font color="#0000FF">Lego&nbsp;Z81</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/LegoZ81?topicparent=Library.EasyRtpInstall">?</a> - 30 Jul 2004 -- 10:45a
+<p />
+For <a href="JDM.html">JDM</a> <a href="ECU.html">ECU</a>'s
+<p />
+A15 line on the surface mount m66207 is pin 17 (on DIP it is pin 16)
+<p />
+WE (WR by Oki's notes) on the m66207 is pin 27 (on DIP it is pin 25) 
+<p />
+WE (WR by Oki's notes) on the 82c55 is pin 40 (on DIP it is pin 38)
+<p />
+Pinouts are here:
+<p />
+<a href=http://forum.pgmfi.org/files/m66207large.jpg>m66207</a>
+<p />
+<a href=http://forum.pgmfi.org/files/82c55alarge.jpg>82c55a</a>
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"><B>Parents:</b> <a href="WebHome.html">Web&nbsp;Home</a> &gt; <a href="RealTimeProgramming.html">Real&nbsp;Time&nbsp;Programming</a></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.4 - 30 Jul 2004 - 16:01 GMT - <span style='background : #FFFFCE;'><font color="#0000FF">Lego&nbsp;Z81</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/LegoZ81?topicparent=Library.EasyRtpInstall">?</a> 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/EasyRtpInstall?t=1194411427"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/EasyRtpInstall">Attach</a>
+   |  <a href="../../rdiff/Library/EasyRtpInstall.html">History</a>
+   |  <a href="../../oops/Library/EasyRtpInstall%3Ftemplate=oopsmore&amp;param1=1.4&amp;param2=1.4.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.EasyRtpInstall">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#fc8b959795bc8c9b919a95d2938e9bc38f899e96999f88c1a8ab959795dcba9999989e9d9f97">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#74001b1934101d131d0015181201071d1b1a1b1a181d1a115a171b19" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

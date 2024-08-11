@@ -1,0 +1,184 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . ReplaceM5128 ( vs. r1.1)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/ReplaceM5128.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>ReplaceM5128</b> ( vs. r1.1)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/ReplaceM5128.html">ReplaceM5128</a></b>
+		(<a href="../../view/Library/ReplaceM5128%3Frev=r1.1.html">r1.1</a> - 27&nbsp;Feb&nbsp;2004 - Home.synoptic)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="synoptic" date="1077904740" format="1.0" version="1.1"}%
+%META:TOPICPARENT{name="RealTimeProgramming"}%
+<p />
+<p />
+This page explain how to replace the current <a href="../../view/Library/5128XRAM.html">5128&nbsp;XRAM</a> 2K <a href="../../view/Library/SRAM.html">SRAM</a> chip by a DS1220 <a href="../../view/Library/NVSRAM.html">NVSRAM</a> for future <a href="../../view/Library/RTP.html">RTP</a> solution.
+<p />
+<p />
+<ul>
+<li> <a href="../../view/Library/ReplaceM5128.html#Brief_Explanation">Brief Explanation</a>
+</li>
+<li> <a href="../../view/Library/ReplaceM5128.html#Parts_list_">Parts list:</a>
+</li>
+<li> <a href="../../view/Library/ReplaceM5128.html#Construction_">Construction:</a>
+</li>
+<li> <a href="../../view/Library/ReplaceM5128.html#Step_by_step_">Step by step:</a>
+</li>
+<li> <a href="../../view/Library/ReplaceM5128.html#Note_">Note:</a>
+</li>
+</ul>
+<p />
+<h3> Brief Explanation </h3>
+    The M5128 chip is used to store and calculate values while the car is running. By default pin 19 and 22 are grounded, thus preventing full 2k addressing. Also, it is a good idea to replace the current M5128 by a DS1220 <a href="../../view/Library/NVSRAM.html">NVSRAM</a> module. This module  behave like a normal ram, but its <a href="../../view/Library/RAM.html">RAM</a> content will remain when power is cut.
+<p />
+<h3> Parts list: </h3>
+<ul>
+<li> 1x DS1220AB
+</li>
+<li> 1x 24 pin IC socket
+</li>
+<li> 22 gauge wire (or smaller) 
+</li>
+</ul>
+<p />
+<h3> Construction: </h3>
+    It is pretty simple, but required a bit of dexterity. First you need to unsolder the M5128. Then, you should cut the traces of pin 19 an dpin 22 as they both connect to the ground. Solder the 24 pin IC socket. Then, solder a wire from M5128 pin 19 to <a href="../../view/Library/MCU.html">MCU</a> pin 23 and solder a wire from M5128 pin 22 to <a href="../../view/Library/MCU.html">MCU</a> pin 22 too.
+<p />
+<h3> Step by step: </h3>
+<ul>
+<li> Desolder M5128
+</li>
+<li> Cut traces to ground of pin 19 and pin 22
+</li>
+<li> Solder 24 pin IC socket
+</li>
+<li> Solder wire from M5128 pin 19 to <a href="../../view/Library/MCU.html">MCU</a> pin 23
+</li>
+<li> Solder wired from M5128 pin 22 to <a href="../../view/Library/MCU.html">MCU</a> pin 22
+</li>
+<li> Put in the DS1220AB
+</li>
+</ul>
+<p />
+<p />
+<h3> Note: </h3>
+The traces to be cut on a 90-91 <a href="../../view/Library/ECU.html">ECU</a> are on the component side. On the 88-89, there is 1 trace on the solder side, and 1 on the component side. You can check out the scans to help you out.
+<p />
+%META:FILEATTACHMENT{name="DS1220-88-89.jpg" attr="" comment="Solder side of a 1988 - 1989 <a href="../../view/Library/ECU.html">ECU</a>" date="1077904110" path="DS1220-88-89.jpg" size="681906" user="synoptic" version="1.1"}%
+%META:FILEATTACHMENT{name="DS1220-90-91.jpg" attr="" comment="Solder side of a 1990 - 1991 <a href="../../view/Library/ECU.html">ECU</a>" date="1077904174" path="DS1220-90-91.jpg" size="728209" user="synoptic" version="1.1"}%
+%META:FILEATTACHMENT{name="DS1220-TOP-90-91.jpg" attr="" comment="Component side of a 1990 - 1991 <a href="../../view/Library/ECU.html">ECU</a>" date="1077904204" path="DS1220-TOP-90-91.jpg" size="115939" user="synoptic" version="1.1"}%</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/ReplaceM5128.html">View</a>
+  |  <a href="ReplaceM5128.html">Diffs</a>  | <a href="../../view/Library/ReplaceM5128%3Frev=1.1.html">r1.1</a>
+  |  <a href="../../oops/Library/ReplaceM5128%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.ReplaceM5128">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#a1d6c8cac8e1d1c6ccc7c88fced3c69ed2d4c3cbc4c2d59cf5f6c8cac881e7c4c4c5c3c0c2ca">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#51253e3c113538363825303d372422383e3f3e3f3d383f347f323e3c" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision  - <br />
+    Revision r1.1 - 27 Feb 2004 - 17:59 GMT - Home.synoptic
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

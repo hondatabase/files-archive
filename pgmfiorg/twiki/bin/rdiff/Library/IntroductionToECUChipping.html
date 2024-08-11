@@ -1,0 +1,880 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . IntroductionToECUChipping (r1.1 vs. r1.10)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/IntroductionToECUChipping.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>IntroductionToECUChipping</b> (r1.1 vs. r1.10)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/IntroductionToECUChipping.html">IntroductionToECUChipping</a></b>
+		(<a href="../../view/Library/IntroductionToECUChipping%3Frev=r1.10.html">r1.10</a> - 12&nbsp;May&nbsp;2006 - Home.hondainfo)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+Hex is base a 16 numbering system. Instead of digits from 0 to 9, hex uses digits from 0 to F. So A = 10, B = 11, ... F = 15. Typically we distinguish hex numbers from other numbers by either putting 0x at the front of the number or putting an 'h' at the end. i.e. 0xFE and FEh are both the hex number FE.    
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+So, you've found the fuel and timing tables in your <a href="../../view/Library/ECU.html">ECU</a>'s program, edit away. Most <a href="../../view/Library/ECU.html">ECU</a>s have a <a href="../../view/Library/CheckSum.html">Check&nbsp;Sum</a> routine - the checksum gods must be appeased after any changes to the <a href="../../view/Library/ROM.html">ROM</a> are made or the car will not run properly.  It would take a long time to tune a car if everyone only had hexeditors at their disposal.  In many cases, <a href="../../view/Library/ROM.html">ROM</a> editors are available to assist in the tuning process.  
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+So, you've found the fuel and timing tables in your <a href="../../view/Library/ECU.html">ECU</a>'s program, edit away. How do you interpret all this? Well, first you mut know about the addresses. Each byte has its own address referenced by the left most column (the "offset" column) and the top row. As an example, look to the bottom right corner of the above picture. Notice the byte that has 6f as its value. Follow the row to the corresponding row in the offset column and you will see a 3ef0. Then follow 6f's column all the way up to the F on the top row. Put those values together and you have the address of the 6f byte: 0x3eff.
+<p />
+Now what? This data is the binary representation of the actual machine code that runs in the ecu's processor and <a href="../../view/Library/ROM.html">ROM</a> data that the <a href="../../view/Library/ECU.html">ECU</a> uses. To figure out what it does you must use a disassembler to convert the binary code/data into the machine code instructions which are more human readable. 
+<p />
+Most <a href="../../view/Library/ECU.html">ECU</a>s have a <a href="../../view/Library/CheckSum.html">Check&nbsp;Sum</a> routine - the checksum gods must be appeased after any changes to the <a href="../../view/Library/ROM.html">ROM</a> are made or the car will not run properly.  It would take a long time to tune a car if everyone only had hexeditors at their disposal.  In many cases, <a href="../../view/Library/ROM.html">ROM</a> editors are available to assist in the tuning process.  
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+If you have a <a href="../../view/Library/OBD2.html">OBD2</a> <a href="../../view/Library/ECU.html">ECU</a>, you are just going to have to wait or buy commercial <a href="../../view/Library/TechTom.html">Tech&nbsp;Tom</a> gear.  It is possible to remove the 66K <a href="../../view/Library/MCU.html">MCU</a> and replace it with another <a href="../../view/Library/OTP.html">OTP</a> 66P507 or <a href="../../view/Library/FLASH.html">FLASH</a> 66Q589 (As the case may be) but this is far from trivial.  Little is known about <a href="../../view/Library/OBD.html">OBD</a>2 code.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+If you have a <a href="../../view/Library/OBD2.html">OBD2</a> <a href="../../view/Library/ECU.html">ECU</a>, you are just going to have to wait or buy commercial <a href="../../view/Library/TechTom.html">Tech&nbsp;Tom</a> gear.  It is possible to remove the 66K <a href="../../view/Library/MCU.html">MCU</a> and replace it with another <a href="../../view/Library/OTP.html">OTP</a> 66P507 or <a href="../../view/Library/FLASH.html">FLASH</a> 66Q589 (As the case may be) but this is far from trivial.  Little is known about <a href="../../view/Library/OBD.html">OBD</a>2 code. See <a href="../../view/Library/ChippingOBD2.html">Chipping&nbsp;OBD2</a> by Doc</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/IntroductionToECUChipping.html">IntroductionToECUChipping</a></b>
+		(<a href="../../view/Library/IntroductionToECUChipping%3Frev=r1.9.html">r1.9</a> - 11&nbsp;Apr&nbsp;2005 - Home.drdisco69)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<ul>
+<li> <a href="http://pgmfi.org/phorum/list.php?f=69" target="_top">Turboedit forum on PGMFI</a> - editor mainly
+</li>
+<li> <a href="http://pgmfi.org/phorum/list.php?f=12" target="_top">8XC154 Development forum on PGMFI</a> - new <a href="../../view/Library/ROM.html">ROM</a>s and code
+</li>
+</ul>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<ul>
+<li> <a href="http://forum.pgmfi.org/viewforum.php?f=39" target="_top">Turboedit forum on PGMFI</a> - editor mainly
+</li>
+<li> <a href="http://forum.pgmfi.org/viewforum.php?f=7" target="_top">8XC154 Development forum on PGMFI</a> - new <a href="../../view/Library/ROM.html">ROM</a>s and code
+</li>
+</ul>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<ul>
+<li> <a href="http://pgmfi.org/phorum/list.php?f=65" target="_top">BRE forum on PGMFI</a>
+</li>
+<li> <a href="http://pgmfi.org/phorum/list.php?f=22" target="_top">OBD0 Vtec development forum on PGMFI</a>
+</li>
+</ul>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<ul>
+<li> <a href="http://forum.pgmfi.org/viewforum.php?f=36" target="_top">BRE forum on PGMFI</a>
+</li>
+<li> <a href="http://forum.pgmfi.org/viewforum.php?f=14" target="_top">OBD0 Vtec development forum on PGMFI</a>
+</li>
+</ul>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<ul>
+<li> <a href="http://pgmfi.org/phorum/list.php?f=40" target="_top">Uberdata forum on PGMFI</a>
+</li>
+</ul>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<ul>
+<li> <a href="http://forum.pgmfi.org/viewforum.php?f=27" target="_top">Uberdata forum on PGMFI</a>
+</li>
+</ul>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<ul>
+<li> <a href="http://pgmfi.org/phorum/list.php?f=13" target="_top">OBD1 Development forum on PGMFI</a>
+</li>
+</ul>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<ul>
+<li> <a href="http://forum.pgmfi.org/viewforum.php?f=8" target="_top">OBD1 Development forum on PGMFI</a>
+</li>
+</ul>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<ul>
+<li>  <a href="http://pgmfi.org/phorum/list.php?f=64" target="_top">Crome forum on PGMFI</a>
+</li>
+<li> <a href="http://pgmfi.org/phorum/list.php?f=13" target="_top">OBD1 Development forum on PGMFI</a>
+</li>
+</ul>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<ul>
+<li>  <a href="http://forum.pgmfi.org/viewforum.php?f=35" target="_top">Crome forum on PGMFI</a>
+</li>
+<li> <a href="http://forum.pgmfi.org/viewforum.php?f=8" target="_top">OBD1 Development forum on PGMFI</a>
+</li>
+</ul></td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/IntroductionToECUChipping.html">IntroductionToECUChipping</a></b>
+		(<a href="../../view/Library/IntroductionToECUChipping%3Frev=r1.8.html">r1.8</a> - 11&nbsp;Mar&nbsp;2005 - <a href="../../view/Home/LegoZ81.html">Lego&nbsp;Z81</a>)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Now, with your new <a href="../../view/Library/EPROM.html">EPROM</a> ready, crack the case of your <a href="../../view/Library/ECU.html">ECU</a>. All 92-95 <a href="../../view/Library/ECU.html">ECU</a>s made by Honda were able to accept an external <a href="../../view/Library/EPROM.html">EPROM</a>s, even if they did not come with one from the factory. All 92-95 <a href="../../view/Library/ECU.html">ECU</a>s use the same procedure for chipping. Beginners beware of Japanese <a href="../../view/Library/ECU.html">ECU</a>s as they use surface mount components that are marginally harder to work with than US/European <a href="../../view/Library/ECU.html">ECU</a>s. The section of the example <a href="../../view/Library/P28.html">P28</a> 93 Civic Si <a href="../../view/Library/ECU.html">ECU</a> that is important for chipping is outlined in red in the following picture: (Honda was nice and outlined it in a dashed white line for you on the board too)
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Now, with your new <a href="../../view/Library/EPROM.html">EPROM</a> ready, crack the case of your <a href="../../view/Library/ECU.html">ECU</a>. All 92-95 <a href="../../view/Library/ECU.html">ECU</a>s made by Honda were able to accept an external <a href="../../view/Library/EPROM.html">EPROM</a>s, even if they did not come with one from the factory. All 92-95 <a href="../../view/Library/ECU.html">ECU</a>s use the same procedure for chipping. Beginners beware of Japanese <a href="../../view/Library/ECU.html">ECU</a>s as they use surface mount components that are marginally harder to work with than US/European <a href="../../view/Library/ECU.html">ECU</a>s. See here for <a href="../../view/Library/ChippingJDMP30.html">Chipping&nbsp;JDMP30</a> <a href="../../view/Library/ECU.html">ECU</a>.The section of the example <a href="../../view/Library/P28.html">P28</a> 93 Civic Si <a href="../../view/Library/ECU.html">ECU</a> that is important for chipping is outlined in red in the following picture: (Honda was nice and outlined it in a dashed white line for you on the board too)</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/IntroductionToECUChipping.html">IntroductionToECUChipping</a></b>
+		(<a href="../../view/Library/IntroductionToECUChipping%3Frev=r1.7.html">r1.7</a> - 23&nbsp;Apr&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+<p />
+Please feel free to link to this article, but "mirroring" is highly discouraged, as you will not automatically receive updates.</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/IntroductionToECUChipping.html">IntroductionToECUChipping</a></b>
+		(<a href="../../view/Library/IntroductionToECUChipping%3Frev=r1.6.html">r1.6</a> - 30&nbsp;Mar&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Don't despair if you don't have access to a dyno, however.  Accelerometers (like the <a href="../../view/Library/G-Spot.html">G-Spot</a>) measure acceleration forces with fairly good (&lt;1%) precison (consistency, repeatability).  If you can record this information as part of your <a href="../../view/Library/DataLogging.html">Data&nbsp;Logging</a> procedure, you can do some math knowing the weight of the vehicle and its gearing to come up with horsepower and torque output figures for the car.  Again, this method has fairly good precision (REPEATABILITY) but relatively poor accuracy (i.e. numbers will almost never match a calibrated dyno) - what this means for you as a tuner is that if your calculated horsepower and torque numbers increase consistently, you the changes you made improved the performance of the car. The numbers themselves don't mean a lot, but if you can produce significant and consistent improvements, you have tuned the car better.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Don't despair if you don't have access to a dyno, however.  Accelerometers (like the <a href="../../view/Library/G-Spot.html">G-Spot</a>) measure acceleration forces with fairly good (&lt;1%) <a href="https://en.wikipedia.org/wiki/Accuracy_and_precision" target="_top">precison</a>.  If you can record this information as part of your <a href="../../view/Library/DataLogging.html">Data&nbsp;Logging</a> procedure, you can do some math knowing the weight of the vehicle and its gearing to come up with horsepower and torque output figures for the car.  Again, this method has fairly good <a href="https://en.wikipedia.org/wiki/Accuracy_and_precision" target="_top">precison</a> but relatively poor <a href="https://en.wikipedia.org/wiki/Accuracy_and_precision" target="_top">accuracy</a>. The numbers themselves don't mean a lot, but if you can produce significant and consistent improvements, you have tuned the car better.  </td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/IntroductionToECUChipping.html">IntroductionToECUChipping</a></b>
+		(<a href="../../view/Library/IntroductionToECUChipping%3Frev=r1.5.html">r1.5</a> - 29&nbsp;Mar&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Honda is no exception to these rules about tuning. Basis for this can be seen very clearly by comparing European/US fuel and timing maps to Japanese timing maps for the same engine. Japanese have gasoline that is on average a minimum of about 10 octane points greater than gas sold in the US. Comparing <a href="../../view/Library/JDM.html">JDM</a> and <a href="../../view/Library/USDM.html">USDM</a>/EDM timing curves generally show the <a href="../../view/Library/JDM.html">JDM</a> maps having several degrees more spark advance, reflecting the manufacturer's expectation of better quality gasoline. I don't really have enough experience tuning or on a dyno to be able to say exactly what is possible, but you have to wonder about how much 205 HP out a 1.8L (ITR) can be improved on. However, I doubt it would surprise anyone if another 5-10 HP could be squeezed out of an ITR by HOURS on the dyno and some changes to the <a href="../../view/Library/ECU.html">ECU</a> program, particularly in the control over timing.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Honda is no exception to these rules about tuning. Basis for this can be seen very clearly by comparing European/US fuel and timing maps to Japanese timing maps for the same engine. Japanese have gasoline that is on average a minimum of about 10 octane points greater than gas sold in the US. Comparing <a href="../../view/Library/JDM.html">JDM</a> and <a href="../../view/Library/USDM.html">USDM</a>/EDM timing curves generally show the <a href="../../view/Library/JDM.html">JDM</a> maps having several degrees more spark advance, reflecting the manufacturer's expectation of better quality gasoline. You have to wonder about how much 205 HP out a 1.8L (ITR) can be improved on within the constraints of pump gas. It wouldn't surprise anyone if another 5-10 peak HP and a considerable amount of low-midrange torque could be squeezed out of an ITR by HOURS on a dyno, and some changes to the <a href="../../view/Library/ECU.html">ECU</a> program.  This goes to show that even on Honda's "performance" motors, very conservative assumptions are made about the quality of gasoline used.  If you are willing to run high octane gasoline consistently, significant performance improvements can usually be found by tuning the car for the better quality gas.  
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+This does bring us to a valid point. Tuning is best something done on a dyno that can simulate loads (such as a Dynapack or Mustang dyno).  Dynojets are only useful for tuning a much narrow range of operating conditions, namely acceleration at wide open throttle through the rev reange.  When a Dyno is not available, something to give an objective measure of how the car is responding is a good second choice. <a href="../../view/Library/WideBandO2.html">Wideband O2</a> meters and <a href="../../view/Library/ExhaustGasTempSensor.html">EGT</a> probes can give you some idea of what is going on.  Widebands generally provide more direct information about <a href="../../view/Library/AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratio</a>, but they are generally ineffective for timing adjustment. <a href="../../view/Library/ExhaustGasTempSensor.html">EGT</a> probes tell how how the exhaust leaving a motor is, which can be used to infer a lot of information.  If <a href="../../view/Library/AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratio</a> is left relatively constant, most changes in EGTs can be attributed to timing adjustment.  <a href="../../view/Library/AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratios</a> will causes changes in EGTs!  If you are trying to use an EGT to tune your timing, make sure you have your AFRs nailed reasonably close to your target <strong>first</strong>.  This article in intended as a <em>brief</em> introduction, so enough of that.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+This does bring us to an important point. Tuning is best something done on a dyno that can simulate loads (such as a Dynapack or Mustang dyno).  Dynojets are only useful for tuning a much narrow range of operating conditions, namely acceleration at wide open throttle through the rev reange.  When a Dyno is not available, something to give an objective measure of how the car is responding is a good second choice. <a href="../../view/Library/WideBandO2.html">Wideband O2</a> meters and <a href="../../view/Library/ExhaustGasTempSensor.html">EGT</a> probes can give you some idea of what is going on.  Widebands generally provide more direct information about <a href="../../view/Library/AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratio</a>, but they are generally ineffective for timing adjustment. <a href="../../view/Library/ExhaustGasTempSensor.html">EGT</a> probes tell how how the exhaust leaving a motor is, which can be used to infer a lot of information.  If <a href="../../view/Library/AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratio</a> is left relatively constant, most changes in EGTs can be attributed to timing adjustment.  <a href="../../view/Library/AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratios</a> will cause changes in EGTs so make sure you have your AFRs nailed reasonably close to your target <em>before</em> trying to use an EGT to tune your timing.  This article in intended as a <strong>brief</strong> introduction, so enough of that.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Don't despair if you don't have access to a dyno, however.  Accelerometers (like the <a href="../../view/Library/G-Spot.html">G-Spot</a>) measure acceleration forces with fiarly good (&lt;1%) precison (consistency, repeatability).  If you can record this information as part of your <a href="../../view/Library/DataLogging.html">Data&nbsp;Logging</a> procedure, you can do some math knowing the weight of the vehicle and its gearing to come up with horsepower and torque output figures for the car.  Again, this method has fairly good precision (REPEATABILITY) but relatively poor accuracy (i.e. numbers will almost never match a calibrated dyno) - what this means for you as a tuner is that if your calculated horsepower and torque numbers increase consistently, you the changes you made improved the performance of the car. The numbers themselves don't mean a lot, but if you can produce significant consistent improvements you have tuned the car better.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Don't despair if you don't have access to a dyno, however.  Accelerometers (like the <a href="../../view/Library/G-Spot.html">G-Spot</a>) measure acceleration forces with fairly good (&lt;1%) precison (consistency, repeatability).  If you can record this information as part of your <a href="../../view/Library/DataLogging.html">Data&nbsp;Logging</a> procedure, you can do some math knowing the weight of the vehicle and its gearing to come up with horsepower and torque output figures for the car.  Again, this method has fairly good precision (REPEATABILITY) but relatively poor accuracy (i.e. numbers will almost never match a calibrated dyno) - what this means for you as a tuner is that if your calculated horsepower and torque numbers increase consistently, you the changes you made improved the performance of the car. The numbers themselves don't mean a lot, but if you can produce significant and consistent improvements, you have tuned the car better.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+A final note before more practical matters - the "butt dyno" is a totally inappropriate way to determine how the car is performing - most of the changes you will make to a computer program will be subtle enough that you probably will not be able to "feel" them accurately. The butt dyno has almost zero precision - I've had many kids report "very different" results from no real changes to a chip. Also, the butt dyno is much better for detecting rapid increases in torque than consistently more torque. Consistent torque is what makes a car fast, not how quickly torque increases. What this means concretely is that a car may "feel" faster on the butt dyno because it has sharp spikes of torque, but in reality it is slower than a car with a smoother powerband with gradual increases in torque. 
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+A final note about tuning tools - the "butt dyno" is a totally inappropriate way to determine how the car is performing - most of the changes you will make to a computer program will be subtle enough that you probably will not be able to "feel" them accurately. The butt dyno has almost zero precision - I've had many kids report "very different" results from no real changes to a chip. Also, the butt dyno is much better for detecting rapid increases in torque than consistently more torque. Consistent torque is what makes a car fast, not how quickly torque increases. What this means concretely is that a car may "feel" faster on the butt dyno because it has sharp spikes of torque, but in reality it is slower than a car with a smoother powerband with gradual increases in torque. 
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<h4> Hexediting and Raw editing </h4>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<h4> Hexediting and Raw ROM editing </h4>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<h4><a name="ROM_Editors"> </a> <a href="../../view/Library/ROM.html">ROM</a> Editors </h4>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<h4> ROM Editors </h4>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<a href="http://www.turboedit.org" target="_top">TurboEdit</a> has since largely replaced Ghettodyne as the most actively developed <a href="../../view/Library/OBD.html">OBD</a>0 <a href="../../view/Library/ROM.html">ROM</a> editor.  It supports <a href="../../view/Library/ROM.html">ROM</a>s based off the <a href="../../view/Library/PM6.html">PM6</a> and <a href="../../view/Library/PM7.html">PM7</a> codebase at this point.  Close communication between [[Home.TeamOBD0][Team <a href="../../view/Library/OBD.html">OBD</a>0] and Jason Parker, TE's author, ensure that it supports the latest features quickly.  As you can see, the interface is very similar to earlier editors:
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<a href="http://www.turboedit.org" target="_top">TurboEdit</a> has since largely replaced Ghettodyne as the most actively developed <a href="../../view/Library/OBD.html">OBD</a>0 <a href="../../view/Library/ROM.html">ROM</a> editor.  It supports <a href="../../view/Library/ROM.html">ROM</a>s based off the <a href="../../view/Library/PM6.html">PM6</a> and <a href="../../view/Library/PM7.html">PM7</a> codebase at this point.  Close communication between <a href="../../view/Home/TeamOBD0.html">Team OBD0</a> and Jason Parker, TE's author, ensure that it supports the latest features quickly.  As you can see, the interface is very similar to earlier editors:
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<ul>
+<li> <a href="http://pgmfi.org/phorum/list.php?f=69" target="_top">Turboedit forum on PGMFI</a> - editor mainly
+</li>
+<li> <a href="http://pgmfi.org/phorum/list.php?f=12" target="_top">8XC154 Development forum on PGMFI</a> - new <a href="../../view/Library/ROM.html">ROM</a>s and code
+</li>
+</ul>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<h5><a name="Crome_OBD1_"> </a> Crome (<a href="../../view/Library/OBD.html">OBD</a>1) </h5>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<h5><a name="BRE_Ben_s_ROM_Editor_OBD0_Vtec_"> </a> <a href="../../view/Library/BRE.html">BRE</a> (Ben's <a href="../../view/Library/ROM.html">ROM</a> Editor - <a href="../../view/Library/OBD.html">OBD</a>0 Vtec) </h5>
+<a href="../../view/Library/BRE.html">BRE</a> is arguably one of the best editors for <a href="../../view/Library/OBD.html">OBD</a>0Vtec <a href="../../view/Library/ECU.html">ECU</a>s, like the PR3 and PW0.  It runs under Windows.  Hopefully Ben will come by and add more information about it. 
+<ul>
+<li> <a href="http://pgmfi.org/phorum/list.php?f=65" target="_top">BRE forum on PGMFI</a>
+</li>
+<li> <a href="http://pgmfi.org/phorum/list.php?f=22" target="_top">OBD0 Vtec development forum on PGMFI</a>
+</li>
+</ul>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Uberdata was the first publicly available <a href="../../view/Library/ROM.html">ROM</a> Editor for <a href="../../view/Library/OBD.html">OBD</a>1 Civics/Integras, written by Blake Warner (Uberteg).  It uses primarily the P72 and P75 code, but has been adapted to run almost any Honda motor.  It has solid boost support, support for the Transtronics Romulator, and recently added support for inline assembly scripting.  It runs on windows.
+<ul>
+<li> <a href="http://pgmfi.org/phorum/list.php?f=40" target="_top">Uberdata forum on PGMFI</a>
+</li>
+<li> <a href="http://www.ecimulti.org/uberdata" target="_top">The Home of Uberdata</a>
+</li>
+<li> <a href="http://pgmfi.org/phorum/list.php?f=13" target="_top">OBD1 Development forum on PGMFI</a>
+</li>
+</ul>
+<hr />
+<h5><a name="Crome_OBD1_"> </a> Crome (<a href="../../view/Library/OBD.html">OBD</a>1) </h5>
+Crome is the first scriptable <a href="../../view/Library/OBD.html">OBD</a>1 <a href="../../view/Library/ROM.html">ROM</a> Editor, written by John Cui.  Core features are designed for the <a href="../../view/Library/JDM.html">JDM</a> P30 "203" code, but it has support for many other <a href="../../view/Library/ROM.html">ROM</a>s to lesser degrees.  The new version of Crome (March 04) supports the PGMFI <a href="../../view/Library/RealTimeProgramming.html">Real&nbsp;Time&nbsp;Programming</a> solution, and has improved boost code compared with earlier versions.  It also has a new plugin interface allowing HTML based front ends to scripts.
+<ul>
+<li>  <a href="http://pgmfi.org/phorum/list.php?f=64" target="_top">Crome forum on PGMFI</a>
+</li>
+<li> <a href="http://pgmfi.org/phorum/list.php?f=13" target="_top">OBD1 Development forum on PGMFI</a>
+</li>
+</ul>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<h4><a name="Chipping_an_ECU_hardware"> </a> Chipping an <a href="../../view/Library/ECU.html">ECU</a>: hardware </h4>
+At this point, the assumption will be made (regardless of whether it is actually true) that you have successfully created a new <a href="../../view/Library/ROM.html">ROM</a> image and you want to put it into an <a href="../../view/Library/ECU.html">ECU</a>. The next step towards reprogramming is to take the electronic image you have created and program it into an <a href="../../view/Library/EPROM.html">EPROM</a>(Erasable Programmable Read Only Memory). <a href="../../view/Library/EPROM.html">EPROM</a>s for automotive use are generally 128K, 256K or 512k in size. Use the same size <a href="../../view/Library/EPROM.html">EPROM</a> as the factory uses. Almost all 88-95 Hondas use a <a href="../../view/Library/27C256.html">27&nbsp;C256</a> <a href="../../view/Library/EPROM.html">EPROM</a>. (A quick note about chips: <a href="../../view/Library/27C256.html">27&nbsp;CXXX</a> chips are generally UV erasable - you need a special UV light; blacklights do not work. <a href="../../view/Library/28C256.html">28&nbsp;CXXX</a> are generally <a href="../../view/Library/EEPROM.html">EEPROM</a> - Electrically Erasable and are not pin-compatible... and <a href="../../view/Library/29C256.html">29&nbsp;CXXX</a> are generally Flash <a href="../../view/Library/ROM.html">ROM</a>s and <strong>are</strong> pin-compatible. There are exceptions to these rules, however.)
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<h4> Chipping an ECU: hardware </h4>
+<h5><a name="Chips_and_ROM_Burners"> </a> Chips and <a href="../../view/Library/ROM.html">ROM</a> Burners </h5>
+At this point, the assumption will be made (regardless of whether it is actually true) that you have successfully created a new <a href="../../view/Library/ROM.html">ROM</a> image and you want to put it into an <a href="../../view/Library/ECU.html">ECU</a>. The next step towards reprogramming is to take the electronic image you have created and program it into an <a href="../../view/Library/EPROM.html">EPROM</a>(Erasable Programmable Read Only Memory). <a href="../../view/Library/EPROM.html">EPROM</a>s for automotive use are generally 128K, 256K or 512k in size. Almost all 88-95 Hondas use a <a href="../../view/Library/27C256.html">27&nbsp;C256</a> <a href="../../view/Library/EPROM.html">EPROM</a>. There are many kinds of <a href="../../view/Library/ChipsForECUs.html">Chips&nbsp;For&nbsp;ECUs</a> that you can use.  Pay attention to the speed of the chip and whether your <a href="../../view/Library/RomBurner.html">Rom&nbsp;Burner</a> can program it.  
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+In order to program an <a href="../../view/Library/EPROM.html">EPROM</a>, you will need a <a href="../../view/Library/RomBurner.html">ROM burner</a>. It does not really matter which model you get as long as it can program the chips you need. A cheap, hobbyist-oriented burner is available for less than $100 ready assembled (or less in kit form) from www.batronix.com. Another unit is available from www.xtronics.com and is the programmer of choice for Hondata. Needham Electronics also make a quality programmer. The point of all this is quite simply that it doesn't matter WHICH programmer you have; being able to program 2XC256 chips is what matters.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<a href="../../view/Library/RomBurner.html">ROM burners</a> are the devices used to program chips. It does not really matter which model you get as long as it can program <a href="../../view/Library/ChipsForECUs.html">Chips&nbsp;For&nbsp;ECUs</a>. The <a href="../../view/Library/RomBurner.html">Rom&nbsp;Burner</a> Wiki entry has a list of some common types of burners used for <a href="../../view/Library/ECU.html">ECU</a> programming, and has links to reviews and prices in some cases. It doesn't matter WHICH programmer you have; being able to program the right chips matters.
+<p />
+<h5> Soldering and Desoldering gear </h5>
+I purchased a Xytronics  soldering and <a href="../../view/Library/DesolderingStation.html">Desoldering&nbsp;Station</a> with temperature control for under $400 shipped from Howard Electronics Inc. Professional desoldering tools with integrated vacuum sources can be obtained readily from ebay or other merchants - Pace and Metcal gear is always on ebay.  I've spoken with plenty of people who purchased professional gear for under $100 that has worked well for them.  If you do a lot of <a href="../../view/Library/ECU.html">ECU</a>s, a quality <a href="../../view/Library/DesolderingStation.html">Desoldering&nbsp;Station</a> will be one of yoru favorite tools for the time and suffering it saves.
+<p />
+On the cheaper/DIY side, there are several other tools that work adaquately.  A cheap <a href="../../view/Library/DesolderingIron.html">Desoldering&nbsp;Iron</a> will work pretty well, especially with the right tip and some small mods.  Often, an existing <a href="../../view/Library/DesolderingTool.html">Desoldering&nbsp;Tool</a> can be modified to make it more effective.  <a href="../../view/Library/DesolderingBraid.html">Desoldering&nbsp;Braid</a> can be very effective when used properly, and can even be superior to a <a href="../../view/Library/DesolderingStation.html">Desoldering&nbsp;Station</a> in some cases.
+<p />
+A quality <a href="../../view/Library/SolderingIron.html">Soldering&nbsp;Iron</a> is another tool that you will thank yourself for purchasing every time you use it.  Small tips and less power will make things easier on you.  Temperature control is a nice feature, although by no means required.  I have had a lot of luck with the cheapie 12-15W 3-prong blue <a href="../../view/Library/RatShack.html">Rat&nbsp;Shack</a> irons in a pinch.
+<p />
+<a href="../../view/Library/LearningToSolder.html">Learning&nbsp;To&nbsp;Solder</a> and <a href="../../view/Library/DesolderingTips.html">Desoldering&nbsp;Tips</a> contain a lot of good tips for those starting out, but there really is no substitute for practice.  Working on a couple of sacrificial <a href="../../view/Library/ECU.html">ECU</a>s/circuit boards prior to an <a href="../../view/Library/ECU.html">ECU</a> that needs to go in your vehicle is probably a really good idea.  Much like welding, getting comfortable with the iron, solder and workspace you have is key!  I messed up about half of the first dozen <a href="../../view/Library/ECU.html">ECU</a>s I did. Most were simple poor solder joints that were easily fixed, although I cooked two PR3s by not desoldering them fully and ripping the pads + traces off the board.  Repairing a destructive soldering adventure like that can be very stressful and difficult. After buying my <a href="../../view/Library/DesolderingStation.html">Desoldering&nbsp;Station</a>, I've fried approximately 3 <a href="../../view/Library/ECU.html">ECU</a>s out of 200. (and one of those I still think was a bad alternator/voltage reg...)  Part of this was certainly practice, but having the right tools made a <strong>big</strong> difference.
+</td></tr>
+<tr><td bgcolor="#FFD7D7" colspan ="2"><b> Deleted: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+I purchased a Xytronics desoldering/soldering station with temperature control for under $400 shipped from Howard Electronics Inc. Professional desoldering tools with integrated vacuum sources can be obtained readily from ebay or other merchants - Pace and Metcal gear is always on ebay. You can get a desoldering tool from radio shack, but it does not work terribly well and I would highly recommend borrowing or buying a true desoldering iron if possible.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+<hr />
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Hopefully, at this point, you have learned a little about <a href="../../view/Library/ECU.html">ECU</a>s, how they work and break, and how to modify them. If you have further interest check out the rest of the Wiki, or <a href="../../view/Library/FurtherReading.html">Further&nbsp;Reading</a>.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Hopefully, at this point, you have learned a little about <a href="../../view/Library/ECU.html">ECU</a>s, how they work and break, and how to modify them. If you have further interest check out the rest of the Wiki, or <a href="../../view/Library/FurtherReading.html">Further&nbsp;Reading</a>.  The <a href="../../view/Library/ECU.html">ECU</a> is just a tool allowing precise fuel and timing delivery - knowing how to modify the <a href="../../view/Library/ECU.html">ECU</a> itself is only half the battle to having a well tuned car.  Spend the time and budget the money for the right tools to tune the car, not just chip the <a href="../../view/Library/ECU.html">ECU</a>.</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/IntroductionToECUChipping.html">IntroductionToECUChipping</a></b>
+		(<a href="../../view/Library/IntroductionToECUChipping%3Frev=r1.4.html">r1.4</a> - 29&nbsp;Mar&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<h2><a name="Introduction_to_ECU_Chipping"> </a> Introduction to <a href="../../view/Library/ECU.html">ECU</a> Chipping </h2>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<h2> Introduction to ECU Chipping </h2>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<h3> How it all works </h3>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+You can completely change the operating characteristics of an engine by changing the fuel tables around. As an example, a <a href="../../view/Library/PM6.html">PM6</a> (88-91 Civic/CRX Si) <a href="../../view/Library/ECU.html">ECU</a> is normally used to run a D16A6, ~100HP. By little more than changing the fuel, ignition tables and the revlimiter, a PM6 can run a <a href="../../view/Library/DOHC.html">DOHC</a> ZC, ~135HP, like it came out of the factory. Additionally, little more than even more fuel/ignition map changes and revlimiter changes are all that is needed to make it run a B18A/B18B or a B20B! In another more extreme example, a friend of mine recently had success running a 2G accord engine with a GM computer! Please, be careful changing your engine's fuel/timing tables - understand that timing changes can completely change the operating characteristics of the engine! You can destroy your engine in seconds with a bad program. Please be very careful, especially when doing baseline tunes as opposed to modifying an existing tune.  
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+You can completely change the operating characteristics of an engine by changing the fuel and timing tables around. As an example, a <a href="../../view/Library/PM6.html">PM6</a> (88-91 Civic/CRX Si) <a href="../../view/Library/ECU.html">ECU</a> is normally used to run a D16A6, ~100HP. By little more than changing the fuel, ignition tables and the revlimiter, a PM6 can run a <a href="../../view/Library/DOHC.html">DOHC</a> ZC, ~135HP, like it came out of the factory. Additionally, little more than even more fuel/ignition map changes and revlimiter changes are all that is needed to make it run a B18A/B18B or a B20B! Virutally the same <a href="../../view/Library/ECU.html">ECU</a> hardware runs a D16Z6 <a href="../../view/Library/SOHC.html">SOHC</a> vtec and a B16A2/A3 <a href="../../view/Library/DOHC.html">DOHC</a> vtec motor - swapping chips will let one motor's <a href="../../view/Library/ECU.html">ECU</a> run the other motor, and vise versa.  In another more extreme example, a friend of mine recently had success running a 2G accord engine with a GM computer! 
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+With that out the way, we are now going to pretend that you now know what fuel and timing adjustments you would like to make, because an adequate explanation of how to tune a car is well beyond both the scope of this article and my expertise.  Proper tools and technique were briefly touched earlier, but by no means should be considered definitive.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+As I hope you have gathered, there is a certain amount of art and a lot of skill/experience involved in tuning a car well.  An adequate explanation of how to tune a car perfectly is far beyond both the scope of this article and my expertise. Please, be careful changing your engine's fuel/timing tables - understand that timing changes can completely change the operating characteristics of the engine! Please be very careful, especially when doing baseline tunes - you can destroy your engine in seconds with a bad program. Use proper tools (wideband, EGT, accelerometer, dyno) whenever possible.  We are now going to <strong>assume</strong> that you now know what fuel and timing adjustments you need to make, regardless of whether this is actually the case. With that hefty disclaimer out of the way, the tools and methods from this point forwards are going to become a lot more specific:
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Fuel and timing tables are stored in the middle of the code running the <a href="../../view/Library/ECU.html">ECU</a>. Distinguishing them from code is generally not THAT hard because they "look" different than the pseudorandom data that runs the computer. A hex editor will let you manipulate the raw data in the <a href="../../view/Library/ECU.html">ECU</a>. <a href="http://www.x-ways.net/winhex/index-m.html" target="_top">WinHex</a> is a quality, shareware hexeditor available from www.download.com. You might want to grab some checksum utilities from www.keil.com as they're generally useful.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<font size="-1" color="#FF0000">TOC: No TOC in "Library.IntroductionToECUChipping"</font>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+<hr />
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+In winhex:
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<h4> Hexediting and Raw editing </h4>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<a href="../../../../resources/articles/Chipping_Basics_12-02/winhex.gif" target="_top">http://www.pgmfi.org/resources/articles/Chipping_Basics_12-02/winhex.gif</a>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Fuel and timing tables are stored in the middle of the code running the <a href="../../view/Library/ECU.html">ECU</a>. Distinguishing them from code is generally not THAT hard because they "look" different than the pseudorandom data that runs the computer. A hex editor will let you manipulate the raw data in the <a href="../../view/Library/ECU.html">ECU</a>. <a href="http://www.x-ways.net/winhex/index-m.html" target="_top">WinHex</a> is a quality, shareware hexeditor available from www.download.com. You might want to grab some checksum utilities from www.keil.com as they're generally useful.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+In winhex:
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+So, you've found the fuel and timing tables in your <a href="../../view/Library/ECU.html">ECU</a>'s program, edit away. Most <a href="../../view/Library/ECU.html">ECU</a>s have a checksum routine - the checksum gods must be appeased after any changes to the <a href="../../view/Library/ROM.html">ROM</a> are made or the car will not run properly.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<img src="../../../pub/Library/IntroductionToECUChipping/winhex.gif" alt="winhex.gif"  width="626" height="423"  />
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Alternatively, you can use a <a href="../../view/Library/RomEditor.html">ROM Editor</a>. Although these programs are generally specific to one or more <a href="../../view/Library/ECU.html">ECU</a>s, most <a href="../../view/Library/ROM.html">ROM</a> editors are fairly similar visually - <a href="../../view/Library/UnderstandingMaps.html">Understanding&nbsp;Maps</a> has a lot of pictures and more hands-on explanation of editor-based fuel and timing table adjustment.  Ghettodyne (available at <a href="http://www.ghettodyne.com" target="_top">http://www.ghettodyne.com</a>) is a free <a href="../../view/Library/ROM.html">ROM</a> editor that currently supports the PM6 (88-91 CRX/Civic Si) <a href="../../view/Library/ECU.html">ECU</a>. Fortunately PM6 <a href="../../view/Library/ROM.html">ROM</a>s will work in almost any 88-91 MULTI-POINT INJECTION CIVIC/INTEGRA <a href="../../view/Library/ECU.html">ECU</a> (PG7, PM6, PM7, PM8, PR4) so this is not as limiting as it initially sounds. To give you an idea of what ghettodyne looks like:
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+So, you've found the fuel and timing tables in your <a href="../../view/Library/ECU.html">ECU</a>'s program, edit away. Most <a href="../../view/Library/ECU.html">ECU</a>s have a <a href="../../view/Library/CheckSum.html">Check&nbsp;Sum</a> routine - the checksum gods must be appeased after any changes to the <a href="../../view/Library/ROM.html">ROM</a> are made or the car will not run properly.  It would take a long time to tune a car if everyone only had hexeditors at their disposal.  In many cases, <a href="../../view/Library/ROM.html">ROM</a> editors are available to assist in the tuning process.  
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+<hr />  
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<a href="../../../../resources/articles/Chipping_Basics_12-02/ghettodyne_small.jpg" target="_top">http://www.pgmfi.org/resources/articles/Chipping_Basics_12-02/ghettodyne_small.jpg</a>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<h4><a name="ROM_Editors"> </a> <a href="../../view/Library/ROM.html">ROM</a> Editors </h4>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+At this point, the assumption will be made (regardless of whether it is actually true) that you have successfully created a new <a href="../../view/Library/ROM.html">ROM</a> image and you want to put it into an <a href="../../view/Library/ECU.html">ECU</a>. The next step towards reprogramming is to take the electronic image you have created and program it into an <a href="../../view/Library/EPROM.html">EPROM</a>(Erasable Programmable Read Only Memory). <a href="../../view/Library/EPROM.html">EPROM</a>s for automotive use are generally 128K, 256K or 512k in size. Use the same size <a href="../../view/Library/EPROM.html">EPROM</a> as the factory uses. Almost all 88-95 Hondas use a <a href="../../view/Library/27C256.html">27&nbsp;C256</a> <a href="../../view/Library/EPROM.html">EPROM</a>. (A quick note about chips: <a href="../../view/Library/27C256.html">27&nbsp;CXXX</a> chips are generally UV erasable - you need a special UV light; blacklights do not work. <a href="../../view/Library/28C256.html">28&nbsp;CXXX</a> are generally <a href="../../view/Library/EEPROM.html">EEPROM</a> - Electrically Erasable and are not pin-compatible... and <a href="../../view/Library/29C256.html">29&nbsp;CXXX</a> are generally Flash <a href="../../view/Library/ROM.html">ROM</a>s and <strong>are</strong> pin-compatible. There are exceptions to these rules, however.)
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Remember, anything you can do with a <a href="../../view/Library/ROM.html">ROM</a> editor can be done by hand with a hexeditor too.  
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+In order to program an <a href="../../view/Library/EPROM.html">EPROM</a>, you will need a <a href="../../view/Library/RomBurner.html">ROM burner</a>. It does not really matter which model you get as long as it can program the chips you need. A cheap, hobbyist-oriented burner is available for less than $100 ready assembled (or less in kit form) from www.batronix.com. Another unit is available from www.xtronics.com and is the programmer of choice for Hondata. Needham Electronics also make a quality programmer. The point of all this is quite simply that it doesn't matter WHICH programmer you have; being able to program 2XC256 chips is what matters.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Although most <a href="../../view/Library/RomEditor.html">ROM Editors</a> are specific to one or more <a href="../../view/Library/ECU.html">ECU</a>s, most are fairly similar visually - <a href="../../view/Library/UnderstandingMaps.html">Understanding&nbsp;Maps</a> has a lot of pictures and more hands-on explanation of editor-based fuel and timing table adjustment.  Most of the concepts will apply to any and all editors.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Now, with your new <a href="../../view/Library/EPROM.html">EPROM</a> ready, crack the case of your <a href="../../view/Library/ECU.html">ECU</a>. All 92-95 <a href="../../view/Library/ECU.html">ECU</a>s made by Honda were able to accept an external <a href="../../view/Library/EPROM.html">EPROM</a>s, even if they did not come with one from the factory. All 92-95 <a href="../../view/Library/ECU.html">ECU</a>s use the same procedure for chipping. Beginners beware of Japanese <a href="../../view/Library/ECU.html">ECU</a>s as they use surface mount components that are marginally harder to work with than US/European <a href="../../view/Library/ECU.html">ECU</a>s. The section of the example <a href="../../view/Library/P28.html">P28</a> 93 Civic Si <a href="../../view/Library/ECU.html">ECU</a> that is important for chipping is outlined in red in the following picture: (Honda was nice and outlined it in a dashed white line for you on the board too)
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<hr />
+<h5><a name="Ghettodyne_OBD0_"> </a> Ghettodyne (<a href="../../view/Library/OBD.html">OBD</a>0) </h5>
+Ghettodyne (available at <a href="http://www.ghettodyne.com" target="_top">http://www.ghettodyne.com</a>) is a free <a href="../../view/Library/ROM.html">ROM</a> editor that was the first to support the PM6 (88-91 CRX/Civic Si) <a href="../../view/Library/ECU.html">ECU</a>. <strong>It is no longer being actively developed.</strong>  To give you an idea of what ghettodyne looks like:
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<a href="../../../../resources/articles/Chipping_Basics_12-02/P28chipping_small.jpg" target="_top">http://www.pgmfi.org/resources/articles/Chipping_Basics_12-02/P28chipping_small.jpg</a>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<img src="../../../pub/Library/IntroductionToECUChipping/ghettodyne_small.jpg" alt="ghettodyne_small.jpg"  width="648" height="398"  />
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+<hr />
+<h5><a name="Turboedit_OBD0_"> </a> Turboedit (<a href="../../view/Library/OBD.html">OBD</a>0) </h5>
+<a href="http://www.turboedit.org" target="_top">TurboEdit</a> has since largely replaced Ghettodyne as the most actively developed <a href="../../view/Library/OBD.html">OBD</a>0 <a href="../../view/Library/ROM.html">ROM</a> editor.  It supports <a href="../../view/Library/ROM.html">ROM</a>s based off the <a href="../../view/Library/PM6.html">PM6</a> and <a href="../../view/Library/PM7.html">PM7</a> codebase at this point.  Close communication between [[Home.TeamOBD0][Team <a href="../../view/Library/OBD.html">OBD</a>0] and Jason Parker, TE's author, ensure that it supports the latest features quickly.  As you can see, the interface is very similar to earlier editors:
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+First, you must de-solder the parts silkscreened in white on the circuit board. I purchased a Xytronics desoldering/soldering station with temperature control for under $400 shipped from Howard Electronics Inc. Professional desoldering tools with integrated vacuum sources can be obtained readily from ebay or other merchants - Pace and Metcal gear is always on ebay. You can get a desoldering tool from radio shack, but it does not work terribly well and I would highly recommend borrowing or buying a true desoldering iron if possible.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<img src="../../../pub/Library/IntroductionToECUChipping/TE2_SS.jpg" alt="TE2_SS.jpg"  width="640" height="476"  />
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Once all the pads are desoldered and you can see through holes for components in the red section above, you need to start soldering in components. No bizarre components are used - everything should be readily obtainable from your local electronics store, Radio Shack, Digikey, Newark Electronics or just about any other <a href="../../view/Library/ElectronicPartSupplier.html">electronic parts distributor</a>. Honda was nice enough to label on the board where everything goes. Place the <a href="../../view/Library/74HC373.html">74&nbsp;HC373</a> chip on the board where indicated and solder it in place. R54 should be filled with a 1k to 1.2k resistor(the exact value does not matter). C51 and C52 are 0.1µf ceramic disc capacitors(12V or better will work fine). Place a 28 pin socket for the <a href="../../view/Library/ROM.html">ROM</a> where 27256 is marked. (BTW, spend a bit more money and get the much higher quality machined-pin sockets instead of the cheapy bent metal leaf type.) Once the socket is in place, place a the <a href="../../view/Library/ROM.html">ROM</a> you programmed earlier in it. Finally, connect J1 with a small wire to enable the external <a href="../../view/Library/ROM.html">ROM</a>. No changes other than cutting J1 are needed to restore the <a href="../../view/Library/ECU.html">ECU</a> to its original state.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<hr />
+<h5><a name="Crome_OBD1_"> </a> Crome (<a href="../../view/Library/OBD.html">OBD</a>1) </h5>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Here you can see a chipped P28 <a href="../../view/Library/ECU.html">ECU</a>. The person who chipped it used a socket for the 74HC373 as well as for the <a href="../../view/Library/ROM.html">ROM</a> socket, and used a real jumper instead of just connecting J1 with a wire. Nevertheless, it will give you an idea of what it should look like when you are done:
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<hr />
+<h5><a name="Uberdata_OBD1_"> </a> Uberdata (<a href="../../view/Library/OBD.html">OBD</a>1) </h5>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+<hr />
+<h4><a name="Chipping_an_ECU_hardware"> </a> Chipping an <a href="../../view/Library/ECU.html">ECU</a>: hardware </h4>
+At this point, the assumption will be made (regardless of whether it is actually true) that you have successfully created a new <a href="../../view/Library/ROM.html">ROM</a> image and you want to put it into an <a href="../../view/Library/ECU.html">ECU</a>. The next step towards reprogramming is to take the electronic image you have created and program it into an <a href="../../view/Library/EPROM.html">EPROM</a>(Erasable Programmable Read Only Memory). <a href="../../view/Library/EPROM.html">EPROM</a>s for automotive use are generally 128K, 256K or 512k in size. Use the same size <a href="../../view/Library/EPROM.html">EPROM</a> as the factory uses. Almost all 88-95 Hondas use a <a href="../../view/Library/27C256.html">27&nbsp;C256</a> <a href="../../view/Library/EPROM.html">EPROM</a>. (A quick note about chips: <a href="../../view/Library/27C256.html">27&nbsp;CXXX</a> chips are generally UV erasable - you need a special UV light; blacklights do not work. <a href="../../view/Library/28C256.html">28&nbsp;CXXX</a> are generally <a href="../../view/Library/EEPROM.html">EEPROM</a> - Electrically Erasable and are not pin-compatible... and <a href="../../view/Library/29C256.html">29&nbsp;CXXX</a> are generally Flash <a href="../../view/Library/ROM.html">ROM</a>s and <strong>are</strong> pin-compatible. There are exceptions to these rules, however.)
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<a href="../../../../resources/articles/Chipping_Basics_12-02/P28done_small.jpg" target="_top">http://www.pgmfi.org/resources/articles/Chipping_Basics_12-02/P28done_small.jpg</a>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+In order to program an <a href="../../view/Library/EPROM.html">EPROM</a>, you will need a <a href="../../view/Library/RomBurner.html">ROM burner</a>. It does not really matter which model you get as long as it can program the chips you need. A cheap, hobbyist-oriented burner is available for less than $100 ready assembled (or less in kit form) from www.batronix.com. Another unit is available from www.xtronics.com and is the programmer of choice for Hondata. Needham Electronics also make a quality programmer. The point of all this is quite simply that it doesn't matter WHICH programmer you have; being able to program 2XC256 chips is what matters.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+I purchased a Xytronics desoldering/soldering station with temperature control for under $400 shipped from Howard Electronics Inc. Professional desoldering tools with integrated vacuum sources can be obtained readily from ebay or other merchants - Pace and Metcal gear is always on ebay. You can get a desoldering tool from radio shack, but it does not work terribly well and I would highly recommend borrowing or buying a true desoldering iron if possible.
+<hr />
+<h5><a name="OBD0_ECU_Chipping"> </a> OBD0 <a href="../../view/Library/ECU.html">ECU</a> Chipping </h5>
+If you have a <a href="../../view/Library/OBD0.html">OBD0</a> <a href="../../view/Library/ECU.html">ECU</a>, chipping the <a href="../../view/Library/ECU.html">ECU</a> might not be straightforward. Almost ALL 90-91 PM6, PM7, PR4 and PP5(with catalytic converter) <a href="../../view/Library/ECU.html">ECU</a>s had external <a href="../../view/Library/EPROM.html">EPROM</a>s, and are easy to change the program on. Almost all 88-89 PG7, PM6, PM7 and 88-91 PM8 <a href="../../view/Library/ECU.html">ECU</a>s did not have an external <a href="../../view/Library/EPROM.html">EPROM</a>. It is possible to chip these <a href="../../view/Library/ECU.html">ECU</a>s, but it requires considerably more work and is beyond the scope of this article. See <a href="../../view/Library/ChippingAn88-89ECU.html">Chipping&nbsp;An88-89&nbsp;ECU</a> for more details.  The following <a href="../../view/Library/ECU.html">ECU</a> is a PM7 that does not have an external <a href="../../view/Library/ROM.html">ROM</a>:
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+<img src="../../../pub/Library/IntroductionToECUChipping/trickyPM7small.jpg" alt="trickyPM7small.jpg"  width="500" height="346"  />
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+If you have a <a href="../../view/Library/OBD0.html">OBD0</a> <a href="../../view/Library/ECU.html">ECU</a>, chipping the <a href="../../view/Library/ECU.html">ECU</a> might not be such an easy option for you. Almost ALL 90-91 PM6, PM7, PR4 and PP5(with catalytic converter) <a href="../../view/Library/ECU.html">ECU</a>s had external <a href="../../view/Library/EPROM.html">EPROM</a>s, and are easy to change the program on. Almost all 88-89 PG7, PM6, PM7 and 88-91 PM8 <a href="../../view/Library/ECU.html">ECU</a>s did not have an external <a href="../../view/Library/EPROM.html">EPROM</a>. It is possible to chip these <a href="../../view/Library/ECU.html">ECU</a>s, but it requires considerably more work and is beyond the scope of this article. The following <a href="../../view/Library/ECU.html">ECU</a> is a PM7 that does not have an external <a href="../../view/Library/ROM.html">ROM</a>:
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+If you are luckier and have an <a href="../../view/Library/ECU.html">ECU</a> with an external <a href="../../view/Library/EPROM.html">EPROM</a> from the factory, the <a href="../../view/Library/ECU.html">ECU</a> you have will look more like this:
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<a href="../../../../resources/articles/Chipping_Basics_12-02/trickyPM7small.jpg" target="_top">http://www.pgmfi.org/resources/articles/Chipping_Basics_12-02/trickyPM7small.jpg</a>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<img src="../../../pub/Library/IntroductionToECUChipping/PM6tochip_small.jpg" alt="PM6tochip_small.jpg"  width="411" height="278"  />
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+An <a href="../../view/Library/OBD0.html">OBD0</a> <a href="../../view/Library/ECU.html">ECU</a> with an external <a href="../../view/Library/EPROM.html">EPROM</a> is very simple to chip. First, cut all 28 pins with a razor blade or utility knife. BE CAREFUL YOU DO NOT SLIP AS YOU CAN PERMANENTLY DAMAGE THE CIRCUIT BOARD. It is not absolutely necessary to do this before desoldering, but removing the chip will make it much easier, particularly if you do not have a good desoldering station. Once the original <a href="../../view/Library/ROM.html">ROM</a> is desoldered and removed and you can see through the holes in the circuit board, add a socket for an <a href="../../view/Library/EPROM.html">EPROM</a> and then place the new <a href="../../view/Library/ROM.html">ROM</a> you have created into the socket.
+<hr />
+<h5><a name="OBD1_ECU_chipping"> </a> OBD1 <a href="../../view/Library/ECU.html">ECU</a> chipping </h5>
+Now, with your new <a href="../../view/Library/EPROM.html">EPROM</a> ready, crack the case of your <a href="../../view/Library/ECU.html">ECU</a>. All 92-95 <a href="../../view/Library/ECU.html">ECU</a>s made by Honda were able to accept an external <a href="../../view/Library/EPROM.html">EPROM</a>s, even if they did not come with one from the factory. All 92-95 <a href="../../view/Library/ECU.html">ECU</a>s use the same procedure for chipping. Beginners beware of Japanese <a href="../../view/Library/ECU.html">ECU</a>s as they use surface mount components that are marginally harder to work with than US/European <a href="../../view/Library/ECU.html">ECU</a>s. The section of the example <a href="../../view/Library/P28.html">P28</a> 93 Civic Si <a href="../../view/Library/ECU.html">ECU</a> that is important for chipping is outlined in red in the following picture: (Honda was nice and outlined it in a dashed white line for you on the board too)
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+If you are luckier, the <a href="../../view/Library/ECU.html">ECU</a> you have will look more like this:
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<img src="../../../pub/Library/IntroductionToECUChipping/P28chipping_small.jpg" alt="P28chipping_small.jpg"  width="422" height="302"  />
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+First, you must de-solder the parts silkscreened in white on the circuit board. Once all the pads are desoldered and you can see through holes for components in the red section above, you need to start soldering in components. No bizarre components are used - everything should be readily obtainable from your local electronics store, Radio Shack, Digikey, Newark Electronics or just about any other <a href="../../view/Library/ElectronicPartSupplier.html">electronic parts distributor</a>. 
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<a href="../../../../resources/articles/Chipping_Basics_12-02/PM6tochip_small.jpg" target="_top">http://www.pgmfi.org/resources/articles/Chipping_Basics_12-02/PM6tochip_small.jpg</a>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Honda was nice enough to label on the board where everything goes. Place the <a href="../../view/Library/74HC373.html">74&nbsp;HC373</a> chip on the board where indicated and solder it in place. R54 should be filled with a 1k to 1.2k resistor(the exact value does not matter). C51 and C52 are 0.1µf ceramic disc capacitors(12V or better will work fine). Place a 28 pin socket for the <a href="../../view/Library/ROM.html">ROM</a> where 27256 is marked. (BTW, spend a bit more money and get the much higher quality machined-pin sockets instead of the cheapy bent metal leaf type.) Once the socket is in place, place a the <a href="../../view/Library/ROM.html">ROM</a> you programmed earlier in it. Finally, connect J1 with a small wire to enable the external <a href="../../view/Library/ROM.html">ROM</a>. No changes other than cutting J1 are needed to restore the <a href="../../view/Library/ECU.html">ECU</a> to its original state.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+Here you can see a chipped P28 <a href="../../view/Library/ECU.html">ECU</a>. The person who chipped it used a socket for the 74HC373 as well as for the <a href="../../view/Library/ROM.html">ROM</a> socket, and used a real jumper instead of just connecting J1 with a wire. Nevertheless, it will give you an idea of what it should look like when you are done:
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+If you are lucky enough to get an <a href="../../view/Library/OBD0.html">OBD0</a> <a href="../../view/Library/ECU.html">ECU</a> with an external <a href="../../view/Library/EPROM.html">EPROM</a>, it is very simple to chip it. First, remove the <a href="../../view/Library/ROM.html">ROM</a> present by cutting all 28 pins with a razor blade or utility knife. BE CAREFUL YOU DO NOT SLIP AS YOU CAN PERMANENTLY DAMAGE THE CIRCUIT BOARD. It is not absolutely necessary to do this before desoldering, but removing the chip will make it much easier, particularly if you do not have a good desoldering station. Once the original <a href="../../view/Library/ROM.html">ROM</a> is desoldered and removed and you can see through the holes in the circuit board, add a socket for an <a href="../../view/Library/EPROM.html">EPROM</a> and then place the new <a href="../../view/Library/ROM.html">ROM</a> you have created into the socket.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<img src="../../../pub/Library/IntroductionToECUChipping/P28done_small.jpg" alt="P28done_small.jpg"  width="431" height="297"  />
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+If you have a <a href="../../view/Library/OBD2.html">OBD2</a> <a href="../../view/Library/ECU.html">ECU</a>, you are just going to have to wait or buy commercial <a href="../../view/Library/TechTom.html">Tech&nbsp;Tom</a> gear.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<hr />
+<h5><a name="OBD2_ECU_Chipping"> </a> <a href="../../view/Library/OBD.html">OBD</a>2 <a href="../../view/Library/ECU.html">ECU</a> Chipping </h5>
+If you have a <a href="../../view/Library/OBD2.html">OBD2</a> <a href="../../view/Library/ECU.html">ECU</a>, you are just going to have to wait or buy commercial <a href="../../view/Library/TechTom.html">Tech&nbsp;Tom</a> gear.  It is possible to remove the 66K <a href="../../view/Library/MCU.html">MCU</a> and replace it with another <a href="../../view/Library/OTP.html">OTP</a> 66P507 or <a href="../../view/Library/FLASH.html">FLASH</a> 66Q589 (As the case may be) but this is far from trivial.  Little is known about <a href="../../view/Library/OBD.html">OBD</a>2 code.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+<hr />
+<h4> Troubleshooting </h4>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+<h2> Conclusion </h2>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+<p />
+%META:FILEATTACHMENT{name="ghettodyne_small.jpg" attr="h" comment="view of ghettodyne (small)" date="1080590546" path="C:\Documents and Settings\Administrator\Desktop\temp\wiki\dfs\ghettodyne_small.jpg" size="75773" user="blundar" version="1.1"}%
+%META:FILEATTACHMENT{name="P28chipping_small.jpg" attr="h" comment="P28 chipping (small)" date="1080590564" path="C:\Documents and Settings\Administrator\Desktop\temp\wiki\dfs\P28chipping_small.jpg" size="64300" user="blundar" version="1.1"}%
+%META:FILEATTACHMENT{name="P28done_small.jpg" attr="h" comment="P28 done (small)" date="1080590584" path="C:\Documents and Settings\Administrator\Desktop\temp\wiki\dfs\P28done_small.jpg" size="60506" user="blundar" version="1.1"}%
+%META:FILEATTACHMENT{name="PM6tochip_small.jpg" attr="h" comment="PM6to chip (small)" date="1080590616" path="C:\Documents and Settings\Administrator\Desktop\temp\wiki\dfs\PM6tochip_small.jpg" size="56965" user="blundar" version="1.1"}%
+%META:FILEATTACHMENT{name="trickyPM7small.jpg" attr="h" comment="88-89 <a href="../../view/Library/ROM.html">ROM</a>-less <a href="../../view/Library/ECU.html">ECU</a> (small)" date="1080590649" path="C:\Documents and Settings\Administrator\Desktop\temp\wiki\dfs\trickyPM7small.jpg" size="66239" user="blundar" version="1.1"}%
+%META:FILEATTACHMENT{name="winhex.gif" attr="h" comment="screenshot of winhex" date="1080591273" path="C:\Documents and Settings\Administrator\Desktop\temp\wiki\dfs\winhex.gif" size="19150" user="blundar" version="1.2"}%
+%META:FILEATTACHMENT{name="TE2_SS.jpg" attr="h" comment="TE2 screenshot" date="1080592135" path="C:\Documents and Settings\Administrator\Desktop\temp\wiki\dfs\TE2_SS.jpg" size="121953" user="blundar" version="1.1"}%</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/IntroductionToECUChipping.html">IntroductionToECUChipping</a></b>
+		(<a href="../../view/Library/IntroductionToECUChipping%3Frev=r1.3.html">r1.3</a> - 29&nbsp;Mar&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+This does bring us to a valid point. Tuning is best something done on a dyno, or at least with something to give a very objective measure of how the car is responding. <a href="../../view/Library/WideBandO2.html">Wideband O2</a> meters and <a href="../../view/Library/ExhaustGasTempSensor.html">EGT</a> probes can give you some idea of what is going on, but they are generally more effective at tuning air-fuel ratio than timing adjustment. The "butt dyno" is a totally inappropriate way to determine how the car is performing - most of the changes you will make to a computer program will be subtle enough that you probably will not be able to "feel" them. Beware of most aftermarket "chips": more often than not these programs just dump more fuel and increase timing greatly while doing things like raising revlimiters far beyond safe levels. There are very limited gains to be had from most "performance chips." Tuning not "chipping" generally produces usable, real world gains. That being said, changing the program of a <a href="../../view/Library/ECU.html">ECU</a> is generally not that tricky. First it would probably be wise to focus on some basics of how <a href="../../view/Library/ECU.html">ECU</a>s work so that it is more apparent where we could makes changes to have a positive effect on performance.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+This does bring us to a valid point. Tuning is best something done on a dyno that can simulate loads (such as a Dynapack or Mustang dyno).  Dynojets are only useful for tuning a much narrow range of operating conditions, namely acceleration at wide open throttle through the rev reange.  When a Dyno is not available, something to give an objective measure of how the car is responding is a good second choice. <a href="../../view/Library/WideBandO2.html">Wideband O2</a> meters and <a href="../../view/Library/ExhaustGasTempSensor.html">EGT</a> probes can give you some idea of what is going on.  Widebands generally provide more direct information about <a href="../../view/Library/AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratio</a>, but they are generally ineffective for timing adjustment. <a href="../../view/Library/ExhaustGasTempSensor.html">EGT</a> probes tell how how the exhaust leaving a motor is, which can be used to infer a lot of information.  If <a href="../../view/Library/AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratio</a> is left relatively constant, most changes in EGTs can be attributed to timing adjustment.  <a href="../../view/Library/AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratios</a> will causes changes in EGTs!  If you are trying to use an EGT to tune your timing, make sure you have your AFRs nailed reasonably close to your target <strong>first</strong>.  This article in intended as a <em>brief</em> introduction, so enough of that.
+<p />
+Don't despair if you don't have access to a dyno, however.  Accelerometers (like the <a href="../../view/Library/G-Spot.html">G-Spot</a>) measure acceleration forces with fiarly good (&lt;1%) precison (consistency, repeatability).  If you can record this information as part of your <a href="../../view/Library/DataLogging.html">Data&nbsp;Logging</a> procedure, you can do some math knowing the weight of the vehicle and its gearing to come up with horsepower and torque output figures for the car.  Again, this method has fairly good precision (REPEATABILITY) but relatively poor accuracy (i.e. numbers will almost never match a calibrated dyno) - what this means for you as a tuner is that if your calculated horsepower and torque numbers increase consistently, you the changes you made improved the performance of the car. The numbers themselves don't mean a lot, but if you can produce significant consistent improvements you have tuned the car better.
+<p />
+A final note before more practical matters - the "butt dyno" is a totally inappropriate way to determine how the car is performing - most of the changes you will make to a computer program will be subtle enough that you probably will not be able to "feel" them accurately. The butt dyno has almost zero precision - I've had many kids report "very different" results from no real changes to a chip. Also, the butt dyno is much better for detecting rapid increases in torque than consistently more torque. Consistent torque is what makes a car fast, not how quickly torque increases. What this means concretely is that a car may "feel" faster on the butt dyno because it has sharp spikes of torque, but in reality it is slower than a car with a smoother powerband with gradual increases in torque. 
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Most <a href="../../view/Library/ECU.html">ECU</a>s seem to operate in two modes. In one mode, the <a href="../../view/Library/ECU.html">ECU</a> is monitoring as many engine sensors as possible, trying to get the best fuel economy. This mode is normally referred to as "closed loop" because it is a closed feedback system. In the other mode, the <a href="../../view/Library/ECU.html">ECU</a> is generally trying to achieve the greatest level of performance possible. This mode is normally called "open loop" because it does not continuously monitor sensors and compute fuel correction: simpler routines are used. It's difficult to change the exact behavior of the <a href="../../view/Library/ECU.html">ECU</a> under closed loop conditions because it requires an understanding and possibly a re-write of that portion of the code running the <a href="../../view/Library/ECU.html">ECU</a>. Open loop conditions are generally stored in the form of a table where the <a href="../../view/Library/ECU.html">ECU</a> "looks up" fuel and timing values using a relatively simple algorithm. In most cases, the open loop tables also serve as values to use as a base for fuel correction routines. Modifying these tables is the most basic way to retune a car, however it bears remembering that the <a href="../../view/Library/ECU.html">ECU</a> will be making adjustments to whatever fuel/timing information it has.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Beware of most aftermarket "chips": more often than not these programs just dump more fuel and increase timing greatly while doing things like raising revlimiters far beyond safe levels. There are very limited gains to be had from most "performance chips." Tuning not "chipping" generally produces usable, real world gains. That being said, changing the program of a <a href="../../view/Library/ECU.html">ECU</a> is generally not that tricky. First, it would probably be wise to focus on some basics of how <a href="../../view/Library/ECU.html">ECU</a>s work so that it is more apparent where we could makes changes to have a positive effect on performance.
+<p />
+Most <a href="../../view/Library/ECU.html">ECU</a>s seem to operate in two modes. In one mode, the <a href="../../view/Library/ECU.html">ECU</a> is monitoring as many engine sensors as possible, trying to get the best fuel economy. This mode is normally referred to as "closed loop" because it is a closed feedback system. In the other mode, the <a href="../../view/Library/ECU.html">ECU</a> runs a much simpler routine that is most often engaged at wide open throttle. This mode is normally called "open loop" because it does not continuously monitor sensors and compute fuel correction. Open loop conditions are generally stored in the form of a table where the <a href="../../view/Library/ECU.html">ECU</a> "looks up" fuel and timing values using a relatively simple algorithm. Modifying fuel and timing tables is the most basic way to retune a car, however it bears remembering that the <a href="../../view/Library/ECU.html">ECU</a> will be making adjustments to whatever information it has. In most cases, open loop table values serve as base values for closed loop fuel correction routines to adjust, but it is difficult to change the exact behavior of adjustment routines. Problematic closed loop correction routines require an understanding and possibly a re-write of the code running the <a href="../../view/Library/ECU.html">ECU</a> to be fixed properly. 
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+With that out the way, we are now going to pretend that you now know what fuel and timing adjustments you would like to make, because an adequate explanation of how to tune a car is well beyond both the scope of this article and my expertise.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+With that out the way, we are now going to pretend that you now know what fuel and timing adjustments you would like to make, because an adequate explanation of how to tune a car is well beyond both the scope of this article and my expertise.  Proper tools and technique were briefly touched earlier, but by no means should be considered definitive.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Alternatively, you can use a <a href="../../view/Library/RomEditor.html">ROM Editor</a>. These programs are generally specific to one or more <a href="../../view/Library/ECU.html">ECU</a>s, and allow a more visual representation of the data inside the <a href="../../view/Library/ECU.html">ECU</a>. Ghettodyne (available at <a href="http://www.ghettodyne.com" target="_top">http://www.ghettodyne.com</a>) is a free <a href="../../view/Library/ROM.html">ROM</a> editor that currently supports the PM6 (88-91 CRX/Civic Si) <a href="../../view/Library/ECU.html">ECU</a>. Fortunately PM6 <a href="../../view/Library/ROM.html">ROM</a>s will work in almost any 88-91 MULTI-POINT INJECTION CIVIC/INTEGRA <a href="../../view/Library/ECU.html">ECU</a> (PG7, PM6, PM7, PM8, PR4) so this is not as limiting as it initially sounds. To give you an idea of what ghettodyne looks like:
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Alternatively, you can use a <a href="../../view/Library/RomEditor.html">ROM Editor</a>. Although these programs are generally specific to one or more <a href="../../view/Library/ECU.html">ECU</a>s, most <a href="../../view/Library/ROM.html">ROM</a> editors are fairly similar visually - <a href="../../view/Library/UnderstandingMaps.html">Understanding&nbsp;Maps</a> has a lot of pictures and more hands-on explanation of editor-based fuel and timing table adjustment.  Ghettodyne (available at <a href="http://www.ghettodyne.com" target="_top">http://www.ghettodyne.com</a>) is a free <a href="../../view/Library/ROM.html">ROM</a> editor that currently supports the PM6 (88-91 CRX/Civic Si) <a href="../../view/Library/ECU.html">ECU</a>. Fortunately PM6 <a href="../../view/Library/ROM.html">ROM</a>s will work in almost any 88-91 MULTI-POINT INJECTION CIVIC/INTEGRA <a href="../../view/Library/ECU.html">ECU</a> (PG7, PM6, PM7, PM8, PR4) so this is not as limiting as it initially sounds. To give you an idea of what ghettodyne looks like:
+</td></tr>
+<tr><td bgcolor="#FFD7D7" colspan ="2"><b> Deleted: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p /></td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/IntroductionToECUChipping.html">IntroductionToECUChipping</a></b>
+		(<a href="../../view/Library/IntroductionToECUChipping%3Frev=r1.2.html">r1.2</a> - 20&nbsp;Feb&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+You can completely change the operating characteristics of an engine by changing the fuel tables around. As an example, a <span style='background : #FFFFCE;'><font color="#0000FF">Trash.PM6</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Trash/PM6?topicparent=Library.IntroductionToECUChipping">?</a> (88-91 Civic/CRX Si) <a href="../../view/Library/ECU.html">ECU</a> is normally used to run a D16A6, ~100HP. By little more than changing the fuel, ignition tables and the revlimiter, a Trash.PM6 can run a <a href="../../view/Library/DOHC.html">DOHC</a> ZC, ~135HP, like it came out of the factory. Additionally, little more than even more fuel/ignition map changes and revlimiter changes are all that is needed to make it run a B18A/B18B or a B20B! In another more extreme example, a friend of mine recently had success running a 2G accord engine with a GM computer! Please, be careful changing your engine's fuel/timing tables - understand that timing changes can completely change the operating characteristics of the engine! You can destroy your engine in seconds with a bad program. Please be very careful, especially when doing baseline tunes as opposed to modifying an existing tune.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+You can completely change the operating characteristics of an engine by changing the fuel tables around. As an example, a <a href="../../view/Library/PM6.html">PM6</a> (88-91 Civic/CRX Si) <a href="../../view/Library/ECU.html">ECU</a> is normally used to run a D16A6, ~100HP. By little more than changing the fuel, ignition tables and the revlimiter, a PM6 can run a <a href="../../view/Library/DOHC.html">DOHC</a> ZC, ~135HP, like it came out of the factory. Additionally, little more than even more fuel/ignition map changes and revlimiter changes are all that is needed to make it run a B18A/B18B or a B20B! In another more extreme example, a friend of mine recently had success running a 2G accord engine with a GM computer! Please, be careful changing your engine's fuel/timing tables - understand that timing changes can completely change the operating characteristics of the engine! You can destroy your engine in seconds with a bad program. Please be very careful, especially when doing baseline tunes as opposed to modifying an existing tune.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Fuel and timing tables are stored in the middle of the code running the <a href="../../view/Library/ECU.html">ECU</a>. Distinguishing them from code is generally not THAT hard because they "look" different than the pseudorandom data that runs the computer. A hex editor will let you manipulate the raw data in the <a href="../../view/Library/ECU.html">ECU</a>. <a href="../../view/Library/WinHex.html">Win&nbsp;Hex</a> is a quality, shareware hexeditor available from www.download.com. You might want to grab some checksum utilities from www.keil.com as they're generally useful.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Fuel and timing tables are stored in the middle of the code running the <a href="../../view/Library/ECU.html">ECU</a>. Distinguishing them from code is generally not THAT hard because they "look" different than the pseudorandom data that runs the computer. A hex editor will let you manipulate the raw data in the <a href="../../view/Library/ECU.html">ECU</a>. <a href="http://www.x-ways.net/winhex/index-m.html" target="_top">WinHex</a> is a quality, shareware hexeditor available from www.download.com. You might want to grab some checksum utilities from www.keil.com as they're generally useful.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Alternatively, you can use a <a href="../../view/Library/RomEditor.html">ROM Editor</a>. These programs are generally specific to one or more <a href="../../view/Library/ECU.html">ECU</a>s, and allow a more visual representation of the data inside the <a href="../../view/Library/ECU.html">ECU</a>. Ghettodyne (available at <a href="http://www.ghettodyne.com" target="_top">http://www.ghettodyne.com</a>) is a free <a href="../../view/Library/ROM.html">ROM</a> editor that currently supports the Trash.PM6 (88-91 CRX/Civic Si) <a href="../../view/Library/ECU.html">ECU</a>. Fortunately Trash.PM6 <a href="../../view/Library/ROM.html">ROM</a>s will work in almost any 88-91 MULTI-POINT INJECTION CIVIC/INTEGRA <a href="../../view/Library/ECU.html">ECU</a> (PG7, Trash.PM6, PM7, PM8, PR4) so this is not as limiting as it initially sounds. To give you an idea of what ghettodyne looks like:
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Alternatively, you can use a <a href="../../view/Library/RomEditor.html">ROM Editor</a>. These programs are generally specific to one or more <a href="../../view/Library/ECU.html">ECU</a>s, and allow a more visual representation of the data inside the <a href="../../view/Library/ECU.html">ECU</a>. Ghettodyne (available at <a href="http://www.ghettodyne.com" target="_top">http://www.ghettodyne.com</a>) is a free <a href="../../view/Library/ROM.html">ROM</a> editor that currently supports the PM6 (88-91 CRX/Civic Si) <a href="../../view/Library/ECU.html">ECU</a>. Fortunately PM6 <a href="../../view/Library/ROM.html">ROM</a>s will work in almost any 88-91 MULTI-POINT INJECTION CIVIC/INTEGRA <a href="../../view/Library/ECU.html">ECU</a> (PG7, PM6, PM7, PM8, PR4) so this is not as limiting as it initially sounds. To give you an idea of what ghettodyne looks like:
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+If you have a <a href="../../view/Library/OBD0.html">OBD0</a> <a href="../../view/Library/ECU.html">ECU</a>, chipping the <a href="../../view/Library/ECU.html">ECU</a> might not be such an easy option for you. Almost ALL 90-91 Trash.PM6, PM7, PR4 and PP5(with catalytic converter) <a href="../../view/Library/ECU.html">ECU</a>s had external <a href="../../view/Library/EPROM.html">EPROM</a>s, and are easy to change the program on. Almost all 88-89 PG7, Trash.PM6, PM7 and 88-91 PM8 <a href="../../view/Library/ECU.html">ECU</a>s did not have an external <a href="../../view/Library/EPROM.html">EPROM</a>. It is possible to chip these <a href="../../view/Library/ECU.html">ECU</a>s, but it requires considerably more work and is beyond the scope of this article. The following <a href="../../view/Library/ECU.html">ECU</a> is a PM7 that does not have an external <a href="../../view/Library/ROM.html">ROM</a>:
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+If you have a <a href="../../view/Library/OBD0.html">OBD0</a> <a href="../../view/Library/ECU.html">ECU</a>, chipping the <a href="../../view/Library/ECU.html">ECU</a> might not be such an easy option for you. Almost ALL 90-91 PM6, PM7, PR4 and PP5(with catalytic converter) <a href="../../view/Library/ECU.html">ECU</a>s had external <a href="../../view/Library/EPROM.html">EPROM</a>s, and are easy to change the program on. Almost all 88-89 PG7, PM6, PM7 and 88-91 PM8 <a href="../../view/Library/ECU.html">ECU</a>s did not have an external <a href="../../view/Library/EPROM.html">EPROM</a>. It is possible to chip these <a href="../../view/Library/ECU.html">ECU</a>s, but it requires considerably more work and is beyond the scope of this article. The following <a href="../../view/Library/ECU.html">ECU</a> is a PM7 that does not have an external <a href="../../view/Library/ROM.html">ROM</a>:
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<a href="http://www.pgmfi.org/resources/articles/Chipping_Basics_12-02/Trash.PM6tochip_small.jpg" target="_top">http://www.pgmfi.org/resources/articles/Chipping_Basics_12-02/Trash.PM6tochip_small.jpg</a>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<a href="../../../../resources/articles/Chipping_Basics_12-02/PM6tochip_small.jpg" target="_top">http://www.pgmfi.org/resources/articles/Chipping_Basics_12-02/PM6tochip_small.jpg</a></td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/IntroductionToECUChipping.html">IntroductionToECUChipping</a></b>
+		(<a href="../../view/Library/IntroductionToECUChipping%3Frev=r1.1.html">r1.1</a> - 19&nbsp;Feb&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="blundar" date="1077231960" format="1.0" version="1.1"}%
+<h2><a name="Introduction_to_ECU_Chipping"> </a> Introduction to <a href="../../view/Library/ECU.html">ECU</a> Chipping </h2>
+by <a href="../../view/Library/DavidBlundell.html">David&nbsp;Blundell</a>
+<p />
+<p />
+With the move from carburetors to fuel injection, computers have assumed an important role in the proper functioning of an engine. The level of precise control possible with a <a href="../../view/Library/ECU.html">ECU</a> (Engine Control Unit - computer for running an engine) can not only allow for greatly improved fuel economy, but can also allow for fine tuning of an engine to a degree that is arguably impossible with the best carburetors. Many <a href="../../view/Library/ECU.html">ECU</a>s, including those made by Honda, do data interpolation, allowing them to intelligently compensate for engine conditions that fall "between" known states, allowing for an almost continuously variable response to varying engine conditions. Additionally, the <a href="../../view/Library/ECU.html">ECU</a> can make small corrections to fuel/timing based on the state of various engine sensors. It is probably fairly fair to say that from the factory, most manufacturers tune for fuel economy, emissions and poor quality gasoline as opposed to power and race gas.
+Honda is no exception to these rules about tuning. Basis for this can be seen very clearly by comparing European/US fuel and timing maps to Japanese timing maps for the same engine. Japanese have gasoline that is on average a minimum of about 10 octane points greater than gas sold in the US. Comparing <a href="../../view/Library/JDM.html">JDM</a> and <a href="../../view/Library/USDM.html">USDM</a>/EDM timing curves generally show the <a href="../../view/Library/JDM.html">JDM</a> maps having several degrees more spark advance, reflecting the manufacturer's expectation of better quality gasoline. I don't really have enough experience tuning or on a dyno to be able to say exactly what is possible, but you have to wonder about how much 205 HP out a 1.8L (ITR) can be improved on. However, I doubt it would surprise anyone if another 5-10 HP could be squeezed out of an ITR by HOURS on the dyno and some changes to the <a href="../../view/Library/ECU.html">ECU</a> program, particularly in the control over timing.
+<p />
+This does bring us to a valid point. Tuning is best something done on a dyno, or at least with something to give a very objective measure of how the car is responding. <a href="../../view/Library/WideBandO2.html">Wideband O2</a> meters and <a href="../../view/Library/ExhaustGasTempSensor.html">EGT</a> probes can give you some idea of what is going on, but they are generally more effective at tuning air-fuel ratio than timing adjustment. The "butt dyno" is a totally inappropriate way to determine how the car is performing - most of the changes you will make to a computer program will be subtle enough that you probably will not be able to "feel" them. Beware of most aftermarket "chips": more often than not these programs just dump more fuel and increase timing greatly while doing things like raising revlimiters far beyond safe levels. There are very limited gains to be had from most "performance chips." Tuning not "chipping" generally produces usable, real world gains. That being said, changing the program of a <a href="../../view/Library/ECU.html">ECU</a> is generally not that tricky. First it would probably be wise to focus on some basics of how <a href="../../view/Library/ECU.html">ECU</a>s work so that it is more apparent where we could makes changes to have a positive effect on performance.
+<p />
+Most <a href="../../view/Library/ECU.html">ECU</a>s seem to operate in two modes. In one mode, the <a href="../../view/Library/ECU.html">ECU</a> is monitoring as many engine sensors as possible, trying to get the best fuel economy. This mode is normally referred to as "closed loop" because it is a closed feedback system. In the other mode, the <a href="../../view/Library/ECU.html">ECU</a> is generally trying to achieve the greatest level of performance possible. This mode is normally called "open loop" because it does not continuously monitor sensors and compute fuel correction: simpler routines are used. It's difficult to change the exact behavior of the <a href="../../view/Library/ECU.html">ECU</a> under closed loop conditions because it requires an understanding and possibly a re-write of that portion of the code running the <a href="../../view/Library/ECU.html">ECU</a>. Open loop conditions are generally stored in the form of a table where the <a href="../../view/Library/ECU.html">ECU</a> "looks up" fuel and timing values using a relatively simple algorithm. In most cases, the open loop tables also serve as values to use as a base for fuel correction routines. Modifying these tables is the most basic way to retune a car, however it bears remembering that the <a href="../../view/Library/ECU.html">ECU</a> will be making adjustments to whatever fuel/timing information it has.
+<p />
+You can completely change the operating characteristics of an engine by changing the fuel tables around. As an example, a <span style='background : #FFFFCE;'><font color="#0000FF">Trash.PM6</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Trash/PM6?topicparent=Library.IntroductionToECUChipping">?</a> (88-91 Civic/CRX Si) <a href="../../view/Library/ECU.html">ECU</a> is normally used to run a D16A6, ~100HP. By little more than changing the fuel, ignition tables and the revlimiter, a Trash.PM6 can run a <a href="../../view/Library/DOHC.html">DOHC</a> ZC, ~135HP, like it came out of the factory. Additionally, little more than even more fuel/ignition map changes and revlimiter changes are all that is needed to make it run a B18A/B18B or a B20B! In another more extreme example, a friend of mine recently had success running a 2G accord engine with a GM computer! Please, be careful changing your engine's fuel/timing tables - understand that timing changes can completely change the operating characteristics of the engine! You can destroy your engine in seconds with a bad program. Please be very careful, especially when doing baseline tunes as opposed to modifying an existing tune.
+<p />
+With that out the way, we are now going to pretend that you now know what fuel and timing adjustments you would like to make, because an adequate explanation of how to tune a car is well beyond both the scope of this article and my expertise.
+<p />
+Fuel and timing tables are stored in the middle of the code running the <a href="../../view/Library/ECU.html">ECU</a>. Distinguishing them from code is generally not THAT hard because they "look" different than the pseudorandom data that runs the computer. A hex editor will let you manipulate the raw data in the <a href="../../view/Library/ECU.html">ECU</a>. <a href="../../view/Library/WinHex.html">Win&nbsp;Hex</a> is a quality, shareware hexeditor available from www.download.com. You might want to grab some checksum utilities from www.keil.com as they're generally useful.
+<p />
+<p />
+In winhex:
+<p />
+<a href="../../../../resources/articles/Chipping_Basics_12-02/winhex.gif" target="_top">http://www.pgmfi.org/resources/articles/Chipping_Basics_12-02/winhex.gif</a>
+<p />
+<p />
+<p />
+So, you've found the fuel and timing tables in your <a href="../../view/Library/ECU.html">ECU</a>'s program, edit away. Most <a href="../../view/Library/ECU.html">ECU</a>s have a checksum routine - the checksum gods must be appeased after any changes to the <a href="../../view/Library/ROM.html">ROM</a> are made or the car will not run properly.
+<p />
+Alternatively, you can use a <a href="../../view/Library/RomEditor.html">ROM Editor</a>. These programs are generally specific to one or more <a href="../../view/Library/ECU.html">ECU</a>s, and allow a more visual representation of the data inside the <a href="../../view/Library/ECU.html">ECU</a>. Ghettodyne (available at <a href="http://www.ghettodyne.com" target="_top">http://www.ghettodyne.com</a>) is a free <a href="../../view/Library/ROM.html">ROM</a> editor that currently supports the Trash.PM6 (88-91 CRX/Civic Si) <a href="../../view/Library/ECU.html">ECU</a>. Fortunately Trash.PM6 <a href="../../view/Library/ROM.html">ROM</a>s will work in almost any 88-91 MULTI-POINT INJECTION CIVIC/INTEGRA <a href="../../view/Library/ECU.html">ECU</a> (PG7, Trash.PM6, PM7, PM8, PR4) so this is not as limiting as it initially sounds. To give you an idea of what ghettodyne looks like:
+<p />
+<p />
+<a href="../../../../resources/articles/Chipping_Basics_12-02/ghettodyne_small.jpg" target="_top">http://www.pgmfi.org/resources/articles/Chipping_Basics_12-02/ghettodyne_small.jpg</a>
+<p />
+<p />
+<p />
+At this point, the assumption will be made (regardless of whether it is actually true) that you have successfully created a new <a href="../../view/Library/ROM.html">ROM</a> image and you want to put it into an <a href="../../view/Library/ECU.html">ECU</a>. The next step towards reprogramming is to take the electronic image you have created and program it into an <a href="../../view/Library/EPROM.html">EPROM</a>(Erasable Programmable Read Only Memory). <a href="../../view/Library/EPROM.html">EPROM</a>s for automotive use are generally 128K, 256K or 512k in size. Use the same size <a href="../../view/Library/EPROM.html">EPROM</a> as the factory uses. Almost all 88-95 Hondas use a <a href="../../view/Library/27C256.html">27&nbsp;C256</a> <a href="../../view/Library/EPROM.html">EPROM</a>. (A quick note about chips: <a href="../../view/Library/27C256.html">27&nbsp;CXXX</a> chips are generally UV erasable - you need a special UV light; blacklights do not work. <a href="../../view/Library/28C256.html">28&nbsp;CXXX</a> are generally <a href="../../view/Library/EEPROM.html">EEPROM</a> - Electrically Erasable and are not pin-compatible... and <a href="../../view/Library/29C256.html">29&nbsp;CXXX</a> are generally Flash <a href="../../view/Library/ROM.html">ROM</a>s and <strong>are</strong> pin-compatible. There are exceptions to these rules, however.)
+<p />
+In order to program an <a href="../../view/Library/EPROM.html">EPROM</a>, you will need a <a href="../../view/Library/RomBurner.html">ROM burner</a>. It does not really matter which model you get as long as it can program the chips you need. A cheap, hobbyist-oriented burner is available for less than $100 ready assembled (or less in kit form) from www.batronix.com. Another unit is available from www.xtronics.com and is the programmer of choice for Hondata. Needham Electronics also make a quality programmer. The point of all this is quite simply that it doesn't matter WHICH programmer you have; being able to program 2XC256 chips is what matters.
+<p />
+Now, with your new <a href="../../view/Library/EPROM.html">EPROM</a> ready, crack the case of your <a href="../../view/Library/ECU.html">ECU</a>. All 92-95 <a href="../../view/Library/ECU.html">ECU</a>s made by Honda were able to accept an external <a href="../../view/Library/EPROM.html">EPROM</a>s, even if they did not come with one from the factory. All 92-95 <a href="../../view/Library/ECU.html">ECU</a>s use the same procedure for chipping. Beginners beware of Japanese <a href="../../view/Library/ECU.html">ECU</a>s as they use surface mount components that are marginally harder to work with than US/European <a href="../../view/Library/ECU.html">ECU</a>s. The section of the example <a href="../../view/Library/P28.html">P28</a> 93 Civic Si <a href="../../view/Library/ECU.html">ECU</a> that is important for chipping is outlined in red in the following picture: (Honda was nice and outlined it in a dashed white line for you on the board too)
+<p />
+<a href="../../../../resources/articles/Chipping_Basics_12-02/P28chipping_small.jpg" target="_top">http://www.pgmfi.org/resources/articles/Chipping_Basics_12-02/P28chipping_small.jpg</a>
+<p />
+<p />
+First, you must de-solder the parts silkscreened in white on the circuit board. I purchased a Xytronics desoldering/soldering station with temperature control for under $400 shipped from Howard Electronics Inc. Professional desoldering tools with integrated vacuum sources can be obtained readily from ebay or other merchants - Pace and Metcal gear is always on ebay. You can get a desoldering tool from radio shack, but it does not work terribly well and I would highly recommend borrowing or buying a true desoldering iron if possible.
+<p />
+Once all the pads are desoldered and you can see through holes for components in the red section above, you need to start soldering in components. No bizarre components are used - everything should be readily obtainable from your local electronics store, Radio Shack, Digikey, Newark Electronics or just about any other <a href="../../view/Library/ElectronicPartSupplier.html">electronic parts distributor</a>. Honda was nice enough to label on the board where everything goes. Place the <a href="../../view/Library/74HC373.html">74&nbsp;HC373</a> chip on the board where indicated and solder it in place. R54 should be filled with a 1k to 1.2k resistor(the exact value does not matter). C51 and C52 are 0.1µf ceramic disc capacitors(12V or better will work fine). Place a 28 pin socket for the <a href="../../view/Library/ROM.html">ROM</a> where 27256 is marked. (BTW, spend a bit more money and get the much higher quality machined-pin sockets instead of the cheapy bent metal leaf type.) Once the socket is in place, place a the <a href="../../view/Library/ROM.html">ROM</a> you programmed earlier in it. Finally, connect J1 with a small wire to enable the external <a href="../../view/Library/ROM.html">ROM</a>. No changes other than cutting J1 are needed to restore the <a href="../../view/Library/ECU.html">ECU</a> to its original state.
+<p />
+Here you can see a chipped P28 <a href="../../view/Library/ECU.html">ECU</a>. The person who chipped it used a socket for the 74HC373 as well as for the <a href="../../view/Library/ROM.html">ROM</a> socket, and used a real jumper instead of just connecting J1 with a wire. Nevertheless, it will give you an idea of what it should look like when you are done:
+<p />
+<p />
+<a href="../../../../resources/articles/Chipping_Basics_12-02/P28done_small.jpg" target="_top">http://www.pgmfi.org/resources/articles/Chipping_Basics_12-02/P28done_small.jpg</a>
+<p />
+<p />
+<p />
+If you have a <a href="../../view/Library/OBD0.html">OBD0</a> <a href="../../view/Library/ECU.html">ECU</a>, chipping the <a href="../../view/Library/ECU.html">ECU</a> might not be such an easy option for you. Almost ALL 90-91 Trash.PM6, PM7, PR4 and PP5(with catalytic converter) <a href="../../view/Library/ECU.html">ECU</a>s had external <a href="../../view/Library/EPROM.html">EPROM</a>s, and are easy to change the program on. Almost all 88-89 PG7, Trash.PM6, PM7 and 88-91 PM8 <a href="../../view/Library/ECU.html">ECU</a>s did not have an external <a href="../../view/Library/EPROM.html">EPROM</a>. It is possible to chip these <a href="../../view/Library/ECU.html">ECU</a>s, but it requires considerably more work and is beyond the scope of this article. The following <a href="../../view/Library/ECU.html">ECU</a> is a PM7 that does not have an external <a href="../../view/Library/ROM.html">ROM</a>:
+<p />
+<a href="../../../../resources/articles/Chipping_Basics_12-02/trickyPM7small.jpg" target="_top">http://www.pgmfi.org/resources/articles/Chipping_Basics_12-02/trickyPM7small.jpg</a>
+<p />
+<p />
+<p />
+If you are luckier, the <a href="../../view/Library/ECU.html">ECU</a> you have will look more like this:
+<p />
+<p />
+<a href="http://www.pgmfi.org/resources/articles/Chipping_Basics_12-02/Trash.PM6tochip_small.jpg" target="_top">http://www.pgmfi.org/resources/articles/Chipping_Basics_12-02/Trash.PM6tochip_small.jpg</a>
+<p />
+<p />
+If you are lucky enough to get an <a href="../../view/Library/OBD0.html">OBD0</a> <a href="../../view/Library/ECU.html">ECU</a> with an external <a href="../../view/Library/EPROM.html">EPROM</a>, it is very simple to chip it. First, remove the <a href="../../view/Library/ROM.html">ROM</a> present by cutting all 28 pins with a razor blade or utility knife. BE CAREFUL YOU DO NOT SLIP AS YOU CAN PERMANENTLY DAMAGE THE CIRCUIT BOARD. It is not absolutely necessary to do this before desoldering, but removing the chip will make it much easier, particularly if you do not have a good desoldering station. Once the original <a href="../../view/Library/ROM.html">ROM</a> is desoldered and removed and you can see through the holes in the circuit board, add a socket for an <a href="../../view/Library/EPROM.html">EPROM</a> and then place the new <a href="../../view/Library/ROM.html">ROM</a> you have created into the socket.
+<p />
+If you have a <a href="../../view/Library/OBD2.html">OBD2</a> <a href="../../view/Library/ECU.html">ECU</a>, you are just going to have to wait or buy commercial <a href="../../view/Library/TechTom.html">Tech&nbsp;Tom</a> gear.
+<p />
+At this point, you should have a working <a href="../../view/Library/ECU.html">ECU</a> with a new program. If you get a solid red light on a <a href="../../view/Library/OBD0.html">OBD0</a> <a href="../../view/Library/ECU.html">ECU</a> or a continuous <a href="../../view/Library/CEL.html">CEL</a> on <a href="../../view/Library/OBD1.html">OBD1</a>  car and the car runs terribly with a very low rev limit and a stumbling idle, you probably have a bad connection. If the same thing happens 30-45seconds after you start the car, you probably failed to pray to the checksum gods. If the car runs weird, try putting a stock program in an verifying that the fuel/timing changes you made were not detrimental.
+<p />
+Hopefully, at this point, you have learned a little about <a href="../../view/Library/ECU.html">ECU</a>s, how they work and break, and how to modify them. If you have further interest check out the rest of the Wiki, or <a href="../../view/Library/FurtherReading.html">Further&nbsp;Reading</a>.</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/IntroductionToECUChipping.html">View</a>
+  |  <a href="IntroductionToECUChipping.html">Diffs</a>  | <a href="../../view/Library/IntroductionToECUChipping%3Frev=1.10.html">r1.10</a> | <a href="IntroductionToECUChipping%3Frev1=1.10&amp;rev2=1.9.html">&gt;</a> | <a href="../../view/Library/IntroductionToECUChipping%3Frev=1.9.html">r1.9</a> | <a href="IntroductionToECUChipping%3Frev1=1.9&amp;rev2=1.8.html">&gt;</a> | <a href="../../view/Library/IntroductionToECUChipping%3Frev=1.8.html">r1.8</a>
+  |  <a href="../../oops/Library/IntroductionToECUChipping%3Ftemplate=oopsmore&amp;param1=1.10&amp;param2=1.10.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.IntroductionToECUChipping">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#63140a080a2313040e050a4d0c11045c101601090600175e37340a080a432506060701020008">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#83f7eceec3e7eae4eaf7e2efe5f6f0eaecedecedefeaede6ade0ecee" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision r1.1 - 19 Feb 2004 - 23:06 GMT - Home.blundar<br />
+    Revision r1.10 - 12 May 2006 - 09:00 GMT - Home.hondainfo
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,208 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . McuReaders (r1.1 vs. r1.2)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/McuReaders.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>McuReaders</b> (r1.1 vs. r1.2)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/McuReaders.html">McuReaders</a></b>
+		(<a href="../../view/Library/McuReaders%3Frev=r1.2.html">r1.2</a> - 05&nbsp;Mar&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+All of the <a href="../../view/Library/MCU.html">MCU</a> readers described here take advantage of a design flaw of oki <a href="../../view/Library/MCU.html">MCU</a>s (and the design flaw is present on all <a href="../../view/Library/MCU.html">MCU</a>s we have seen to date).  <a href="../../view/Library/MCU.html">MCU</a>s can use both internal <a href="../../view/Library/ROM.html">ROM</a> or external <a href="../../view/Library/ROM.html">ROM</a> for program memory storage, and a GND or +5v signal on  <a href="../../view/Library/_EA.html">_EA</a>(EA prime - normally has line above EA) is used to control whether internal or external program memory is selected.  *Oki <a href="../../view/Library/MCU.html">MCU</a>s do not <a href="../../view/Library/Latch.html">latch</a> the state of the <a href="../../view/Library/_EA.html">_EA</a> pin on startup - by some clever trickery, the internal code memory can be unmasked after the <a href="../../view/Library/MCU.html">MCU</a> has begun executing code.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+All of the <a href="../../view/Library/MCU.html">MCU</a> readers described here take advantage of a design flaw of oki <a href="../../view/Library/MCU.html">MCU</a>s (and the design flaw is present on all <a href="../../view/Library/MCU.html">MCU</a>s we have seen to date).  <a href="../../view/Library/MCU.html">MCU</a>s can use both internal <a href="../../view/Library/ROM.html">ROM</a> or external <a href="../../view/Library/ROM.html">ROM</a> for program memory storage, and a GND or +5v signal on  <a href="../../view/Library/_EA.html">_EA</a>(EA prime - normally has line above EA) is used to control whether internal or external program memory is selected.  *Oki <a href="../../view/Library/MCU.html">MCU</a>s do not <a href="../../view/Library/Latch.html">Latch</a> the state of the <a href="../../view/Library/_EA.html">_EA</a> pin on startup - by some clever trickery, the internal code memory can be unmasked after the <a href="../../view/Library/MCU.html">MCU</a> has begun executing code.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<ul>
+<li> <span style='background : #FFFFCE;'><font color="#0000FF">OBD0&nbsp;Oki83&nbsp;C154&nbsp;Reader&nbsp;Blundar</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/OBD0Oki83C154ReaderBlundar?topicparent=Library.McuReaders">?</a>
+</li>
+<li> <span style='background : #FFFFCE;'><font color="#0000FF">OBD1&nbsp;Oki66207&nbsp;Reader&nbsp;Doc</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/OBD1Oki66207ReaderDoc?topicparent=Library.McuReaders">?</a>
+</li>
+<li> <a href="../../view/Library/OBD2Oki66507ReaderNico.html">OBD2&nbsp;Oki66507&nbsp;Reader&nbsp;Nico</a>
+</li>
+<li> <span style='background : #FFFFCE;'><font color="#0000FF">OBD2&nbsp;Oki66507&nbsp;Reader&nbsp;Didier</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/OBD2Oki66507ReaderDidier?topicparent=Library.McuReaders">?</a>
+</li>
+</ul>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<ul>
+<li> <a href="../../view/Library/OBD0Oki83C154Reader.html">OBD0&nbsp;Oki83&nbsp;C154&nbsp;Reader</a> - Blundar's adaptation
+</li>
+<li> <a href="../../view/Library/OBD1Oki66207Reader-DIP64.html">OBD1&nbsp;Oki66207&nbsp;Reader-DIP64</a> - Doc's original 66207 design for DIP package chips
+</li>
+<li> <a href="../../view/Library/OBD1Oki66207Reader-PLCC68.html">OBD1&nbsp;Oki66207&nbsp;Reader-PLCC68</a> - John de sol's adapation of Doc's design for <a href="../../view/Library/JDM.html">JDM</a> SMT 66207s
+</li>
+<li> <a href="../../view/Library/OBD2Oki66507ReaderNico.html">OBD2&nbsp;Oki66507&nbsp;Reader&nbsp;Nico</a> - Nico's original reader for the 66507
+</li>
+<li> <span style='background : #FFFFCE;'><font color="#0000FF">OBD2&nbsp;Oki66507&nbsp;Reader&nbsp;Didier</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/OBD2Oki66507ReaderDidier?topicparent=Library.McuReaders">?</a> - Didier's revised design for a 66507 reader
+</li>
+</ul>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+A reader for other chips would require adjusting the board physical package and the code for clock speed and <a href="../../view/Library/ROM.html">ROM</a> size.</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/McuReaders.html">McuReaders</a></b>
+		(<a href="../../view/Library/McuReaders%3Frev=r1.1.html">r1.1</a> - 04&nbsp;Mar&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="blundar" date="1078436945" format="1.0" version="1.1"}%
+%META:TOPICPARENT{name="WebHome"}%
+All of the <a href="../../view/Library/MCU.html">MCU</a> readers described here take advantage of a design flaw of oki <a href="../../view/Library/MCU.html">MCU</a>s (and the design flaw is present on all <a href="../../view/Library/MCU.html">MCU</a>s we have seen to date).  <a href="../../view/Library/MCU.html">MCU</a>s can use both internal <a href="../../view/Library/ROM.html">ROM</a> or external <a href="../../view/Library/ROM.html">ROM</a> for program memory storage, and a GND or +5v signal on  <a href="../../view/Library/_EA.html">_EA</a>(EA prime - normally has line above EA) is used to control whether internal or external program memory is selected.  *Oki <a href="../../view/Library/MCU.html">MCU</a>s do not <a href="../../view/Library/Latch.html">latch</a> the state of the <a href="../../view/Library/_EA.html">_EA</a> pin on startup - by some clever trickery, the internal code memory can be unmasked after the <a href="../../view/Library/MCU.html">MCU</a> has begun executing code.
+<p />
+All of the <a href="../../view/Library/ROM.html">ROM</a> dumpers that take advantage of this flaw operate like this:
+<ul>
+<li> Manually wire an I/O pin to the <a href="../../view/Library/_EA.html">_EA</a> pin of the <a href="../../view/Library/MCU.html">MCU</a>.  Use a pull up/pull down resistor if necessary.
+</li>
+<li> Use a <a href="../../view/Library/ROM.html">ROM</a> that is larger than the internal <a href="../../view/Library/ROM.html">ROM</a> of <a href="../../view/Library/MCU.html">MCU</a>.  Make sure all address lines are connected as need be.
+</li>
+<li> Initialize serial port of <a href="../../view/Library/MCU.html">MCU</a> for communication with PC
+</li>
+<li> Jump above the masked <a href="../../view/Library/ROM.html">ROM</a> area (32k for 66207, 48k for 66507, ...)
+</li>
+<li> Flip state of <a href="../../view/Library/_EA.html">_EA</a> using I/O pin
+</li>
+<li> Enter delay loop long enough to allow internal <a href="../../view/Library/ROM.html">ROM</a> to be masked into memory again
+</li>
+<li> Copy <a href="../../view/Library/ROM.html">ROM</a> contents out the serial port
+</li>
+</ul>
+<p />
+There are several designs that have been tested:
+<ul>
+<li> <span style='background : #FFFFCE;'><font color="#0000FF">OBD0&nbsp;Oki83&nbsp;C154&nbsp;Reader&nbsp;Blundar</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/OBD0Oki83C154ReaderBlundar?topicparent=Library.McuReaders">?</a>
+</li>
+<li> <span style='background : #FFFFCE;'><font color="#0000FF">OBD1&nbsp;Oki66207&nbsp;Reader&nbsp;Doc</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/OBD1Oki66207ReaderDoc?topicparent=Library.McuReaders">?</a>
+</li>
+<li> <a href="../../view/Library/OBD2Oki66507ReaderNico.html">OBD2&nbsp;Oki66507&nbsp;Reader&nbsp;Nico</a>
+</li>
+<li> <span style='background : #FFFFCE;'><font color="#0000FF">OBD2&nbsp;Oki66507&nbsp;Reader&nbsp;Didier</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/OBD2Oki66507ReaderDidier?topicparent=Library.McuReaders">?</a>
+</li>
+</ul></td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/McuReaders.html">View</a>
+  |  <a href="McuReaders.html">Diffs</a>  | <a href="../../view/Library/McuReaders%3Frev=1.2.html">r1.2</a> | &gt; | <a href="../../view/Library/McuReaders%3Frev=1.1.html">r1.1</a>
+  |  <a href="../../oops/Library/McuReaders%3Ftemplate=oopsmore&amp;param1=1.2&amp;param2=1.2.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.McuReaders">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#384f51535178485f555e5116574a5f074b4d5a525d5b4c056c6f515351187e5d5d5c5a595b53">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#493d2624092d202e203d28252f3c3a20262726272520272c672a2624" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision r1.1 - 04 Mar 2004 - 21:49 GMT - Home.blundar<br />
+    Revision r1.2 - 05 Mar 2004 - 17:46 GMT - Home.blundar
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

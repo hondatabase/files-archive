@@ -1,0 +1,155 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . VehicleSpeedSensor (r1.1 vs. r1.2)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/VehicleSpeedSensor.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>VehicleSpeedSensor</b> (r1.1 vs. r1.2)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/VehicleSpeedSensor.html">VehicleSpeedSensor</a></b>
+		(<a href="../../view/Library/VehicleSpeedSensor%3Frev=r1.2.html">r1.2</a> - 27&nbsp;Sep&nbsp;2005 - <span style='background : #FFFFCE;'><font color="#0000FF">Fast&nbsp;Hatch</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Home/FastHatch?topicparent=Library.VehicleSpeedSensor">?</a>)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+The Vehgicle Speed Sensor (<a href="../../view/Library/VSS.html">VSS</a>) tells the <a href="../../view/Library/ECU.html">ECU</a> how fast the car is moving.  In most hondas, it pulses to ground 4 times per revolution of the axles. Most <a href="../../view/Library/OBD0.html">OBD0</a> cars have the electronic <a href="../../view/Library/VSS.html">VSS</a> module inside the speedometer in the cluster, which is cable driven. Most <a href="../../view/Library/OBD1.html">OBD1</a> and <a href="../../view/Library/OBD2.html">OBD2</a> cars have an electronic <a href="../../view/Library/VSS.html">VSS</a> mounted on the transmission, and an electronically controlled speedometer in the cluster. One function the <a href="../../view/Library/VSS.html">VSS</a> appears to play in stock <a href="../../view/Library/ECU.html">ECU</a>s is to enable a <a href="../../view/Library/SpeedLimiter.html">Speed&nbsp;Limiter</a>. The <a href="../../view/Library/VSS.html">VSS</a> is also used to output a signal to the gauge cluster. A third function is to calculate gear dependent fuel corrections. Lastley, the <a href="../../view/Library/ECU.html">ECU</a> uses the <a href="../../view/Library/VSS.html">VSS</a> for cruise control. <a href="../../view/Library/LaunchControl.html">Launch&nbsp;Control</a> code also uses the <a href="../../view/Library/VSS.html">VSS</a>.
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+The Vehicle Speed Sensor (<a href="../../view/Library/VSS.html">VSS</a>) tells the <a href="../../view/Library/ECU.html">ECU</a> how fast the car is moving.  In most hondas, it pulses to ground 4 times per revolution of the axles. Most <a href="../../view/Library/OBD0.html">OBD0</a> cars have the electronic <a href="../../view/Library/VSS.html">VSS</a> module inside the speedometer in the cluster, which is cable driven. Most <a href="../../view/Library/OBD1.html">OBD1</a> and <a href="../../view/Library/OBD2.html">OBD2</a> cars have an electronic <a href="../../view/Library/VSS.html">VSS</a> mounted on the transmission, and an electronically controlled speedometer in the cluster. One function the <a href="../../view/Library/VSS.html">VSS</a> appears to play in stock <a href="../../view/Library/ECU.html">ECU</a>s is to enable a <a href="../../view/Library/SpeedLimiter.html">Speed&nbsp;Limiter</a>. The <a href="../../view/Library/VSS.html">VSS</a> is also used to output a signal to the gauge cluster. A third function is to calculate gear dependent fuel corrections. Lastley, the <a href="../../view/Library/ECU.html">ECU</a> uses the <a href="../../view/Library/VSS.html">VSS</a> for cruise control. <a href="../../view/Library/LaunchControl.html">Launch&nbsp;Control</a> code also uses the <a href="../../view/Library/VSS.html">VSS</a>.</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/VehicleSpeedSensor.html">VehicleSpeedSensor</a></b>
+		(<a href="../../view/Library/VehicleSpeedSensor%3Frev=r1.1.html">r1.1</a> - 13&nbsp;Dec&nbsp;2004 - Home.cyphear)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="cyphear" date="1102929000" format="1.0" version="1.1"}%
+The Vehgicle Speed Sensor (<a href="../../view/Library/VSS.html">VSS</a>) tells the <a href="../../view/Library/ECU.html">ECU</a> how fast the car is moving.  In most hondas, it pulses to ground 4 times per revolution of the axles. Most <a href="../../view/Library/OBD0.html">OBD0</a> cars have the electronic <a href="../../view/Library/VSS.html">VSS</a> module inside the speedometer in the cluster, which is cable driven. Most <a href="../../view/Library/OBD1.html">OBD1</a> and <a href="../../view/Library/OBD2.html">OBD2</a> cars have an electronic <a href="../../view/Library/VSS.html">VSS</a> mounted on the transmission, and an electronically controlled speedometer in the cluster. One function the <a href="../../view/Library/VSS.html">VSS</a> appears to play in stock <a href="../../view/Library/ECU.html">ECU</a>s is to enable a <a href="../../view/Library/SpeedLimiter.html">Speed&nbsp;Limiter</a>. The <a href="../../view/Library/VSS.html">VSS</a> is also used to output a signal to the gauge cluster. A third function is to calculate gear dependent fuel corrections. Lastley, the <a href="../../view/Library/ECU.html">ECU</a> uses the <a href="../../view/Library/VSS.html">VSS</a> for cruise control. <a href="../../view/Library/LaunchControl.html">Launch&nbsp;Control</a> code also uses the <a href="../../view/Library/VSS.html">VSS</a>.
+<p />
+In most cases, the <a href="../../view/Library/SpeedLimiter.html">Speed&nbsp;Limiter</a> can be disabled in the <a href="../../view/Library/ROM.html">ROM</a>, but in the cases where it cannot be removed in code, other tricks can be done.  If you wanted to build an electronic device to remove the speed limiter without touching the internals of your <a href="../../view/Library/ECU.html">ECU</a> or the code running it, you would need to limit the frequency of the pulses generated by the <a href="../../view/Library/VSS.html">VSS</a> module to less than the frequency of your <a href="../../view/Library/VSS.html">VSS</a> at the <a href="../../view/Library/SpeedLimiter.html">Speed&nbsp;Limiter</a>.
+<p />
+What I would do: (says <span style='background : #FFFFCE;'><font color="#0000FF">Dave&nbsp;Blundell</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/DaveBlundell?topicparent=Library.VehicleSpeedSensor">?</a>)
+-Get a multimeter with a frequency counter or a oscilloscope
+-hook it up to the <a href="../../view/Library/VSS.html">VSS</a> signal being fed to your <a href="../../view/Library/ECU.html">ECU</a>.
+-go for a drive. Record the frequency of the speedo at 100mph (safely below your speed limiter)
+-build a device to limit the frequency to the 100mph freq maximum.
+-it would be good to pass the actual <a href="../../view/Library/VSS.html">VSS</a> pulse through unaltered at lower speeds.</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/VehicleSpeedSensor.html">View</a>
+  |  <a href="VehicleSpeedSensor.html">Diffs</a>  | <a href="../../view/Library/VehicleSpeedSensor%3Frev=1.2.html">r1.2</a> | &gt; | <a href="../../view/Library/VehicleSpeedSensor%3Frev=1.1.html">r1.1</a>
+  |  <a href="../../oops/Library/VehicleSpeedSensor%3Ftemplate=oopsmore&amp;param1=1.2&amp;param2=1.2.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.VehicleSpeedSensor">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#c5b2acaeac85b5a2a8a3acebaab7a2fab6b0a7afa0a6b1f89192acaeace583a0a0a1a7a4a6ae">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#bcc8d3d1fcd8d5dbd5c8ddd0dac9cfd5d3d2d3d2d0d5d2d992dfd3d1" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision r1.1 - 13 Dec 2004 - 09:10 GMT - Home.cyphear<br />
+    Revision r1.2 - 27 Sep 2005 - 10:22 GMT - <span style='background : #FFFFCE;'><font color="#0000FF">Fast&nbsp;Hatch</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Home/FastHatch?topicparent=Library.VehicleSpeedSensor">?</a>
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

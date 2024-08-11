@@ -1,0 +1,188 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . PR3   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="PR3.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>PR3</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+<h2> PR3 </h2>
+<p />
+89-93 <a href="JDM.html">JDM</a> B16A EF8/9
+<p />
+<a href="MCU.html">MCU</a> = M66x301 58 and 93
+<p />
+<p />
+Note: There are both <a href="OBD0.html">OBD0</a> and <a href="OBD1.html">OBD1</a> <a href="ECU.html">ECU</a>s designated "PR3" and they are <strong>not</strong> in any shape or form compatible with each other.
+<p />
+<p />
+This picture shows Auto/Manual selection on a <a href="OBD0.html">OBD0</a> PR3:
+<p />
+<a href="http://pgmfi.org/resources/FAQ/scans/OBD0_pr3-auto-manual.jpg" target="_top">scan </a>
+<p />
+(thanks <a href="OBD1.html">OBD1</a>  Kenobi)
+<p />
+<a href="OBD1.html">OBD1</a> PR3s are much more like the <a href="P28.html">P28</a>/<a href="P30.html">P30</a> in terms of design and structure, and they use the same circuit board, usually a 02D01720-1500.  They are a member of the <a href="OBD1CivicIntegra.html">OBD1&nbsp;Civic&nbsp;Integra</a> family.
+<p />
+<p />
+<p />
+This picture is of a 92-93 <a href="OBD1.html">OBD1</a>  <a href="JDM.html">JDM</a> Integra RSi/XSi (B16A)
+<p />
+<a href="http://pgmfi.org/resources/FAQ/scans/PR3-OBD1.jpg" target="_top">scan</a>
+<p />
+To add an address, click <strong><em>Edit</em></strong> below, find where your <strong><em>Hex Offset</em></strong> address is, and then add your new entry like so:
+<p />
+"|''location''|''length in bytes''|''description''|''notes''<newline>|"
+<p />
+<h2><a name="OBD0_PR3"> </a> <a href="OBD.html">OBD</a>0 PR3 </h2>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> <strong><em>Location</em></strong> </td><td> <strong><em>Bytes</em></strong> </td><td> <strong><em>Description</em></strong> </td><td> <strong><em>Notes</em></strong> </td></tr>
+<tr><td> 31DE </td><td> 1 </td><td> Warm/high cam revlimit </td><td> uses the <a href="OBD08BitRev.html">OBD08&nbsp;Bit&nbsp;Rev</a> formula </td></tr>
+<tr><td> 31D8 </td><td> 1 </td><td> Low cam revlimit </td><td> uses the <a href="OBD08BitRev.html">OBD08&nbsp;Bit&nbsp;Rev</a> formula </td></tr>
+<tr><td> 31E0 </td><td> 1 </td><td> High cam restart </td><td> uses the <a href="OBD08BitRev.html">OBD08&nbsp;Bit&nbsp;Rev</a> formula </td></tr>
+<tr><td> 3414 </td><td> 1 </td><td> VTEC disengage </td><td> The <a href="ECU.html">ECU</a> uses 3418 (Tested by <a href="BenOgle.html">Ben&nbsp;Ogle</a>) </td></tr>
+<tr><td> 3415 </td><td> 1 </td><td> VTEC engage </td><td> The <a href="ECU.html">ECU</a> uses 3419 (Tested by <a href="BenOgle.html">Ben&nbsp;Ogle</a>) </td></tr>
+<tr><td> 3416 </td><td> 1 </td><td> VTEC disengage </td><td> The <a href="ECU.html">ECU</a> uses 3418 (Tested by <a href="BenOgle.html">Ben&nbsp;Ogle</a>) </td></tr>
+<tr><td> 3417 </td><td> 1 </td><td> VTEC engage </td><td> The <a href="ECU.html">ECU</a> uses 3419 (Tested by <a href="BenOgle.html">Ben&nbsp;Ogle</a>) </td></tr>
+<tr><td> 3418 </td><td> 1 </td><td> VTEC disengage </td><td> uses the <a href="OBD0VTEC.html">OBD0&nbsp;VTEC</a> formula </td></tr>
+<tr><td> 3419 </td><td> 1 </td><td> VTEC engage </td><td> uses the <a href="OBD0VTEC.html">OBD0&nbsp;VTEC</a> formula </td></tr>
+<tr><td> 341A </td><td> 1 </td><td> VTEC disengage </td><td> The <a href="ECU.html">ECU</a> uses 3418 (Tested by <a href="BenOgle.html">Ben&nbsp;Ogle</a>) </td></tr>
+<tr><td> 341B </td><td> 1 </td><td> VTEC engage </td><td> The <a href="ECU.html">ECU</a> uses 3419 (Tested by <a href="BenOgle.html">Ben&nbsp;Ogle</a>) </td></tr>
+<tr><td> 3BE6 </td><td> 255 </td><td> Ignition map 1 </td><td> uses the <a href="OBD0Ignition.html">OBD0&nbsp;Ignition</a> formula </td></tr>
+<tr><td> 3CE5 </td><td> 255 </td><td> Ignition map VTEC </td><td> the first row is not used so its really a 15x16 map at 3CF4 But the extra row works good as filler </td></tr>
+<tr><td> 3DE4 </td><td> 255 </td><td> Fuel map 1 </td><td> uses the <a href="OBD0Fuel.html">OBD0&nbsp;Fuel</a> formula </td></tr>
+<tr><td> 3EE3 </td><td> 15 </td><td> Fuel multipliers 1 </td><td> fuel <a href="ColumnMultiplier.html">Column&nbsp;Multipliers</a> for fuel map 1 </td></tr>
+<tr><td> 3EF2 </td><td> 255 </td><td> Fuel map 2 </td><td> uses the <a href="OBD0Fuel.html">OBD0&nbsp;Fuel</a> formula </td></tr>
+<tr><td> 3FF1 </td><td> 15 </td><td> Fuel multipliers 2 </td><td> fuel <a href="ColumnMultiplier.html">Column&nbsp;Multipliers</a> for fuel map 2 </td></tr>
+</table>
+<p />
+<p />
+<font size = "-1"><center>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th align="center" bgcolor="#D0D1E0"> <strong><span style='background : #FFFFCE;'><font color="#0000FF">Attachment</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FileAttachment?topicparent=Library.PR3">?</a>:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Modify:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Size:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Date:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Who:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Comment:</strong> </th></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/PR3/pr3-j01-1.JPG">pr3-j01-1.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/PR3?filename=pr3-j01-1.JPG&amp;revInfo=1">mod</a>     </td><td>  750753  </td><td>  30 Mar 2004 - 02:19  </td><td>  eg6ajk  </td><td>  &nbsp;  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/PR3/pr3-j01-2.JPG">pr3-j01-2.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/PR3?filename=pr3-j01-2.JPG&amp;revInfo=1">mod</a>     </td><td>  748024  </td><td>  30 Mar 2004 - 02:19  </td><td>  eg6ajk  </td><td>  &nbsp;  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/PR3/PR3-J01.JPG">PR3-J01.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/PR3?filename=PR3-J01.JPG&amp;revInfo=1">mod</a>     </td><td>  766190  </td><td>  30 Mar 2004 - 02:21  </td><td>  eg6ajk  </td><td>  &nbsp;  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/PR3/pr3-j51bottom.jpg">pr3-j51bottom.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/PR3?filename=pr3-j51bottom.jpg&amp;revInfo=1">mod</a>     </td><td>  1789469  </td><td>  27 Jul 2004 - 06:44  </td><td>  averageJoe  </td><td>  pr3-j51 bottom.jpg  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/PR3/pr3-j51top.jpg">pr3-j51top.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/PR3?filename=pr3-j51top.jpg&amp;revInfo=1">mod</a>     </td><td>  1612037  </td><td>  27 Jul 2004 - 06:49  </td><td>  averageJoe  </td><td>  pr3-j51 top.jpg  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/PR3/pr3-j51ksbottom.jpg">pr3-j51ksbottom.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/PR3?filename=pr3-j51ksbottom.jpg&amp;revInfo=1">mod</a>     </td><td>  629048  </td><td>  27 Jul 2004 - 06:50  </td><td>  averageJoe  </td><td>  &nbsp;  </td></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/PR3/pr3-j51kstop.jpg">pr3-j51kstop.jpg</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/PR3?filename=pr3-j51kstop.jpg&amp;revInfo=1">mod</a>     </td><td>  495819  </td><td>  27 Jul 2004 - 06:51  </td><td>  averageJoe  </td><td>  &nbsp;  </td></tr>
+</table>
+<p />
+</font></center>
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.4 - 29 Jan 2005 - 07:10 GMT - noriega 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/PR3?t=1194413759"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/PR3">Attach</a>
+   |  <a href="../../rdiff/Library/PR3.html">History</a>
+   |  <a href="../../oops/Library/PR3%3Ftemplate=oopsmore&amp;param1=1.4&amp;param2=1.4.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.PR3">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#17607e7c7e5767707a717e39786570286462757d7274632a43407e7c7e37517272737576747c">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#43372c2e03272a242a37222f2536302a2c2d2c2d2f2a2d266d202c2e" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

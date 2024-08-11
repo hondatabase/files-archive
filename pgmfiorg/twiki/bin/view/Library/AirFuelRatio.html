@@ -1,0 +1,167 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . AirFuelRatio   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="AirFuelRatio.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>AirFuelRatio</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+The ratio of the mass of air taken in my an engine to the mass of fuel.  14.7:1 is chemically ideal in order to get the greatest efficiency from every gallon of fuel.  However, due to the inefficiencies of any engine, the greatest amount of power is usually obtained with a lower <a href="AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratio</a>, but not usually less than 13.4:1 for non-race gasoline engines.
+<p />
+More info:
+<p />
+Author: Deluded
+WE break very few street engines with these tuning parameters:
+<p />
+<ul>
+<li> less than 10psi: 12:1 <a href="AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratio</a>
+</li>
+<li> up to 16psi: 11:1 <a href="AirFuelRatio.html">Air&nbsp;Fuel&nbsp;Ratio</a>
+</li>
+<li> 9.5:1 compression or less: 1 degree retard/#boost
+</li>
+<li> above 9.5:1 compression at least 1.25 degrees per psi
+</li>
+</ul>
+<p />
+<a href="WebGeek.html">Web&nbsp;Geek</a>:  This was taken from a post by blundell on using step-retard that I think should be added in here.  Perhaps Dave wants to edit out any info that really isnt needed, or perhaps edit it to make it more universal:
+<p />
+"I'm tuning my homefry Tony Fowee's turbo D16A6 CRX in the next couple days. Will not be uberdata, but rather NG22 / <a href="TurboEdit.html">Turbo&nbsp;Edit</a> 2.0-try10 'cause it's an <a href="OBD.html">OBD</a>0 car. I thought I'd share my plan for tuning it so that it might help someone.
+The car will be tuned on 93 octane unleaded pump gas. I'll prob dump a gallon of tolulene in the car + tweak the maps a little at the track sunday. Stock D16A6 motor, gutted 89 HF CRX. HF manifold, T3 turbo, DSM 450s, Saab viggen IC. Nothing bling. Hope to hit mid-low 13s on slicks. Shouldn't be hard considering weight of car.
+<p />
+I'll be aiming for: 
+<p />
+13.5 AFR while NA. 28 degrees timing at boost/NA transition peak power production. Timing retarded by 1 deg / 1000 <a href="RPM.html">RPM</a> on top side of <a href="RPM.html">RPM</a> band after peak power production.
+<p />
+12.5 AFR from 0psi to 3psi. retard 0.25 degrees cumulative by 3psi (i.e. 0.08 degrees/psi)
+<p />
+12.25 AFR from 3psi to 5psi. retard 0.75 degrees cumulative by 5psi (i.e. 0.25 degrees/psi)
+<p />
+12.0 AFR from 5psi to 7psi. retard timing 1.75 degrees cumulative by 7psi (0.5 degrees/psi)
+<p />
+11.5 AFR from 7psi to 10psi. retard timing 5 degrees cumulative by 10psi (0.75 degrees/psi)
+<p />
+Timing ends up at 23 degrees @ 10psi ... little on the high side but not much. The gradual increase of retard is called a "step-retard." The step retard is designed to retard the timing when it is needed (high boost) and leave you with as much advance as possible when you don't to spool the turbo and get overall better performance. (low boost) BE CAREFUL. The key to a good step retard is to figure out where you want your FINAL timing to be, and work backwards from there.
+<p />
+AFRs get richer as boost climbs because fuel acts to cool combustible charge, makes for safer motor at expense of power production. The saying "lean is mean" applies here too - generally you'll make more power from the leaner AFRs at the expense of EGTs, detonation danger, etc. Run the higher AFRs while you can and gradually drop them as the motor needs it. Motors rarely like sudden changes in anything, and AFR is no exception."
+<p />
+(Dave sez: 13.14 @ 107mph best of day.  3 chips, less than 45 min tuning total.  See <a href="../Home/FooweesCar.html">Foowees&nbsp;Car</a> for more information)
+<p />
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.2 - 12 Jul 2004 - 15:45 GMT - blundar 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/AirFuelRatio?t=1194410495"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/AirFuelRatio">Attach</a>
+   |  <a href="../../rdiff/Library/AirFuelRatio.html">History</a>
+   |  <a href="../../oops/Library/AirFuelRatio%3Ftemplate=oopsmore&amp;param1=1.2&amp;param2=1.2.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.AirFuelRatio">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#4b3c2220220b3b2c262d226524392c74383e29212e283f761f1c2220226b0d2e2e2f292a2820">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#3c4853517c58555b55485d505a494f555352535250555259125f5351" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

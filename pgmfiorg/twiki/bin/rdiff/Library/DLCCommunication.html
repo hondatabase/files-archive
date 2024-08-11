@@ -1,0 +1,455 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . DLCCommunication (r1.1 vs. r1.6)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/DLCCommunication.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>DLCCommunication</b> (r1.1 vs. r1.6)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/DLCCommunication.html">DLCCommunication</a></b>
+		(<a href="../../view/Library/DLCCommunication%3Frev=r1.6.html">r1.6</a> - 29&nbsp;May&nbsp;2006 - Home.hondainfo)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<strong>DLC Communication</strong> UNDER RESEARCH AND CONSTRUCTION BY HONDAINFO PLEASE BE PATIENT
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<strong>DLC Communication</strong> UNDER CONSTRUCTION BY HONDAINFO 
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<strong>OBD0 (with 10 MHz <a href="../../view/Library/MCU.html">MCU</a> clock)</strong>
+<p />
+Mode: Serial communication UART mode, 187500 baud, 9 bit no parity, 1 stop
+<p />
+Protocol: send the byte you want to receive wait for response
+<p />
+Send 9 bit data to ECM.
+<p />
+9th bit = 0 - the first 8 bit will address the Internal <a href="../../view/Library/RAM.html">RAM</a> (0-255)
+<p />
+(send [START]xxxxxxxx0[STOP] to address IRAM)
+<p />
+9th bit = 1 - the first 8 bit will address the External <a href="../../view/Library/RAM.html">RAM</a> (0-255)
+<p />
+(send [START]xxxxxxxx1[STOP] to address ERAM)
+<p />
+<p />
+ECM transmits the content of i/e <a href="../../view/Library/RAM.html">RAM</a> address
+<p />
+<strong>OBD1 (with 10MHz <a href="../../view/Library/MCU.html">MCU</a> clock)</strong>
+<p />
+Mode: Serial Communication <a href="../../view/Library/MultiprocessorMode.html">Multiprocessor Mode</a>, 62500 baud, 8 bit, odd parity, 1 stop
+<p />
+Protocol: send the byte (in different modes) you want to receive wait for response
+<p />
+Send byte in data transmit mode, odd parity   - the first 8 bit will address the Internal <a href="../../view/Library/RAM.html">RAM</a> 0000h-00ffh
+<p />
+(send [START]xxxxxxxx0o[STOP])
+<p />
+Send byte in address transmit mode, odd parity   - the first 8 bit will address the Internal <a href="../../view/Library/RAM.html">RAM</a> 0100h-01ffh
+<p />
+(send [START]xxxxxxxx1o[STOP])
+<p />
+Send byte in data transmit mode, even parity   - the first 8 bit will address the Internal <a href="../../view/Library/RAM.html">RAM</a> 0200h-02ffh
+<p />
+(send [START]xxxxxxxx0e[STOP])
+<p />
+Send byte in address transmit mode, even parity   - the first 8 bit will address the Internal <a href="../../view/Library/RAM.html">RAM</a> 0300h-03ffh
+<p />
+(send [START]xxxxxxxx1e[STOP])
+<p />
+Send 00 byte in data transmit mode, odd parity   - If the previous address was even, the <a href="../../view/Library/ECU.html">ECU</a> sends back the high byte of the word at the previous address
+<p />
+(send [START]0000000001[STOP])
+<p />
+<p />
+<strong>OBD2 (3 pin <a href="../../view/Library/DLC.html">DLC</a>)</strong> Currently there's no information :(
+<p />
+<p />
+<strong>OTHER COMPUTERS</strong> Currently there's no information :(
+<p />
+<hr />
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Soon...
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<a href="../../view/Library/OBD.html">OBD</a>0 See table of <a href="http://www.pgmfi.org/twiki/pub/Library/DLCCommunication/OBD0RAMMAPS.xls" target="_top">OBD0 RAM MAPS</a>
+<p />
+<a href="../../view/Library/OBD.html">OBD</a>1 See table of <a href="http://www.pgmfi.org/twiki/pub/Library/DLCCommunication/OBD1RAMMAPS.xls" target="_top">OBD1 RAM MAPS</a>
+<p />
+<a href="../../view/Library/OBD.html">OBD</a>2 Currently there's no information :(
+<p />
+%META:FILEATTACHMENT{name="OBD0RAMMAPS.xls" attr="" comment="" date="1117699353" path="C:\Documents and Settings\Beci\Asztal\Honda <a href="../../view/Library/ECU.html">ECU</a> ASM\OBD0 <a href="../../view/Library/RAM.html">RAM</a> MAPS.xls" size="19456" user="hondainfo" version="1.1"}%
+%META:FILEATTACHMENT{name="OBD1RAMMAPS.xls" attr="" comment="" date="1117699370" path="C:\Documents and Settings\Beci\Asztal\Honda <a href="../../view/Library/ECU.html">ECU</a> ASM\OBD1 <a href="../../view/Library/RAM.html">RAM</a> MAPS.xls" size="26624" user="hondainfo" version="1.1"}%
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Soon...</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/DLCCommunication.html">DLCCommunication</a></b>
+		(<a href="../../view/Library/DLCCommunication%3Frev=r1.5.html">r1.5</a> - 13&nbsp;Jun&nbsp;2005 - Home.hondainfo)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<strong>DLC Communication</strong> UNDER CONSTRUCTION BY HONDAINFO PLEASE BE PATIENT
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<strong>DLC Communication</strong> UNDER RESEARCH AND CONSTRUCTION BY HONDAINFO PLEASE BE PATIENT</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/DLCCommunication.html">DLCCommunication</a></b>
+		(<a href="../../view/Library/DLCCommunication%3Frev=r1.4.html">r1.4</a> - 03&nbsp;Jun&nbsp;2005 - Home.hondainfo)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+<hr />
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<a href="../../view/Library/OBD.html">OBD</a>0
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<strong>OBD0 (with 10 MHz <a href="../../view/Library/MCU.html">MCU</a> clock)</strong>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<a href="../../view/Library/OBD.html">OBD</a>1
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Mode: Serial communication UART mode, 187500 baud, 9 bit no parity, 1 stop
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<a href="../../view/Library/OBD.html">OBD</a>2 (3 pin <a href="../../view/Library/DLC.html">DLC</a>)
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Protocol: send the byte you want to receive wait for response
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+OTHER COMPUTERS
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Send 9 bit data to ECM.
+<p />
+9th bit = 0 - the first 8 bit will address the Internal <a href="../../view/Library/RAM.html">RAM</a> (0-255)
+<p />
+(send [START]xxxxxxxx0[STOP] to address IRAM)
+<p />
+9th bit = 1 - the first 8 bit will address the External <a href="../../view/Library/RAM.html">RAM</a> (0-255)
+<p />
+(send [START]xxxxxxxx1[STOP] to address ERAM)
+<p />
+<p />
+ECM transmits the content of i/e <a href="../../view/Library/RAM.html">RAM</a> address
+<p />
+<strong>OBD1 (with 10MHz <a href="../../view/Library/MCU.html">MCU</a> clock)</strong>
+<p />
+Mode: Serial Communication <a href="../../view/Library/MultiprocessorMode.html">Multiprocessor Mode</a>, 62500 baud, 8 bit, odd parity, 1 stop
+<p />
+Protocol: send the byte (in different modes) you want to receive wait for response
+<p />
+Send byte in data transmit mode, odd parity   - the first 8 bit will address the Internal <a href="../../view/Library/RAM.html">RAM</a> 0000h-00ffh
+<p />
+(send [START]xxxxxxxx0o[STOP])
+<p />
+Send byte in address transmit mode, odd parity   - the first 8 bit will address the Internal <a href="../../view/Library/RAM.html">RAM</a> 0100h-01ffh
+<p />
+(send [START]xxxxxxxx1o[STOP])
+<p />
+Send byte in data transmit mode, even parity   - the first 8 bit will address the Internal <a href="../../view/Library/RAM.html">RAM</a> 0200h-02ffh
+<p />
+(send [START]xxxxxxxx0e[STOP])
+<p />
+Send byte in address transmit mode, even parity   - the first 8 bit will address the Internal <a href="../../view/Library/RAM.html">RAM</a> 0300h-03ffh
+<p />
+(send [START]xxxxxxxx1e[STOP])
+<p />
+Send 00 byte in data transmit mode, odd parity   - If the previous address was even, the <a href="../../view/Library/ECU.html">ECU</a> sends back the high byte of the word at the previous address
+<p />
+(send [START]0000000001[STOP])
+<p />
+<p />
+<strong>OBD2 (3 pin <a href="../../view/Library/DLC.html">DLC</a>)</strong> Currently there's no information :(
+<p />
+<p />
+<strong>OTHER COMPUTERS</strong> Currently there's no information :(
+<p />
+<hr /></td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/DLCCommunication.html">DLCCommunication</a></b>
+		(<a href="../../view/Library/DLCCommunication%3Frev=r1.3.html">r1.3</a> - 02&nbsp;Jun&nbsp;2005 - Home.hondainfo)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+3. Application layer
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<strong>3. Application layer</strong>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<a href="../../view/Library/OBD.html">OBD</a>0
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<a href="../../view/Library/OBD.html">OBD</a>0 See table of <a href="http://www.pgmfi.org/twiki/pub/Library/DLCCommunication/OBD0RAMMAPS.xls" target="_top">OBD0 RAM MAPS</a>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<a href="../../view/Library/OBD.html">OBD</a>1
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<a href="../../view/Library/OBD.html">OBD</a>1 See table of <a href="http://www.pgmfi.org/twiki/pub/Library/DLCCommunication/OBD1RAMMAPS.xls" target="_top">OBD1 RAM MAPS</a>
+<p />
+<a href="../../view/Library/OBD.html">OBD</a>2 Currently there's no information :(
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<a href="../../view/Library/OBD.html">OBD</a>2
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+%META:FILEATTACHMENT{name="OBD0RAMMAPS.xls" attr="" comment="" date="1117699353" path="C:\Documents and Settings\Beci\Asztal\Honda <a href="../../view/Library/ECU.html">ECU</a> ASM\OBD0 <a href="../../view/Library/RAM.html">RAM</a> MAPS.xls" size="19456" user="hondainfo" version="1.1"}%
+%META:FILEATTACHMENT{name="OBD1RAMMAPS.xls" attr="" comment="" date="1117699370" path="C:\Documents and Settings\Beci\Asztal\Honda <a href="../../view/Library/ECU.html">ECU</a> ASM\OBD1 <a href="../../view/Library/RAM.html">RAM</a> MAPS.xls" size="26624" user="hondainfo" version="1.1"}%</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/DLCCommunication.html">DLCCommunication</a></b>
+		(<a href="../../view/Library/DLCCommunication%3Frev=r1.2.html">r1.2</a> - 01&nbsp;Jun&nbsp;2005 - Home.hondainfo)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+1. Physical layer
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<strong>1. Physical Layer</strong> (Theoretical informations based on ISO 9141 - CARB Road Vehicles Diagnostic Systems standard)
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+2. Communication layer
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<p />
+<strong>Signal and Communication Specifications</strong>
+<p />
+Honda specifies different logic levels for the Receiver
+and Transmitter.
+<p />
+Receiver Logic Levels:
+<p />
+Logic “0” &lt;= 0.3 * VBAT
+0.7 * VBAT &gt;= Logic “1”
+<p />
+Transmitter Logic Levels:
+<p />
+Logic “0” &lt;= 0.2 * VBAT 
+0.8 * VBAT &gt;= Logic “1”
+<p />
+A logic bit transition must be less than 10% of the total bit
+time. The transition time is measured between the 80%
+and 20% battery points. Bit time is defined as the time
+between the 50% battery points of consecutive rising and
+falling levels.
+<p />
+<strong>Physical Layer</strong>
+<p />
+CTE = Tester and Cables capacitance
+COBW = On-Board Wiring capacitance
+CECU = Sum of all <a href="../../view/Library/ECU.html">ECU</a> Input Capacitance
+where CECU + COBW is less or equal to 7.6 nF and CTE is
+less or equal to 2 nF.
+The capacitance of the <a href="../../view/Library/DLC.html">DLC</a> data line with respect to GND
+can be no greater than 500 pF.
+<p />
+<p />
+<strong>2. Data Link Layer (Communication)</strong></td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/DLCCommunication.html">DLCCommunication</a></b>
+		(<a href="../../view/Library/DLCCommunication%3Frev=r1.1.html">r1.1</a> - 27&nbsp;May&nbsp;2005 - Home.hondainfo)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="hondainfo" date="1117198920" format="1.0" version="1.1"}%
+%META:TOPICPARENT{name="DataLogging"}%
+<strong>DLC Communication</strong> UNDER CONSTRUCTION BY HONDAINFO PLEASE BE PATIENT
+<p />
+1. Physical layer
+<p />
+2. Communication layer
+<p />
+<a href="../../view/Library/OBD.html">OBD</a>0
+<p />
+<a href="../../view/Library/OBD.html">OBD</a>1
+<p />
+<a href="../../view/Library/OBD.html">OBD</a>2 (3 pin <a href="../../view/Library/DLC.html">DLC</a>)
+<p />
+OTHER COMPUTERS
+<p />
+3. Application layer
+<p />
+<a href="../../view/Library/OBD.html">OBD</a>0
+<p />
+<a href="../../view/Library/OBD.html">OBD</a>1
+<p />
+<a href="../../view/Library/OBD.html">OBD</a>2</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/DLCCommunication.html">View</a>
+  |  <a href="DLCCommunication.html">Diffs</a>  | <a href="../../view/Library/DLCCommunication%3Frev=1.6.html">r1.6</a> | <a href="DLCCommunication%3Frev1=1.6&amp;rev2=1.5.html">&gt;</a> | <a href="../../view/Library/DLCCommunication%3Frev=1.5.html">r1.5</a> | <a href="DLCCommunication%3Frev1=1.5&amp;rev2=1.4.html">&gt;</a> | <a href="../../view/Library/DLCCommunication%3Frev=1.4.html">r1.4</a>
+  |  <a href="../../oops/Library/DLCCommunication%3Ftemplate=oopsmore&amp;param1=1.6&amp;param2=1.6.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.DLCCommunication">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#2b5c4240426b5b4c464d420544594c14585e49414e485f167f7c4240420b6d4e4e4f494a4840">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#384c5755785c515f514c59545e4d4b51575657565451565d165b5755" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision r1.1 - 27 May 2005 - 13:02 GMT - Home.hondainfo<br />
+    Revision r1.6 - 29 May 2006 - 14:12 GMT - Home.hondainfo
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

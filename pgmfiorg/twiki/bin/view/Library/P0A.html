@@ -1,0 +1,206 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title> PGMFI.ORG - Grassroots ECU Development - Library . P0A   </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+  %HTTP_EQUIV_ON_VIEW%
+ ="" />
+ <link rel="STYLESHEET" type="text/css" href="../../../style.css">
+</head>
+<body  background="../../../images/background.gif">
+<p />
+<a name="PageTop"></a>
+<form name="main" action="P0A.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td>
+<SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="WebHome.html">Library</a>&gt; <b>P0A</b>   </font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../Home/WebHome.html">Home</a>  |  <a href="WebHome.html">Library</a>  |  <a href="WebChanges.html">Change&nbsp;Log</a>  |  <a href="WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form>
+<p />
+P0A
+<p />
+94-95 <a href="OBD1.html">OBD1</a> Accord EX
+<p />
+attached pic is a 94 P0A-A51
+<br>
+<a href="PCB.html">PCB</a> is IPT 02D010B0-1502
+<p />
+  The data below has been copied over from the P13 page as a place holder.
+Only a few of the locations are actually known at this time.
+<p />
+<h3><a name="RAM"> </a> <a href="RAM.html">RAM</a> </h3>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> <strong><em>Location</em></strong> </td><td> <strong><em>Bytes</em></strong> </td><td> <strong><em>Description</em></strong> </td><td> <strong><em>Notes</em></strong> </td></tr>
+<tr><td>  </td><td> 1 </td><td colspan="2"> MAP sensor </td></tr>
+<tr><td>  </td><td> 1 </td><td> Tps Sensor </td><td> <a href="OBD1_8bitTPS.html">OBD1_8bit&nbsp;TPS</a> </td></tr>
+<tr><td>  </td><td> 2 </td><td colspan="2"> <a href="RPM.html">RPM</a> in 16bit form </td></tr>
+<tr><td>  </td><td> 1 </td><td> <a href="ECT.html">ECT</a> Sensor </td><td> ?? </td></tr>
+<tr><td>  </td><td> 1 </td><td> <a href="VSS.html">VSS</a> Sensor </td><td> km/h </td></tr>
+<tr><td>  </td><td> 1 </td><td> Column of table </td><td> See <a href="ROM.html">ROM</a> @6050 - mBar scale </td></tr>
+<tr><td>  </td><td> 1 </td><td> Row of low cam table </td><td> See <a href="ROM.html">ROM</a> @6000 - low cam <a href="RPM.html">RPM</a> scale </td></tr>
+<tr><td>  </td><td> 1 </td><td> Row of high cam table </td><td> See <a href="ROM.html">ROM</a> @6028 - high cam <a href="RPM.html">RPM</a> scale </td></tr>
+<tr><td>  </td><td> 2 </td><td> <a href="CEL.html">CEL</a> Word #1 </td><td> contains 0x0000 otherwise a bit depending on <a href="CEL.html">CEL</a> </td></tr>
+<tr><td>  </td><td> 2 </td><td> <a href="CEL.html">CEL</a> Word #2 </td><td> contains 0x0000 otherwise a bit depending on <a href="CEL.html">CEL</a> </td></tr>
+<tr><td>  </td><td> 2 </td><td> <a href="CEL.html">CEL</a> Word #3 </td><td> contains 0x0000 otherwise a bit depending on <a href="CEL.html">CEL</a> </td></tr>
+<tr><td>  </td><td> 2 </td><td> <a href="CEL.html">CEL</a> Word #4 </td><td> contains 0x0000 otherwise a bit depending on <a href="CEL.html">CEL</a> </td></tr>
+<tr><td>  </td><td> 2 </td><td> Actual Rev Cut </td><td> <a href="OBD1_16bitRPM.html">OBD1_16bit&nbsp;RPM</a> </td></tr>
+<tr><td>  </td><td> 2 </td><td> Actual Rev Resume </td><td> <a href="OBD1_16bitRPM.html">OBD1_16bit&nbsp;RPM</a> </td></tr>
+<tr><td>  </td><td> 1 </td><td> Current <a href="RPM.html">RPM</a> in 8bit form </td><td>  &nbsp;  </td></tr>
+<tr><td>  </td><td> 1b </td><td> VTEC Active </td><td> ?? </td></tr>
+<tr><td>  </td><td> 1b </td><td> A/C Switch Input </td><td> If pin B5 (ACS) is grounded, 0x0224.0 will read 1 </td></tr>
+<tr><td>  </td><td> 1 </td><td> <a href="RPM.html">RPM</a> in 8bit form </td><td>  &nbsp;  </td></tr>
+<tr><td>  </td><td> 1 </td><td> O2 sensor </td><td> ??? </td></tr>
+<tr><td>  </td><td> 1 </td><td> <a href="IAT.html">IAT</a> sensor </td><td> 0v-5v 0x00-0xFF </td></tr>
+<tr><td>  </td><td> 1 </td><td> Baro Sensor </td><td> 0v-5v 0x00-0xFF </td></tr>
+<tr><td>  </td><td> 1 </td><td> <a href="ECT.html">ECT</a> sensor </td><td> 0v-5v 0x00-0xFF </td></tr>
+</table>
+<h3><a name="ROM"> </a> <a href="ROM.html">ROM</a> </h3>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td> <strong><em>Location</em></strong> </td><td> <strong><em>Bytes</em></strong> </td><td> <strong><em>Description</em></strong> </td><td> <strong><em>Notes</em></strong> </td></tr>
+<tr><td> 0C90 </td><td> 4 </td><td> Checksum Jump Instruction </td><td> Change 909DF17F-&gt;03A40C00 to disable checksum </td></tr>
+<tr><td>  </td><td> 2 </td><td> High Cam Rev Limit Reset </td><td> Moved to memory here as well as the later entries </td></tr>
+<tr><td>  </td><td> 2 </td><td> High Cam Rev Limit Set </td><td> Moved to memory here as well as the later entries </td></tr>
+<tr><td>  </td><td> 1 </td><td> Speed Limiter </td><td> 0-255km/h (0-159MPH) FF disables speed limiter </td></tr>
+<tr><td>  </td><td> 1 </td><td> VTEC Coolant Temp Check </td><td> (0x44 enables, 0xFF disables) </td></tr>
+<tr><td>  </td><td> 2 </td><td> Low Cam Rev Limit Reset </td><td> <a href="OBD1_16bitRPM.html">OBD1_16bit&nbsp;RPM</a> format </td></tr>
+<tr><td>  </td><td> 2 </td><td> Low Cam Rev Limit Set </td><td> <a href="OBD1_16bitRPM.html">OBD1_16bit&nbsp;RPM</a> format </td></tr>
+<tr><td>  </td><td> 2 </td><td> High Cam Rev Limit Reset </td><td> <a href="OBD1_16bitRPM.html">OBD1_16bit&nbsp;RPM</a> format </td></tr>
+<tr><td>  </td><td> 2 </td><td> High Cam Rev Limit Set </td><td> <a href="OBD1_16bitRPM.html">OBD1_16bit&nbsp;RPM</a> format </td></tr>
+<tr><td> 6000 </td><td> 40 </td><td> Low Cam Rev Scalar 1x40 </td><td> Each scalar is in <a href="OBD1_16bitRPM.html">OBD1_16bit&nbsp;RPM</a> format </td></tr>
+<tr><td> 6028 </td><td> 40 </td><td> High Cam Rev Scalar 1x40 </td><td> Each scalar is in <a href="OBD1_16bitRPM.html">OBD1_16bit&nbsp;RPM</a> format </td></tr>
+<tr><td> 6050 </td><td> 10 </td><td> Low and High Cam Map Scalar 1x10 </td><td> [OBD1_8bitMBar] </td></tr>
+<tr><td> 605A </td><td> 40 </td><td> A scalar? Or Multiplier? 1x40 </td><td> 16bit format </td></tr>
+<tr><td> 6082 </td><td> 40 </td><td> A scalar? Or Multiplier? 1x40 </td><td> 16bit format </td></tr>
+<tr><td> 60AA </td><td> 200 </td><td> Low Cam Fuel Table </td><td> Unknown Conversion Formula </td></tr>
+<tr><td> 6172 </td><td> 200 </td><td> High Cam Fuel Table </td><td> Unknown Conversion Formula </td></tr>
+<tr><td> 623A </td><td> 110 </td><td> Extra Table - no idea, simular to maps @6316 &amp; 6384 </td><td> 10 col x 11 row </td></tr>
+<tr><td> 62A8 </td><td> 110 </td><td> Extra Table - no idea, simular to maps @6316 &amp; 6384 </td><td> 10 col x 11 row </td></tr>
+<tr><td> 6316 </td><td> 110 </td><td> Extra Table - no idea, all 80s </td><td> 10 col x 11 row </td></tr>
+<tr><td> 6384 </td><td> 110 </td><td> Extra Table - no idea, all 80s </td><td> 10 col x 11 row </td></tr>
+<tr><td> 63F8 </td><td> 200 </td><td> Low Cam Ignition Table </td><td> <a href="OBD1_8bitAdvance.html">OBD1_8bit&nbsp;Advance</a> </td></tr>
+<tr><td> 64C0 </td><td> 100 </td><td> Extra Low Cam Ignition Table </td><td> 10 col x 10 row </td></tr>
+<tr><td> 642E </td><td> 100 </td><td> Extra Low Cam Ignition Table </td><td> 10 col x 10 row </td></tr>
+<tr><td> 659C </td><td> 200 </td><td> High Cam Ignition Table </td><td> <a href="OBD1_8bitAdvance.html">OBD1_8bit&nbsp;Advance</a> </td></tr>
+<tr><td> 6664 </td><td> 100 </td><td> Extra High Cam Ignition Table </td><td> 10 col x 10 row </td></tr>
+<tr><td> 66D2 </td><td> 100 </td><td> Extra High Cam Ignition Table </td><td> 10 col x 10 row </td></tr>
+<tr><td> 681C </td><td> 110 </td><td> Extra Table - no idea, all 00s </td><td> 10 col x 11 row </td></tr>
+<tr><td> 688A </td><td> 120 </td><td> Extra Table - no idea, all 00s </td><td> 10 col x 12 row </td></tr>
+</table>
+|7FF1|1|Debug/Test mode????| 0xFF enables, 0x00 disables???? <a href="http://www.pgmfi.org/phorum/read.php?f=13&amp;i=3014&amp;t=3003#reply_3014" target="_top">here</a>|4-95 <a href="OBD1.html">OBD1</a> Accord EX
+<p />
+attached pic is a 94 P0A-A51
+<br>
+<a href="PCB.html">PCB</a> is IPT 02D010B0-1502
+<p />
+<p />
+<font size = "-1"><center>
+<table border="1" cellspacing="0" cellpadding="1"> <tr><th align="center" bgcolor="#D0D1E0"> <strong><span style='background : #FFFFCE;'><font color="#0000FF">Attachment</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/FileAttachment?topicparent=Library.P0A">?</a>:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Modify:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Size:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Date:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Who:</strong> </th><th align="center" bgcolor="#D0D1E0"> <strong>Comment:</strong> </th></tr>
+<tr><td>  <img src="../../../pub/icn/bmp.gif" width="16" height="16" align="top" alt="" /> <a href="../../../pub/Library/P0A/P0A_A51.JPG">P0A_A51.JPG</a>     </td><td>  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/P0A?filename=P0A_A51.JPG&amp;revInfo=1">mod</a>     </td><td>  442912  </td><td>  18 Feb 2004 - 02:24  </td><td>  Speedz  </td><td>  &nbsp;  </td></tr>
+</table>
+<p />
+</font></center>
+<p />
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td align="left"> <font size="-1"></font></td>
+</tr>
+</table>
+<p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"> 
+   <b>Revision:</b> r1.3 - 18 May 2006 - 18:59 GMT - kabuki 
+</FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{   <a href="http://www.pgmfi.org/twiki/bin/edit/Library/P0A?t=1194413195"><b>Edit</b></a>
+   |  <a href="http://www.pgmfi.org/twiki/bin/attach/Library/P0A">Attach</a>
+   |  <a href="../../rdiff/Library/P0A.html">History</a>
+   |  <a href="../../oops/Library/P0A%3Ftemplate=oopsmore&amp;param1=1.3&amp;param2=1.3.html">More</a> 
+ }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.P0A">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#e99e808280a9998e848f80c7869b8ed69a9c8b838c8a9dd4bdbe808280c9af8c8c8d8b888a82">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#b8ccd7d5f8dcd1dfd1ccd9d4decdcbd1d7d6d7d6d4d1d6dd96dbd7d5" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<p />
+<p />
+<p />
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<center><SCRIPT type="text/javascript" language="Javascript" SRC="/~jon/includes/pgmfiAd.js">
+</SCRIPT>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+</html>

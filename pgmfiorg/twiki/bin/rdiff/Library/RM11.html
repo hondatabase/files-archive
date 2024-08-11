@@ -1,0 +1,159 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . RM11 ( vs. r1.1)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/RM11.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>RM11</b> ( vs. r1.1)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/RM11.html">RM11</a></b>
+		(<a href="../../view/Library/RM11%3Frev=r1.1.html">r1.1</a> - 26&nbsp;Jul&nbsp;2005 - Home.hackish)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="hackish" date="1122401143" format="1.0" version="1.1"}%
+Author: Deluded
+<p />
+Date: 04-04-03 01:19
+<p />
+RM11 CAN be replaced with 3 resistors:
+<p />
+From pin 1 to 2...10k ohm (digikey# 10kebk-nd (200 for US$4.70))
+<p />
+2 to 3...51K (51kebk-nd)
+<p />
+3 to 8...12K (12kebk-nd)
+<p />
+No MIL and normal operation
+<p />
+unplug Vtec sol and MIL functions correctly by throwing <a href="../../view/Library/CEL.html">CEL</a>.
+<p />
+I'm not smart, just observant and persistent: look closely at a P72 if you want to see where I came up with this.
+<p />
+Editors note: This RM11 replacement will probably NOT work for auto <a href="../../view/Library/ECU.html">ECU</a>s if the feedback on the auto trans lockup solenoid is required.  A true RM11 or additional resistors would be required to run both a vtec and auto trans solenoid with feedback.
+<p />
+I removed an RM11 and measured all the resistances. This should allow someone to come up with an electrically identical replacement. 
+<p />
+<p />
+<table border="1" cellspacing="0" cellpadding="1"> <tr><td>  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  1  </td><td colspan="2">  2  </td><td colspan="2">  3  </td><td colspan="2">  4  </td><td colspan="2">  5  </td><td colspan="2">  6  </td><td colspan="2">  7  </td><td colspan="2">  8  </td></tr>
+<tr><td>  </td><td colspan="2">  1  </td><td colspan="2">  x  </td><td colspan="2">  9k </td><td colspan="2"> 27k </td><td colspan="2">  9k </td><td colspan="2"> 27k </td><td colspan="2">  9k </td><td colspan="2"> 27k </td><td colspan="2"> 24k </td></tr>
+<tr><td>  </td><td colspan="2">  2  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  x  </td><td colspan="2"> 27k </td><td colspan="2"> 17k </td><td colspan="2"> 30k </td><td colspan="2"> 17k </td><td colspan="2"> 30k </td><td colspan="2"> 26k </td></tr>
+<tr><td>  </td><td colspan="2">  3  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  x  </td><td colspan="2"> 30k </td><td colspan="2"> 20k </td><td colspan="2"> 30k </td><td colspan="2"> 20k </td><td colspan="2"> 10k </td></tr>
+<tr><td>  </td><td colspan="2">  4  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  x  </td><td colspan="2"> 27k </td><td colspan="2"> 17k </td><td colspan="2"> 30k </td><td colspan="2"> 27k </td></tr>
+<tr><td>  </td><td colspan="2">  5  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  x  </td><td colspan="2"> 30k </td><td colspan="2"> 20k </td><td colspan="2"> 10k </td></tr>
+<tr><td>  </td><td colspan="2">  6  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  x  </td><td colspan="2"> 27k </td><td colspan="2"> 27k </td></tr>
+<tr><td>  </td><td colspan="2">  7  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  x  </td><td colspan="2"> 10k </td></tr>
+<tr><td>  </td><td colspan="2">  8  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2">  &nbsp;  </td><td colspan="2" align="right">   x </td></tr>
+</table></td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/RM11.html">View</a>
+  |  <a href="RM11.html">Diffs</a>  | <a href="../../view/Library/RM11%3Frev=1.1.html">r1.1</a>
+  |  <a href="../../oops/Library/RM11%3Ftemplate=oopsmore&amp;param1=1.1&amp;param2=1.1.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.RM11">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#7e091715173e0e1913181750110c19410d0b1c141b1d0a432a291715175e381b1b1a1c1f1d15">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#8bffe4e6cbefe2ece2ffeae7edfef8e2e4e5e4e5e7e2e5eea5e8e4e6" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision  - <br />
+    Revision r1.1 - 26 Jul 2005 - 18:05 GMT - Home.hackish
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

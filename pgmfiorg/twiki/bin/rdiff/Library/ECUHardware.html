@@ -1,0 +1,242 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<link rel="STYLESHEET" type="text/css" href="../../../style.css">
+
+<head>
+ <title>TWiki . Library . ECUHardware (r1.1 vs. r1.4)</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+ <meta name="robots" content="noindex" /> %HTTP_EQUIV_ON_VIEW%
+ <base href="" />
+</head>
+<body bgcolor="#ffffff">
+<a name="PageTop"></a>
+<form name="main" action="../../view/Library/ECUHardware.html">
+   <!-- Constraining Table -->
+   <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" class="tableborder" bgcolor="#FFFFFF"><tr><td>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/top.gif" width="768" height="8" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td><A HREF="../../view.1.html"><img src="../../../images/layout/logo.gif" width="290" height="60" border="0" alt="PGMFI Logo"></a></td>
+    <td><a href='http://banners.pgmfi.org/ads/adclick.php?n=a83ba595' target='_blank'><img src='http://banners.pgmfi.org/ads/adview.php?what=zone:1&amp;n=a83ba595' border='0' alt='' width="468" height="60"></a></td>
+    <td><img src="../../../images/layout/side.gif" width="10" height="60" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/bottom.gif" width="768" height="13" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td colspan="3"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#dedede" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+      <td><FONT CLASS="regblack"><a href="../../view/Library/WebHome.html">Library</a>&gt; <b>ECUHardware</b> (r1.1 vs. r1.4)</font></td>
+      <td align="right" valign="top"><FONT CLASS="smallblack"><B>Destinations: </b><a href="../../view/Home/WebHome.html">Home</a>  |  <a href="../../view/Library/WebHome.html">Library</a>  |  <a href="../../view/Library/WebChanges.html">Change&nbsp;Log</a>  |  <a href="../../view/Library/WebIndex.html">Index</a></FONT></td>
+      </tr>
+      </table>
+   </td>
+   </tr>
+   </table>
+   <table align="center" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/space.gif" width="1" height="1" border="0" alt=""></td>
+   </tr>
+   <tr>
+    <td bgcolor="#000000"><img src="../../../images/layout/shadow.gif" width="768" height="4" border="0" alt=""></td>
+   </tr>
+   </table>
+   <table align="center" bgcolor="#FFFFFF" width="100%" cellspacing="2" cellpadding="2" border="0">
+   <tr>
+    <td><FONT CLASS="regblack"><div align="right"> <a href="../../view/Library/WebSearch.html">Search</a>  |  Go <input type="text" name="topic" size="16" /> </div>
+<p />
+</form><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/ECUHardware.html">ECUHardware</a></b>
+		(<a href="../../view/Library/ECUHardware%3Frev=r1.4.html">r1.4</a> - 06&nbsp;Feb&nbsp;2007 - <span style='background : #FFFFCE;'><font color="#0000FF">Jared&nbsp;Karagen</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Home/JaredKaragen?topicparent=Library.ECUHardware">?</a>)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Honda often used <a href="../../view/Library/MCU.html">MCU</a>s that had internal (on-chip) programs.  These were often copy protected.  There are <a href="../../view/Library/McuReaders.html">Mcu&nbsp;Readers</a> to defeat the copy protection
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Honda often used <a href="../../view/Library/MCU.html">MCU</a>s that had internal (on-chip) programs.  These were often copy protected.  There are <a href="../../view/Library/McuReaders.html">Mcu&nbsp;Readers</a> to defeat the copy protection.
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+<p />
+It is possible to switch between more than one program on your oversized <a href="../../view/Library/EEPROM.html">EEPROM</a>.  All you need to do is add a pullup resistor to the extra address lines (A15, A16, Etc.), then to switch them, just add a debounced switch to the address lines to ground them.
+<p />
+<strong>Here is a diagram of 28 &amp; 32 pin EEPROMS:</strong>
+<ul>
+<li> <a href="../../view/Library/EEPROM.html">EEPROM</a> pinouts: <br /> <img src="../../../pub/Library/ECUHardware/1.32_pin-2-28PinIC.jpg" alt="1.32_pin-2-28PinIC.jpg" width="472" height="434"  />
+</li>
+</ul>
+<p />
+%META:FILEATTACHMENT{name="1.32_pin-2-28PinIC.jpg" attr="" comment="EEPROM pinouts" date="1170725945" path="1. 32_pin-2-28Pin IC.jpg" size="39713" user="JaredKaragen" version="1.1"}%</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/ECUHardware.html">ECUHardware</a></b>
+		(<a href="../../view/Library/ECUHardware%3Frev=r1.3.html">r1.3</a> - 31&nbsp;Mar&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+<ul>
+<li> <span style='background : #FFFFCE;'><font color="#0000FF">OBD2&nbsp;AECU</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/OBD2AECU?topicparent=Library.ECUHardware">?</a>s are quite similar.
+</li>
+<li> <a href="../../view/Library/OBD2.html">OBD2</a> BECUs are quite similar.
+</li>
+</ul>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+<ul>
+<li> <a href="../../view/Library/OBD2A.html">OBD2&nbsp;A</a> <a href="../../view/Library/ECU.html">ECU</a>s are quite similar.
+</li>
+<li> <a href="../../view/Library/OBD2B.html">OBD2&nbsp;B</a> <a href="../../view/Library/ECU.html">ECU</a>s are quite similar.
+</li>
+<li> <a href="../../view/Library/OBD2K.html">OBD2&nbsp;K</a> <a href="../../view/Library/ECU.html">ECU</a>s are an evolution of <a href="../../view/Library/OBD.html">OBD</a>2B <a href="../../view/Library/ECU.html">ECU</a>s designed to run K-series motors
+</li>
+</ul></td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/ECUHardware.html">ECUHardware</a></b>
+		(<a href="../../view/Library/ECUHardware%3Frev=r1.2.html">r1.2</a> - 05&nbsp;Mar&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Changed: </b></td></tr>
+<tr><td bgcolor="#FF4040" valign="top" width="1%">&lt;<br />&lt;</td><td><p />
+Honda often used <a href="../../view/Library/MCU.html">MCU</a>s that had internal (on-chip) programs.  These were often copy protected.  There are <span style='background : #FFFFCE;'><font color="#0000FF">Ways&nbsp;To&nbsp;Read&nbsp;AProtected&nbsp;MCU</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/WaysToReadAProtectedMCU?topicparent=Library.ECUHardware">?</a>
+</td></tr><tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td>
+<p />
+Honda often used <a href="../../view/Library/MCU.html">MCU</a>s that had internal (on-chip) programs.  These were often copy protected.  There are <a href="../../view/Library/McuReaders.html">Mcu&nbsp;Readers</a> to defeat the copy protection</td></tr>
+</table>
+<br clear="all" /><table width="100%" border="3" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#D4D6E8">
+	 <td width="99%">
+		&nbsp;<tt><b>&lt;&lt;O&gt;&gt;</b></tt>&nbsp; Difference Topic
+		<b><a href="../../view/Library/ECUHardware.html">ECUHardware</a></b>
+		(<a href="../../view/Library/ECUHardware%3Frev=r1.1.html">r1.1</a> - 20&nbsp;Feb&nbsp;2004 - Home.blundar)
+	 </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr><td>
+</td></tr>
+<tr><td bgcolor="#D0FFD0" colspan ="2"><b> Added:   </b></td></tr>
+<tr><td bgcolor="#40FF40" valign="top" width="1%">&gt;<br />&gt;</td><td><p />
+%META:TOPICINFO{author="blundar" date="1077236820" format="1.0" version="1.1"}%
+This page describes how the hardware in an <a href="../../view/Library/ECU.html">ECU</a> works, and fun things you can do with it.  If you are just wanting to learn how to chip your <a href="../../view/Library/ECU.html">ECU</a>, you should look at <a href="../../view/Library/WhatYouNeed.html">What&nbsp;You&nbsp;Need</a> instead.  If you are looking for detailed information about what is going on inside a particular program, you might want to look at <a href="../../view/Library/RomMaps.html">Rom&nbsp;Maps</a>.
+<p />
+Honda definitely did not reinvent the wheel in terms of <a href="../../view/Library/ECU.html">ECU</a> technology for each new motor they released.  Each "family" of <a href="../../view/Library/ECU.html">ECU</a> generally shares one or more <a href="../../view/Library/PCB.html">PCB</a>s that are populated with different components in order to run different motors.  This really opens the door for <a href="../../view/Library/ECUHardwareMods.html">ECUHardware&nbsp;Mods</a>.  Additionally, there are design peculiarities that carry over from one family to another.
+<p />
+<a href="../../view/Library/ECU.html">ECU</a> Families:
+<p />
+<ul>
+<li> <a href="../../view/Library/OBD0.html">OBD0</a> <a href="../../view/Library/VacuumAdvance.html">Vacuum&nbsp;Advance</a> <a href="../../view/Library/ECU.html">ECU</a>s from pre-88 cars lacking electronic advance distributors share some common features.
+</li>
+<li> <a href="../../view/Library/OBD0.html">OBD0</a> <a href="../../view/Library/DPFI.html">DPFI</a> <a href="../../view/Library/ECU.html">ECU</a>s from 88-91 cars are useless bastards that are 2 injectors short of being useful
+</li>
+<li> <a href="../../view/Library/OBD0MPFI.html">OBD0&nbsp;MPFI</a> non-vtec <a href="../../view/Library/ECU.html">ECU</a>s from 88-91 are a definite family.
+</li>
+<li> <a href="../../view/Library/OBD0VtecECUs.html">OBD0&nbsp;Vtec&nbsp;ECUs</a> like the PW0 and PR3 are a definite family.
+</li>
+<li> <a href="../../view/Library/OBD1CivicIntegraECUs.html">OBD1&nbsp;Civic&nbsp;Integra&nbsp;ECUs</a> are a definite family.
+</li>
+<li> <a href="../../view/Library/OBD1.html">OBD1</a> <a href="../../view/Library/PreludeAccord.html">Prelude&nbsp;Accord</a> <a href="../../view/Library/ECU.html">ECU</a>s are a definite family.
+</li>
+<li> V6ECUs from the Acura/Rover/Honda Legend V6 cars, NSX and (?) V6 Accord have many common features.
+</li>
+<li> <span style='background : #FFFFCE;'><font color="#0000FF">OBD2&nbsp;AECU</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/OBD2AECU?topicparent=Library.ECUHardware">?</a>s are quite similar.
+</li>
+<li> <a href="../../view/Library/OBD2.html">OBD2</a> BECUs are quite similar.
+</li>
+</ul>
+<p />
+If you want to learn about how the Oki 66K <a href="../../view/Library/MCU.html">MCU</a> works, you should look at <a href="../../view/Library/66kAssemblerDocs.html">66k&nbsp;Assembler&nbsp;Docs</a>.
+<p />
+There are many <a href="../../view/Library/ECUHardwareMods.html">ECUHardware&nbsp;Mods</a> you can do to change how <a href="../../view/Library/ECU.html">ECU</a> hardware works.
+<p />
+Honda often used <a href="../../view/Library/MCU.html">MCU</a>s that had internal (on-chip) programs.  These were often copy protected.  There are <span style='background : #FFFFCE;'><font color="#0000FF">Ways&nbsp;To&nbsp;Read&nbsp;AProtected&nbsp;MCU</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Library/WaysToReadAProtectedMCU?topicparent=Library.ECUHardware">?</a>
+<p />
+Ever wonder who designed honda's <a href="../../view/Library/ECU.html">ECU</a>s?  <a href="../../view/Library/KeheinIndianaPrecisionTechnology.html">Kehein&nbsp;Indiana&nbsp;Precision&nbsp;Technology</a> is to blame...</td></tr>
+</table>
+<br clear="all" /><p />
+</td></tr></table>
+<p />
+      <table width="768" border="0" cellpadding="3" cellspacing="0">
+      <tr>
+        <td valign="center" align="left"><FONT CLASS="smallblack"></FONT></td>
+        <td valign="center" align="center"><FONT CLASS="smallblack"></FONT></td>
+       <td valign="center" align="right"><FONT CLASS="smallblack">{  <a href="../../view/Library/ECUHardware.html">View</a>
+  |  <a href="ECUHardware.html">Diffs</a>  | <a href="../../view/Library/ECUHardware%3Frev=1.4.html">r1.4</a> | <a href="ECUHardware%3Frev1=1.4&amp;rev2=1.3.html">&gt;</a> | <a href="../../view/Library/ECUHardware%3Frev=1.3.html">r1.3</a> | <a href="ECUHardware%3Frev1=1.3&amp;rev2=1.2.html">&gt;</a> | <a href="../../view/Library/ECUHardware%3Frev=1.2.html">r1.2</a>
+  |  <a href="../../oops/Library/ECUHardware%3Ftemplate=oopsmore&amp;param1=1.4&amp;param2=1.4.html">More</a>  }</FONT></td>
+       </tr>
+      </table> 
+      <table align="center" width="768" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+      <tr>
+       <td><img src="../../../images/space.gif" width="1" height="2" border="0" alt=""></td>
+      </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#757580">
+      <tr>
+       <td align="center"><FONT CLASS="disclaimer"><b>Copyright &copy; 2002-present by the contributing authors. All material on this collaboration platform is the property of the <br>contributing authors, and is covered by the <A HREF="http://creativecommons.org/licenses/by-nc-sa/1.0/">Non-Commercial Share-Alike License</A> unless explicitly stated otherwise.<b></FONT></td>
+         </tr>
+      </table>
+      <table align="center" width="768" cellspacing="1" cellpadding="1" border="0" bgcolor="#888898">
+         <tr>
+         <TD align="left">
+         <FONT CLASS="disclaimer">
+      Ideas, requests, problems regarding the <span style='background : #FFFFCE;'><font color="#0000FF">PGMFI TWiki</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/TWiki/WebHome?topicparent=Library.ECUHardware">?</a>? E-Mail the <A href="/cdn-cgi/l/email-protection#73041a181a3303141e151a5d1c01144c000611191610074e27241a181a533516161711121018">WikiAdmin</A> <br>
+      <TD align="right">
+      <FONT CLASS="credits">
+      Site Designed By: <A HREF="/cdn-cgi/l/email-protection#05716a6845616c626c7164696370766c6a6b6a6b696c6b602b666a68" target="_blank">Digital Fusion</A> &nbsp; <b><A HREF="http://www.digitalfusiononline.com">Need a website?</A></b></font>
+      </TD>
+      </TR>
+   </td>
+   </tr>
+   </table>   
+   </td>   
+   </tr>
+   </table>
+<!-- /Constraining Table -->
+<p />
+<table width="100%" border="0" cellpadding="3" cellspacing="0">
+ <tr>
+  <td valign="top">
+    Revision r1.1 - 20 Feb 2004 - 00:27 GMT - Home.blundar<br />
+    Revision r1.4 - 06 Feb 2007 - 01:40 GMT - <span style='background : #FFFFCE;'><font color="#0000FF">Jared&nbsp;Karagen</font></span><a href="http://www.pgmfi.org/twiki/bin/edit/Home/JaredKaragen?topicparent=Library.ECUHardware">?</a>
+  </td>
+  <td width="40%" valign="top">
+   %WEBCOPYRIGHT%
+  </td>
+ </tr>
+</table>
+<a name="PageBottom"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
