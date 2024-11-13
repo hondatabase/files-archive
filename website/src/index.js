@@ -13,15 +13,24 @@ const router = createBrowserRouter([
     path: '*',
     element: <FileExplorer />,
     loader: async ({ request }) => {
-      let path = new URL(request.url).pathname.slice(1);
-      let response;
-      try { response = await new Octokit().repos.getContent({ owner: 'hondatabase', repo: 'files-archive', path: path || '' }); } catch {}
-      let data = response?.data || [];
-      let filesArray = Array.isArray(data) ? data : [data];
-      let files = filesArray
-        .filter(f => !f.name.startsWith('.') && !hiddenItems.includes(f.name))
-        .map((f, idx) => ({ ...f, uniqueId: `${f.sha}-${idx}` }));
-      return { files, loading: false };
+      const getContent = path => new Octokit().repos.getContent({ owner: 'hondatabase', repo: 'files-archive', path });
+      let response, files, metadata = {};
+
+      try {
+        response = await getContent(new URL(request.url).pathname.slice(1) || '');
+        files    = Array.isArray(response?.data) ? response.data : [response.data];
+      } catch { return { files: [], metadata: {}, loading: false }; }
+
+      const metadataFile = files.find(f => f.name === '.metadata.json');
+      if (metadataFile) try {
+        response = await getContent(metadataFile.path);
+        metadata = JSON.parse(atob(response.data.content));
+        files    = files.filter(f => f.name !== '.metadata.json');  // Remove metadata file from files list
+      } catch {}
+
+      files = files.filter(f => !f.name.startsWith('.') && !hiddenItems.includes(f.name)); // Remove hidden and unnecessary files/folders
+
+      return { files, metadata, loading: false };
     }
   }
 ], {

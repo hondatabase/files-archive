@@ -3,7 +3,7 @@ import { File, Folder } from "lucide-react"
 
 const FileGrid = ({ files, onFileClick, metadata = {} }) => (
   <div className="grid grid-cols-[repeat(auto-fill,minmax(120px,1fr))] gap-4 p-4">
-    {files.map(file => {
+    {files.map((file, idx) => {
       let nameParts = file.type === "dir" ? [file.name] : file.name.split(/(?=\.[^.]+$)/);
       let totalLength = file.name.length;
       let shouldTruncate = totalLength > 30;
@@ -13,9 +13,11 @@ const FileGrid = ({ files, onFileClick, metadata = {} }) => (
         file.type === "dir" ? file.name : 
         nameParts[0] + (nameParts[1] || ''));
 
+        // console.log(metadata);
+
       return (
         <div
-          key={file.uniqueId}
+          key={idx}
           onClick={() => onFileClick(file)}
           title={metadata[file.name]?.displayName || file.name}
           className="group flex flex-col items-center p-2 rounded cursor-pointer hover:bg-blue-50 focus:bg-blue-100 w-full max-w-[120px] transition-transform transform hover:scale-105">
@@ -23,9 +25,7 @@ const FileGrid = ({ files, onFileClick, metadata = {} }) => (
             <Folder size={48} className="text-yellow-500 mb-2" /> : 
             <File size={48} className="text-blue-500 mb-2" />
           }
-          <span className="text-sm text-center w-full group-hover:text-blue-600 break-words">
-            {displayName}
-          </span>
+          <span className="text-sm text-center w-full group-hover:text-blue-600 break-words">{displayName}</span>
         </div>
       );
     })}

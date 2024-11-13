@@ -9,7 +9,8 @@ const FileDetails = ({ file, metadata = {}, onClose }) => {
 			? `${(bytes / 1024).toFixed(1)} KB`
 			: `${(bytes / 1048576).toFixed(1)} MB`;
 
-	let description = metadata[file.name]?.description;
+	const author      = metadata[file.name]?.author;
+	const description = metadata[file.name]?.description;
 	let isImage = /\.(jpg|jpeg|png|gif|webp)$/i.test(file.name);
 
 	const handleBackdropClick = e => {
@@ -45,29 +46,28 @@ const FileDetails = ({ file, metadata = {}, onClose }) => {
 							</button>
 						</div>
 					</div>
-
-					{isImage && (
-						<div className="mb-4 h-48 overflow-hidden rounded">
-							<img
-								src={`${file.download_url}?w=400`}
-								alt={file.name}
-								className="w-full h-full object-cover cursor-zoom-in hover:opacity-90 transition-opacity"
-								onClick={() => window.open(file.download_url, '_blank')}
-								loading="lazy"
-							/>
-						</div>
-					)}
-
 					<div className="space-y-4">
-						<div className="text-sm text-gray-600">
-							Size: {formatSize(file.size)}
-						</div>
 						{description && (
 							<div className="prose prose-sm">
-								<h3 className="text-gray-700">Description</h3>
+								<h3 className="text-gray-700 font-semibold">Description</h3>
 								<p className="text-gray-600">{description}</p>
 							</div>
 						)}
+						{isImage && (
+							<div className="mb-4 h-48 overflow-hidden rounded">
+								<img
+									src={`${file.download_url}?w=400`}
+									alt={file.name}
+									className="w-full h-full object-cover cursor-zoom-in hover:opacity-90 transition-opacity"
+									onClick={() => window.open(file.download_url, '_blank')}
+									loading="lazy"
+								/>
+							</div>
+						)}
+						<div className="flex justify-between text-sm text-gray-600">
+							{author && <div><span className="font-semibold">Author:</span> {author}</div>}
+							<div><span className="font-semibold">Size:</span> {formatSize(file.size)}</div>
+						</div>
 					</div>
 				</div>
 			</div>

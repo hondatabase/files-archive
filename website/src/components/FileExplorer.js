@@ -60,6 +60,7 @@ const FileExplorer = () => {
 				<FileGrid
 					files={sortedFiles}
 					onFileClick={handleFileSelect}
+					metadata={metadata}
 				/>
 			</div>
 			{selectedFile && (
