@@ -1,25 +1,16 @@
 import React from 'react'
 
 import Breadcrumbs from './Breadcrumbs'
-import NavigationControls from './NavigationControls'
 import SearchBar from './SearchBar'
 
-const TopBar = ({
-  historyIndex,
-  historyLength,
-  onNavigate,
-  currentPath,
-  onSearch,
-}) => (
+const TopBar = ({ currentPath, onSearch, onNavigate }) => (
   <div className="fixed top-0 left-0 right-0 bg-white border-b z-20 animate-slideDown">
     <div className="flex flex-col gap-2 p-2 sm:p-4">
       <div className="flex items-center gap-4">
-        <NavigationControls
-          onNavigate={onNavigate}
-          canGoBack={historyIndex > 0}
-          canGoForward={historyIndex < historyLength - 1}
-          isHome={!currentPath}
-        />
+        <div className="text-center uppercase font-semibold">
+          Hondatabase
+          <div className="text-center capitalize font-normal">File Archive</div>
+        </div>
         <div className="hidden sm:block flex-1">
           <Breadcrumbs currentPath={currentPath} navigateTo={path => onNavigate(path)} />
         </div>
