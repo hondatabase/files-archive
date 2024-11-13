@@ -14,23 +14,22 @@ const router = createBrowserRouter([
     element: <FileExplorer />,
     loader: async ({ request }) => {
       const getContent = path => new Octokit().repos.getContent({ owner: 'hondatabase', repo: 'files-archive', path });
-      let response, files, metadata = {}, error = null;
+      let response, items, metadata = {}, error = null;
 
       try {
         response = await getContent(new URL(request.url).pathname.slice(1) || '');
-        files    = Array.isArray(response?.data) ? response.data : [response.data];
-      } catch (e) { return { files: [], metadata: {}, loading: false, error: 'Failed to fetch content from GitHub' }; }
+        items    = Array.isArray(response?.data) ? response.data : [response.data];
+      } catch (e) { return { items: [], metadata: {}, loading: false, error: 'Failed to fetch content from GitHub' }; }
 
-      const metadataFile = files.find(f => f.name === '.metadata.json');
+      const metadataFile = items.find(i => i.name === '.metadata.json');
       if (metadataFile) try {
         response = await getContent(metadataFile.path);
         metadata = JSON.parse(atob(response.data.content));
-        files    = files.filter(f => f.name !== '.metadata.json');  // Remove metadata file from files list
       } catch {}
 
-      files = files.filter(f => !f.name.startsWith('.') && !hiddenItems.includes(f.name)); // Remove hidden and unnecessary files/folders
+      items = items.filter(i => !i.name.startsWith('.') && !hiddenItems.includes(i.name)); // Remove hidden and unnecessary files/folders
 
-      return { files, metadata, loading: false, error };
+      return { items, metadata, loading: false, error };
     }
   }
 ], {
