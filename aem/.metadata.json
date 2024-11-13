@@ -1,0 +1,14 @@
+{
+  "AEM 30-0300 X-Series Wideband UEGO Gauge.pdf": {
+    "description": "Manual for the AEM 30-0300 X-Series Wideband UEGO Gauge."
+  },
+  "AEM 30-4100 Wideband UEGO Gauge.pdf": {
+    "description": "Manual for the AEM 30-4100 Wideband UEGO Gauge."
+  },
+  "AEM 30-4110 Wideband UEGO Gauge.pdf": {
+    "description": "Manual for the AEM 30-4110 Wideband UEGO Gauge."
+  },
+  "AEM UEGO Voltage Calibration Outputs.jpg": {
+    "description": "Voltage output calibration for the AEM UEGO Wideband, that has 4 voltage output programs/modes (where you select from the back of the gauge). The values you would need to configure sensor voltages in your tuning program."
+  }
+}

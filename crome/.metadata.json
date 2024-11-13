@@ -1,0 +1,17 @@
+{
+  "CROME 1.1.8R2 beta.exe": {
+    "description": "An early version of CROME."
+  },
+  "CROME_v1.6.x_Manual.pdf": {
+    "description": "Tuning Guide/Manual for CROME."
+  },
+  "Tuning with CROME v1.03.pdf": {
+    "description": "Tuning Guide/Manual for CROME."
+  },
+  "Tuning with CROME v1.06.pdf": {
+    "description": "Tuning Guide/Manual for CROME."
+  },
+  "scripts": {
+    "description": "Scripts for Crome. Consider these as 'plugins' for Crome."
+  }
+}

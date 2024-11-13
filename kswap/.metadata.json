@@ -1,0 +1,9 @@
+{
+  "RPM Signal - OBD2B K-Swap.jpg": {
+    "description": "This is the RPM output wire on OBD2B vehicles. It is where you should connect your swap harness RPM wire to.",
+    "author": "VIRUXE"
+  },
+  "bwe (boostworks) eg-dc kswap harness.pdf": {
+    "description": "Boostworks Engineering K-Swap Harness Manual, for the EG-DC Chassis."
+  }
+}

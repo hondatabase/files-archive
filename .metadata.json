@@ -1,6 +1,79 @@
 {
-	"obd1pinout.png": {
-		"displayName": "OBD1 Pinouts",
-		"description": "OBD1 ECU Connector Pinouts"
-	}
+  "2008-06-02_085638_terminal_removal_procedures.pdf": {
+    "description": "Step-by-step guide on how to remove terminals/pins from connectors."
+  },
+  "B COP mount rev4.DXF": {
+    "description": "3D Print of a mount for a B-series Coil-on-plug kit."
+  },
+  "DIY -- Obd1 to Obd2 Distributor Conversion Harness - Page 2 - Honda-Tech.png": {
+    "displayName": "DIY OBD1 to OBD2 Distributor Conversion Harness"
+  },
+  "Demon12.jpg": {
+    "description": "Picture of a Moates Demon 1.2 RTP board installed."
+  },
+  "Nokia USB Cable Driver.7z": {
+    "description": "Drivers required to be able to datalog via CN2 header, using a Nokia USB cable (old-school way of datalogging).\n\nhttps://www.youtube.com/watch?v=vob1peu7Usw"
+  },
+  "aem": {
+    "displayName": "AEM"
+  },
+  "boostednw": {
+    "displayName": "BoostedNW",
+    "description": "BoostedNW is a company that specializes in Honda ECU tuning and hardware. They offer a variety of products and services, such as the Flash & Burn, GM2 adapter, and more."
+  },
+  "cobrartp": {
+    "displayName": "CobraRTP",
+    "description": "CobraRTP is a hardware solution for tuning Honda ECUs."
+  },
+  "demonecu2.jpg": {
+    "description": "Complete view of a Moates Demon 1.2 RTP Board installed onto an ECU."
+  },
+  "ecu-components": {
+    "displayName": "ECU Components"
+  },
+  "fsm": {
+    "displayName": "Full Service Manuals",
+    "description": "Full Service/Workshop Manuals for various Honda models."
+  },
+  "hondarulez": {
+    "displayName": "HondaRulez",
+    "description": "For documentation: https://hondarulez.hondatabase.com"
+  },
+  "hts": {
+    "displayName": "Honda Tuning Suite",
+    "description": "Honda Tuning Suite OBD1 is a free tuning software."
+  },
+  "kswap": {
+    "displayName": "K-Swap",
+    "description": "K-Series Swap Information"
+  },
+  "moates": {
+    "displayName": "Moates.net",
+    "description": "Files related to Moates.net Products\n\nHoliday Greetings!\n\nAs we move into the end of 2022, we sincerely want to say \"THANK YOU ALL\" for support and patronage. It's been a thrill helping folks with their efforts, and we've truly appreciated the opportunities to socialize, exchange ideas, learn, teach, and facilitate along the way.\n\nWe're closing down the webstore and related operations so that we can pursue the balance of our lives in different areas. There are several challenges that have led us to this decision, and we hope you can all appreciate the following:\nThe headwinds of production supply shortages have cut our supply lines to the marrow. Many components we've used have lead times of a year or more, with costs having increased significantly along the way. There's no end in sight, and we don't want to sacrifice quality with questionable sourcing or chase the costs by increasing prices.\n\nWe've been doing this for a while now, and we're tired and getting older. It's time for us to take a step back and focus on health, family, and overall wellness. Running Moates.net has taken a tremendous amount of time, which is a limited resource and in short supply. Between arthritis and chronic pain of hands, backs, and other various injuries of body parts, it is a challenge to physically perform tasks needed to keep things going and we need to change what we are doing to improve our quality of life.\n\nWe wish you the best on all your projects, whatever they may become. It's been an amazing experience, and again, we truly appreciate you all as we take this step!\n\nGiving thanks,\nCraig, Bonnie, and Dave"
+  },
+  "hrtuning": {
+    "displayName": "HRTuning",
+    "description": "https://hrtuning.com/"
+  },
+  "pgmfiorg": {
+    "displayName": "PGMFI.org",
+    "description": "Files related to the PGMFI.org forum/twiki."
+  },
+  "targetlambda_zpsbc72ef9f.jpg": {
+    "description": "Stock Target Lambda table from Hondata SManager."
+  },
+  "tunerexpress": {
+    "displayName": "Tuner Express",
+    "description": "This software came as a replacement for the OBD0 Honda crowd with the distinct goal of having the ability to tune multiple platforms from one application.  This is for the DIY enthusiast as well as Developers who are comfortable with basic Windows Scripting.  Feel free to download the latest version and give evereverythingything a try.\n\nDownload will allow basic usage, Registration is required for saving files.\n\nPre-requisites: https://www.microsoft.com/en-us/download/details.aspx?id=17718\nhttps://www.innovatemotorsports.com/pub/LogWorks3Setup.exe\nMicrosoft Script Control installation"
+  },
+  "turboedit": {
+    "description": "Discontinued, Free, OBD0 Tuning Program. Use HTS instead, as it is the most up to date."
+  },
+  "uberdata": {
+    "description": "Discontinued, Free OBD1 Tuning Program. Use HTS instead, as it is the most up to date."
+  },
+  "xenocron": {
+    "displayName": "xenocron.com",
+    "description": "Xenocron's old ROM archive.\n\nMon, 13 Dec, 2021 at 3:38 PM - End of an era, Xenocron is now closed\n\nhttps://xenocrontuningsolutions.freshdesk.com/support/solutions/articles/1000307733-end-of-an-era-xenocron-is-now-closed."
+  }
 }

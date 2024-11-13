@@ -1,0 +1,8 @@
+{
+  "DemonOstrichReset.exe": {
+    "description": "The Demon and Ostrich can sometimes get stuck in an odd state. This utility will allow you to reset them to a known state.\n\nIn order to get a device back into a sane state, you need to CHANGE the vendor ID (which software It is set up for). Once you have changed the vendor IDi unplug, count to three, plug back in. Youll probably have to answer -yes- to a few dialog boxes about setting up the hardware when you next use your software of choice."
+  },
+  "firmware": {
+    "description": "Files related to Moates.net Products"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "haltech_ecu_manager_1_14_0_release.exe": {
+    "description": "Version 1.14.0 of the ECU Manager program, for Haltech's older ECU's. Like the PnP's."
+  },
+  "platinum-pro-plug-in": {
+    "displayName": "Platinum Pro Plug-in ECU's",
+    "description": "Files related to the Platinum Pro Plug-in ECU's."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "quick-start-guides": {
+    "displayName": "Quick Start Guides",
+    "description": "Quick Start Guides (QSG) for the Platinum Pro Plug-in ECU's."
+  },
+  "specs": {
+    "displayName": "Features and Specifications",
+    "description": "Features and Specifications for the Platinum Pro Plug-in ECU's."
+  }
+}

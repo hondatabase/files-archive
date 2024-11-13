@@ -1,0 +1,18 @@
+{
+  "ArduiLog_52_mm.ino.with_bootloader.eightanaloginputs1.hex": {
+    "description": "52MM OLED Display hex code",
+    "author": "Johan Putzolu"
+  },
+  "ArduiLog_52_mm.ino.eightanaloginputs1.hex": {
+    "description": "52MM OLED Display hex code",
+    "author": "Johan Putzolu"
+  },
+  "Arduino Nano - Wire OLED.jpg": {
+    "description": "How to wire an OLED to an Arduino Nano.",
+    "author": "Johan Putzolu"
+  },
+  "Oarduino_v7_2019_52mm.ino": {
+    "description": "Arduino code for a 52mm OLED display.",
+    "author": "Johan Putzolu"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "b-series_cop-plate": {
+    "displayName": "B-Series Coil-On-Plug Plate Mount",
+    "description": "Measurements for a B-Series Coil-On-Plug plate mount.",
+    "author": "Walter Hernando Ybarra Sari"
+  },
+  "epoxying": {
+    "description": "Epoxying a Honda block."
+  }
+}

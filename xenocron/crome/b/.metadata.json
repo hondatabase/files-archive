@@ -1,0 +1,18 @@
+{
+  "todabin.bin": {
+    "description": "B18C GSR Head (Mild PnP, .5mm over In&Ex Valves. ITR Cams), JG Intake Manifold. 83MM 10:1 CP Pistons. Crower Rods. Sleeved. SC63 T3/T4 P-Trim. Custom Semi Tubular Exhaust Manifold. 3 inch downpipe. 1000CC Injectors. Ignition tuned on the dyno until 18PSI. Fuel tuned to 19-26PSI.",
+    "author": "MaxPower"
+  },
+  "treyb20.bin": {
+    "description": "Stock B20.",
+    "author": "quicksol95"
+  },
+  "v2-stock-ls-jason.bin": {
+    "description": "203 BIN. Stock LS motor. 4500RPM Launch Control. Ignition Values borrowed and modified from previous bin (this one's a lot better).",
+    "author": "FooK"
+  },
+  "wierd half 110 final 17 psi.bin": {
+    "description": "2.0/VTEC, 1100cc injectors, T4/T67, Motorola 2.5 Bar on half pump and half 110 racegas Tuned tc 17-18 psi, rur RSS71-AIO or Pv5€72-AIO plugs.",
+    "author": "Joseph Davis"
+  }
+}
