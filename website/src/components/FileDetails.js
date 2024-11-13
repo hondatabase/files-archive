@@ -18,10 +18,10 @@ const FileDetails = ({ file, metadata = {}, onClose }) => {
 
 	return (
 		<div
-			className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+			className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 animate-fadeIn"
 			onClick={handleBackdropClick}>
 			<div
-				className="bg-white rounded-lg shadow-xl w-full max-w-2xl m-4"
+				className="bg-white rounded-lg shadow-xl w-full max-w-2xl m-4 animate-slideIn"
 				onClick={(e) => e.stopPropagation()}
 				role="dialog"
 				aria-modal="true">

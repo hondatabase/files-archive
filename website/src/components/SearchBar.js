@@ -5,7 +5,7 @@ const SearchBar = ({ onSearch }) => {
 	const [query, setQuery] = React.useState("");
 
 	return (
-		<div className="relative">
+		<div className="relative animate-fadeIn">
 			<input
 				type="text"
 				value={query}

@@ -11,7 +11,7 @@ const TopBar = ({
   currentPath,
   onSearch,
 }) => (
-  <div className="fixed top-0 left-0 right-0 bg-white border-b z-20">
+  <div className="fixed top-0 left-0 right-0 bg-white border-b z-20 animate-slideDown">
     <div className="flex flex-col gap-2 p-2 sm:p-4">
       <div className="flex items-center gap-4">
         <NavigationControls
