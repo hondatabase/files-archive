@@ -9,11 +9,10 @@ const FileDetails = ({ file, metadata = {}, onClose }) => {
 			? `${(bytes / 1024).toFixed(1)} KB`
 			: `${(bytes / 1048576).toFixed(1)} MB`;
 
-	let description = metadata[file.name];
+	let description = metadata[file.name]?.description;
 	let isImage = /\.(jpg|jpeg|png|gif|webp)$/i.test(file.name);
-	let [showFullImage, setShowFullImage] = useState(false);
 
-	const handleBackdropClick = (e) => {
+	const handleBackdropClick = e => {
 		if (e.target === e.currentTarget) onClose();
 	};
 
