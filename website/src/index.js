@@ -6,8 +6,7 @@ import FileExplorer from './components/FileExplorer';
 
 import './index.css';
 
-const octokit = new Octokit();
-const hiddenFiles = ['CNAME'];
+const hiddenItems = ['CNAME', 'website'];
 
 const router = createBrowserRouter([
   {
@@ -16,11 +15,11 @@ const router = createBrowserRouter([
     loader: async ({ request }) => {
       let path = new URL(request.url).pathname.slice(1);
       let response;
-      try { response = await octokit.repos.getContent({ owner: 'hondatabase', repo: 'files-archive', path: path || '' }); } catch {}
+      try { response = await new Octokit().repos.getContent({ owner: 'hondatabase', repo: 'files-archive', path: path || '' }); } catch {}
       let data = response?.data || [];
       let filesArray = Array.isArray(data) ? data : [data];
       let files = filesArray
-        .filter(f => !f.name.startsWith('.') && !hiddenFiles.includes(f.name))
+        .filter(f => !f.name.startsWith('.') && !hiddenItems.includes(f.name))
         .map((f, idx) => ({ ...f, uniqueId: `${f.sha}-${idx}` }));
       return { files, loading: false };
     }
