@@ -17,7 +17,7 @@ const FileGrid = ({ files, onFileClick, metadata = {} }) => (
         <div
           key={file.uniqueId}
           onClick={() => onFileClick(file)}
-          title={file.name}
+          title={metadata[file.name]?.displayName || file.name}
           className="group flex flex-col items-center p-2 rounded cursor-pointer hover:bg-blue-50 focus:bg-blue-100 w-full max-w-[120px] transition-transform transform hover:scale-105">
           {file.type === "dir" ? 
             <Folder size={48} className="text-yellow-500 mb-2" /> : 
