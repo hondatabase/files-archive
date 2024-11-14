@@ -2,7 +2,7 @@
   "homepage": "https://files.hondatabase.com",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist --cname files.hondatabase.com",
     "start": "webpack serve --mode development",
     "build": "webpack --mode production"
   },
