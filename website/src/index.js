@@ -28,6 +28,7 @@ const router = createBrowserRouter([
       } catch {}
 
       items = items.filter(i => !i.name.startsWith('.') && !hiddenItems.includes(i.name)); // Remove hidden and unnecessary files/folders
+      items = items.slice().sort((a, b) => (a.type === b.type ? 0 : a.type === "dir" ? -1 : 1)); // Sort directories first
 
       return { items, metadata, loading: false, error };
     }

@@ -33,7 +33,7 @@ export default () => {
 
     }, [items, searchParams, selectedFile]);
 
-    const sortedItems = items.slice().sort((a, b) => (a.type === b.type ? 0 : a.type === "dir" ? -1 : 1));
+    useEffect(() => setFilteredItems(items), [items]);
 
     if (loading) return <div className="w-full p-4 text-center">Loading...</div>;
 
@@ -77,7 +77,7 @@ export default () => {
                     onClose  = {handleCloseDetails}
                 />
             )}
-			<StatusBar fileCount={files.length} />
+			<StatusBar fileCount={items.filter(item => item.type === "file").length} query={query} queryFileCount={filteredItems.filter(item => item.type === "file").length}/>
         </div>
     );
 };
