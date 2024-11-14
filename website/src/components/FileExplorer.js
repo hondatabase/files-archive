@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useNavigate, useLocation, useLoaderData, useSearchParams } from "react-router-dom";
 
 import TopBar from "./TopBar";
@@ -6,13 +6,15 @@ import ItemGrid from "./ItemGrid";
 import FileDetails from "./FileDetails";
 import StatusBar from "./StatusBar";
 
-    const [selectedFile, setSelectedFile] = useState(null);
-    const navigate = useNavigate();
-    const location = useLocation();
-    const [searchParams, setSearchParams] = useSearchParams();
-    const { items = [], metadata = {}, loading = false, error } = useLoaderData();
-    const currentPath = location.pathname.replace(/^\//, "");
 export default () => {
+	const { items = [], metadata = {}, loading = false, error } = useLoaderData();
+	const [query, setQuery] = useState("");
+	const [selectedFile, setSelectedFile] = useState(null);
+	const [filteredItems, setFilteredItems] = useState(items);
+	const navigate = useNavigate();
+	const location = useLocation();
+	const [searchParams, setSearchParams] = useSearchParams();
+	const currentPath = location.pathname.replace(/^\//, "");
 
     if (loading) return <div className="w-full p-4 text-center">Loading...</div>;
     if (error) return (
@@ -28,13 +30,12 @@ export default () => {
             let item = items.find(f => f.path === fileParam);
             item && setSelectedFile(item);
         }
-    }, [items, searchParams]);
 
-    if (loading) return <div className="w-full p-4 text-center">Loading...</div>;
+    }, [items, searchParams, selectedFile]);
 
     const sortedItems = items.slice().sort((a, b) => (a.type === b.type ? 0 : a.type === "dir" ? -1 : 1));
 
-	const files = items.filter(item => item.type === "file");
+    if (loading) return <div className="w-full p-4 text-center">Loading...</div>;
 
     const handleItemSelect = item => {
         if (item.type === "dir")
@@ -50,18 +51,23 @@ export default () => {
         setSearchParams({});
     };
 
+    const handleSearch = useCallback(query => {
+        setFilteredItems(!query.trim() ? items : items.filter(item => item.name.toLowerCase().includes(query.toLowerCase())));
+		setQuery(query);
+    }, [items]);
+
     return (
         <div className="w-full min-h-screen bg-white">
             <TopBar
-                currentPath = {currentPath}
-                onSearch    = {(query) => console.log(query)}
-                onNavigate  = {navigate}
+                currentPath={currentPath}
+                onSearch={handleSearch}
+                onNavigate={navigate}
             />
             <div className="pt-20">
                 <ItemGrid
-                    items       = {sortedItems}
-                    onItemClick = {handleItemSelect}
-                    metadata    = {metadata}
+                    items={filteredItems}
+                    onItemClick={handleItemSelect}
+                    metadata={metadata}
                 />
             </div>
             {selectedFile && (
