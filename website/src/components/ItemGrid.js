@@ -2,7 +2,7 @@ import React from "react"
 import { File, Folder } from "lucide-react"
 import { Tooltip } from "react-tooltip"
 
-const ItemGrid = ({ items, onItemClick, metadata = {} }) => (
+export default ({ items, onItemClick, metadata = {} }) => (
   <>
     <div className="grid grid-cols-[repeat(auto-fill,minmax(120px,1fr))] gap-4 p-4 pt-10 sm:pt-0">
       {items.map((item, idx) => {
@@ -31,5 +31,3 @@ const ItemGrid = ({ items, onItemClick, metadata = {} }) => (
     <Tooltip id="item-tooltip" className="!z-[9999]" />
   </>
 );
-
-export default ItemGrid

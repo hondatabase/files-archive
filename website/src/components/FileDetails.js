@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { FileText, Download, X, Image } from "lucide-react";
 
-const FileDetails = ({ file, metadata = {}, onClose }) => {
+export default ({ file, metadata = {}, onClose }) => {
 	const formatSize = (bytes) =>
 		bytes < 1024
 			? `${bytes} B`
@@ -74,5 +74,3 @@ const FileDetails = ({ file, metadata = {}, onClose }) => {
 		</div>
 	);
 };
-
-export default FileDetails;

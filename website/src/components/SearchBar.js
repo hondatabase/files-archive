@@ -1,7 +1,7 @@
 import React from "react";
 import { Search } from "lucide-react";
 
-const SearchBar = ({ onSearch }) => {
+export default ({ onSearch }) => {
 	const [query, setQuery] = React.useState("");
 
 	return (
@@ -18,5 +18,3 @@ const SearchBar = ({ onSearch }) => {
 		</div>
 	);
 };
-
-export default SearchBar;

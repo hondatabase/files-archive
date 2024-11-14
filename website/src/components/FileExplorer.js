@@ -6,13 +6,13 @@ import ItemGrid from "./ItemGrid";
 import FileDetails from "./FileDetails";
 import StatusBar from "./StatusBar";
 
-const FileExplorer = () => {
     const [selectedFile, setSelectedFile] = useState(null);
     const navigate = useNavigate();
     const location = useLocation();
     const [searchParams, setSearchParams] = useSearchParams();
     const { items = [], metadata = {}, loading = false, error } = useLoaderData();
     const currentPath = location.pathname.replace(/^\//, "");
+export default () => {
 
     if (loading) return <div className="w-full p-4 text-center">Loading...</div>;
     if (error) return (
@@ -75,5 +75,3 @@ const FileExplorer = () => {
         </div>
     );
 };
-
-export default FileExplorer;

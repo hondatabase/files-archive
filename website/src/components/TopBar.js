@@ -3,7 +3,7 @@ import React from 'react'
 import Breadcrumbs from './Breadcrumbs'
 import SearchBar from './SearchBar'
 
-const TopBar = ({ currentPath, onSearch, onNavigate }) => (
+export default ({ currentPath, onSearch, onNavigate }) => (
   <div className="fixed top-0 left-0 right-0 bg-white border-b z-20 animate-slideDown">
     <div className="flex flex-col gap-2 p-2 sm:p-4">
       <div className="flex items-center gap-4">
@@ -24,5 +24,3 @@ const TopBar = ({ currentPath, onSearch, onNavigate }) => (
     </div>
   </div>
 )
-
-export default TopBar

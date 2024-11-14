@@ -3,8 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import FileExplorer from './components/FileExplorer';
 
-function App() {
-  return (
+export default App = () => (
 	<BrowserRouter>
 		{/* <div> */}
 			{/* <h1 className="text-3xl font-bold text-center my-8">GitHub Repository Explorer</h1> */}
@@ -13,7 +12,4 @@ function App() {
 			</Routes>
 		{/* </div> */}
 	</BrowserRouter>
-  );
-}
-
-export default App;
+);
