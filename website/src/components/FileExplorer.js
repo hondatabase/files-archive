@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import { useNavigate, useLocation, useLoaderData, useSearchParams } from "react-router-dom";
 
 import TopBar from "./TopBar";
@@ -15,6 +15,7 @@ export default () => {
 	const location = useLocation();
 	const [searchParams, setSearchParams] = useSearchParams();
 	const currentPath = location.pathname.replace(/^\//, "");
+	const explicitlyClosedRef = useRef(false);
 
     if (loading) return <div className="w-full p-4 text-center">Loading...</div>;
     if (error) return (
@@ -26,7 +27,7 @@ export default () => {
 
     useEffect(() => {
         let fileParam = searchParams.get('file');
-        if (fileParam && !selectedFile) {
+        if (fileParam && !selectedFile && !explicitlyClosedRef.current) {
             let item = items.find(f => f.path === fileParam);
             item && setSelectedFile(item);
         }
@@ -41,12 +42,14 @@ export default () => {
         if (item.type === "dir")
 			navigate(`/${item.path}`);
         else {
+            explicitlyClosedRef.current = false;
             setSelectedFile(item);
             setSearchParams({ file: item.path });
         }
     };
 
     const handleCloseDetails = () => {
+        explicitlyClosedRef.current = true;
         setSelectedFile(null);
         setSearchParams({});
     };
