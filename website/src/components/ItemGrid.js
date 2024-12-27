@@ -1,11 +1,19 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { File, Folder, Images, FileText, Archive } from "lucide-react"
 import { Tooltip } from "react-tooltip"
 
 export default ({ items, onItemClick, metadata = {} }) => {
+  const [isMobile, setIsMobile] = useState(false);
   const isImageFile = name => /\.(jpg|jpeg|png|gif|webp|svg|bmp)$/i.test(name);
   const isPdfFile = name => /\.pdf$/i.test(name);
   const isArchiveFile = name => /\.(zip|rar|7z|tar|gz)$/i.test(name);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <>
@@ -30,8 +38,10 @@ export default ({ items, onItemClick, metadata = {} }) => {
             <div
               key={idx}
               onClick={() => onItemClick(item)}
-              data-tooltip-id="item-tooltip"
-              data-tooltip-content={metadata[item.name]?.displayName || item.name}
+              {...(!isMobile && {
+                'data-tooltip-id': "item-tooltip",
+                'data-tooltip-content': metadata[item.name]?.displayName || item.name
+              })}
               className="group flex flex-col items-center p-2 rounded cursor-pointer hover:bg-blue-50 focus:bg-blue-100 w-full max-w-[120px] transition-transform transform hover:scale-105">
               {icon}
               <span className="text-sm text-center w-full group-hover:text-blue-600 break-words">{displayName}</span>
@@ -39,7 +49,7 @@ export default ({ items, onItemClick, metadata = {} }) => {
           );
         })}
       </div>
-      <Tooltip id="item-tooltip" className="!z-[9999]" />
+      {!isMobile && <Tooltip id="item-tooltip" className="!z-[9999]" />}
     </>
   );
 };
