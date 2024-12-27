@@ -1,7 +1,9 @@
-import React from "react";
-import { FileText, Download, X, Image } from "lucide-react";
+import React, { useState } from "react";
+import { FileText, Download, X, Image, Loader2 } from "lucide-react";
 
 export default ({ file, metadata = {}, onClose }) => {
+    const [isLoading, setIsLoading] = useState(true);
+
 	const formatSize = (bytes) =>
 		bytes < 1024
 			? `${bytes} B`
@@ -54,12 +56,18 @@ export default ({ file, metadata = {}, onClose }) => {
 							</div>
 						)}
 						{isImage && (
-							<div className="mb-4 h-48 overflow-hidden rounded">
+							<div className="mb-4 h-48 overflow-hidden rounded relative">
+                                {isLoading && (
+                                    <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+                                        <Loader2 className="animate-spin" size={24} />
+                                    </div>
+                                )}
 								<img
 									src={`${file.download_url}?w=400`}
 									alt={file.name}
-									className="w-full h-full object-cover cursor-zoom-in hover:opacity-90 transition-opacity"
+									className={`w-full h-full object-cover cursor-zoom-in hover:opacity-90 transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
 									onClick={() => window.open(file.download_url, '_blank')}
+									onLoad={() => setIsLoading(false)}
 									loading="lazy"
 								/>
 							</div>
