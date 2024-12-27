@@ -1,1 +1,7 @@
-<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Files Archive - hondatabase.com</title><script defer="defer" src="/bundle.js"></script></head><body><div id="root"></div></body></html>
+<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Files Archive - hondatabase.com</title><script>(function(){
+        let redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();</script><script defer="defer" src="/bundle.js"></script></head><body><div id="root"></div></body></html>
