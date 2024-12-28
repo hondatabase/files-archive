@@ -1,0 +1,25 @@
+name: Check Duplicate Files
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check-duplicates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Find duplicate files
+        uses: jitterbit/get-changed-files@v1
+        id: changed-files
+        
+      - name: Check for duplicates
+        run: |
+          files=$(find . -type f -not -path '*/\.*' -not -path '*/website/*' -exec md5sum {} \; | sort | uniq -w32 -d)
+          if [ ! -z "$files" ]; then
+            echo "Duplicate files found:"
+            echo "$files"
+            exit 1
+          fi
