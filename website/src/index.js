@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Octokit } from '@octokit/rest';
-import FileExplorer from './components/FileExplorer';
+import App from './App';
 
 import './index.css';
 
@@ -11,7 +11,7 @@ const hiddenItems = ['CNAME', 'website'];
 const router = createBrowserRouter([
   {
     path: '*',
-    element: <FileExplorer />,
+    element: <App />,
     loader: async ({ request }) => {
       const getContent = path => new Octokit().repos.getContent({ owner: 'hondatabase', repo: 'files-archive', path });
       let response, items, metadata = {}, error = null;
