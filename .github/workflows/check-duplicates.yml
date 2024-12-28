@@ -17,9 +17,39 @@ jobs:
         
       - name: Check for duplicates
         run: |
-          files=$(find . -type f -not -path '*/\.*' -not -path '*/website/*' -exec md5sum {} \; | sort | uniq -w32 -d)
-          if [ ! -z "$files" ]; then
-            echo "Duplicate files found:"
-            echo "$files"
-            exit 1
-          fi
+          # Create a temporary file to store MD5 results
+          find . -type f -not -path '*/\.*' -not -path '*/website/*' -exec md5sum {} \; | sort > md5_results.txt
+          
+          # Process the results to group duplicates
+          echo "=== Checking for duplicate files ==="
+          
+          # Use awk to group files by MD5 hash and only print groups with more than one file
+          awk '
+          {
+            hash = substr($1, 1, 32)
+            file = substr($0, 34)
+            files[hash] = files[hash] ? files[hash] "\n                 " file : file
+            count[hash]++
+          }
+          END {
+            found_duplicates = 0
+            for (hash in files) {
+              if (count[hash] > 1) {
+                found_duplicates = 1
+                print "\nDuplicate set found (MD5: " hash "):"
+                print "  Files:"
+                print "                 " files[hash]
+                print "  Total copies: " count[hash]
+              }
+            }
+            exit found_duplicates
+          }' md5_results.txt
+          
+          # Store the exit code
+          DUPLICATE_CHECK_EXIT_CODE=$?
+          
+          # Clean up temporary file
+          rm md5_results.txt
+          
+          # Exit with stored exit code
+          exit $DUPLICATE_CHECK_EXIT_CODE
