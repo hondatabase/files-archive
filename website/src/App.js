@@ -11,6 +11,7 @@ export default () => {
     const [query, setQuery] = useState("");
     const [selectedFile, setSelectedFile] = useState(null);
     const [filteredItems, setFilteredItems] = useState(items);
+    const [showWelcome, setShowWelcome] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
     const [searchParams, setSearchParams] = useSearchParams();
@@ -35,6 +36,14 @@ export default () => {
 
     useEffect(() => setFilteredItems(items), [items]);
 
+    useEffect(() => {
+        const hasVisited = localStorage.getItem('hasVisitedBefore');
+        if (!hasVisited) {
+            setShowWelcome(true);
+            localStorage.setItem('hasVisitedBefore', 'true');
+        }
+    }, []);
+
     const handleItemSelect = item => {
         if (item.type === "dir") navigate(`/${item.path}`);
         else {
@@ -57,6 +66,35 @@ export default () => {
 
     return (
         <div className="w-full min-h-screen bg-white">
+            {showWelcome && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+                    <div className="bg-white rounded-lg p-6 max-w-lg w-full">
+                        <h2 className="text-xl font-bold mb-4">Welcome to Honda Files Archive</h2>
+                        <p className="mb-4">
+                            This is a community-driven archive of mostly legacy Honda-related resources. Browse through our collection using the 
+                            search bar or directory navigation.
+                        </p>
+                        <p className="mb-4">
+                            Want to contribute? Visit our{' '}
+                            <a 
+                                href="https://github.com/hondatabase/files-archive" 
+                                className="text-blue-600 hover:underline"
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                                GitHub repository
+                            </a>{' '}
+                            to submit new files or improvements.
+                        </p>
+                        <button
+                            onClick={() => setShowWelcome(false)}
+                            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+                        >
+                            Got it!
+                        </button>
+                    </div>
+                </div>
+            )}
             <TopBar currentPath={currentPath} onSearch={handleSearch} onNavigate={navigate} />
             <div className="pt-20">
                 <ItemGrid items={filteredItems} onItemClick={handleItemSelect} metadata={metadata} />
