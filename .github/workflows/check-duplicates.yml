@@ -18,7 +18,7 @@ jobs:
       - name: Check for duplicates
         run: |
           # Create a temporary file to store MD5 results
-          find . -type f -not -path '*/\.*' -not -path '*/website/*' -exec md5sum {} \; | sort > md5_results.txt
+          find . -type f -size +0 -not -path '*/\.*' -not -path '*/website/*' -exec md5sum {} \; | sort > md5_results.txt
           
           # Process the results to group duplicates
           echo "=== Checking for duplicate files ==="
