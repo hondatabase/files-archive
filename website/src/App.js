@@ -69,7 +69,7 @@ export default () => {
             {showWelcome && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
                     <div className="bg-white rounded-lg p-6 max-w-lg w-full">
-                        <h2 className="text-xl font-bold mb-4">Welcome to Honda Files Archive</h2>
+                        <h2 className="text-xl font-bold mb-4">Welcome to Hondatabase's Files Archive</h2>
                         <p className="mb-4">
                             This is a community-driven archive of mostly legacy Honda-related resources. Browse through our collection using the 
                             search bar or directory navigation.
